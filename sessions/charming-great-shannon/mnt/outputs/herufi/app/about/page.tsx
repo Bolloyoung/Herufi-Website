@@ -1,0 +1,173 @@
+import type { Metadata } from 'next'
+import PageHeader from '@/components/PageHeader'
+import CTASection from '@/components/CTASection'
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'Herufi combines analytical methods, venture strategy, field knowledge, and African market context to produce useful intelligence.',
+}
+
+const values = [
+  { title: 'Clarity over noise', body: 'The value of research is not volume — it is precision. Every piece of work should answer a real question.' },
+  { title: 'Context over assumptions', body: 'African markets are not monolithic. Context changes everything. We start with the specific, not the general.' },
+  { title: 'Evidence over hype', body: 'Hot takes are easy. Evidence-backed analysis takes work. We do the work.' },
+  { title: 'Frameworks over hot takes', body: 'Good analysis is reusable. Frameworks outlive the moment. We build tools, not just opinions.' },
+  { title: 'Usefulness over complexity', body: 'If the output does not help someone make a better decision, it has failed. Simplicity in service of the decision.' },
+]
+
+const expertise = [
+  'African venture ecosystems and capital markets',
+  'Investment readiness and due diligence frameworks',
+  'Impact investing and development finance',
+  'Informal market dynamics and local context',
+  'Climate, energy, and food systems',
+  'Football analytics and sports business intelligence',
+  'Data analysis, forecasting, and decision modelling',
+  'Market entry and go-to-market strategy',
+]
+
+export default function AboutPage() {
+  return (
+    <>
+      <PageHeader
+        label="About"
+        title="What Herufi is and why it exists"
+        description="Herufi means 'letters' or 'written intelligence' in Swahili. It was built to fill a specific gap in how African markets are understood."
+      />
+
+      {/* Mission */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-4">Mission</p>
+          <h2 className="text-3xl font-semibold text-charcoal mb-6 leading-snug">
+            Useful intelligence for decision-makers who cannot afford to be wrong
+          </h2>
+          <div className="space-y-4 text-charcoal/65 leading-relaxed">
+            <p>
+              Herufi exists because too much research about African markets is either too shallow, too generic, or built for a different audience. Investors, founders, and institutions working in and around African markets need something different: structured, context-aware intelligence that helps them make better decisions.
+            </p>
+            <p>
+              Herufi is not a consultancy in the traditional sense. It is a research and analytics platform that produces structured reports, original frameworks, and data-backed analysis — with a clear orientation toward practical decisions.
+            </p>
+            <p>
+              The work spans venture strategy, market research, climate and development intelligence, data analytics, and sports business. The common thread is analytical rigour applied to real problems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Philosophy */}
+      <section className="py-20 px-6 bg-gray-soft border-y border-border-soft">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-4">Research Philosophy</p>
+          <h2 className="text-3xl font-semibold text-charcoal mb-6 leading-snug">How Herufi thinks about research</h2>
+          <div className="space-y-4 text-charcoal/65 leading-relaxed">
+            <p>
+              Good research starts with a precise question. Not "what is happening in African fintech" but "what are the structural reasons why fintech credit products fail to scale beyond informal savings groups in East Africa?" The precision of the question shapes the quality of the answer.
+            </p>
+            <p>
+              Herufi research is designed to have a long shelf life. It should still be useful six months after publication. That means avoiding reactive commentary and focusing on structural analysis that holds up over time.
+            </p>
+            <p>
+              Where data is available, it is used. Where data is limited — as it often is in African markets — methodology is made explicit and qualitative intelligence is used with appropriate care. The goal is never to disguise uncertainty. It is to name it clearly and work within it honestly.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How Herufi Works */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-4">Approach</p>
+          <h2 className="text-3xl font-semibold text-charcoal mb-10 leading-snug">How Herufi works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                step: '01',
+                title: 'Define the question',
+                body: 'Every engagement starts with a precise question or decision that needs to be made. Vague briefs produce vague outputs.',
+              },
+              {
+                step: '02',
+                title: 'Build the analysis',
+                body: 'Research is structured around a methodology — quantitative where data exists, qualitative where it does not, always with explicit assumptions.',
+              },
+              {
+                step: '03',
+                title: 'Produce useful output',
+                body: 'The deliverable is oriented around the decision or use case. A report that sits unread has failed.',
+              },
+            ].map((item) => (
+              <div key={item.step} className="bg-gray-soft rounded-xl p-6 border border-border-soft">
+                <span className="text-3xl font-bold text-charcoal/10 block mb-3">{item.step}</span>
+                <h3 className="text-base font-semibold text-charcoal mb-2">{item.title}</h3>
+                <p className="text-sm text-charcoal/55 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise */}
+      <section className="py-20 px-6 bg-cream border-y border-border-soft">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-4">Expertise</p>
+          <h2 className="text-3xl font-semibold text-charcoal mb-8">Areas of deep work</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {expertise.map((area) => (
+              <div
+                key={area}
+                className="flex items-center gap-3 bg-white border border-border-soft rounded-lg px-4 py-3"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-forest flex-shrink-0" />
+                <span className="text-sm text-charcoal/70">{area}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-4">Founder</p>
+          <div className="flex gap-6 items-start">
+            <div className="w-20 h-20 rounded-full bg-gray-soft border border-border-soft flex items-center justify-center flex-shrink-0 text-3xl">
+              👤
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold text-charcoal mb-2">Founder profile</h2>
+              <p className="text-charcoal/55 leading-relaxed text-sm">
+                Herufi was founded by a researcher and analyst with experience across venture strategy, impact investment, and African market intelligence. More detail on the founder background will be added here.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 px-6 bg-charcoal">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold mb-4">Values</p>
+          <h2 className="text-3xl font-semibold text-cream mb-10">What Herufi stands for</h2>
+          <div className="space-y-5">
+            {values.map((v) => (
+              <div key={v.title} className="border-b border-cream/10 pb-5 last:border-0">
+                <h3 className="text-base font-semibold text-cream mb-1">{v.title}</h3>
+                <p className="text-sm text-cream/50 leading-relaxed">{v.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        label="Work together"
+        headline="Looking for research or strategy support?"
+        body="Get in touch to discuss how Herufi can help with your research, analytics, or decision intelligence needs."
+        primaryCta={{ label: 'Contact Herufi', href: '/contact' }}
+        secondaryCta={{ label: 'View services', href: '/services' }}
+      />
+    </>
+  )
+}

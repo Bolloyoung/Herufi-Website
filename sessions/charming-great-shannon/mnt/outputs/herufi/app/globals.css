@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-merriweather: 'Merriweather', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-charcoal antialiased;
+  font-family: var(--font-inter);
+}
+
+/* Prose styles for MDX articles */
+.prose {
+  @apply text-charcoal leading-relaxed;
+}
+.prose h1 { @apply text-3xl font-semibold mt-10 mb-4 text-charcoal; }
+.prose h2 { @apply text-2xl font-semibold mt-8 mb-3 text-charcoal; }
+.prose h3 { @apply text-xl font-semibold mt-6 mb-2 text-charcoal; }
+.prose p  { @apply mb-5 text-[17px] leading-8; }
+.prose ul { @apply mb-5 list-disc pl-6 space-y-1; }
+.prose ol { @apply mb-5 list-decimal pl-6 space-y-1; }
+.prose blockquote {
+  @apply border-l-4 border-forest pl-5 italic text-gray-600 my-6;
+}
+.prose a  { @apply text-forest underline underline-offset-2 hover:text-forest-light transition-colors; }
+.prose strong { @apply font-semibold text-charcoal; }
+
+/* Nav link animation */
+.nav-link {
+  @apply relative text-sm font-medium text-charcoal/70 hover:text-charcoal transition-colors duration-200;
+}
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-px bg-forest transition-all duration-300;
+}
+.nav-link:hover::after { @apply w-full; }
+
+/* Section fade-in utility */
+.section-fade { @apply opacity-0 translate-y-4 transition-all duration-700; }
+.section-fade.visible { @apply opacity-100 translate-y-0; }
