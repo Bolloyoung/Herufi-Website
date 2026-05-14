@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import type { Pillar } from '@/data/pillars'
 import { TrendingUp, Globe, Leaf, BarChart2, Trophy, BookOpen } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
-const iconMap: Record<string, React.FC<{ size?: number; className?: string }>> = {
+const iconMap: Record<string, LucideIcon> = {
   TrendingUp, Globe, Leaf, BarChart2, Trophy, BookOpen,
 }
 

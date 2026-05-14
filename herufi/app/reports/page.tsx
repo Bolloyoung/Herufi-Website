@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Long-form downloadable research from Herufi — market reports, sector outlooks, investment theses, sports business reports, and framework papers.',
 }
 
-const categories = [...new Set(reports.map((r) => r.category))]
+const categories = Array.from(new Set(reports.map((r) => r.category)))
 
 export default function ReportsPage() {
   return (

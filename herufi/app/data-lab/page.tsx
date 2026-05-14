@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'The Herufi Data Lab — dashboards, calculators, scoring tools, and market maps that turn research into interactive intelligence.',
 }
 
-const toolCategories = [...new Set(dataTools.map((t) => t.category))]
+const toolCategories = Array.from(new Set(dataTools.map((t) => t.category)))
 
 export default function DataLabPage() {
   return (

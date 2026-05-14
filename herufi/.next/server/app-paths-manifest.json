@@ -1,8 +1,14 @@
 {
-  "/page": "app/page.js",
-  "/reports/page": "app/reports/page.js",
-  "/data-lab/page": "app/data-lab/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
   "/projects/page": "app/projects/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/data-lab/page": "app/data-lab/page.js",
+  "/services/page": "app/services/page.js",
+  "/reports/page": "app/reports/page.js",
   "/research/page": "app/research/page.js",
-  "/services/page": "app/services/page.js"
+  "/frameworks/[slug]/page": "app/frameworks/[slug]/page.js",
+  "/frameworks/page": "app/frameworks/page.js",
+  "/page": "app/page.js",
+  "/research/[slug]/page": "app/research/[slug]/page.js"
 }

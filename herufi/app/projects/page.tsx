@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Herufi project portfolio — research reports, strategy projects, dashboards, predictive models, and sports intelligence tools.',
 }
 
-const categories = [...new Set(projects.map((p) => p.category))]
+const categories = Array.from(new Set(projects.map((p) => p.category)))
 
 export default function ProjectsPage() {
   return (
