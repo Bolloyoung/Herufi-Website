@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Tag from '@/components/Tag'
+import Comments from '@/components/Comments'
 import { getArticleBySlug, getAllArticles } from '@/lib/content'
+import { markdownToHtml } from '@/lib/markdown'
 
 type Props = { params: { slug: string } }
 
@@ -56,7 +58,7 @@ export default function ArticlePage({ params }: Props) {
       {/* Body */}
       <div
         className="prose"
-        dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br/>') }}
+        dangerouslySetInnerHTML={{ __html: markdownToHtml(article.content) }}
       />
 
       {/* Tags */}
@@ -67,6 +69,11 @@ export default function ArticlePage({ params }: Props) {
           ))}
         </div>
       )}
+
+      {/* Comments */}
+      <div className="mt-12">
+        <Comments />
+      </div>
 
       {/* Back CTA */}
       <div className="mt-12">

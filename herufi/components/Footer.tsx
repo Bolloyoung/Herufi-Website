@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Logo from '@/components/Logo'
 
 const footerLinks = {
   Research: [
@@ -8,11 +9,11 @@ const footerLinks = {
     { label: 'Data & Analytics', href: '/research?pillar=data-analytics' },
     { label: 'Sports Business', href: '/research?pillar=sports-business' },
   ],
-  Platform: [
-    { label: 'Frameworks', href: '/frameworks' },
-    { label: 'Data Lab', href: '/data-lab' },
-    { label: 'Reports', href: '/reports' },
-    { label: 'Projects', href: '/projects' },
+  Analytics: [
+    { label: 'Frameworks', href: '/analytics#frameworks' },
+    { label: 'Data Lab', href: '/analytics#tools' },
+    { label: 'Sports Dashboard', href: '/analytics#sports' },
+    { label: 'Reports', href: '/research#reports' },
   ],
   Company: [
     { label: 'About', href: '/about' },
@@ -29,9 +30,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="block mb-4">
-              <span className="text-xl font-bold tracking-[0.12em] text-cream uppercase">
-                Herufi
-              </span>
+              <Logo variant="light" />
             </Link>
             <p className="text-sm leading-relaxed text-cream/50 max-w-xs mb-6">
               Research and analytics for markets, ventures, systems, and performance.

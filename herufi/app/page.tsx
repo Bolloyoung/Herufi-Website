@@ -19,22 +19,38 @@ const whatHerufiDoes = [
   {
     title: 'Not a news site',
     body: 'Herufi does not react to daily headlines. It produces structured research and long shelf-life analysis that holds up over time.',
-    icon: '📋',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+      </svg>
+    ),
   },
   {
     title: 'Original frameworks',
     body: 'Herufi builds reusable analytical tools — scorecards, diagnostic lenses, and decision frameworks — not just opinions.',
-    icon: '🔬',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
+      </svg>
+    ),
   },
   {
     title: 'Data-backed insight',
     body: 'Every piece of analysis is grounded in evidence. Where data is limited, methodology is made explicit.',
-    icon: '📊',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+      </svg>
+    ),
   },
   {
     title: 'African context first',
     body: 'Research is built around the structural realities of African markets — not adapted from Western frameworks after the fact.',
-    icon: '🌍',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+      </svg>
+    ),
   },
 ]
 
@@ -51,6 +67,8 @@ export default async function HomePage() {
         subtext="Herufi produces structured research, original frameworks, and data-backed insights for decision-makers working across African markets, venture strategy, impact, and sports business."
         primaryCta={{ label: 'Read Research', href: '/research' }}
         secondaryCta={{ label: 'Work With Herufi', href: '/contact' }}
+        imageSrc="https://images.unsplash.com/photo-1612831455359-970e23a1e4e9?w=1200&q=80"
+        imageAlt="Aerial view of African city"
       />
 
       {/* What Herufi Does */}
@@ -64,7 +82,9 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whatHerufiDoes.map((item) => (
               <div key={item.title} className="p-6 bg-gray-soft rounded-xl border border-border-soft">
-                <div className="text-3xl mb-4">{item.icon}</div>
+                <div className="w-10 h-10 rounded-lg bg-forest/8 flex items-center justify-center mb-4 text-forest">
+                  {item.icon}
+                </div>
                 <h3 className="text-base font-semibold text-charcoal mb-2">{item.title}</h3>
                 <p className="text-sm text-charcoal/55 leading-relaxed">{item.body}</p>
               </div>
@@ -160,41 +180,45 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Services Preview */}
+      {/* How Herufi Works — linked to pillars */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            label="Services"
+            label="How it works"
             title="How Herufi works with you"
-            description="Herufi takes on research, strategy, and analytics engagements for investors, founders, institutions, and sports organisations."
+            description="Research, frameworks, and analytics — built for decision-makers across five domains. Each service connects to a core research pillar."
             centered
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {[
-              { letter: 'A', title: 'Research & Market Intelligence' },
-              { letter: 'B', title: 'Venture Strategy & Investment Analysis' },
-              { letter: 'C', title: 'Impact, Climate & Development Strategy' },
-              { letter: 'D', title: 'Data, Analytics & Decision Intelligence' },
-              { letter: 'E', title: 'Sports Business Analytics' },
+              { letter: 'A', title: 'Research & Market Intelligence', href: '/research?pillar=markets-systems', desc: 'Market reports, sector briefs, and ecosystem maps.' },
+              { letter: 'B', title: 'Venture Strategy & Investment', href: '/research?pillar=venture-strategy', desc: 'Investment readiness, due diligence, and fundraising support.' },
+              { letter: 'C', title: 'Impact, Climate & Development', href: '/research?pillar=climate-energy', desc: 'Climate opportunity mapping and impact program design.' },
+              { letter: 'D', title: 'Data, Analytics & Decision Intelligence', href: '/analytics', desc: 'Dashboards, models, and scoring tools for sharper decisions.' },
+              { letter: 'E', title: 'Sports Business Analytics', href: '/research?pillar=sports-business', desc: 'Player valuation, recruitment analytics, and academy economics.' },
             ].map((s) => (
-              <div
+              <a
                 key={s.letter}
-                className="bg-gray-soft border border-border-soft rounded-xl p-5 text-center"
+                href={s.href}
+                className="group bg-gray-soft border border-border-soft rounded-xl p-5 hover:border-forest/30 hover:shadow-sm transition-all duration-200 block"
               >
-                <div className="w-8 h-8 rounded-lg bg-forest text-cream font-bold text-sm flex items-center justify-center mx-auto mb-3">
-                  {s.letter}
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-forest text-cream font-bold text-sm flex items-center justify-center flex-shrink-0 group-hover:bg-forest-light transition-colors">
+                    {s.letter}
+                  </div>
+                  <p className="text-sm font-semibold text-charcoal leading-snug group-hover:text-forest transition-colors">{s.title}</p>
                 </div>
-                <p className="text-sm font-medium text-charcoal leading-snug">{s.title}</p>
-              </div>
+                <p className="text-xs text-charcoal/50 leading-relaxed pl-11">{s.desc}</p>
+              </a>
             ))}
           </div>
           <div className="text-center">
-            <Link
+            <a
               href="/services"
               className="inline-flex items-center gap-2 border border-charcoal/20 text-charcoal text-sm font-medium px-6 py-3 rounded hover:border-forest hover:text-forest transition-colors duration-200"
             >
               View all services
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -206,16 +230,16 @@ export default async function HomePage() {
           <div className="bg-charcoal text-cream rounded-2xl p-8">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold mb-3">Data Lab</p>
             <h3 className="text-2xl font-semibold mb-3 leading-snug">
-              Turning research into tools
+              Analytics and tools
             </h3>
             <p className="text-cream/55 text-sm leading-relaxed mb-6">
               Dashboards, calculators, scoring models, and market maps. The Data Lab is where Herufi research becomes interactive intelligence.
             </p>
             <Link
-              href="/data-lab"
+              href="/analytics#tools"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:text-gold-light transition-colors"
             >
-              Explore the Data Lab
+              Explore Analytics
               <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -232,7 +256,7 @@ export default async function HomePage() {
               Player valuation, recruitment analytics, academy economics, and commercial strategy. Built for clubs, academies, and investors — not fans.
             </p>
             <Link
-              href="/research?pillar=sports-business"
+              href="/analytics#sports"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:text-gold-light transition-colors"
             >
               Sports research
@@ -247,14 +271,14 @@ export default async function HomePage() {
       {/* About Founder Placeholder */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center">
-          <div className="w-28 h-28 md:w-36 md:h-36 rounded-full bg-gray-soft border-2 border-border-soft flex-shrink-0 flex items-center justify-center">
-            <span className="text-4xl">👤</span>
+          <div className="w-28 h-28 md:w-36 md:h-36 rounded-full bg-forest flex-shrink-0 flex items-center justify-center">
+            <span className="text-3xl font-bold text-cream">MK</span>
           </div>
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-2">Founder</p>
-            <h3 className="text-2xl font-semibold text-charcoal mb-3">Built by someone who thinks in frameworks</h3>
+            <h3 className="text-2xl font-semibold text-charcoal mb-3">Michael Kasuku — founder, Herufi</h3>
             <p className="text-charcoal/55 leading-relaxed text-sm mb-4">
-              Herufi was built to fill a gap: structured, African-context-first research for decision-makers who need intelligence, not noise. More detail coming soon.
+              Herufi was built to fill a gap: structured, African-context-first research and analytics for decision-makers who cannot afford to be wrong. Combining venture strategy, market research, and sports business intelligence.
             </p>
             <Link
               href="/about"

@@ -128,22 +128,67 @@ export default function AboutPage() {
       </section>
 
       {/* Founder */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-4">Founder</p>
-          <div className="flex gap-6 items-start">
-            <div className="w-20 h-20 rounded-full bg-gray-soft border border-border-soft flex items-center justify-center flex-shrink-0 text-3xl">
-              👤
-            </div>
-            <div>
-              <h2 className="text-2xl font-semibold text-charcoal mb-2">Founder profile</h2>
-              <p className="text-charcoal/55 leading-relaxed text-sm">
-                Herufi was founded by a researcher and analyst with experience across venture strategy, impact investment, and African market intelligence. More detail on the founder background will be added here.
-              </p>
-            </div>
-          </div>
+<section className="py-20 px-6 bg-white">
+  <div className="max-w-4xl mx-auto">
+    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-6">Founder</p>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+      {/* Avatar */}
+      <div className="flex flex-col items-center md:items-start gap-4">
+        <div className="w-24 h-24 rounded-2xl bg-forest flex items-center justify-center">
+          <span className="text-3xl font-bold text-cream">MK</span>
         </div>
-      </section>
+        <div>
+          <p className="font-semibold text-charcoal text-lg">Michael Kasuku</p>
+          <p className="text-sm text-charcoal/50">Founder, Herufi</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://linkedin.com/in/michaelkasuku"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-medium text-forest hover:text-forest-light transition-colors flex items-center gap-1"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a
+            href="mailto:hello@herufi.org"
+            className="text-xs font-medium text-forest hover:text-forest-light transition-colors"
+          >
+            hello@herufi.org
+          </a>
+        </div>
+      </div>
+      {/* Bio */}
+      <div className="md:col-span-2 space-y-4 text-charcoal/65 leading-relaxed text-sm">
+        <p>
+          Herufi was founded by a researcher and analyst with a background spanning venture strategy, impact investment, African market intelligence, and sports business analytics. The work is grounded in real engagement with founders, investors, and institutions operating across African markets — not theoretical frameworks built from a distance.
+        </p>
+        <p>
+          The platform emerged from a consistent observation: that too much research about African markets is either too shallow, too generic, or built for a different audience. Decision-makers working in and around these markets need something different — structured, context-aware intelligence that actually helps them act.
+        </p>
+        <p>
+          The research spans six core pillars because that is where the genuine analytical demand sits: venture strategy, market systems, climate and development, data intelligence, sports business, and culture and context. The common thread is rigour applied to real decisions.
+        </p>
+        <div className="grid grid-cols-2 gap-3 pt-3">
+          {[
+            'African venture ecosystems',
+            'Impact and development finance',
+            'Sports business analytics',
+            'Data and decision modelling',
+            'Market entry and strategy',
+            'Climate and energy investment',
+          ].map((skill) => (
+            <div key={skill} className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-forest flex-shrink-0" />
+              <span className="text-xs text-charcoal/60">{skill}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Values */}
       <section className="py-20 px-6 bg-charcoal">
