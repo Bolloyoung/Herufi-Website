@@ -135,15 +135,15 @@ export default function AboutPage() {
       {/* Avatar */}
       <div className="flex flex-col items-center md:items-start gap-4">
         <div className="w-24 h-24 rounded-2xl bg-forest flex items-center justify-center">
-          <span className="text-3xl font-bold text-cream">MK</span>
+          <span className="text-3xl font-bold text-cream">MO</span>
         </div>
         <div>
-          <p className="font-semibold text-charcoal text-lg">Michael Kasuku</p>
+          <p className="font-semibold text-charcoal text-lg">Michael Omega</p>
           <p className="text-sm text-charcoal/50">Founder, Herufi</p>
         </div>
         <div className="flex items-center gap-3">
           <a
-            href="https://linkedin.com/in/michaelkasuku"
+            href="https://www.linkedin.com/in/michael-omega-a179b3195/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs font-medium text-forest hover:text-forest-light transition-colors flex items-center gap-1"

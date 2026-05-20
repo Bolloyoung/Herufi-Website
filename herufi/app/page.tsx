@@ -272,11 +272,11 @@ export default async function HomePage() {
       <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center">
           <div className="w-28 h-28 md:w-36 md:h-36 rounded-full bg-forest flex-shrink-0 flex items-center justify-center">
-            <span className="text-3xl font-bold text-cream">MK</span>
+            <span className="text-3xl font-bold text-cream">MO</span>
           </div>
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-2">Founder</p>
-            <h3 className="text-2xl font-semibold text-charcoal mb-3">Michael Kasuku — founder, Herufi</h3>
+            <h3 className="text-2xl font-semibold text-charcoal mb-3">Michael Omega — founder, Herufi</h3>
             <p className="text-charcoal/55 leading-relaxed text-sm mb-4">
               Herufi was built to fill a gap: structured, African-context-first research and analytics for decision-makers who cannot afford to be wrong. Combining venture strategy, market research, and sports business intelligence.
             </p>
