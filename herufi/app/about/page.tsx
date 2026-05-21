@@ -31,8 +31,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         label="About"
-        title="What Herufi is and why it exists"
-        description="Herufi means 'letters' or 'written intelligence' in Swahili. It was built to fill a specific gap in how African markets are understood."
+        title="A research intelligence platform for African markets"
+        description="Herufi combines analytical methods, original frameworks, and data-backed intelligence to produce structured insights for decision-makers who cannot afford to be wrong."
       />
 
       {/* Mission */}
@@ -44,13 +44,13 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-4 text-charcoal/65 leading-relaxed">
             <p>
-              Herufi exists because too much research about African markets is either too shallow, too generic, or built for a different audience. Investors, founders, and institutions working in and around African markets need something different: structured, context-aware intelligence that helps them make better decisions.
+              Herufi is a research intelligence platform — a hybrid of research institution, analytics laboratory, venture intelligence engine, and strategic foresight system. It was built to fill a specific gap: structured, African-context-first intelligence for decision-makers who need evidence, not opinion.
             </p>
             <p>
-              Herufi is not a consultancy in the traditional sense. It is a research and analytics platform that produces structured reports, original frameworks, and data-backed analysis — with a clear orientation toward practical decisions.
+              The platform produces structured reports, original frameworks, quantitative models, and interactive dashboards — across venture strategy, African market systems, climate and energy, data analytics, sports business intelligence, and policy analysis. The common thread is methodological rigour applied to real decisions.
             </p>
             <p>
-              The work spans venture strategy, market research, climate and development intelligence, data analytics, and sports business. The common thread is analytical rigour applied to real problems.
+              Every finding passes a reliability layer before publication. Confidence levels are classified. Sources are linked. Methodology is made explicit. The goal is not to produce more content — it is to produce intelligence that holds up over time.
             </p>
           </div>
         </div>
@@ -71,6 +71,31 @@ export default function AboutPage() {
             <p>
               Where data is available, it is used. Where data is limited — as it often is in African markets — methodology is made explicit and qualitative intelligence is used with appropriate care. The goal is never to disguise uncertainty. It is to name it clearly and work within it honestly.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Approach */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-4">Platform Approach</p>
+          <h2 className="text-3xl font-semibold text-charcoal mb-8 leading-snug">Seven capabilities. One platform.</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: 'Research Institution', desc: 'Long shelf-life, evidence-backed analysis' },
+              { label: 'Venture Intelligence', desc: 'Investment readiness and deal intelligence' },
+              { label: 'Analytics Laboratory', desc: 'Models, forecasts, and quantitative rigour' },
+              { label: 'Economic Strategy', desc: 'Market systems and structural analysis' },
+              { label: 'Policy Research Hub', desc: 'Development finance and policy frameworks' },
+              { label: 'Mixed Methods Engine', desc: 'Qualitative depth + quantitative rigour' },
+              { label: 'Interactive Intelligence', desc: 'Dashboards, tools, and visual outputs' },
+              { label: 'Sports Analytics', desc: 'Football economics and performance data' },
+            ].map((c) => (
+              <div key={c.label} className="bg-gray-soft border border-border-soft rounded-xl p-4">
+                <p className="text-xs font-semibold text-charcoal mb-1 leading-snug">{c.label}</p>
+                <p className="text-xs text-charcoal/50 leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

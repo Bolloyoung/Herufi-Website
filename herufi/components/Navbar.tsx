@@ -6,6 +6,8 @@ import { usePathname } from 'next/navigation'
 import { navLinks } from '@/data/navigation'
 import { Menu, X } from 'lucide-react'
 import Logo from '@/components/Logo'
+import { supabase } from '@/lib/supabase'
+import type { User } from '@supabase/supabase-js'
 
 function isActive(href: string, pathname: string): boolean {
   if (href === '/') return pathname === '/'
@@ -15,6 +17,7 @@ function isActive(href: string, pathname: string): boolean {
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [user, setUser] = useState<User | null>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -24,6 +27,18 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => { setOpen(false) }, [pathname])
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      setUser(data.session?.user ?? null)
+    })
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
+      setUser(session?.user ?? null)
+    })
+    return () => subscription.unsubscribe()
+  }, [])
+
+  const initial = user?.email?.charAt(0).toUpperCase() ?? ''
 
   return (
     <header
@@ -45,9 +60,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`relative nav-link text-sm font-medium transition-colors duration-200 pb-0.5 ${
-                  active
-                    ? 'text-forest after:!w-full'
-                    : 'text-charcoal/60 hover:text-charcoal'
+                  active ? 'text-forest after:!w-full' : 'text-charcoal/60 hover:text-charcoal'
                 }`}
               >
                 {link.label}
@@ -61,14 +74,40 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* CTA */}
+        {/* Desktop CTA — auth-aware */}
         <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="text-sm font-medium bg-charcoal text-cream px-4 py-2 rounded hover:bg-forest transition-colors duration-200"
-          >
-            Work With Herufi
-          </Link>
+          {user ? (
+            <>
+              <Link
+                href="/dashboard"
+                className="text-sm font-medium text-charcoal/60 hover:text-charcoal transition-colors"
+              >
+                Dashboard
+              </Link>
+              <Link
+                href="/dashboard"
+                className="w-8 h-8 rounded-full bg-forest text-cream text-xs font-bold flex items-center justify-center hover:bg-forest-light transition-colors"
+                title={user.email}
+              >
+                {initial}
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="text-sm font-medium text-charcoal/60 hover:text-charcoal transition-colors"
+              >
+                Sign in
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm font-medium bg-charcoal text-cream px-4 py-2 rounded hover:bg-forest transition-colors duration-200"
+              >
+                Work With Herufi
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -99,12 +138,31 @@ export default function Navbar() {
               </Link>
             )
           })}
-          <Link
-            href="/contact"
-            className="mt-3 text-center text-sm font-medium bg-charcoal text-cream px-4 py-2.5 rounded"
-          >
-            Work With Herufi
-          </Link>
+          <div className="mt-3 flex flex-col gap-2">
+            {user ? (
+              <Link
+                href="/dashboard"
+                className="text-center text-sm font-medium bg-forest text-cream px-4 py-2.5 rounded"
+              >
+                Dashboard ({user.email})
+              </Link>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="text-center text-sm font-medium border border-charcoal/20 text-charcoal px-4 py-2.5 rounded"
+                >
+                  Sign in
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-center text-sm font-medium bg-charcoal text-cream px-4 py-2.5 rounded"
+                >
+                  Work With Herufi
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       )}
     </header>

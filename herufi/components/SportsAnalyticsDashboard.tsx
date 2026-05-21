@@ -1,6 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
+  LineChart, Line, CartesianGrid, PieChart, Pie, Cell,
+  RadarChart, Radar, PolarGrid, PolarAngleAxis, Legend,
+} from 'recharts'
 
 type Tab = 'values' | 'pipeline' | 'squad' | 'markets'
 
@@ -16,95 +21,91 @@ const playerData = [
 ]
 
 const pipelineData = [
-  { stage: 'U13 Entry', count: 100, color: '#1B4332' },
-  { stage: 'U15 Select', count: 65, color: '#2D6A4F' },
-  { stage: 'U17 Elite', count: 40, color: '#C9A84C' },
-  { stage: 'U21 Squad', count: 22, color: '#E8C96A' },
-  { stage: 'Professional', count: 8, color: '#1B4332' },
+  { stage: 'U13', count: 100, retention: 100 },
+  { stage: 'U15', count: 65, retention: 65 },
+  { stage: 'U17', count: 40, retention: 40 },
+  { stage: 'U21', count: 22, retention: 22 },
+  { stage: 'Pro', count: 8, retention: 8 },
 ]
 
 const squadData = [
-  { pos: 'GK', pct: 8, color: '#1B4332' },
-  { pos: 'DEF', pct: 33, color: '#2D6A4F' },
-  { pos: 'MID', pct: 36, color: '#C9A84C' },
-  { pos: 'FWD', pct: 23, color: '#E8C96A' },
+  { name: 'GK', value: 8 },
+  { name: 'DEF', value: 33 },
+  { name: 'MID', value: 36 },
+  { name: 'FWD', value: 23 },
 ]
 
 const marketData = [
-  { country: 'Nigeria', index: 94 },
-  { country: 'Ghana', index: 81 },
-  { country: 'Senegal', index: 78 },
-  { country: "Côte d'Ivoire", index: 71 },
-  { country: 'Kenya', index: 52 },
+  { country: 'Nigeria', index: 94, transfers: 82, academies: 91, potential: 96 },
+  { country: 'Ghana', index: 81, transfers: 76, academies: 78, potential: 85 },
+  { country: 'Senegal', index: 78, transfers: 71, academies: 74, potential: 82 },
+  { country: "Côte d'Ivoire", index: 71, transfers: 68, academies: 65, potential: 77 },
+  { country: 'Kenya', index: 52, transfers: 44, academies: 55, potential: 61 },
 ]
 
-const maxValue = Math.max(...playerData.map((p) => p.value))
+const radarData = [
+  { subject: 'Nigeria', A: 94 },
+  { subject: 'Ghana', A: 81 },
+  { subject: 'Senegal', A: 78 },
+  { subject: "Côte d'Ivoire", A: 71 },
+  { subject: 'Kenya', A: 52 },
+]
+
+const COLORS = ['#1B4332', '#2D6A4F', '#C9A84C', '#E8C96A']
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-charcoal text-cream text-xs px-3 py-2 rounded-lg shadow-lg">
+        <p className="font-semibold mb-1">{label}</p>
+        {payload.map((p: any) => (
+          <p key={p.dataKey} style={{ color: p.color }}>
+            {p.name}: {typeof p.value === 'number' && p.dataKey === 'value' ? `€${p.value >= 1000 ? (p.value/1000).toFixed(1)+'m' : p.value+'k'}` : p.value}
+          </p>
+        ))}
+      </div>
+    )
+  }
+  return null
+}
 
 function PlayerValueChart() {
-  const [hovered, setHovered] = useState<string | null>(null)
   return (
-    <div className="space-y-3">
-      <p className="text-xs text-charcoal/40 uppercase tracking-widest mb-4">Transfer value (€k) by player age</p>
-      {playerData.map((p) => (
-        <div
-          key={p.name}
-          className="group flex items-center gap-3 cursor-default"
-          onMouseEnter={() => setHovered(p.name)}
-          onMouseLeave={() => setHovered(null)}
-        >
-          <div className="w-24 text-right flex-shrink-0">
-            <span className="text-xs font-medium text-charcoal truncate">{p.name}</span>
-          </div>
-          <div className="flex-1 bg-gray-soft rounded-full h-6 overflow-hidden">
-            <div
-              className="h-full rounded-full flex items-center justify-end pr-2 transition-all duration-500"
-              style={{
-                width: `${(p.value / maxValue) * 100}%`,
-                backgroundColor: hovered === p.name ? '#C9A84C' : '#1B4332',
-              }}
-            >
-              <span className="text-[10px] font-semibold text-cream">
-                €{p.value >= 1000 ? `${(p.value / 1000).toFixed(1)}m` : `${p.value}k`}
-              </span>
-            </div>
-          </div>
-          <span className="text-xs text-charcoal/40 w-8 flex-shrink-0">Age {p.age}</span>
-        </div>
-      ))}
+    <div>
+      <p className="text-xs text-charcoal/40 uppercase tracking-widest mb-4">Transfer value (€k) by player</p>
+      <ResponsiveContainer width="100%" height={280}>
+        <BarChart data={playerData} layout="vertical" margin={{ left: 10, right: 20 }}>
+          <XAxis type="number" tick={{ fontSize: 10, fill: '#1C1C1E99' }} tickFormatter={(v) => v >= 1000 ? `€${(v/1000).toFixed(1)}m` : `€${v}k`} />
+          <YAxis type="category" dataKey="name" tick={{ fontSize: 11, fill: '#1C1C1E' }} width={70} />
+          <Tooltip content={<CustomTooltip />} />
+          <Bar dataKey="value" name="Value" fill="#1B4332" radius={[0, 4, 4, 0]}>
+            {playerData.map((_, i) => (
+              <Cell key={i} fill={i === 3 ? '#C9A84C' : '#1B4332'} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+      <p className="text-xs text-charcoal/40 mt-2">Highlight: top transfer value at age 21 — peak market window for African midfielders.</p>
     </div>
   )
 }
 
 function PipelineChart() {
   return (
-    <div className="space-y-2">
+    <div>
       <p className="text-xs text-charcoal/40 uppercase tracking-widest mb-4">Academy cohort progression (per 100 players)</p>
-      {pipelineData.map((d, i) => {
-        const width = d.count
-        return (
-          <div key={d.stage} className="flex items-center gap-3">
-            <div className="w-24 text-right flex-shrink-0">
-              <span className="text-xs font-medium text-charcoal">{d.stage}</span>
-            </div>
-            <div className="flex-1 flex items-center gap-2">
-              <div
-                className="h-8 rounded transition-all duration-700 flex items-center justify-center"
-                style={{ width: `${width}%`, backgroundColor: d.color }}
-              >
-                <span className="text-xs font-bold text-cream">{d.count}</span>
-              </div>
-            </div>
-            {i > 0 && (
-              <span className="text-xs text-charcoal/40 w-12 flex-shrink-0">
-                {Math.round((d.count / pipelineData[i - 1].count) * 100)}% ret.
-              </span>
-            )}
-          </div>
-        )
-      })}
-      <div className="mt-4 p-3 bg-forest/5 rounded-lg border border-forest/10">
+      <ResponsiveContainer width="100%" height={260}>
+        <LineChart data={pipelineData} margin={{ left: 10, right: 20 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5E3" />
+          <XAxis dataKey="stage" tick={{ fontSize: 11, fill: '#1C1C1E' }} />
+          <YAxis tick={{ fontSize: 10, fill: '#1C1C1E99' }} domain={[0, 100]} />
+          <Tooltip content={<CustomTooltip />} />
+          <Line type="monotone" dataKey="count" name="Players retained" stroke="#1B4332" strokeWidth={2.5} dot={{ fill: '#1B4332', r: 5 }} activeDot={{ r: 7, fill: '#C9A84C' }} />
+        </LineChart>
+      </ResponsiveContainer>
+      <div className="mt-3 p-3 bg-forest/5 rounded-lg border border-forest/10">
         <p className="text-xs text-charcoal/60">
-          <span className="font-semibold text-forest">8% conversion</span> from U13 intake to professional contract. Top-performing African academies achieve 12–18%.
+          <span className="font-semibold text-forest">8% conversion</span> — U13 to professional contract. Top African academies achieve 12–18%.
         </p>
       </div>
     </div>
@@ -112,75 +113,29 @@ function PipelineChart() {
 }
 
 function SquadChart() {
-  const size = 180
-  const cx = size / 2
-  const cy = size / 2
-  const r = 65
-  const inner = 38
-  let cumulative = 0
-
-  const segments = squadData.map((d) => {
-    const start = cumulative
-    cumulative += d.pct
-    return { ...d, start, end: cumulative }
-  })
-
-  function polarToXY(pct: number, radius: number) {
-    const angle = (pct / 100) * 2 * Math.PI - Math.PI / 2
-    return {
-      x: cx + radius * Math.cos(angle),
-      y: cy + radius * Math.sin(angle),
-    }
-  }
-
-  function arcPath(start: number, end: number) {
-    const s = polarToXY(start, r)
-    const e = polarToXY(end, r)
-    const si = polarToXY(start, inner)
-    const ei = polarToXY(end, inner)
-    const large = end - start > 50 ? 1 : 0
-    return `M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 1 ${e.x} ${e.y} L ${ei.x} ${ei.y} A ${inner} ${inner} 0 ${large} 0 ${si.x} ${si.y} Z`
-  }
-
-  const [hovered, setHovered] = useState<string | null>(null)
-
   return (
     <div className="flex flex-col md:flex-row items-center gap-8">
-      <svg width={size} height={size} className="flex-shrink-0">
-        {segments.map((seg) => (
-          <path
-            key={seg.pos}
-            d={arcPath(seg.start, seg.end)}
-            fill={hovered === seg.pos ? '#C9A84C' : seg.color}
-            className="cursor-pointer transition-all duration-200"
-            onMouseEnter={() => setHovered(seg.pos)}
-            onMouseLeave={() => setHovered(null)}
-          />
-        ))}
-        <text x={cx} y={cy - 4} textAnchor="middle" fill="#1C1C1E" fontSize="11" fontWeight="600">Squad</text>
-        <text x={cx} y={cy + 10} textAnchor="middle" fill="#1C1C1E" fontSize="11" fontWeight="600">Balance</text>
-      </svg>
-      <div className="space-y-3 flex-1">
-        <p className="text-xs text-charcoal/40 uppercase tracking-widest mb-2">Position distribution</p>
-        {squadData.map((d) => (
-          <div
-            key={d.pos}
-            className="flex items-center gap-3 cursor-default"
-            onMouseEnter={() => setHovered(d.pos)}
-            onMouseLeave={() => setHovered(null)}
-          >
-            <span
-              className="w-3 h-3 rounded-sm flex-shrink-0 transition-colors duration-200"
-              style={{ backgroundColor: hovered === d.pos ? '#C9A84C' : d.color }}
-            />
-            <span className="text-sm font-medium text-charcoal w-10">{d.pos}</span>
+      <ResponsiveContainer width={220} height={220}>
+        <PieChart>
+          <Pie data={squadData} cx="50%" cy="50%" innerRadius={55} outerRadius={90} dataKey="value" paddingAngle={3}>
+            {squadData.map((_, i) => (
+              <Cell key={i} fill={COLORS[i % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip formatter={(v) => `${v}%`} />
+          <Legend iconType="circle" iconSize={8} />
+        </PieChart>
+      </ResponsiveContainer>
+      <div className="flex-1 space-y-3">
+        <p className="text-xs text-charcoal/40 uppercase tracking-widest mb-3">Position distribution</p>
+        {squadData.map((d, i) => (
+          <div key={d.name} className="flex items-center gap-3">
+            <span className="w-3 h-3 rounded-sm flex-shrink-0" style={{ backgroundColor: COLORS[i] }} />
+            <span className="text-sm font-medium text-charcoal w-10">{d.name}</span>
             <div className="flex-1 bg-gray-soft rounded-full h-2">
-              <div
-                className="h-2 rounded-full transition-all duration-500"
-                style={{ width: `${d.pct}%`, backgroundColor: hovered === d.pos ? '#C9A84C' : d.color }}
-              />
+              <div className="h-2 rounded-full transition-all duration-700" style={{ width: `${d.value}%`, backgroundColor: COLORS[i] }} />
             </div>
-            <span className="text-xs text-charcoal/50 w-8 text-right">{d.pct}%</span>
+            <span className="text-xs text-charcoal/50 w-8 text-right">{d.value}%</span>
           </div>
         ))}
       </div>
@@ -189,34 +144,22 @@ function SquadChart() {
 }
 
 function MarketsChart() {
-  const [hovered, setHovered] = useState<string | null>(null)
   return (
-    <div className="space-y-3">
-      <p className="text-xs text-charcoal/40 uppercase tracking-widest mb-4">Talent production index (0–100)</p>
-      {marketData.map((m) => (
-        <div
-          key={m.country}
-          className="flex items-center gap-3 cursor-default"
-          onMouseEnter={() => setHovered(m.country)}
-          onMouseLeave={() => setHovered(null)}
-        >
-          <div className="w-28 text-right flex-shrink-0">
-            <span className="text-sm font-medium text-charcoal">{m.country}</span>
-          </div>
-          <div className="flex-1 bg-gray-soft rounded-full h-8 overflow-hidden">
-            <div
-              className="h-full rounded-full flex items-center justify-end pr-3 transition-all duration-500"
-              style={{
-                width: `${m.index}%`,
-                backgroundColor: hovered === m.country ? '#C9A84C' : '#1B4332',
-              }}
-            >
-              <span className="text-xs font-bold text-cream">{m.index}</span>
-            </div>
-          </div>
-        </div>
-      ))}
-      <p className="text-xs text-charcoal/40 mt-3">Index combines: youth registrations, international transfers, academy density, and FIFA ranking trajectory.</p>
+    <div>
+      <p className="text-xs text-charcoal/40 uppercase tracking-widest mb-4">Multi-factor talent index by market</p>
+      <ResponsiveContainer width="100%" height={280}>
+        <BarChart data={marketData} margin={{ left: 10, right: 20 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5E5E3" />
+          <XAxis dataKey="country" tick={{ fontSize: 10, fill: '#1C1C1E' }} />
+          <YAxis tick={{ fontSize: 10, fill: '#1C1C1E99' }} domain={[0, 100]} />
+          <Tooltip content={<CustomTooltip />} />
+          <Legend iconType="circle" iconSize={8} />
+          <Bar dataKey="transfers" name="Transfer activity" fill="#1B4332" radius={[2, 2, 0, 0]} />
+          <Bar dataKey="academies" name="Academy density" fill="#2D6A4F" radius={[2, 2, 0, 0]} />
+          <Bar dataKey="potential" name="Growth potential" fill="#C9A84C" radius={[2, 2, 0, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+      <p className="text-xs text-charcoal/40 mt-2">Index combines: international transfers, academy density, FIFA ranking trajectory, and youth registration data.</p>
     </div>
   )
 }
@@ -233,7 +176,6 @@ export default function SportsAnalyticsDashboard() {
 
   return (
     <div className="bg-white border border-border-soft rounded-2xl overflow-hidden shadow-sm">
-      {/* Tab bar */}
       <div className="flex border-b border-border-soft overflow-x-auto">
         {tabs.map((tab) => (
           <button
@@ -249,15 +191,12 @@ export default function SportsAnalyticsDashboard() {
           </button>
         ))}
       </div>
-
-      {/* Chart panel */}
-      <div className="p-6 md:p-8 min-h-[320px]">
+      <div className="p-6 md:p-8 min-h-[340px]">
         {activeTab === 'values' && <PlayerValueChart />}
         {activeTab === 'pipeline' && <PipelineChart />}
         {activeTab === 'squad' && <SquadChart />}
         {activeTab === 'markets' && <MarketsChart />}
       </div>
-
       <div className="px-6 py-3 bg-gray-soft border-t border-border-soft flex items-center justify-between">
         <span className="text-xs text-charcoal/40">Demo data — illustrative of Herufi Sports Intelligence tools</span>
         <span className="text-xs font-medium text-forest">Herufi Sports Analytics</span>

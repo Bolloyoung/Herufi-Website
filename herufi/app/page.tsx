@@ -17,26 +17,17 @@ export const metadata: Metadata = {
 
 const whatHerufiDoes = [
   {
-    title: 'Not a news site',
-    body: 'Herufi does not react to daily headlines. It produces structured research and long shelf-life analysis that holds up over time.',
+    title: 'Research institution',
+    body: 'Structured, long shelf-life analysis built around African market realities. Hypotheses, evidence, methodology — made explicit.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
       </svg>
     ),
   },
   {
-    title: 'Original frameworks',
-    body: 'Herufi builds reusable analytical tools — scorecards, diagnostic lenses, and decision frameworks — not just opinions.',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Data-backed insight',
-    body: 'Every piece of analysis is grounded in evidence. Where data is limited, methodology is made explicit.',
+    title: 'Analytics laboratory',
+    body: 'Quantitative models, forecasting, causal inference, and machine learning — applied to markets, ventures, and sports performance.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
@@ -44,8 +35,17 @@ const whatHerufiDoes = [
     ),
   },
   {
+    title: 'Venture intelligence',
+    body: 'Investment readiness, due diligence, market entry, and fundraising intelligence — built for investors and founders who cannot afford to be wrong.',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+      </svg>
+    ),
+  },
+  {
     title: 'African context first',
-    body: 'Research is built around the structural realities of African markets — not adapted from Western frameworks after the fact.',
+    body: 'Every framework, model, and finding is grounded in the structural realities of African markets — not adapted from Western assumptions after the fact.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
@@ -62,13 +62,13 @@ export default async function HomePage() {
     <>
       {/* Hero */}
       <Hero
-        eyebrow="Research & Analytics"
-        headline="Research and analytics for markets, ventures, systems, and performance."
-        subtext="Herufi produces structured research, original frameworks, and data-backed insights for decision-makers working across African markets, venture strategy, impact, and sports business."
-        primaryCta={{ label: 'Read Research', href: '/research' }}
+        eyebrow="Research Intelligence Platform"
+        headline="Structured intelligence for decision-makers."
+        subtext="Herufi is a research intelligence platform producing evidence-backed analysis, original frameworks, and data-driven intelligence across African markets, ventures, climate, and sports — built for depth, not speed."
+        primaryCta={{ label: 'Explore Research', href: '/research' }}
         secondaryCta={{ label: 'Work With Herufi', href: '/contact' }}
-        imageSrc="https://images.unsplash.com/photo-1612831455359-970e23a1e4e9?w=1200&q=80"
-        imageAlt="Aerial view of African city"
+        imageSrc="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=1200&q=80"
+        imageAlt="Professional in African business context"
       />
 
       {/* What Herufi Does */}
@@ -98,7 +98,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between mb-12">
             <SectionHeader
-              label="Research"
+              label="Research Pillars"
               title="Six core research pillars"
               description="Structured intelligence across the domains that matter most to decision-makers in African markets."
               className="mb-0"
@@ -179,6 +179,46 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Platform Capabilities */}
+      <section className="py-24 px-6 bg-charcoal">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            label="The Platform"
+            title="A research operating system"
+            description="Herufi combines qualitative depth, quantitative rigour, and interactive intelligence into a single analytical platform."
+            className="mb-12 [&_*]:text-cream [&_.label]:text-gold"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-cream/10 rounded-xl overflow-hidden">
+            {[
+              {
+                domain: 'Research Engine',
+                items: ['Hypothesis generation', 'Literature mapping', 'Thematic coding', 'Narrative analysis', 'Evidence classification'],
+              },
+              {
+                domain: 'Analytics Engine',
+                items: ['Regression & forecasting', 'Causal inference', 'Clustering & ML', 'Panel data analysis', 'Predictive modelling'],
+              },
+              {
+                domain: 'Intelligence Output',
+                items: ['Interactive dashboards', 'Reliability scoring', 'Source transparency', 'Methodology audits', 'Decision briefs'],
+              },
+            ].map((col) => (
+              <div key={col.domain} className="bg-charcoal p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold mb-5">{col.domain}</p>
+                <ul className="space-y-3">
+                  {col.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-sm text-cream/60">
+                      <span className="w-1 h-1 rounded-full bg-forest flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* How Herufi Works — linked to pillars */}
       <section className="py-24 px-6 bg-white">

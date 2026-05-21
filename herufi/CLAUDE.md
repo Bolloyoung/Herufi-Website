@@ -13,69 +13,120 @@ npm start        # Serve production build
 
 All commands run from the `herufi/` subdirectory (the actual Next.js project root).
 
+## Platform Vision
+
+Herufi is a **Research Intelligence Platform** — a hybrid of:
+- Research institution (structured, long shelf-life analysis)
+- Venture intelligence platform (investment readiness, due diligence)
+- Analytics laboratory (quantitative models, forecasting, ML)
+- Economic strategy engine (African market systems analysis)
+- Policy research hub (development finance, climate policy)
+- Mixed methods research system (qualitative + quantitative)
+- Interactive intelligence platform (dashboards, tools)
+
+Design inspiration: Bloomberg, Financial Times, Stripe, Linear, McKinsey Insights, Our World In Data, The Economist.
+
+Core principles: **depth over speed, evidence over opinion, reproducibility over aesthetics, African context first.**
+
 ## Architecture
 
-**Next.js 14 App Router** static site. No database, no API routes. TypeScript throughout.
+### Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 14 App Router |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Charts | Recharts |
+| Auth/DB | Supabase |
+| Content | Markdown (gray-matter) |
+| Icons | Lucide React |
+| Deployment | Vercel |
 
 ### Content Pipeline
 
 Two content sources, both rendered server-side at build time:
 
-1. **`data/*.ts`** — TypeScript arrays for services, projects, frameworks, tools, reports, pillars, navigation. Edit these to update site content that doesn't need long-form prose.
-2. **`content/research/*.md`** — Markdown articles with gray-matter frontmatter. Parsed by `lib/content.ts` utilities (`getAllArticles`, `getArticleBySlug`, `getArticlesByPillar`). Rendered via `next-mdx-remote`.
+1. **`data/*.ts`** — TypeScript arrays for services, projects, frameworks, tools, reports, pillars, navigation.
+2. **`content/research/*.md`** — Markdown articles with gray-matter frontmatter. Parsed by `lib/content.ts`. Rendered via `lib/markdown.ts`.
 
-### Pages → Data Flow
+### Page Map
 
 ```
-app/page.tsx              ← imports from data/pillars.ts, data/services.ts, lib/content.ts
-app/research/page.tsx     ← lib/content.ts getAllArticles()
-app/research/[slug]/      ← lib/content.ts getArticleBySlug()
-app/frameworks/[slug]/    ← lib/content.ts getFrameworkBySlug()
-app/services/page.tsx     ← data/services.ts
-app/projects/page.tsx     ← data/projects.ts
-app/data-lab/page.tsx     ← data/tools.ts
-app/reports/page.tsx      ← data/reports.ts
+/                    → Home (research intelligence platform overview)
+/about               → About + founder profile + platform approach
+/research            → Articles + Reports (consolidated)
+/analytics           → Frameworks + Interactive tools + Sports dashboard
+/platform            → Full platform capabilities overview
+/services            → Service offerings
+/contact             → Contact form
+/login               → Magic link authentication (Supabase)
+/dashboard           → Member portal (authenticated users only)
+/auth/callback       → Supabase auth callback handler
+/research/[slug]     → Individual research articles with Comments (Giscus)
+/sitemap.xml         → Auto-generated sitemap
 ```
 
-### Component Conventions
+### Tiered Access Model
 
-- Card components (`ResearchCard`, `ServiceCard`, etc.) receive strongly-typed props from data files — each card type has a matching TypeScript interface.
-- `PageHeader.tsx` / `SectionHeader.tsx` — page-level and section-level headers respectively.
-- `Navbar.tsx` drives nav links from `data/navigation.ts`.
+| Role | Access |
+|------|--------|
+| Public | Summaries, simplified dashboards, public research pages |
+| Member | Full dashboards, source data, methodology appendices, drilldowns |
+| Admin | Publishing controls, member management (email: NEXT_PUBLIC_ADMIN_EMAIL) |
+
+Authentication uses Supabase magic links (email OTP). No passwords.
+
+### Key Components
+
+| Component | Purpose |
+|-----------|---------|
+| `Logo.tsx` | SVG H-mark logo, accepts `variant` (dark/light) and `size` props |
+| `Navbar.tsx` | Active tab via `startsWith`, closes on route change |
+| `SportsAnalyticsDashboard.tsx` | Recharts-powered 4-tab interactive dashboard |
+| `AnimatedSection.tsx` | Framer Motion scroll-triggered fade-in wrapper |
+| `AnimatedCounter.tsx` | Framer Motion number counter on scroll-in |
+| `MemberGate.tsx` | Content gating — shows lock UI if not authenticated |
+| `Comments.tsx` | Giscus GitHub Discussions comments embed |
 
 ### Styling
 
-Custom Tailwind palette defined in `tailwind.config.ts`:
+Custom Tailwind palette in `tailwind.config.ts`:
 - `charcoal` (#1C1C1E) — primary text
 - `forest` (#1B4332) / `forest-light` (#2D6A4F) — brand green
 - `gold` (#C9A84C) / `gold-light` (#E8C96A) — accent
 - `cream` (#FAFAF8) — background
 
-Fonts: `font-sans` → Inter, `font-serif` → Merriweather (Google Fonts via globals.css).
+Fonts: `font-sans` → Inter, `font-serif` → Merriweather.
 
-### Forms
+### Environment Variables
 
-`ContactForm.tsx` and `NewsletterSignup.tsx` are currently frontend-only (show success state). To wire them up: Formspree for contact, Mailchimp/Loops for newsletter. Both would use Next.js API routes under `app/api/`.
+Copy `.env.example` to `.env.local` and fill in:
 
-### Deployment
+```
+NEXT_PUBLIC_SUPABASE_URL=         # From Supabase project settings
+NEXT_PUBLIC_SUPABASE_ANON_KEY=    # From Supabase project settings
+NEXT_PUBLIC_ADMIN_EMAIL=          # hello@herufi.org
+NEXT_PUBLIC_SITE_URL=             # https://herufi.org
+```
 
-Vercel. Pushing to `main` triggers auto-deploy. Domain: herufi.org.
+## Planned / In Development
 
-## Planned Work (from roadmap)
+### Backend Infrastructure (requires Railway/Render deployment)
+- Python/FastAPI research orchestration engine
+- Automated data acquisition (World Bank, IMF, UNData, Kaggle, FBRef)
+- Qualitative analysis engine (BERTopic, LDA, NLP)
+- Quantitative engine (scikit-learn, statsmodels, Prophet, ARIMA)
+- PostgreSQL + pgvector database
+- Elasticsearch/Typesense search
 
-The following features are planned but not yet implemented:
-
-- **Navigation restructure**: Home, About, Research, Analytics, Services, Contact (consolidate Research+Reports → Research; Frameworks+Data Lab → Analytics)
-- **Logo**: Create and add a Herufi logo
-- **Active tab indicator**: Highlight current nav item
-- **Landing page hero image**: Add image to hero section
-- **Interactive sports analytics dashboard**: Charts/visualisations on the data-lab / analytics page
-- **Comments system**: Blog-style comments on research articles
-- **Email addresses**: hello@herufi.org (MX records + forwarding)
-- **Infographic-heavy Analytics section**: Motion/animation, model explanations, data visualisations
-- **Profile page**: Brief founder/team profile
-- **Visual improvements**: Replace emoji in tiles with quarter-height cover images; add images to pages
-- **Prose cleanup**: Strip `#`, `*`, long dashes, and extraneous punctuation from research markdown
+### Frontend (in scope for Next.js)
+- Recharts/D3.js enhanced dashboards on analytics page
+- Research Studio page (upload datasets, PDFs, connect APIs)
+- Confidence level badges on research articles
+- Source transparency panel on article pages
+- Admin publishing dashboard
 
 ## Adding Research Articles
 
@@ -93,3 +144,17 @@ tags: ["tag1", "tag2"]
 featured: true
 ---
 ```
+
+## Founder
+
+**Michael Omega** — Founder, Herufi
+LinkedIn: https://www.linkedin.com/in/michael-omega-a179b3195/
+Email: hello@herufi.org
+
+## Wiring Up Pending Features
+
+**Comments (Giscus):** Replace `REPO_ID_PLACEHOLDER` and `CATEGORY_ID_PLACEHOLDER` in `components/Comments.tsx` with values from [giscus.app](https://giscus.app) after enabling GitHub Discussions on the repo.
+
+**Supabase Auth:** Create a Supabase project, copy URL + anon key to `.env.local`, enable Email OTP auth in Supabase dashboard. Create an `approved_members` table with an `email` column for allowlist.
+
+**Hero image:** The home page uses an Unsplash placeholder. Replace `imageSrc` in `app/page.tsx` with `/founder.jpg` (or another image in `public/`) when ready.
