@@ -156,7 +156,7 @@ Email: hello@herufi.org
 
 ## Wiring Up Pending Features
 
-**Comments (Giscus):** Replace `REPO_ID_PLACEHOLDER` and `CATEGORY_ID_PLACEHOLDER` in `components/Comments.tsx` with values from [giscus.app](https://giscus.app) after enabling GitHub Discussions on the repo.
+**Comments (Giscus):** Wired to `Bolloyoung/Herufi-Website` GitHub Discussions ("Announcements" category). Discussions is enabled on the repo. The giscus GitHub App must be installed on the repo (https://github.com/apps/giscus) for the embed to work.
 
 **Supabase Auth:** Create a Supabase project, copy URL + anon key to `.env.local`, enable Email OTP auth in Supabase dashboard. Create an `approved_members` table with an `email` column for allowlist.
 

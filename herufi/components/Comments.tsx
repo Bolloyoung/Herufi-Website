@@ -10,10 +10,10 @@ export default function Comments() {
 
     const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
-    script.setAttribute('data-repo', 'herufi-org/herufi')
-    script.setAttribute('data-repo-id', 'REPO_ID_PLACEHOLDER')
-    script.setAttribute('data-category', 'Research Comments')
-    script.setAttribute('data-category-id', 'CATEGORY_ID_PLACEHOLDER')
+    script.setAttribute('data-repo', 'Bolloyoung/Herufi-Website')
+    script.setAttribute('data-repo-id', 'R_kgDOSdJOUw')
+    script.setAttribute('data-category', 'Announcements')
+    script.setAttribute('data-category-id', 'DIC_kwDOSdJOU84DA5YD')
     script.setAttribute('data-mapping', 'pathname')
     script.setAttribute('data-strict', '0')
     script.setAttribute('data-reactions-enabled', '1')
