@@ -1,22 +1,18 @@
 'use client'
 
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
+import SplineBackdrop from '@/components/SplineBackdrop'
 
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-  ssr: false,
-  loading: () => (
-    <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-[#12241C] to-forest" />
-  ),
-})
+type SplineHeroProps = {
+  /** Hue rotation (degrees) applied to the 3D scene — see SplineBackdrop. */
+  hue?: number
+}
 
-export default function SplineHero() {
+export default function SplineHero({ hue = 0 }: SplineHeroProps) {
   return (
-    <section className="relative h-[100svh] min-h-[600px] bg-charcoal overflow-hidden">
+    <section className="relative mt-16 h-[calc(100svh-4rem)] min-h-[560px] bg-charcoal overflow-hidden">
       {/* 3D scene */}
-      <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/Cr41gNTFdE9v8ZKt/scene.splinecode" />
-      </div>
+      <SplineBackdrop hue={hue} />
 
       {/* Readability gradient — lets the scene show through on the right */}
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/60 to-transparent pointer-events-none" />

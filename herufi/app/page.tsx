@@ -20,7 +20,7 @@ export default async function HomePage() {
       <SplineHero />
 
       {/* What we do — one clean statement strip */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-14 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-forest mb-5">What we do</p>
           <h2 className="text-2xl sm:text-3xl font-semibold text-charcoal leading-snug mb-6">
@@ -36,9 +36,9 @@ export default async function HomePage() {
       </section>
 
       {/* Research domains — quiet grid */}
-      <section className="py-24 px-6 bg-cream border-t border-border-soft">
+      <section className="py-14 px-6 bg-cream border-t border-border-soft">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between mb-8">
             <SectionHeader
               label="Research Domains"
               title="Where we focus"
@@ -74,9 +74,9 @@ export default async function HomePage() {
 
       {/* Latest publications */}
       {articles.length > 0 && (
-        <section className="py-24 px-6 bg-white border-t border-border-soft">
+        <section className="py-14 px-6 bg-white border-t border-border-soft">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-end justify-between mb-12">
+            <div className="flex items-end justify-between mb-8">
               <SectionHeader
                 label="Latest"
                 title="Recent publications"
