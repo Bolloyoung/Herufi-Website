@@ -40,6 +40,9 @@ export default function Navbar() {
 
   const initial = user?.email?.charAt(0).toUpperCase() ?? ''
 
+  // Home page renders a dark full-screen hero — use light nav until scrolled
+  const onDark = pathname === '/' && !scrolled
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -48,7 +51,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2.5">
-          <Logo />
+          <Logo variant={onDark ? 'light' : 'dark'} />
         </Link>
 
         {/* Desktop nav */}
@@ -60,14 +63,16 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`relative nav-link text-sm font-medium transition-colors duration-200 pb-0.5 ${
-                  active ? 'text-forest after:!w-full' : 'text-charcoal/60 hover:text-charcoal'
+                  onDark
+                    ? active ? 'text-cream' : 'text-cream/60 hover:text-cream'
+                    : active ? 'text-forest after:!w-full' : 'text-charcoal/60 hover:text-charcoal'
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute bottom-0 left-0 h-px bg-forest transition-all duration-300 ${
-                    active ? 'w-full' : 'w-0'
-                  }`}
+                  className={`absolute bottom-0 left-0 h-px transition-all duration-300 ${
+                    onDark ? 'bg-gold' : 'bg-forest'
+                  } ${active ? 'w-full' : 'w-0'}`}
                 />
               </Link>
             )
@@ -80,7 +85,9 @@ export default function Navbar() {
             <>
               <Link
                 href="/dashboard"
-                className="text-sm font-medium text-charcoal/60 hover:text-charcoal transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  onDark ? 'text-cream/60 hover:text-cream' : 'text-charcoal/60 hover:text-charcoal'
+                }`}
               >
                 Dashboard
               </Link>
@@ -96,13 +103,19 @@ export default function Navbar() {
             <>
               <Link
                 href="/login"
-                className="text-sm font-medium text-charcoal/60 hover:text-charcoal transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  onDark ? 'text-cream/60 hover:text-cream' : 'text-charcoal/60 hover:text-charcoal'
+                }`}
               >
                 Sign in
               </Link>
               <Link
                 href="/contact"
-                className="text-sm font-medium bg-charcoal text-cream px-4 py-2 rounded hover:bg-forest transition-colors duration-200"
+                className={`text-sm font-medium px-4 py-2 rounded transition-colors duration-200 ${
+                  onDark
+                    ? 'bg-cream text-charcoal hover:bg-gold'
+                    : 'bg-charcoal text-cream hover:bg-forest'
+                }`}
               >
                 Work With Herufi
               </Link>
@@ -112,7 +125,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 text-charcoal"
+          className={`lg:hidden p-2 ${onDark && !open ? 'text-cream' : 'text-charcoal'}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >

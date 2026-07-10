@@ -27,7 +27,7 @@ export default function ArticlePage({ params }: Props) {
     <article className="max-w-3xl mx-auto px-6 py-24">
       {/* Back */}
       <Link
-        href="/research"
+        href="/our-work"
         className="inline-flex items-center gap-1.5 text-sm text-charcoal/50 hover:text-charcoal mb-10 transition-colors"
       >
         <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
@@ -78,7 +78,7 @@ export default function ArticlePage({ params }: Props) {
       {/* Back CTA */}
       <div className="mt-12">
         <Link
-          href="/research"
+          href="/our-work"
           className="inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-forest-light transition-colors"
         >
           ← Back to all research

@@ -2,23 +2,18 @@ import Link from 'next/link'
 import Logo from '@/components/Logo'
 
 const footerLinks = {
-  Research: [
-    { label: 'Venture Strategy', href: '/research?pillar=venture-strategy' },
-    { label: 'Markets & Economies', href: '/research?pillar=markets-systems' },
-    { label: 'Climate & Energy', href: '/research?pillar=climate-energy' },
-    { label: 'Data & Analytics', href: '/research?pillar=data-analytics' },
-    { label: 'Sports Business', href: '/research?pillar=sports-business' },
-  ],
-  Analytics: [
-    { label: 'Frameworks', href: '/analytics#frameworks' },
-    { label: 'Data Lab', href: '/analytics#tools' },
-    { label: 'Sports Dashboard', href: '/analytics#sports' },
-    { label: 'Reports', href: '/research#reports' },
+  'Our Work': [
+    { label: 'All Publications', href: '/our-work' },
+    { label: 'Venture Strategy', href: '/our-work?pillar=venture-strategy' },
+    { label: 'Markets & Economies', href: '/our-work?pillar=markets-systems' },
+    { label: 'Climate & Energy', href: '/our-work?pillar=climate-energy' },
+    { label: 'Sports Business', href: '/our-work?pillar=sports-business' },
+    { label: 'Interactive Analytics', href: '/our-work#analytics' },
   ],
   Company: [
-    { label: 'About', href: '/about' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Contact Us', href: '/contact' },
+    { label: 'Member Sign In', href: '/login' },
   ],
 }
 
@@ -26,7 +21,7 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal text-cream/70">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="block mb-4">

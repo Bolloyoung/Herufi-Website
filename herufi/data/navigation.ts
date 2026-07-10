@@ -1,8 +1,6 @@
 export const navLinks = [
-  { label: 'Home',      href: '/' },
-  { label: 'About',     href: '/about' },
-  { label: 'Research',  href: '/research' },
-  { label: 'Analytics', href: '/analytics' },
-  { label: 'Services',  href: '/services' },
-  { label: 'Contact',   href: '/contact' },
+  { label: 'Home',       href: '/' },
+  { label: 'Our Work',   href: '/our-work' },
+  { label: 'About Us',   href: '/about' },
+  { label: 'Contact Us', href: '/contact' },
 ]

@@ -53,20 +53,23 @@ Two content sources, both rendered server-side at build time:
 
 ### Page Map
 
+Four-tab site structure: **Home, Our Work, About Us, Contact Us.**
+
 ```
-/                    → Home (research intelligence platform overview)
-/about               → About + founder profile + platform approach
-/research            → Articles + Reports (consolidated)
-/analytics           → Frameworks + Interactive tools + Sports dashboard
-/platform            → Full platform capabilities overview
-/services            → Service offerings
-/contact             → Contact form
+/                    → Home (Spline 3D hero + domains + latest publications)
+/our-work            → Publications + reports + pillar filter + interactive analytics
+/about               → About Us + founder profile + platform approach
+/contact             → Contact Us form
 /login               → Magic link authentication (Supabase)
 /dashboard           → Member portal (authenticated users only)
 /auth/callback       → Supabase auth callback handler
 /research/[slug]     → Individual research articles with Comments (Giscus)
 /sitemap.xml         → Auto-generated sitemap
 ```
+
+Old routes (`/research`, `/analytics`, `/frameworks`, `/services`, `/platform`, `/data-lab`, `/reports`, `/projects`) permanently redirect via `next.config.js`. Article pages remain at `/research/[slug]`.
+
+**Spline note:** `@splinetool/react-spline` is pinned to `2.2.6` — 4.x is ESM-only and breaks the Next 14 webpack build. The 3D hero lives in `components/SplineHero.tsx` (loaded client-side via `next/dynamic`, `ssr: false`).
 
 ### Tiered Access Model
 

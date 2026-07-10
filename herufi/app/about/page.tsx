@@ -236,7 +236,7 @@ export default function AboutPage() {
         headline="Looking for research or strategy support?"
         body="Get in touch to discuss how Herufi can help with your research, analytics, or decision intelligence needs."
         primaryCta={{ label: 'Contact Herufi', href: '/contact' }}
-        secondaryCta={{ label: 'View services', href: '/services' }}
+        secondaryCta={{ label: 'Explore our work', href: '/our-work' }}
       />
     </>
   )

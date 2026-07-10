@@ -207,10 +207,10 @@ export default function DashboardPage() {
         {/* Quick links */}
         <div className="flex flex-wrap gap-3">
           {[
-            { label: 'Browse research', href: '/research' },
-            { label: 'Analytics', href: '/analytics' },
-            { label: 'Platform overview', href: '/platform' },
-            { label: 'Services', href: '/services' },
+            { label: 'Browse our work', href: '/our-work' },
+            { label: 'Interactive analytics', href: '/our-work#analytics' },
+            { label: 'About Herufi', href: '/about' },
+            { label: 'Contact us', href: '/contact' },
             { label: 'Contact', href: '/contact' },
           ].map((link) => (
             <Link

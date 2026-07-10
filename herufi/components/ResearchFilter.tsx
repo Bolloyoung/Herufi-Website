@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Search, X } from 'lucide-react'
 import ResearchCard from '@/components/ResearchCard'
 import ReportCard from '@/components/ReportCard'
@@ -26,8 +27,12 @@ type Props = {
 }
 
 export default function ResearchFilter({ articles, pillars, reports }: Props) {
+  const searchParams = useSearchParams()
+  const pillarParam = searchParams.get('pillar')
   const [query, setQuery] = useState('')
-  const [activePillar, setActivePillar] = useState<string | null>(null)
+  const [activePillar, setActivePillar] = useState<string | null>(
+    pillarParam && pillars.some((p) => p.id === pillarParam) ? pillarParam : null
+  )
 
   const filteredArticles = useMemo(() => {
     return articles.filter((a) => {
