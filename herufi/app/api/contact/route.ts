@@ -28,14 +28,13 @@ export async function POST(request: Request) {
       from: `Herufi Website <${CONTACT_INBOX}>`,
       to: CONTACT_INBOX,
       replyTo: email,
-      subject: `New contact form message from ${name}`,
+      subject: type || `New contact form message from ${name}`,
       text: [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        organisation && `Organisation: ${organisation}`,
-        type && `Type of engagement: ${type}`,
-        '',
         message,
+        '',
+        '---',
+        `From: ${name} <${email}>`,
+        organisation && `Organisation: ${organisation}`,
       ].filter(Boolean).join('\n'),
     })
 
