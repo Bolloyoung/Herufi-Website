@@ -15,7 +15,7 @@ const engagementTypes = [
       </svg>
     ),
     title: 'Commission a report',
-    body: 'One-off research or market intelligence.',
+    body: 'Standalone research or market intelligence.',
   },
   {
     icon: (
@@ -24,7 +24,7 @@ const engagementTypes = [
       </svg>
     ),
     title: 'Venture strategy support',
-    body: 'Investment readiness, due diligence, or go-to-market.',
+    body: 'Investment readiness, due diligence, or market entry.',
   },
   {
     icon: (
@@ -34,15 +34,6 @@ const engagementTypes = [
     ),
     title: 'Data and analytics',
     body: 'Dashboards, models, and scoring tools.',
-  },
-  {
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-forest flex-shrink-0 mt-0.5">
-        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-      </svg>
-    ),
-    title: 'Sports intelligence',
-    body: 'Recruitment, valuation, and academy analytics.',
   },
   {
     icon: (

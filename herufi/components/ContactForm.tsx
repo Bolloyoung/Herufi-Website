@@ -63,7 +63,6 @@ export default function ContactForm() {
           <option>Commission a report</option>
           <option>Venture strategy support</option>
           <option>Data and analytics</option>
-          <option>Sports business intelligence</option>
           <option>Research partnership</option>
           <option>Other</option>
         </select>

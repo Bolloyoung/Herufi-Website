@@ -2,13 +2,13 @@ import Link from 'next/link'
 import Logo from '@/components/Logo'
 
 const footerLinks = {
-  'Our Work': [
-    { label: 'All Publications', href: '/our-work' },
-    { label: 'Venture Strategy', href: '/our-work?pillar=venture-strategy' },
-    { label: 'Markets & Economies', href: '/our-work?pillar=markets-systems' },
-    { label: 'Climate & Energy', href: '/our-work?pillar=climate-energy' },
-    { label: 'Sports Business', href: '/our-work?pillar=sports-business' },
-    { label: 'Interactive Analytics', href: '/our-work#analytics' },
+  Explore: [
+    { label: 'Blogs', href: '/blogs' },
+    { label: 'Publications', href: '/publications' },
+    { label: 'Venture Strategy', href: '/blogs?pillar=venture-strategy' },
+    { label: 'Markets and Economies', href: '/blogs?pillar=markets-systems' },
+    { label: 'Climate and Energy', href: '/blogs?pillar=climate-energy' },
+    { label: 'Data and Analytics', href: '/blogs?pillar=data-analytics' },
   ],
   Company: [
     { label: 'About Us', href: '/about' },
@@ -28,8 +28,8 @@ export default function Footer() {
               <Logo variant="light" />
             </Link>
             <p className="text-sm leading-relaxed text-cream/50 max-w-xs mb-6">
-              Research and analytics for markets, ventures, systems, and performance.
-              Built for decision-makers working across African markets.
+              Research and analytics for markets, ventures, and systems.
+              Built for decision makers working across African markets.
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -76,7 +76,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Herufi. All rights reserved.
           </p>
           <p className="text-xs text-cream/30">
-            herufi.org — Research & Analytics
+            herufi.org | Research and Analytics
           </p>
         </div>
       </div>

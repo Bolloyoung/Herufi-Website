@@ -5,24 +5,24 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Herufi | Research and Analytics for African Markets, Ventures and Performance',
+    default: 'Herufi | Research and Analytics for African Markets and Ventures',
     template: '%s | Herufi',
   },
   description:
-    'Herufi produces structured research, original frameworks, and data-backed insights for investors, founders, institutions, and sports organisations working across African markets.',
+    'Herufi produces structured research, original frameworks, and insights grounded in data for investors, founders, and institutions working across African markets.',
   metadataBase: new URL('https://herufi.org'),
-  keywords: ['African markets research', 'venture strategy Africa', 'sports analytics Africa', 'African investment intelligence', 'climate finance Africa', 'Herufi'],
+  keywords: ['African markets research', 'venture strategy Africa', 'African investment intelligence', 'climate finance Africa', 'Herufi'],
   openGraph: {
     siteName: 'Herufi',
     locale: 'en_US',
     type: 'website',
     title: 'Herufi | Research and Analytics for African Markets',
-    description: 'Structured research, original frameworks, and data-backed insights for decision-makers working across African markets.',
+    description: 'Structured research, original frameworks, and insights grounded in data for decision makers working across African markets.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Herufi | Research and Analytics for African Markets',
-    description: 'Structured research and analytics for investors, founders, and sports organisations in African markets.',
+    description: 'Structured research and analytics for investors, founders, and institutions in African markets.',
   },
   robots: {
     index: true,

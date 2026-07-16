@@ -47,7 +47,7 @@ export default function LoginPage() {
             </div>
             <h2 className="text-lg font-semibold text-charcoal mb-2">Check your email</h2>
             <p className="text-sm text-charcoal/55">
-              We sent a sign-in link to <strong>{email}</strong>. Click it to access your member dashboard.
+              We sent a login link to <strong>{email}</strong>. Click it to access your member dashboard.
             </p>
             <p className="text-xs text-charcoal/40 mt-4">No email? Check your spam folder, or <button onClick={() => setSubmitted(false)} className="text-forest underline">try again</button>.</p>
           </div>
@@ -74,7 +74,7 @@ export default function LoginPage() {
                 disabled={loading}
                 className="w-full bg-charcoal text-cream text-sm font-medium py-2.5 rounded-lg hover:bg-forest transition-colors disabled:opacity-50"
               >
-                {loading ? 'Sending...' : 'Send sign-in link'}
+                {loading ? 'Sending...' : 'Send login link'}
               </button>
             </form>
 

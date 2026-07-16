@@ -48,26 +48,31 @@ Core principles: **depth over speed, evidence over opinion, reproducibility over
 
 Two content sources, both rendered server-side at build time:
 
-1. **`data/*.ts`** — TypeScript arrays for services, projects, frameworks, tools, reports, pillars, navigation.
-2. **`content/research/*.md`** — Markdown articles with gray-matter frontmatter. Parsed by `lib/content.ts`. Rendered via `lib/markdown.ts`.
+1. **`data/*.ts`** — TypeScript arrays for pillars, publications, navigation.
+2. **`content/blog/*.md`** — Markdown blog posts with gray-matter frontmatter. Parsed by `lib/content.ts`. Rendered via `lib/markdown.ts`.
+
+Blogs link to publications: a blog's optional `publication` frontmatter field references an `id` in `data/publications.ts`, which renders a "Full Publication" card on the post.
 
 ### Page Map
 
-Four-tab site structure: **Home, Our Work, About Us, Contact Us.**
+Five-tab site structure: **Home, Blogs, Publications, About Us, Contact Us.**
 
 ```
-/                    → Home (Spline 3D hero + domains + latest publications)
-/our-work            → Publications + reports + pillar filter + interactive analytics
+/                    → Home (Spline 3D hero + domains + latest blogs)
+/blogs               → Blog listing with search + pillar filter (?pillar=<id>)
+/blogs/[slug]        → Individual blog posts with Comments (Giscus)
+/publications        → Detailed long form reports (data/publications.ts)
 /about               → About Us + founder profile + platform approach
 /contact             → Contact Us form
 /login               → Magic link authentication (Supabase)
 /dashboard           → Member portal (authenticated users only)
 /auth/callback       → Supabase auth callback handler
-/research/[slug]     → Individual research articles with Comments (Giscus)
 /sitemap.xml         → Auto-generated sitemap
 ```
 
-Old routes (`/research`, `/analytics`, `/frameworks`, `/services`, `/platform`, `/data-lab`, `/reports`, `/projects`) permanently redirect via `next.config.js`. Article pages remain at `/research/[slug]`.
+Old routes (`/our-work`, `/research`, `/research/:slug`, `/analytics`, `/frameworks`, `/services`, `/platform`, `/data-lab`, `/reports`, `/projects`) permanently redirect via `next.config.js`.
+
+**Copy style:** site copy avoids hyphens and dashes entirely (no em dashes, no hyphenated compounds like "evidence-backed"). Rephrase instead. Sports content was removed from the site; there are five research pillars.
 
 **Spline note:** `@splinetool/react-spline` is pinned to `2.2.6` — 4.x is ESM-only and breaks the Next 14 webpack build. The 3D hero lives in `components/SplineHero.tsx` (loaded client-side via `next/dynamic`, `ssr: false`).
 
@@ -87,7 +92,6 @@ Authentication uses Supabase magic links (email OTP). No passwords.
 |-----------|---------|
 | `Logo.tsx` | SVG H-mark logo, accepts `variant` (dark/light) and `size` props |
 | `Navbar.tsx` | Active tab via `startsWith`, closes on route change |
-| `SportsAnalyticsDashboard.tsx` | Recharts-powered 4-tab interactive dashboard |
 | `AnimatedSection.tsx` | Framer Motion scroll-triggered fade-in wrapper |
 | `AnimatedCounter.tsx` | Framer Motion number counter on scroll-in |
 | `MemberGate.tsx` | Content gating — shows lock UI if not authenticated |
@@ -131,22 +135,31 @@ NEXT_PUBLIC_SITE_URL=             # https://herufi.org
 - Source transparency panel on article pages
 - Admin publishing dashboard
 
-## Adding Research Articles
+## Adding Blog Posts
 
-Create `content/research/<slug>.md` with this frontmatter:
+Create `content/blog/<slug>.md` with this frontmatter:
 
 ```markdown
 ---
-title: "Article Title"
-excerpt: "One-sentence summary"
-author: "Author Name"
-date: "2025-01-15"
+title: "Post Title"
+slug: "post-title"
+summary: "One sentence summary"
+category: "Analysis"
+author: "Michael Omega"
+date: "2026-07-16"
 readingTime: "8 min read"
-pillar: "venture-capital"   # one of: venture-capital | climate-resilience | sport-intelligence | data-decision-intelligence | context-strategy | informal-markets
+pillar: "Venture Strategy and Capital Intelligence"
 tags: ["tag1", "tag2"]
-featured: true
+publication: "publication-id"   # optional, matches an id in data/publications.ts
 ---
 ```
+
+`pillar` must exactly match one of the five titles in `data/pillars.ts`:
+Venture Strategy and Capital Intelligence | Markets, Systems and African Economies | Climate, Energy, Food and Infrastructure | Data, Predictive Analytics and Decision Intelligence | Culture, Context and Intelligence Notes
+
+## Adding Publications
+
+Add an entry to the `publications` array in `data/publications.ts` (id, title, category, summary, date, format, fileUrl, tags). Host the PDF and point `fileUrl` at it.
 
 ## Founder
 

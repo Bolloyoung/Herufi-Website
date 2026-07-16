@@ -12,11 +12,10 @@ import {
 
 const pillarData = [
   { name: 'Venture Strategy', value: 1, color: '#1B4332' },
-  { name: 'Markets & Economies', value: 1, color: '#2D6A4F' },
-  { name: 'Climate & Energy', value: 1, color: '#4A8C6F' },
-  { name: 'Data & Analytics', value: 1, color: '#C9A84C' },
-  { name: 'Sports Business', value: 1, color: '#E8C96A' },
-  { name: 'Culture & Context', value: 1, color: '#8B7355' },
+  { name: 'Markets and Economies', value: 1, color: '#2D6A4F' },
+  { name: 'Climate and Energy', value: 1, color: '#4A8C6F' },
+  { name: 'Data and Analytics', value: 1, color: '#C9A84C' },
+  { name: 'Culture and Context', value: 1, color: '#8B7355' },
 ]
 
 const timelineData = [
@@ -28,10 +27,10 @@ const timelineData = [
 ]
 
 const platformStats = [
-  { label: 'Research articles', value: 6 },
-  { label: 'Frameworks', value: 10 },
-  { label: 'Reports', value: 7 },
-  { label: 'Data tools', value: 6 },
+  { label: 'Blog posts', value: 0 },
+  { label: 'Publications', value: 0 },
+  { label: 'Research pillars', value: 5 },
+  { label: 'Frameworks in development', value: 10 },
 ]
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -117,7 +116,7 @@ export default function DashboardPage() {
           {/* Research by pillar */}
           <div className="bg-white border border-border-soft rounded-2xl p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/40 mb-1">Research distribution</p>
-            <h3 className="text-base font-semibold text-charcoal mb-4">Articles by pillar</h3>
+            <h3 className="text-base font-semibold text-charcoal mb-4">Blogs by pillar</h3>
             <ResponsiveContainer width="100%" height={220}>
               <PieChart>
                 <Pie
@@ -174,7 +173,7 @@ export default function DashboardPage() {
               },
               {
                 title: 'Analytics & Dashboards',
-                items: ['Interactive drilldowns', 'Reliability scores', 'Sports intelligence tools'],
+                items: ['Interactive drilldowns', 'Reliability scores', 'Scenario models'],
                 available: true,
               },
               {
@@ -207,11 +206,10 @@ export default function DashboardPage() {
         {/* Quick links */}
         <div className="flex flex-wrap gap-3">
           {[
-            { label: 'Browse our work', href: '/our-work' },
-            { label: 'Interactive analytics', href: '/our-work#analytics' },
+            { label: 'Browse blogs', href: '/blogs' },
+            { label: 'Publications', href: '/publications' },
             { label: 'About Herufi', href: '/about' },
             { label: 'Contact us', href: '/contact' },
-            { label: 'Contact', href: '/contact' },
           ].map((link) => (
             <Link
               key={link.href}

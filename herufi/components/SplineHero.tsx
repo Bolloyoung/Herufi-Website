@@ -25,18 +25,18 @@ export default function SplineHero({ hue = 0 }: SplineHeroProps) {
             Research Intelligence Platform
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-cream leading-[1.08] mb-6">
-            Structured intelligence for decision-makers.
+            Structured intelligence for decision makers.
           </h1>
           <p className="text-base sm:text-lg text-cream/60 leading-relaxed max-w-xl mb-10">
-            Evidence-backed research, original frameworks, and data-driven analysis
-            across African markets, ventures, climate, and sports.
+            Research grounded in evidence, original frameworks, and rigorous analysis
+            across African markets, ventures, climate, and data.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <Link
-              href="/our-work"
+              href="/blogs"
               className="inline-flex items-center gap-2 bg-cream text-charcoal text-sm font-semibold px-7 py-3.5 rounded hover:bg-gold hover:text-charcoal transition-colors duration-200"
             >
-              Explore Our Work
+              Read the Blogs
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
