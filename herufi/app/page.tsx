@@ -3,8 +3,10 @@ import Link from 'next/link'
 import SplineHero from '@/components/SplineHero'
 import SectionHeader from '@/components/SectionHeader'
 import ResearchCard from '@/components/ResearchCard'
+import BlogPostCard from '@/components/BlogPostCard'
 import CTASection from '@/components/CTASection'
 import { pillars } from '@/data/pillars'
+import { blogPosts } from '@/data/blogPosts'
 import { getAllArticles } from '@/lib/content'
 
 export const metadata: Metadata = {
@@ -86,33 +88,31 @@ export default async function HomePage() {
       </section>
 
       {/* Latest blogs */}
-      {articles.length > 0 && (
-        <section className="py-14 px-6 bg-white border-t border-border-soft">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-end justify-between mb-8">
-              <SectionHeader
-                label="Latest"
-                title="Recent blogs"
-                className="mb-0"
-              />
-              <Link
-                href="/blogs"
-                className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-forest hover:text-forest-light transition-colors"
-              >
-                View all blogs
-                <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {articles.map((article) => (
-                <ResearchCard key={article.slug} article={article} />
-              ))}
-            </div>
+      <section className="py-14 px-6 bg-white border-t border-border-soft">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-8">
+            <SectionHeader
+              label="Latest"
+              title="Recent blogs"
+              className="mb-0"
+            />
+            <Link
+              href="/blogs"
+              className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-forest hover:text-forest-light transition-colors"
+            >
+              View all blogs
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
           </div>
-        </section>
-      )}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {articles.length > 0
+              ? articles.map((article) => <ResearchCard key={article.slug} article={article} />)
+              : blogPosts.map((post) => <BlogPostCard key={post.id} post={post} />)}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <CTASection

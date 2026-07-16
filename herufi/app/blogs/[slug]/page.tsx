@@ -80,7 +80,7 @@ export default function BlogPostPage({ params }: Props) {
             href={linkedPublication.fileUrl}
             className="inline-flex items-center gap-2 bg-cream text-charcoal text-sm font-semibold px-5 py-2.5 rounded hover:bg-gold transition-colors"
           >
-            Read the publication ({linkedPublication.format})
+            Read the publication
           </a>
         </div>
       )}

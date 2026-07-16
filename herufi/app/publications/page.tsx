@@ -48,7 +48,7 @@ export default function PublicationsPage() {
                       href={pub.fileUrl}
                       className="text-sm font-medium text-forest hover:text-forest-light transition-colors flex-shrink-0"
                     >
-                      Read ({pub.format})
+                      Read
                     </a>
                   </div>
                 </div>

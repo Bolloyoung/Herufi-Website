@@ -7,7 +7,7 @@ type ResearchCardProps = { article: ArticleFrontmatter; featured?: boolean }
 export default function ResearchCard({ article, featured = false }: ResearchCardProps) {
   return (
     <Link
-      href={`/research/${article.slug}`}
+      href={`/blogs/${article.slug}`}
       className={`group block bg-white border border-border-soft rounded-xl overflow-hidden hover:border-forest/40 hover:shadow-md transition-all duration-200 ${
         featured ? 'md:flex' : ''
       }`}
