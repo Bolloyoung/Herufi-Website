@@ -1,0 +1,33 @@
+{
+  "herufi": {
+    "color": {
+      "charcoal": { "value": "#1C1C1E", "type": "color", "description": "Primary text and dark surfaces" },
+      "forest": { "value": "#1B4332", "type": "color", "description": "Brand primary green" },
+      "forest-light": { "value": "#2D6A4F", "type": "color", "description": "Hover state for forest" },
+      "gold": { "value": "#C9A84C", "type": "color", "description": "Accent — use sparingly (~5%)" },
+      "gold-light": { "value": "#E8C96A", "type": "color", "description": "Hover state for gold" },
+      "cream": { "value": "#FAFAF8", "type": "color", "description": "Page background" },
+      "gray-soft": { "value": "#F5F5F3", "type": "color", "description": "Card and tint surfaces" },
+      "border-soft": { "value": "#E5E5E3", "type": "color", "description": "Hairline borders" }
+    },
+    "fontFamilies": {
+      "sans": { "value": "Inter", "type": "fontFamilies", "description": "Headings, UI, navigation" },
+      "serif": { "value": "Merriweather", "type": "fontFamilies", "description": "Editorial long-form body" }
+    },
+    "fontWeights": {
+      "body": { "value": "400", "type": "fontWeights" },
+      "nav": { "value": "500", "type": "fontWeights" },
+      "heading": { "value": "600", "type": "fontWeights" },
+      "wordmark": { "value": "700", "type": "fontWeights" }
+    },
+    "letterSpacing": {
+      "label": { "value": "0.12em", "type": "letterSpacing", "description": "Uppercase eyebrow labels" },
+      "wordmark": { "value": "0.12em", "type": "letterSpacing" }
+    },
+    "borderRadius": {
+      "button": { "value": "6", "type": "borderRadius" },
+      "card": { "value": "12", "type": "borderRadius" },
+      "pill": { "value": "9999", "type": "borderRadius" }
+    }
+  }
+}
