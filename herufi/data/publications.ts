@@ -11,5 +11,36 @@ export type Publication = {
 }
 
 // Publications are the detailed, long form reports behind the blog posts.
-// Add new entries here; the newest first publication is coming soon.
-export const publications: Publication[] = []
+// Report HTML and figures live in public/publications/.
+export const publications: Publication[] = [
+  {
+    id: 'broken-ladder-2014-baseline',
+    title: 'The Broken Ladder',
+    category: 'Baseline Diagnosis',
+    summary: 'A global baseline diagnosis of African startup investment. Evidence from 49,436 companies, data to 2014.',
+    date: '2026',
+    format: 'HTML',
+    fileUrl: '/publications/broken-ladder-2014-baseline.html',
+    tags: ['Venture Capital', 'Africa', 'Startup Funding', 'Baseline'],
+  },
+  {
+    id: 'frontier-to-market-2014-2026',
+    title: 'From Frontier to Market',
+    category: 'Reality Check',
+    summary: 'How African startup funding transformed between 2014 and 2026. A source linked reality check of the 2014 lessons.',
+    date: '2026',
+    format: 'HTML',
+    fileUrl: '/publications/frontier-to-market-2014-2026.html',
+    tags: ['Venture Capital', 'Africa', 'Capital Structure', 'Retrospective'],
+  },
+  {
+    id: 'continent-heading-2026-2030',
+    title: 'Where the Continent Is Heading',
+    category: 'Scenarios',
+    summary: 'Validated scenarios for African startup funding, 2026 to 2030. Every variable, every assumption, every check.',
+    date: '2026',
+    format: 'HTML',
+    fileUrl: '/publications/continent-heading-2026-2030.html',
+    tags: ['Venture Capital', 'Africa', 'Forecasting', 'Scenarios'],
+  },
+]
