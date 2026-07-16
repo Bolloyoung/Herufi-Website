@@ -14,16 +14,27 @@ export default function ContactForm() {
   const [form, setForm] = useState<FormData>({
     name: '', email: '', organisation: '', type: '', message: '',
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   const update = (k: keyof FormData, v: string) => setForm((f) => ({ ...f, [k]: v }))
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setStatus('loading')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Request failed')
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
   }
 
-  if (submitted) {
+  if (status === 'success') {
     return (
       <div className="bg-forest/10 border border-forest/20 rounded-xl p-8 text-center">
         <div className="text-3xl mb-4">✓</div>
@@ -80,11 +91,19 @@ export default function ContactForm() {
         />
       </div>
 
+      {status === 'error' && (
+        <p className="text-sm text-red-600 text-center">
+          Something went wrong sending your message. Please try again or email{' '}
+          <a href="mailto:hello@herufi.org" className="underline">hello@herufi.org</a> directly.
+        </p>
+      )}
+
       <button
         type="submit"
-        className="w-full bg-charcoal text-cream text-sm font-medium py-3 rounded-lg hover:bg-forest transition-colors duration-200"
+        disabled={status === 'loading'}
+        className="w-full bg-charcoal text-cream text-sm font-medium py-3 rounded-lg hover:bg-forest transition-colors duration-200 disabled:opacity-60"
       >
-        Send message
+        {status === 'loading' ? 'Sending...' : 'Send message'}
       </button>
 
       <p className="text-xs text-charcoal/35 text-center">

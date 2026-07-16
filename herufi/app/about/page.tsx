@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
+import NewsletterSignup from '@/components/NewsletterSignup'
 import CTASection from '@/components/CTASection'
 
 export const metadata: Metadata = {
@@ -228,6 +229,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <NewsletterSignup dark />
 
       <CTASection
         label="Work together"

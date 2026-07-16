@@ -4,6 +4,7 @@ import SplineHero from '@/components/SplineHero'
 import SectionHeader from '@/components/SectionHeader'
 import ResearchCard from '@/components/ResearchCard'
 import BlogPostCard from '@/components/BlogPostCard'
+import NewsletterSignup from '@/components/NewsletterSignup'
 import CTASection from '@/components/CTASection'
 import { pillars } from '@/data/pillars'
 import { blogPosts } from '@/data/blogPosts'
@@ -113,6 +114,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Newsletter */}
+      <NewsletterSignup />
 
       {/* CTA */}
       <CTASection

@@ -116,6 +116,7 @@ NEXT_PUBLIC_SUPABASE_URL=         # From Supabase project settings
 NEXT_PUBLIC_SUPABASE_ANON_KEY=    # From Supabase project settings
 NEXT_PUBLIC_ADMIN_EMAIL=          # hello@herufi.org
 NEXT_PUBLIC_SITE_URL=             # https://herufi.org
+RESEND_API_KEY=                   # From resend.com, herufi.org domain verified there
 ```
 
 ## Planned / In Development
@@ -174,3 +175,23 @@ Email: hello@herufi.org
 **Supabase Auth:** Create a Supabase project, copy URL + anon key to `.env.local`, enable Email OTP auth in Supabase dashboard. Create an `approved_members` table with an `email` column for allowlist.
 
 **Hero image:** The home page uses an Unsplash placeholder. Replace `imageSrc` in `app/page.tsx` with `/founder.jpg` (or another image in `public/`) when ready.
+
+**Contact form (Resend):** `components/ContactForm.tsx` posts to `app/api/contact/route.ts`, which sends an email via Resend to hello@herufi.org (reply-to set to the submitter's address). Requires `RESEND_API_KEY` in the environment and the herufi.org domain verified in the Resend dashboard.
+
+**Newsletter signup:** `components/NewsletterSignup.tsx` (used on the home and about pages) inserts into a `newsletter_subscribers` table via the existing Supabase client. Create the table once in the Supabase SQL editor:
+
+```sql
+create table if not exists newsletter_subscribers (
+  id uuid primary key default gen_random_uuid(),
+  email text unique not null,
+  created_at timestamptz not null default now()
+);
+
+alter table newsletter_subscribers enable row level security;
+
+create policy "Allow public insert" on newsletter_subscribers
+  for insert to anon
+  with check (true);
+```
+
+No select policy is added, so the subscriber list is not publicly readable — view it from the Supabase dashboard's table editor.

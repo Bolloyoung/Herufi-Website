@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { supabase } from '@/lib/supabase'
 
 type NewsletterProps = {
   dark?: boolean
@@ -8,11 +9,18 @@ type NewsletterProps = {
 
 export default function NewsletterSignup({ dark = false }: NewsletterProps) {
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'submitted'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'duplicate' | 'error'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) setStatus('submitted')
+    setStatus('loading')
+    const { error } = await supabase.from('newsletter_subscribers').insert({ email })
+    if (error) {
+      setStatus(error.code === '23505' ? 'duplicate' : 'error')
+      return
+    }
+    setStatus('success')
+    setEmail('')
   }
 
   return (
@@ -27,7 +35,7 @@ export default function NewsletterSignup({ dark = false }: NewsletterProps) {
         <p className="text-sm text-charcoal/55 mb-6">
           No noise. No daily updates. Just structured analysis when it is ready.
         </p>
-        {status === 'submitted' ? (
+        {status === 'success' ? (
           <div className="bg-forest/10 text-forest text-sm rounded px-6 py-3 font-medium">
             You are on the list. We will be in touch.
           </div>
@@ -43,11 +51,18 @@ export default function NewsletterSignup({ dark = false }: NewsletterProps) {
             />
             <button
               type="submit"
-              className="text-sm font-medium bg-charcoal text-cream px-5 py-2.5 rounded hover:bg-forest transition-colors duration-200 whitespace-nowrap"
+              disabled={status === 'loading'}
+              className="text-sm font-medium bg-charcoal text-cream px-5 py-2.5 rounded hover:bg-forest transition-colors duration-200 whitespace-nowrap disabled:opacity-60"
             >
-              Subscribe
+              {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
             </button>
           </form>
+        )}
+        {status === 'duplicate' && (
+          <p className="text-xs text-charcoal/40 mt-3">That email is already subscribed.</p>
+        )}
+        {status === 'error' && (
+          <p className="text-xs text-red-600 mt-3">Something went wrong. Please try again.</p>
         )}
       </div>
     </section>
