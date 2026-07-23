@@ -1,0 +1,112 @@
+{
+  "id": "r1_fig4",
+  "title": "Africa: newly funded startups per year, the ecosystem is young and accelerating",
+  "caption": "Newly funded African startups per year, 2005 to 2014, with the cumulative count.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "color": [
+          "#1B4332",
+          "#C9A84C"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 0,
+          "textStyle": {
+            "fontSize": 11
+          }
+        },
+        "grid": {
+          "left": 56,
+          "right": 56,
+          "top": 40,
+          "bottom": 34,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": [
+          {
+            "type": "value",
+            "name": "Newly funded startups",
+            "nameTextStyle": {
+              "fontSize": 11
+            }
+          },
+          {
+            "type": "value",
+            "name": "Cumulative",
+            "nameTextStyle": {
+              "fontSize": 11
+            }
+          }
+        ],
+        "series": [
+          {
+            "name": "Newly funded startups",
+            "type": "bar",
+            "data": [
+              4,
+              1,
+              3,
+              7,
+              13,
+              16,
+              23,
+              35,
+              42,
+              49
+            ],
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "barMaxWidth": 34
+          },
+          {
+            "name": "Cumulative",
+            "type": "line",
+            "data": [
+              4,
+              5,
+              8,
+              15,
+              28,
+              44,
+              67,
+              102,
+              144,
+              193
+            ],
+            "yAxisIndex": 1,
+            "itemStyle": {
+              "color": "#C9A84C"
+            },
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

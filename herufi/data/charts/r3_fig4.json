@@ -1,0 +1,399 @@
+{
+  "id": "r3_fig4",
+  "title": "Component forecasts, 2026 to 2030",
+  "caption": "Component forecasts 2026 to 2030: debt share, exits, deal counts (the canary) and cumulative unicorns. Shaded areas and dashed paths mark the bear to bull range.",
+  "panels": [
+    {
+      "title": "Debt as % of total funding",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 50,
+          "right": 20,
+          "top": 20,
+          "bottom": 30,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"
+          ],
+          "axisLabel": {
+            "fontSize": 9
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "%",
+          "min": 0,
+          "max": 60
+        },
+        "series": [
+          {
+            "name": "Actual / base forecast",
+            "type": "line",
+            "data": [
+              25,
+              34,
+              32,
+              40,
+              33,
+              36.25,
+              37.5,
+              38.75,
+              40
+            ],
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "lineStyle": {
+              "width": 2.2
+            },
+            "symbolSize": 5
+          }
+        ]
+      }
+    },
+    {
+      "title": "Startup exits (M&A deals per year)",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 50,
+          "right": 20,
+          "top": 20,
+          "bottom": 30,
+          "containLabel": true
+        },
+        "legend": {
+          "show": false
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"
+          ],
+          "axisLabel": {
+            "fontSize": 9
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Deals"
+        },
+        "series": [
+          {
+            "name": "Bull (1.5x)",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              151.2,
+              173.9,
+              200.0,
+              230.0,
+              264.3
+            ],
+            "lineStyle": {
+              "opacity": 0.3,
+              "type": "dashed",
+              "color": "#38a169"
+            },
+            "symbolSize": 0
+          },
+          {
+            "name": "Bear (0.6x)",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              60.5,
+              69.5,
+              80.0,
+              92.0,
+              105.7
+            ],
+            "lineStyle": {
+              "opacity": 0.3,
+              "type": "dashed",
+              "color": "#c53030"
+            },
+            "symbolSize": 0
+          },
+          {
+            "name": "Exits (M&A per year)",
+            "type": "line",
+            "data": [
+              39,
+              67,
+              100.8,
+              115.9,
+              133.3,
+              153.3,
+              176.2
+            ],
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "lineStyle": {
+              "width": 2.4
+            },
+            "symbolSize": 6
+          }
+        ]
+      }
+    },
+    {
+      "title": "Deals \u2265 $100K per year",
+      "option": {
+        "color": [
+          "#c53030",
+          "#1B4332",
+          "#38a169"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 0,
+          "textStyle": {
+            "fontSize": 10
+          },
+          "type": "scroll"
+        },
+        "grid": {
+          "left": 60,
+          "right": 24,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Deals",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "series": [
+          {
+            "name": "Bear",
+            "type": "line",
+            "data": [
+              380,
+              350,
+              330,
+              320,
+              310
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#c53030"
+            }
+          },
+          {
+            "name": "Base",
+            "type": "line",
+            "data": [
+              400,
+              440,
+              480,
+              530,
+              580
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            }
+          },
+          {
+            "name": "Bull",
+            "type": "line",
+            "data": [
+              420,
+              520,
+              650,
+              800,
+              950
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#38a169"
+            }
+          },
+          {
+            "name": "2025 actual",
+            "type": "scatter",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              506
+            ],
+            "symbolSize": 9,
+            "itemStyle": {
+              "color": "#1C1C1E"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Cumulative unicorns",
+      "option": {
+        "color": [
+          "#c53030",
+          "#1B4332",
+          "#38a169"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 0,
+          "textStyle": {
+            "fontSize": 10
+          },
+          "type": "scroll"
+        },
+        "grid": {
+          "left": 60,
+          "right": 24,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Companies \u2265 $1B",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "series": [
+          {
+            "name": "Bear (+0.5/yr)",
+            "type": "line",
+            "data": [
+              8,
+              8.5,
+              9,
+              9.5,
+              10
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#c53030"
+            }
+          },
+          {
+            "name": "Base (+1.5/yr)",
+            "type": "line",
+            "data": [
+              8,
+              9.5,
+              11,
+              12.5,
+              14
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            }
+          },
+          {
+            "name": "Bull (+3/yr)",
+            "type": "line",
+            "data": [
+              8,
+              11,
+              14,
+              17,
+              20
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#38a169"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

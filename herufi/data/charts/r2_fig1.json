@@ -1,0 +1,218 @@
+{
+  "id": "r2_fig1",
+  "title": "African startup funding per year, 2005 to 2025 (log scale)",
+  "caption": "African startup funding per year, 2005 to 2025, on a log scale, combining the 2014 snapshot cohorts, Partech (equity), Africa: The Big Deal (equity plus debt) and Disrupt Africa (disclosed equity).",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "color": [
+          "#a0aec0",
+          "#c53030",
+          "#1B4332",
+          "#C9A84C"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 0,
+          "textStyle": {
+            "fontSize": 10
+          },
+          "type": "scroll"
+        },
+        "grid": {
+          "left": 60,
+          "right": 24,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "log",
+          "name": "USD millions (log)",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          },
+          "min": 1
+        },
+        "series": [
+          {
+            "name": "2014 snapshot (lifetime raise by first-funding cohort)",
+            "type": "line",
+            "data": [
+              16.31,
+              40.83,
+              9.55,
+              2.29,
+              241.69,
+              121.71,
+              38.04,
+              108.57,
+              414.79,
+              675.27,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#a0aec0"
+            }
+          },
+          {
+            "name": "Africa: The Big Deal (equity+debt, deals \u2265$100K)",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              2020,
+              1400,
+              4300,
+              4600,
+              2900,
+              2200,
+              3200
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#c53030"
+            }
+          },
+          {
+            "name": "Partech (equity only)",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              277,
+              367,
+              560,
+              1163,
+              2020,
+              1430,
+              5200,
+              4900,
+              2300,
+              2200,
+              2400
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            }
+          },
+          {
+            "name": "Disrupt Africa (disclosed equity only)",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              185.8,
+              129.1,
+              195.1,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#C9A84C"
+            }
+          }
+        ]
+      },
+      "height": 380
+    }
+  ]
+}

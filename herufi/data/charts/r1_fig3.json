@@ -1,0 +1,320 @@
+{
+  "id": "r1_fig3",
+  "title": "Geographic distribution of African startups, 2014",
+  "caption": "Geographic distribution of the 194 African startups in the 2014 snapshot. Bubble size reflects the number of funded startups; red marks the Big Four hubs (over 30% of total disclosed funding each).",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "item",
+          "formatter": "{b}<br/>Startups: {c}<br/>Total funding: (see caption)"
+        },
+        "geo": {
+          "map": "world",
+          "roam": true,
+          "zoom": 3.1,
+          "center": [
+            21,
+            3
+          ],
+          "itemStyle": {
+            "areaColor": "#eef1ee",
+            "borderColor": "#d6dad5"
+          },
+          "emphasis": {
+            "itemStyle": {
+              "areaColor": "#e4e8e3"
+            }
+          }
+        },
+        "series": [
+          {
+            "name": "African startups (2014)",
+            "type": "scatter",
+            "coordinateSystem": "geo",
+            "data": [
+              {
+                "name": "South Africa",
+                "value": [
+                  25.1,
+                  -29.0,
+                  52
+                ],
+                "symbolSize": 39.7,
+                "itemStyle": {
+                  "color": "#c53030",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 646717001
+              },
+              {
+                "name": "Egypt",
+                "value": [
+                  30.8,
+                  26.8,
+                  23
+                ],
+                "symbolSize": 29.1,
+                "itemStyle": {
+                  "color": "#c53030",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 430439796
+              },
+              {
+                "name": "Kenya",
+                "value": [
+                  37.9,
+                  0.0,
+                  24
+                ],
+                "symbolSize": 29.6,
+                "itemStyle": {
+                  "color": "#c53030",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 286115274
+              },
+              {
+                "name": "Nigeria",
+                "value": [
+                  8.7,
+                  9.1,
+                  29
+                ],
+                "symbolSize": 31.7,
+                "itemStyle": {
+                  "color": "#c53030",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 275942400
+              },
+              {
+                "name": "Tanzania",
+                "value": [
+                  34.9,
+                  -6.4,
+                  7
+                ],
+                "symbolSize": 19.6,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 13014000
+              },
+              {
+                "name": "Zimbabwe",
+                "value": [
+                  29.2,
+                  -19.0,
+                  1
+                ],
+                "symbolSize": 12.4,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 10000000
+              },
+              {
+                "name": "Tunisia",
+                "value": [
+                  9.6,
+                  33.9,
+                  3
+                ],
+                "symbolSize": 15.6,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 3970000
+              },
+              {
+                "name": "Uganda",
+                "value": [
+                  32.3,
+                  1.4,
+                  10
+                ],
+                "symbolSize": 21.9,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 3964000
+              },
+              {
+                "name": "Morocco",
+                "value": [
+                  -7.1,
+                  31.8,
+                  3
+                ],
+                "symbolSize": 15.6,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 3200000
+              },
+              {
+                "name": "Botswana",
+                "value": [
+                  24.7,
+                  -22.3,
+                  4
+                ],
+                "symbolSize": 16.8,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 2271352
+              },
+              {
+                "name": "Somalia",
+                "value": [
+                  46.2,
+                  5.2,
+                  1
+                ],
+                "symbolSize": 12.4,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 2000000
+              },
+              {
+                "name": "Ghana",
+                "value": [
+                  -1.0,
+                  7.9,
+                  11
+                ],
+                "symbolSize": 22.6,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 1774615
+              },
+              {
+                "name": "Algeria",
+                "value": [
+                  1.7,
+                  28.0,
+                  20
+                ],
+                "symbolSize": 27.7,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 1216828
+              },
+              {
+                "name": "Cameroon",
+                "value": [
+                  12.7,
+                  5.7,
+                  2
+                ],
+                "symbolSize": 14.2,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 119561
+              },
+              {
+                "name": "C\u00f4te d'Ivoire",
+                "value": [
+                  -5.5,
+                  7.5,
+                  1
+                ],
+                "symbolSize": 12.4,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 60000
+              },
+              {
+                "name": "Seychelles",
+                "value": [
+                  55.5,
+                  -4.7,
+                  1
+                ],
+                "symbolSize": 12.4,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 35000
+              },
+              {
+                "name": "Mozambique",
+                "value": [
+                  35.5,
+                  -18.7,
+                  1
+                ],
+                "symbolSize": 12.4,
+                "itemStyle": {
+                  "color": "#2b6cb0",
+                  "opacity": 0.82,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "fundingUsd": 0
+              }
+            ],
+            "label": {
+              "show": false
+            }
+          }
+        ]
+      },
+      "needsGeoMap": true,
+      "height": 420
+    }
+  ]
+}

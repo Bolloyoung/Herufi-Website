@@ -1,9 +1,10 @@
+import Link from 'next/link'
 import Tag from './Tag'
 import type { BlogPost } from '@/data/blogPosts'
 
 export default function BlogPostCard({ post }: { post: BlogPost }) {
   return (
-    <a
+    <Link
       href={post.fileUrl}
       className="group block bg-white border border-border-soft rounded-xl overflow-hidden hover:border-forest/40 hover:shadow-md transition-all duration-200"
     >
@@ -28,6 +29,6 @@ export default function BlogPostCard({ post }: { post: BlogPost }) {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }

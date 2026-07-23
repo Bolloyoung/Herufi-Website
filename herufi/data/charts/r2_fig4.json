@@ -1,0 +1,197 @@
+{
+  "id": "r2_fig4",
+  "title": "New realities invisible in the 2014 data",
+  "caption": "Left: funding share of female CEO startups (97 to 98% of capital goes to male-led companies). Centre: the boom, winter and recovery cycle (annual funding, USD millions). Right: exits localising, foreign acquirer share of M&A, 2020 versus 2025.",
+  "panels": [
+    {
+      "title": "Share of funding to female-CEO startups",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Female CEO funding share",
+            "type": "bar",
+            "data": [
+              {
+                "value": 2.0,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 2.2,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2024",
+            "2025"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "%",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          },
+          "max": 10
+        }
+      }
+    },
+    {
+      "title": "Boom, winter, recovery (Big Deal, $M)",
+      "option": {
+        "color": [
+          "#1B4332"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 0,
+          "textStyle": {
+            "fontSize": 10
+          },
+          "type": "scroll",
+          "show": false
+        },
+        "grid": {
+          "left": 60,
+          "right": 24,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "USD millions",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "series": [
+          {
+            "name": "Big Deal annual funding",
+            "type": "line",
+            "data": [
+              2020,
+              1400,
+              4300,
+              4600,
+              2900,
+              2200,
+              3200
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "areaStyle": {
+              "opacity": 0.08
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Share of exits bought by FOREIGN acquirers",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Foreign acquirer share",
+            "type": "bar",
+            "data": [
+              {
+                "value": 56.0,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 33.0,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2020",
+            "2025"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "%",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}

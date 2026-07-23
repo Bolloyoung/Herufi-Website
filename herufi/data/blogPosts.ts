@@ -12,8 +12,9 @@ export type BlogPost = {
   publication: string
 }
 
-// Standalone HTML explainers that tease a full publication. Hosted as static
-// pages in public/blogs/ (each links back here and to its publication).
+// Standalone explainers that tease a full publication. Rendered as real
+// Next.js routes at app/blogs/[slug]/page.tsx (each links back here and to
+// its publication).
 export const blogPosts: BlogPost[] = [
   {
     id: 'why-african-startups-stall',
@@ -23,7 +24,7 @@ export const blogPosts: BlogPost[] = [
     summary: 'We analysed 49,000 companies worldwide to find out what really holds African startups back. The answer is not talent, sectors or geography. It is the size and shape of the money.',
     date: '2026-07-16',
     readingTime: '6 min read',
-    fileUrl: '/blogs/why-african-startups-stall.html',
+    fileUrl: '/blogs/why-african-startups-stall',
     tags: ['Startup Funding', 'Venture Capital', 'Seed Stage', 'Africa'],
     publication: 'broken-ladder-2014-baseline',
   },
@@ -35,7 +36,7 @@ export const blogPosts: BlogPost[] = [
     summary: 'One modern year of African startup funding now beats everything recorded up to 2014, twice over. But the numbers that matter most are not the big ones.',
     date: '2026-07-15',
     readingTime: '6 min read',
-    fileUrl: '/blogs/real-story-african-startup-growth.html',
+    fileUrl: '/blogs/real-story-african-startup-growth',
     tags: ['Startup Funding', 'Venture Capital', 'Exits', 'Debt Financing'],
     publication: 'frontier-to-market-2014-2026',
   },
@@ -47,7 +48,7 @@ export const blogPosts: BlogPost[] = [
     summary: 'Forecasts of $60 to $90 billion make headlines. The math says something more modest and more useful. Here is where African startup funding is actually heading.',
     date: '2026-07-14',
     readingTime: '6 min read',
-    fileUrl: '/blogs/africa-2030-better-than-the-hype.html',
+    fileUrl: '/blogs/africa-2030-better-than-the-hype',
     tags: ['Forecasting', 'Venture Capital', 'Scenarios', 'Exits'],
     publication: 'continent-heading-2026-2030',
   },

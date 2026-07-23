@@ -1,0 +1,48 @@
+/* Scoped port of the static blog explainer stylesheet (was inline <style> in public/blogs/*.html). */
+.explainer-doc{
+  --charcoal:#1C1C1E;--forest:#1B4332;--forest-light:#2D6A4F;--gold:#C9A84C;--gold-light:#E8C96A;--cream:#FAFAF8;--border:#E5E5E3;
+  --sans:'Inter',system-ui,sans-serif;--serif:'Merriweather',Georgia,serif;
+  color:var(--charcoal);font-family:var(--sans);-webkit-font-smoothing:antialiased;
+}
+.explainer-doc *{box-sizing:border-box}
+.explainer-doc a{color:var(--forest);text-decoration:none}
+.explainer-doc a:hover{color:var(--forest-light)}
+.explainer-doc .article{max-width:720px;margin:0 auto;padding:64px 24px 80px}
+.explainer-doc .back{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:rgba(28,28,30,.5);margin-bottom:40px}
+.explainer-doc .back:hover{color:var(--charcoal)}
+.explainer-doc .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.explainer-doc .pill{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px}
+.explainer-doc .pill.green{background:var(--forest);color:var(--cream)}
+.explainer-doc .pill.outline{border:1px solid var(--border);color:rgba(28,28,30,.6)}
+.explainer-doc h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.01em;margin:0 0 18px}
+.explainer-doc .summary{font-size:19px;color:rgba(28,28,30,.55);line-height:1.5;margin:0 0 24px}
+.explainer-doc .meta{display:flex;gap:14px;align-items:center;font-size:14px;color:rgba(28,28,30,.42);border-top:1px solid var(--border);padding-top:18px;margin-bottom:44px}
+.explainer-doc .prose{color:var(--charcoal)}
+.explainer-doc .prose p{font-family:var(--serif);font-size:17.5px;line-height:1.85;margin:0 0 22px}
+.explainer-doc .prose p:first-child em{color:rgba(28,28,30,.5)}
+.explainer-doc .prose h2{font-family:var(--sans);font-weight:600;font-size:24px;margin:44px 0 14px;letter-spacing:-.01em}
+.explainer-doc .prose a{color:var(--forest);text-decoration:underline;text-underline-offset:2px}
+.explainer-doc .prose blockquote{margin:26px 0;padding:16px 22px;border-left:3px solid var(--gold);background:#fff;border-radius:0 8px 8px 0;font-family:var(--serif);font-style:italic;color:rgba(28,28,30,.62);font-size:15.5px;line-height:1.6}
+.explainer-doc .prose hr{border:none;border-top:1px solid var(--border);margin:40px 0}
+.explainer-doc .figimg{margin:26px 0 12px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.explainer-doc .figimg .panels{display:grid;grid-template-columns:repeat(min(var(--panel-count,1),2),1fr);gap:16px}
+.explainer-doc .figimg .panel-title{font-family:var(--sans);font-size:13px;font-weight:600;color:rgba(28,28,30,.6);margin:0 0 6px}
+.explainer-doc .eyebrow{font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;display:block;margin-bottom:8px}
+.explainer-doc .eyebrow.gold{color:var(--gold)}
+.explainer-doc .eyebrow.forest{color:var(--forest)}
+.explainer-doc .pubcard{display:block;background:var(--forest);color:var(--cream);border-radius:16px;padding:26px 28px;margin:36px 0 14px}
+.explainer-doc .pubcard:hover{color:var(--cream)}
+.explainer-doc .pubcard h3{font-size:19px;font-weight:600;margin:0 0 8px;line-height:1.3}
+.explainer-doc .pubcard p{font-size:14.5px;color:rgba(250,250,248,.62);line-height:1.55;margin:0 0 18px}
+.explainer-doc .pubcard .btn{display:inline-block;background:var(--cream);color:var(--charcoal);font-size:14px;font-weight:600;padding:10px 20px;border-radius:6px}
+.explainer-doc .pubcard:hover .btn{background:var(--gold)}
+.explainer-doc .nextcard{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin:14px 0;transition:all .18s ease}
+.explainer-doc .nextcard:hover{border-color:rgba(27,67,50,.4);box-shadow:0 10px 30px rgba(28,28,30,.08)}
+.explainer-doc .nextcard h3{font-size:18px;font-weight:600;color:var(--charcoal);margin:0;line-height:1.35}
+.explainer-doc .nextcard .arrow{color:var(--forest);font-size:26px;flex-shrink:0}
+.explainer-doc .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid var(--border)}
+.explainer-doc .tags .tag{font-size:12px;padding:5px 12px;border-radius:999px;border:1px solid var(--border);color:rgba(28,28,30,.6)}
+
+@media(max-width:640px){
+  .explainer-doc .figimg .panels{grid-template-columns:1fr}
+}

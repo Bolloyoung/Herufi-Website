@@ -1,0 +1,287 @@
+{
+  "id": "r2_fig2",
+  "title": "Four structural shifts, 2014 to 2025 and 2026",
+  "caption": "Four structural shifts, 2014 to 2025 and 2026: the debt rail, the exit market, concentration by deal size and Big Four country totals. One year of 2025 versus all history to 2014.",
+  "panels": [
+    {
+      "title": "The debt rail materialised",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Debt rail",
+            "type": "bar",
+            "data": [
+              {
+                "value": 4.6,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 40,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2014 (% of startups ever using debt)",
+            "2025 (debt as % of funding value)"
+          ],
+          "axisLabel": {
+            "fontSize": 9
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "%",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Startup acquisitions (M&A deals)",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "M&A deals",
+            "type": "bar",
+            "data": [
+              {
+                "value": 2,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 39,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 67,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "ever, up to 2014",
+            "2024",
+            "2025"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Deals",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "2025: Big-4 share of deals rises with deal size",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Big-4 share of deals",
+            "type": "bar",
+            "data": [
+              {
+                "value": 56,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 69,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 81,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              }
+            ],
+            "barMaxWidth": 20,
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "type": "dashed",
+                "color": "#1C1C1E"
+              },
+              "data": [
+                {
+                  "yAxis": 66,
+                  "label": {
+                    "formatter": "2014: Big-4 share of all companies",
+                    "fontSize": 10
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "$100K\u2013$1M",
+            "$1M\u2013$10M",
+            "\u2265$10M"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "% HQ'ed in Big 4",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Big Four: one year of 2025 beats all history to 2014",
+      "option": {
+        "color": [
+          "#a0aec0",
+          "#c53030"
+        ],
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          }
+        },
+        "legend": {
+          "top": 0,
+          "textStyle": {
+            "fontSize": 11
+          }
+        },
+        "grid": {
+          "left": 56,
+          "right": 20,
+          "top": 36,
+          "bottom": 48,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "2014 (lifetime, cumulative)",
+            "type": "bar",
+            "data": [
+              286.12,
+              646.72,
+              430.44,
+              275.94
+            ],
+            "itemStyle": {
+              "color": "#a0aec0"
+            },
+            "barMaxWidth": 26
+          },
+          {
+            "name": "2025 alone (Partech)",
+            "type": "bar",
+            "data": [
+              1040,
+              715,
+              604,
+              572
+            ],
+            "itemStyle": {
+              "color": "#c53030"
+            },
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Kenya",
+            "South Africa",
+            "Egypt",
+            "Nigeria"
+          ],
+          "axisLabel": {
+            "rotate": 0,
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "USD millions",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}

@@ -38,7 +38,7 @@ Core principles: **depth over speed, evidence over opinion, reproducibility over
 | Language | TypeScript |
 | Styling | Tailwind CSS |
 | Animation | Framer Motion |
-| Charts | Recharts |
+| Charts | Recharts (dashboard); ECharts via `echarts-for-react` (publication/blog figures) |
 | Auth/DB | Supabase |
 | Content | Markdown (gray-matter) |
 | Icons | Lucide React |
@@ -160,7 +160,18 @@ Venture Strategy and Capital Intelligence | Markets, Systems and African Economi
 
 ## Adding Publications
 
-Add an entry to the `publications` array in `data/publications.ts` (id, title, category, summary, date, format, fileUrl, tags). Host the PDF and point `fileUrl` at it.
+Add an entry to the `publications` array in `data/publications.ts` (id, title, category, summary, date, format, fileUrl, tags). For a PDF, host the file and point `fileUrl` at it. For a full interactive report (the current three-part African Startup Investment Trilogy), `fileUrl` instead points at an internal `/publications/<id>` route — see below.
+
+## Trilogy reports and chart pipeline (pyecharts → JSON → ECharts)
+
+`The Broken Ladder`, `From Frontier to Market` and `Where the Continent Is Heading` are real Next.js routes, not static HTML:
+
+- `scripts/generate_charts.py` (pyecharts, run via `python3 scripts/generate_charts.py`) builds the 16 figures' ECharts option JSON from the source data and writes one file per figure to `data/charts/<fig_id>.json` (`{ id, title, caption, panels: [{ title, option }] }`).
+- `components/charts/EChart.tsx` renders one panel's raw option via `echarts-for-react`; `components/charts/Figure.tsx` (publications) and `BlogFigure.tsx` (blogs) lay out a figure's panels in a responsive grid with the report's callout box styling.
+- `app/publications/[slug]/page.tsx` and `app/blogs/[slug]/page.tsx` map a slug to a content module in `content/publications/` / `content/blogs/` — hand-ported JSX bodies (1:1 with the original report copy) that import the chart JSON and render `<Figure>`/`<BlogFigure>` in place of what used to be static `<img>` figures. Shared visual design lives in `app/publications/report.css` and `app/blogs/explainer.css` (scoped under `.report-doc` / `.explainer-doc`, ported from the former inline `<style>` blocks).
+- The r1_fig3 Africa bubble map registers a world GeoJSON basemap (`data/geo/world.json`) client-side via `components/charts/geoWorldMap.ts`.
+
+To regenerate charts after a data change: edit `scripts/generate_charts.py`, re-run it, and the updated JSON is picked up automatically (no code changes needed in the content modules).
 
 ## Founder
 

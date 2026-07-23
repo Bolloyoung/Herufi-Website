@@ -1,0 +1,106 @@
+{
+  "id": "r2_fig3",
+  "title": "Africa's unicorns, 2026",
+  "caption": "Africa's unicorns as of early 2026, conservative valuations (USD billions). All are fintech or fintech adjacent.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 150,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Valuation ($B)",
+            "type": "bar",
+            "data": [
+              {
+                "value": 1.0,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 1.0,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 1.0,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                }
+              },
+              {
+                "value": 1.5,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                }
+              },
+              {
+                "value": 1.5,
+                "itemStyle": {
+                  "color": "#2D6A4F"
+                }
+              },
+              {
+                "value": 1.7,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 2.8,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 3.0,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "value",
+          "name": "Valuation (USD billions, early-2026, conservative)",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Interswitch (Nigeria)",
+            "Moniepoint (Nigeria)",
+            "MNT-Halan (Egypt)",
+            "Tyme Group (South Africa)",
+            "Andela (Nigeria / US)",
+            "Wave (Senegal)",
+            "OPay (Nigeria)",
+            "Flutterwave (Nigeria)"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      },
+      "height": 300
+    }
+  ]
+}

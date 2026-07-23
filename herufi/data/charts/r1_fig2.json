@@ -1,0 +1,189 @@
+{
+  "id": "r1_fig2",
+  "title": "Capital concentration and follow on funding by region",
+  "caption": "Left: total disclosed funding by region (USD billions). Right: share of startups raising more than one round, Africa highlighted.",
+  "panels": [
+    {
+      "title": "Total disclosed funding by region (USD billions)",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Total disclosed funding ($B)",
+            "type": "bar",
+            "data": [
+              {
+                "value": 1.68,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 3.15,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 3.88,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 24.86,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 35.58,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 103.63,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 477.87,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "value",
+          "name": "$ billions",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Africa",
+            "Latin America & Caribbean",
+            "Southeast Asia",
+            "Unknown",
+            "China",
+            "Rest of World",
+            "North America"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Share of startups that raise more than one round (%)",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Share raising >1 round (%)",
+            "type": "bar",
+            "data": [
+              {
+                "value": 16.4,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 17.0,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 24.3,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 28.7,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 29.4,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 40.8,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 42.9,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "value",
+          "name": "%",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Unknown",
+            "Africa",
+            "Latin America & Caribbean",
+            "Southeast Asia",
+            "Rest of World",
+            "North America",
+            "China"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}

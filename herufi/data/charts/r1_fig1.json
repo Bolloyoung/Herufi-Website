@@ -1,0 +1,154 @@
+{
+  "id": "r1_fig1",
+  "title": "Global deal flow: companies raising their FIRST round, per year",
+  "caption": "Companies raising their first funding round per year worldwide, 2000 to 2014. The final year is partial.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 34,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Companies raising first round",
+            "type": "bar",
+            "data": [
+              {
+                "value": 188,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 122,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 135,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 174,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 288,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 1507,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 1994,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 2354,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 2713,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 4092,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 4991,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 6044,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 7129,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 8972,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 8365,
+                "itemStyle": {
+                  "color": "#a0c4e8"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Companies",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "id": "r3_fig3",
+  "title": "African startup funding: scenarios for 2026 to 2030",
+  "caption": "African startup funding: scenarios for 2026 to 2030 inside the Monte Carlo band. Shaded bands show the 10 to 90% and 25 to 75% probability ranges (interpolated from the model's terminal-year 2030 percentiles); dashed lines are the bear, base and bull scenario paths.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 0,
+          "textStyle": {
+            "fontSize": 10
+          },
+          "type": "scroll",
+          "data": [
+            "Actual",
+            "MC 10\u201390% band",
+            "MC 25\u201375% band",
+            "Bear \u2248$2.3B",
+            "Base \u2248$5.5B",
+            "Bull \u2248$11B"
+          ]
+        },
+        "grid": {
+          "left": 60,
+          "right": 24,
+          "top": 44,
+          "bottom": 34,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "USD millions"
+        },
+        "series": [
+          {
+            "name": "MC 10\u201390% band (lower)",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              3200,
+              2524.1,
+              1990.9,
+              1570.4,
+              1238.6,
+              977.0
+            ],
+            "stack": "band-MC 10\u201390% band",
+            "symbol": "none",
+            "lineStyle": {
+              "opacity": 0
+            },
+            "areaStyle": {
+              "opacity": 0
+            },
+            "silent": true,
+            "legendHoverLink": false,
+            "tooltip": {
+              "show": false
+            }
+          },
+          {
+            "name": "MC 10\u201390% band",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              0,
+              2227.0,
+              5063.1,
+              8902.8,
+              14311.2,
+              22110.0
+            ],
+            "stack": "band-MC 10\u201390% band",
+            "symbol": "none",
+            "lineStyle": {
+              "opacity": 0
+            },
+            "areaStyle": {
+              "opacity": 0.16,
+              "color": "#c9c9c4"
+            },
+            "itemStyle": {
+              "color": "#c9c9c4"
+            },
+            "silent": true
+          },
+          {
+            "name": "MC 25\u201375% band (lower)",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              3200,
+              2875.2,
+              2583.4,
+              2321.2,
+              2085.7,
+              1874.0
+            ],
+            "stack": "band-MC 25\u201375% band",
+            "symbol": "none",
+            "lineStyle": {
+              "opacity": 0
+            },
+            "areaStyle": {
+              "opacity": 0
+            },
+            "silent": true,
+            "legendHoverLink": false,
+            "tooltip": {
+              "show": false
+            }
+          },
+          {
+            "name": "MC 25\u201375% band",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              0,
+              1147.8,
+              2474.3,
+              4037.4,
+              5908.3,
+              8176.0
+            ],
+            "stack": "band-MC 25\u201375% band",
+            "symbol": "none",
+            "lineStyle": {
+              "opacity": 0
+            },
+            "areaStyle": {
+              "opacity": 0.16,
+              "color": "#a9a9a2"
+            },
+            "itemStyle": {
+              "color": "#a9a9a2"
+            },
+            "silent": true
+          },
+          {
+            "name": "Actual",
+            "type": "line",
+            "data": [
+              277,
+              367,
+              560,
+              1163,
+              2020,
+              1400,
+              4300,
+              4600,
+              2900,
+              2200,
+              3200,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "itemStyle": {
+              "color": "#1C1C1E"
+            },
+            "symbolSize": 5,
+            "lineStyle": {
+              "width": 2.2
+            }
+          },
+          {
+            "name": "Bear \u2248$2.3B",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              3200,
+              2995.5,
+              2804.0,
+              2624.8,
+              2457.0,
+              2300.0
+            ],
+            "itemStyle": {
+              "color": "#c53030"
+            },
+            "lineStyle": {
+              "width": 2.2,
+              "type": "dashed"
+            },
+            "symbolSize": 5
+          },
+          {
+            "name": "Base \u2248$5.5B",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              3200,
+              3566.1,
+              3974.1,
+              4428.7,
+              4935.4,
+              5500.0
+            ],
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "lineStyle": {
+              "width": 2.2,
+              "type": "dashed"
+            },
+            "symbolSize": 5
+          },
+          {
+            "name": "Bull \u2248$11B",
+            "type": "line",
+            "data": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              3200,
+              4096.4,
+              5243.8,
+              6712.7,
+              8593.0,
+              11000.0
+            ],
+            "itemStyle": {
+              "color": "#38a169"
+            },
+            "lineStyle": {
+              "width": 2.2,
+              "type": "dashed"
+            },
+            "symbolSize": 5
+          }
+        ]
+      },
+      "height": 380
+    }
+  ]
+}

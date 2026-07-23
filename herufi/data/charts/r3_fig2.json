@@ -1,0 +1,129 @@
+{
+  "id": "r3_fig2",
+  "title": "Backtest: what each model would have predicted for 2023 to 2025",
+  "caption": "Backtest: three models trained on 2015 to 2022 and scored on their 2023 to 2025 predictions. The log linear trend shows how optimistic headline projections are manufactured.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "color": [
+          "#1C1C1E",
+          "#c53030",
+          "#C9A84C",
+          "#a0aec0"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 0,
+          "textStyle": {
+            "fontSize": 10
+          },
+          "type": "scroll"
+        },
+        "grid": {
+          "left": 60,
+          "right": 24,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "USD millions",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "series": [
+          {
+            "name": "Actual",
+            "type": "line",
+            "data": [
+              2900,
+              2200,
+              3200
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#1C1C1E"
+            }
+          },
+          {
+            "name": "Log-linear (MAPE 357%)",
+            "type": "line",
+            "data": [
+              7794,
+              11862,
+              18052
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4,
+              "type": "dashed"
+            },
+            "itemStyle": {
+              "color": "#c53030"
+            }
+          },
+          {
+            "name": "Damped CAGR (MAPE 167%)",
+            "type": "line",
+            "data": [
+              5736,
+              7153,
+              8919
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4,
+              "type": "dashed"
+            },
+            "itemStyle": {
+              "color": "#C9A84C"
+            }
+          },
+          {
+            "name": "Naive (MAPE 70%)",
+            "type": "line",
+            "data": [
+              4600,
+              4600,
+              4600
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4,
+              "type": "dashed"
+            },
+            "itemStyle": {
+              "color": "#a0aec0"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

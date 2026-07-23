@@ -1,0 +1,208 @@
+{
+  "id": "r3_fig1",
+  "title": "The series we must forecast: African startup funding, 2015 to 2025",
+  "caption": "Left: annual African startup funding 2015 to 2025 (USD millions) with the H1 2026 actual marked. Right: year on year growth rates, the volatility problem.",
+  "panels": [
+    {
+      "title": "African startup funding, 2015 to 2025 (USD millions)",
+      "option": {
+        "color": [
+          "#1B4332"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 56,
+          "right": 20,
+          "top": 36,
+          "bottom": 48,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Annual funding",
+            "type": "bar",
+            "data": [
+              277,
+              367,
+              560,
+              1163,
+              2020,
+              1400,
+              4300,
+              4600,
+              2900,
+              2200,
+              3200
+            ],
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "barMaxWidth": 40,
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "type": "dashed",
+                "color": "#C9A84C"
+              },
+              "data": [
+                {
+                  "yAxis": 1440,
+                  "label": {
+                    "formatter": "H1 2026 actual: $1,440M (half-year)",
+                    "fontSize": 10,
+                    "color": "#C9A84C"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "axisLabel": {
+            "rotate": 0,
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "USD millions",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Year-on-year growth (%)",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "YoY growth",
+            "type": "bar",
+            "data": [
+              {
+                "value": 32.5,
+                "itemStyle": {
+                  "color": "#38a169"
+                }
+              },
+              {
+                "value": 52.6,
+                "itemStyle": {
+                  "color": "#38a169"
+                }
+              },
+              {
+                "value": 107.7,
+                "itemStyle": {
+                  "color": "#38a169"
+                }
+              },
+              {
+                "value": 73.7,
+                "itemStyle": {
+                  "color": "#38a169"
+                }
+              },
+              {
+                "value": -30.7,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 207.1,
+                "itemStyle": {
+                  "color": "#38a169"
+                }
+              },
+              {
+                "value": 7.0,
+                "itemStyle": {
+                  "color": "#38a169"
+                }
+              },
+              {
+                "value": -37.0,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": -24.1,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 45.5,
+                "itemStyle": {
+                  "color": "#38a169"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "%",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}

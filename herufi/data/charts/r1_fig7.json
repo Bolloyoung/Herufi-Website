@@ -1,0 +1,257 @@
+{
+  "id": "r1_fig7",
+  "title": "What predicts Series A graduation",
+  "caption": "Left: permutation importance of features predicting Series A graduation. Right: random forest learning curve used as an overfitting check (shaded band = \u00b1 1 std of cross-validation score).",
+  "panels": [
+    {
+      "title": "Permutation importance (drop in test AUC when feature is shuffled)",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 170,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Permutation importance",
+            "type": "bar",
+            "data": [
+              {
+                "value": 0.0003,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 0.0004,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 0.0004,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 0.0005,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 0.0068,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 0.0092,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 0.0134,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 0.0163,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 0.0332,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 0.1332,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "value",
+          "name": "AUC decrease",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "country_group_ISR",
+            "country_group_GBR",
+            "country_group_CHL",
+            "market_group_Curated Web",
+            "country_group_Other",
+            "years_to_first_funding",
+            "country_group_USA",
+            "n_categories",
+            "first_funding_year",
+            "log_seed"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      },
+      "height": 300
+    },
+    {
+      "title": "Learning curve (random forest)",
+      "option": {
+        "color": [
+          "#1B4332",
+          "#C9A84C"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 0,
+          "textStyle": {
+            "fontSize": 10
+          },
+          "data": [
+            "Training score",
+            "Cross-validation score"
+          ]
+        },
+        "grid": {
+          "left": 56,
+          "right": 24,
+          "top": 40,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "691",
+            "1671",
+            "2651",
+            "3631",
+            "4611"
+          ],
+          "name": "Training examples",
+          "nameLocation": "middle",
+          "nameGap": 28,
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "ROC-AUC",
+          "min": 0.65,
+          "max": 0.85
+        },
+        "series": [
+          {
+            "name": "CV \u00b1 1 std (lower)",
+            "type": "line",
+            "data": [
+              0.72,
+              0.727,
+              0.732,
+              0.735,
+              0.736
+            ],
+            "stack": "band-CV \u00b1 1 std",
+            "symbol": "none",
+            "lineStyle": {
+              "opacity": 0
+            },
+            "areaStyle": {
+              "opacity": 0
+            },
+            "silent": true,
+            "legendHoverLink": false,
+            "tooltip": {
+              "show": false
+            }
+          },
+          {
+            "name": "CV \u00b1 1 std",
+            "type": "line",
+            "data": [
+              0.028,
+              0.034,
+              0.036,
+              0.038,
+              0.038
+            ],
+            "stack": "band-CV \u00b1 1 std",
+            "symbol": "none",
+            "lineStyle": {
+              "opacity": 0
+            },
+            "areaStyle": {
+              "opacity": 0.16,
+              "color": "#C9A84C"
+            },
+            "itemStyle": {
+              "color": "#C9A84C"
+            },
+            "silent": true
+          },
+          {
+            "name": "Training score",
+            "type": "line",
+            "data": [
+              0.809,
+              0.785,
+              0.781,
+              0.78,
+              0.776
+            ],
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            }
+          },
+          {
+            "name": "Cross-validation score",
+            "type": "line",
+            "data": [
+              0.734,
+              0.744,
+              0.75,
+              0.754,
+              0.755
+            ],
+            "itemStyle": {
+              "color": "#C9A84C"
+            },
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

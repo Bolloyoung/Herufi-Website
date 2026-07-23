@@ -1,0 +1,110 @@
+{
+  "id": "r3_fig5",
+  "title": "Required compound growth to hit each 2030 target",
+  "caption": "Compound annual growth required to reach each 2030 target from the 2025 actual, against the historically observed growth rates.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 150,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Required CAGR 2025\u21922030",
+            "type": "bar",
+            "data": [
+              {
+                "value": -6.4,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 11.4,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                }
+              },
+              {
+                "value": 28.0,
+                "itemStyle": {
+                  "color": "#38a169"
+                }
+              },
+              {
+                "value": 80.9,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 96.6,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              }
+            ],
+            "barMaxWidth": 20,
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "type": "dashed",
+                "color": "#1B4332"
+              },
+              "data": [
+                {
+                  "xAxis": 8.0,
+                  "label": {
+                    "formatter": "actual mature-era growth (+8%/yr)",
+                    "fontSize": 10
+                  }
+                },
+                {
+                  "xAxis": 27.7,
+                  "label": {
+                    "formatter": "full-decade growth (+28%/yr)",
+                    "fontSize": 10,
+                    "position": "insideEndTop"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "xAxis": {
+          "type": "value",
+          "name": "% per year",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Our bear $2.3B",
+            "Our base $5.5B",
+            "Our bull $11B",
+            "TBI business-as-usual $62B",
+            "TBI improved-policy $94B"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      },
+      "height": 300
+    }
+  ]
+}

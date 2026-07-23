@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import PageHeader from '@/components/PageHeader'
 import EmptyState from '@/components/EmptyState'
 import Tag from '@/components/Tag'
@@ -44,12 +45,12 @@ export default function PublicationsPage() {
                         <Tag key={t} label={t} variant="outline" size="sm" />
                       ))}
                     </div>
-                    <a
+                    <Link
                       href={pub.fileUrl}
                       className="text-sm font-medium text-forest hover:text-forest-light transition-colors flex-shrink-0"
                     >
                       Read
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}

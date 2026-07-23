@@ -1,0 +1,161 @@
+{
+  "id": "r1_fig6",
+  "title": "The seed cheque gap and its consequence",
+  "caption": "Left: median seed cheque by region (USD thousands). Right: seed to Series A conversion rate by region.",
+  "panels": [
+    {
+      "title": "Median seed cheque (USD thousands)",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Median seed cheque ($K)",
+            "type": "bar",
+            "data": [
+              {
+                "value": 40,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 40,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 315,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 400,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 500,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "value",
+          "name": "$K",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Africa",
+            "Latin America & Caribbean",
+            "Southeast Asia",
+            "China",
+            "North America"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Seed to Series A conversion (%)",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 90,
+          "right": 30,
+          "top": 20,
+          "bottom": 40,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Seed to Series A (%)",
+            "type": "bar",
+            "data": [
+              {
+                "value": 2.4,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 5.1,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 8.0,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 11.1,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 15.6,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              }
+            ],
+            "barMaxWidth": 20
+          }
+        ],
+        "xAxis": {
+          "type": "value",
+          "name": "%",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Latin America & Caribbean",
+            "Africa",
+            "Southeast Asia",
+            "China",
+            "North America"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}
