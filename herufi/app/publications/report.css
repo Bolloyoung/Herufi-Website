@@ -46,7 +46,7 @@
 
 .report-doc figure.fig{margin:26px 0;background:#fff;border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:10px;padding:18px 22px}
 .report-doc figure.fig .tag{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--forest);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:12px}
-.report-doc figure.fig .panels{display:grid;grid-template-columns:repeat(min(var(--panel-count,1),2),1fr);gap:16px}
+.report-doc figure.fig .panels{display:grid;grid-template-columns:1fr;gap:28px}
 .report-doc figure.fig .panel-title{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink-60);margin:0 0 6px}
 .report-doc figure.fig figcaption{font-family:var(--serif);font-style:italic;color:var(--ink-60);font-size:15px;margin-top:12px;line-height:1.55}
 

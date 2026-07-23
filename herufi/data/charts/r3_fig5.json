@@ -11,9 +11,9 @@
         },
         "grid": {
           "left": 150,
-          "right": 30,
-          "top": 20,
-          "bottom": 40,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
           "containLabel": true
         },
         "series": [
@@ -52,7 +52,7 @@
                 }
               }
             ],
-            "barMaxWidth": 20,
+            "barMaxWidth": 26,
             "markLine": {
               "silent": true,
               "symbol": "none",

@@ -11,9 +11,9 @@
         },
         "grid": {
           "left": 170,
-          "right": 30,
-          "top": 20,
-          "bottom": 40,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
           "containLabel": true
         },
         "series": [
@@ -82,7 +82,7 @@
                 }
               }
             ],
-            "barMaxWidth": 20
+            "barMaxWidth": 26
           }
         ],
         "xAxis": {
@@ -127,7 +127,7 @@
           "trigger": "axis"
         },
         "legend": {
-          "top": 0,
+          "top": 4,
           "textStyle": {
             "fontSize": 10
           },
@@ -137,10 +137,10 @@
           ]
         },
         "grid": {
-          "left": 56,
-          "right": 24,
-          "top": 40,
-          "bottom": 40,
+          "left": 64,
+          "right": 28,
+          "top": 64,
+          "bottom": 44,
           "containLabel": true
         },
         "xAxis": {
@@ -162,6 +162,7 @@
         "yAxis": {
           "type": "value",
           "name": "ROC-AUC",
+          "nameGap": 18,
           "min": 0.65,
           "max": 0.85
         },

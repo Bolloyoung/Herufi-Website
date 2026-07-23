@@ -10,9 +10,9 @@
           "trigger": "axis"
         },
         "grid": {
-          "left": 90,
-          "right": 30,
-          "top": 20,
+          "left": 110,
+          "right": 36,
+          "top": 44,
           "bottom": 34,
           "containLabel": true
         },
@@ -112,7 +112,7 @@
                 }
               }
             ],
-            "barMaxWidth": 20
+            "barMaxWidth": 26
           }
         ],
         "xAxis": {

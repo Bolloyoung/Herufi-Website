@@ -68,7 +68,7 @@ def simple_bar_option(categories, series_name, values, y_name=None, subtitle=Non
     option = {
         "color": [color],
         "tooltip": {"trigger": "axis"},
-        "grid": {"left": 56, "right": 20, "top": subtitle and 56 or 36, "bottom": 48, "containLabel": True},
+        "grid": {"left": 64, "right": 32, "top": subtitle and 64 or 44, "bottom": 48, "containLabel": True},
         "series": [series],
     }
     if subtitle:
@@ -99,8 +99,8 @@ def grouped_bar_option(categories, series_list, y_name=None, colors=None, horizo
     option = {
         "color": colors,
         "tooltip": {"trigger": "axis", "axisPointer": {"type": "shadow"}},
-        "legend": {"top": 0, "textStyle": {"fontSize": 11}},
-        "grid": {"left": 56, "right": 20, "top": 36, "bottom": 48, "containLabel": True},
+        "legend": {"top": 4, "textStyle": {"fontSize": 11}},
+        "grid": {"left": 64, "right": 32, "top": 70, "bottom": 48, "containLabel": True},
         "series": series,
     }
     if horizontal:
@@ -118,8 +118,8 @@ def per_point_bar_option(categories, series_name, values, colors, y_name=None, h
     val_axis = {"type": "value", "name": y_name, "nameTextStyle": {"fontSize": 11}, "axisLabel": {"fontSize": 10}}
     option = {
         "tooltip": {"trigger": "axis"},
-        "grid": {"left": 90, "right": 30, "top": 20, "bottom": 40, "containLabel": True},
-        "series": [{"name": series_name, "type": "bar", "data": data, "barMaxWidth": 20}],
+        "grid": {"left": 110, "right": 36, "top": 44, "bottom": 44, "containLabel": True},
+        "series": [{"name": series_name, "type": "bar", "data": data, "barMaxWidth": 26}],
     }
     if horizontal:
         option["xAxis"] = val_axis
@@ -150,13 +150,13 @@ def multi_line_option(categories, series_list, y_name=None, log_scale=False, col
         if mark_line and i == 0:
             s["markLine"] = mark_line
         series.append(s)
-    val_axis = {"type": "log" if log_scale else "value", "name": y_name,
+    val_axis = {"type": "log" if log_scale else "value", "name": y_name, "nameGap": 18,
                 "nameTextStyle": {"fontSize": 11}, "axisLabel": {"fontSize": 10}}
     return {
         "color": colors,
         "tooltip": {"trigger": "axis"},
-        "legend": {"top": 0, "textStyle": {"fontSize": 10}, "type": "scroll"},
-        "grid": {"left": 60, "right": 24, "top": 44, "bottom": 44, "containLabel": True},
+        "legend": {"top": 6, "textStyle": {"fontSize": 10}, "type": "scroll", "itemGap": 14},
+        "grid": {"left": 70, "right": 32, "top": 76, "bottom": 44, "containLabel": True},
         "xAxis": {"type": "category", "data": [str(c) for c in categories], "axisLabel": {"fontSize": 10}},
         "yAxis": val_axis,
         "series": series,
@@ -292,8 +292,8 @@ def r1_fig4():
     option = {
         "color": [FOREST, GOLD],
         "tooltip": {"trigger": "axis"},
-        "legend": {"top": 0, "textStyle": {"fontSize": 11}},
-        "grid": {"left": 56, "right": 56, "top": 40, "bottom": 34, "containLabel": True},
+        "legend": {"top": 4, "textStyle": {"fontSize": 11}},
+        "grid": {"left": 64, "right": 64, "top": 60, "bottom": 34, "containLabel": True},
         "xAxis": {"type": "category", "data": [str(y) for y in years], "axisLabel": {"fontSize": 10}},
         "yAxis": [
             {"type": "value", "name": "Newly funded startups", "nameTextStyle": {"fontSize": 11}},
@@ -369,10 +369,10 @@ def r1_fig7():
     right = {
         "color": [FOREST, GOLD],
         "tooltip": {"trigger": "axis"},
-        "legend": {"top": 0, "textStyle": {"fontSize": 10}, "data": ["Training score", "Cross-validation score"]},
-        "grid": {"left": 56, "right": 24, "top": 40, "bottom": 40, "containLabel": True},
+        "legend": {"top": 4, "textStyle": {"fontSize": 10}, "data": ["Training score", "Cross-validation score"]},
+        "grid": {"left": 64, "right": 28, "top": 64, "bottom": 44, "containLabel": True},
         "xAxis": {"type": "category", "data": [str(t) for t in train_sizes], "name": "Training examples", "nameLocation": "middle", "nameGap": 28, "axisLabel": {"fontSize": 10}},
-        "yAxis": {"type": "value", "name": "ROC-AUC", "min": 0.65, "max": 0.85},
+        "yAxis": {"type": "value", "name": "ROC-AUC", "nameGap": 18, "min": 0.65, "max": 0.85},
         "series": series,
     }
 
@@ -424,7 +424,8 @@ def r2_fig2():
     a = per_point_bar_option(
         ["2014 (% of startups ever using debt)", "2025 (debt as % of funding value)"],
         "Debt rail", [4.6, 40], [GREY, RED], y_name="%")
-    a["xAxis"]["axisLabel"]["fontSize"] = 9
+    a["xAxis"]["axisLabel"] = {"fontSize": 10, "width": 130, "overflow": "break", "lineHeight": 14}
+    a["grid"]["bottom"] = 60
 
     b = per_point_bar_option(["ever, up to 2014", "2024", "2025"], "M&A deals", [2, 39, 67],
                               [GREY, GREY, RED], y_name="Deals")
@@ -584,11 +585,11 @@ def r3_fig3():
 
     option = {
         "tooltip": {"trigger": "axis"},
-        "legend": {"top": 0, "textStyle": {"fontSize": 10}, "type": "scroll",
+        "legend": {"top": 6, "textStyle": {"fontSize": 10}, "type": "scroll", "itemGap": 14,
                    "data": ["Actual", "MC 10–90% band", "MC 25–75% band", "Bear ≈$2.3B", "Base ≈$5.5B", "Bull ≈$11B"]},
-        "grid": {"left": 60, "right": 24, "top": 44, "bottom": 34, "containLabel": True},
+        "grid": {"left": 70, "right": 32, "top": 76, "bottom": 34, "containLabel": True},
         "xAxis": {"type": "category", "data": x, "axisLabel": {"fontSize": 10}},
-        "yAxis": {"type": "value", "name": "USD millions"},
+        "yAxis": {"type": "value", "name": "USD millions", "nameGap": 18},
         "series": series,
     }
     write_figure(
@@ -612,9 +613,9 @@ def r3_fig4():
          "itemStyle": {"color": FOREST}, "lineStyle": {"width": 2.2}, "symbolSize": 5},
     ]
     a = {
-        "tooltip": {"trigger": "axis"}, "grid": {"left": 50, "right": 20, "top": 20, "bottom": 30, "containLabel": True},
+        "tooltip": {"trigger": "axis"}, "grid": {"left": 56, "right": 24, "top": 44, "bottom": 34, "containLabel": True},
         "xAxis": {"type": "category", "data": [str(y) for y in debt_years], "axisLabel": {"fontSize": 9}},
-        "yAxis": {"type": "value", "name": "%", "min": 0, "max": 60},
+        "yAxis": {"type": "value", "name": "%", "nameGap": 18, "min": 0, "max": 60},
         "series": a_series,
     }
 
@@ -623,10 +624,10 @@ def r3_fig4():
     exit_bear = [None, None] + [round(v * 0.6, 1) for v in exit_base[2:]]
     exit_bull = [None, None] + [round(v * 1.5, 1) for v in exit_base[2:]]
     b = {
-        "tooltip": {"trigger": "axis"}, "grid": {"left": 50, "right": 20, "top": 20, "bottom": 30, "containLabel": True},
+        "tooltip": {"trigger": "axis"}, "grid": {"left": 56, "right": 24, "top": 44, "bottom": 34, "containLabel": True},
         "legend": {"show": False},
         "xAxis": {"type": "category", "data": [str(y) for y in exit_years], "axisLabel": {"fontSize": 9}},
-        "yAxis": {"type": "value", "name": "Deals"},
+        "yAxis": {"type": "value", "name": "Deals", "nameGap": 18},
         "series": [
             {"name": "Bull (1.5x)", "type": "line", "data": exit_bull, "lineStyle": {"opacity": 0.3, "type": "dashed", "color": GREEN}, "symbolSize": 0},
             {"name": "Bear (0.6x)", "type": "line", "data": exit_bear, "lineStyle": {"opacity": 0.3, "type": "dashed", "color": RED}, "symbolSize": 0},

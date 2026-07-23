@@ -10,10 +10,10 @@
           "trigger": "axis"
         },
         "grid": {
-          "left": 50,
-          "right": 20,
-          "top": 20,
-          "bottom": 30,
+          "left": 56,
+          "right": 24,
+          "top": 44,
+          "bottom": 34,
           "containLabel": true
         },
         "xAxis": {
@@ -36,6 +36,7 @@
         "yAxis": {
           "type": "value",
           "name": "%",
+          "nameGap": 18,
           "min": 0,
           "max": 60
         },
@@ -72,10 +73,10 @@
           "trigger": "axis"
         },
         "grid": {
-          "left": 50,
-          "right": 20,
-          "top": 20,
-          "bottom": 30,
+          "left": 56,
+          "right": 24,
+          "top": 44,
+          "bottom": 34,
           "containLabel": true
         },
         "legend": {
@@ -98,7 +99,8 @@
         },
         "yAxis": {
           "type": "value",
-          "name": "Deals"
+          "name": "Deals",
+          "nameGap": 18
         },
         "series": [
           {
@@ -174,16 +176,17 @@
           "trigger": "axis"
         },
         "legend": {
-          "top": 0,
+          "top": 6,
           "textStyle": {
             "fontSize": 10
           },
-          "type": "scroll"
+          "type": "scroll",
+          "itemGap": 14
         },
         "grid": {
-          "left": 60,
-          "right": 24,
-          "top": 44,
+          "left": 70,
+          "right": 32,
+          "top": 76,
           "bottom": 44,
           "containLabel": true
         },
@@ -203,6 +206,7 @@
         "yAxis": {
           "type": "value",
           "name": "Deals",
+          "nameGap": 18,
           "nameTextStyle": {
             "fontSize": 11
           },
@@ -298,16 +302,17 @@
           "trigger": "axis"
         },
         "legend": {
-          "top": 0,
+          "top": 6,
           "textStyle": {
             "fontSize": 10
           },
-          "type": "scroll"
+          "type": "scroll",
+          "itemGap": 14
         },
         "grid": {
-          "left": 60,
-          "right": 24,
-          "top": 44,
+          "left": 70,
+          "right": 32,
+          "top": 76,
           "bottom": 44,
           "containLabel": true
         },
@@ -327,6 +332,7 @@
         "yAxis": {
           "type": "value",
           "name": "Companies \u2265 $1B",
+          "nameGap": 18,
           "nameTextStyle": {
             "fontSize": 11
           },

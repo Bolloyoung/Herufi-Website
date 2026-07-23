@@ -10,11 +10,12 @@
           "trigger": "axis"
         },
         "legend": {
-          "top": 0,
+          "top": 6,
           "textStyle": {
             "fontSize": 10
           },
           "type": "scroll",
+          "itemGap": 14,
           "data": [
             "Actual",
             "MC 10\u201390% band",
@@ -25,9 +26,9 @@
           ]
         },
         "grid": {
-          "left": 60,
-          "right": 24,
-          "top": 44,
+          "left": 70,
+          "right": 32,
+          "top": 76,
           "bottom": 34,
           "containLabel": true
         },
@@ -57,7 +58,8 @@
         },
         "yAxis": {
           "type": "value",
-          "name": "USD millions"
+          "name": "USD millions",
+          "nameGap": 18
         },
         "series": [
           {

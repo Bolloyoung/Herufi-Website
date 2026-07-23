@@ -14,7 +14,7 @@ export default function EChart({ panel }: { panel: ChartPanel }) {
     }
   }, [panel.needsGeoMap])
 
-  const height = panel.height ?? 340
+  const height = panel.height ?? 380
 
   if (!mapReady) {
     return (

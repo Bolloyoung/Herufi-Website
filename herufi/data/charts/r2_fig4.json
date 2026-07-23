@@ -10,10 +10,10 @@
           "trigger": "axis"
         },
         "grid": {
-          "left": 90,
-          "right": 30,
-          "top": 20,
-          "bottom": 40,
+          "left": 110,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
           "containLabel": true
         },
         "series": [
@@ -34,7 +34,7 @@
                 }
               }
             ],
-            "barMaxWidth": 20
+            "barMaxWidth": 26
           }
         ],
         "xAxis": {
@@ -70,17 +70,18 @@
           "trigger": "axis"
         },
         "legend": {
-          "top": 0,
+          "top": 6,
           "textStyle": {
             "fontSize": 10
           },
           "type": "scroll",
+          "itemGap": 14,
           "show": false
         },
         "grid": {
-          "left": 60,
-          "right": 24,
-          "top": 44,
+          "left": 70,
+          "right": 32,
+          "top": 76,
           "bottom": 44,
           "containLabel": true
         },
@@ -102,6 +103,7 @@
         "yAxis": {
           "type": "value",
           "name": "USD millions",
+          "nameGap": 18,
           "nameTextStyle": {
             "fontSize": 11
           },
@@ -144,10 +146,10 @@
           "trigger": "axis"
         },
         "grid": {
-          "left": 90,
-          "right": 30,
-          "top": 20,
-          "bottom": 40,
+          "left": 110,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
           "containLabel": true
         },
         "series": [
@@ -168,7 +170,7 @@
                 }
               }
             ],
-            "barMaxWidth": 20
+            "barMaxWidth": 26
           }
         ],
         "xAxis": {
