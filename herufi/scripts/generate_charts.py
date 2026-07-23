@@ -114,11 +114,19 @@ def grouped_bar_option(categories, series_list, y_name=None, colors=None, horizo
 
 def per_point_bar_option(categories, series_name, values, colors, y_name=None, horizontal=False):
     data = [{"value": v, "itemStyle": {"color": c}} for v, c in zip(values, colors)]
-    cat_axis = {"type": "category", "data": categories, "axisLabel": {"fontSize": 10}}
+    if horizontal:
+        # Category labels here are region/company names that can run long (e.g. "Latin America &
+        # Caribbean"); cap their width and wrap instead of letting containLabel reserve unbounded
+        # space for them, or on narrow (mobile) containers the label alone can eat the whole grid
+        # and leave the bars themselves a sliver.
+        cat_axis = {"type": "category", "data": categories,
+                    "axisLabel": {"fontSize": 10, "width": 92, "overflow": "break", "lineHeight": 13}}
+    else:
+        cat_axis = {"type": "category", "data": categories, "axisLabel": {"fontSize": 10}}
     val_axis = {"type": "value", "name": y_name, "nameTextStyle": {"fontSize": 11}, "axisLabel": {"fontSize": 10}}
     option = {
         "tooltip": {"trigger": "axis"},
-        "grid": {"left": 110, "right": 36, "top": 44, "bottom": 44, "containLabel": True},
+        "grid": {"left": 16, "right": 36, "top": 44, "bottom": 44, "containLabel": True},
         "series": [{"name": series_name, "type": "bar", "data": data, "barMaxWidth": 26}],
     }
     if horizontal:
@@ -353,7 +361,6 @@ def r1_fig7():
     feat_vals = [0.0003, 0.0004, 0.0004, 0.0005, 0.0068, 0.0092, 0.0134, 0.0163, 0.0332, 0.1332]
     left = per_point_bar_option(feat_cats, "Permutation importance", feat_vals, [FOREST] * len(feat_vals),
                                  y_name="AUC decrease", horizontal=True)
-    left["grid"]["left"] = 170
 
     train_sizes = [691, 1671, 2651, 3631, 4611]
     train_score = [0.809, 0.785, 0.781, 0.780, 0.776]
@@ -466,7 +473,6 @@ def r2_fig3():
     vals = [v for _, _, v in rows]
     colors = [country_color[c] for _, c, _ in rows]
     option = per_point_bar_option(cats, "Valuation ($B)", vals, colors, y_name="Valuation (USD billions, early-2026, conservative)", horizontal=True)
-    option["grid"]["left"] = 150
     write_figure(
         "r2_fig3",
         "Africa's unicorns, 2026",
@@ -668,7 +674,6 @@ def r3_fig5():
     vals = [-6.4, 11.4, 28.0, 80.9, 96.6]
     colors = [RED, BLUE, GREEN, GREY, GREY]
     option = per_point_bar_option(cats, "Required CAGR 2025→2030", vals, colors, y_name="% per year", horizontal=True)
-    option["grid"]["left"] = 150
     option["series"][0]["markLine"] = {
         "silent": True, "symbol": "none",
         "lineStyle": {"type": "dashed", "color": FOREST},

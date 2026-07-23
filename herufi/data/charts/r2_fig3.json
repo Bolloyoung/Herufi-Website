@@ -10,7 +10,7 @@
           "trigger": "axis"
         },
         "grid": {
-          "left": 150,
+          "left": 16,
           "right": 36,
           "top": 44,
           "bottom": 44,
@@ -96,7 +96,10 @@
             "Flutterwave (Nigeria)"
           ],
           "axisLabel": {
-            "fontSize": 10
+            "fontSize": 10,
+            "width": 92,
+            "overflow": "break",
+            "lineHeight": 13
           }
         }
       },

@@ -10,7 +10,7 @@
           "trigger": "axis"
         },
         "grid": {
-          "left": 110,
+          "left": 16,
           "right": 36,
           "top": 44,
           "bottom": 44,
@@ -89,7 +89,10 @@
             "North America"
           ],
           "axisLabel": {
-            "fontSize": 10
+            "fontSize": 10,
+            "width": 92,
+            "overflow": "break",
+            "lineHeight": 13
           }
         }
       }
@@ -101,7 +104,7 @@
           "trigger": "axis"
         },
         "grid": {
-          "left": 110,
+          "left": 16,
           "right": 36,
           "top": 44,
           "bottom": 44,
@@ -180,7 +183,10 @@
             "China"
           ],
           "axisLabel": {
-            "fontSize": 10
+            "fontSize": 10,
+            "width": 92,
+            "overflow": "break",
+            "lineHeight": 13
           }
         }
       }

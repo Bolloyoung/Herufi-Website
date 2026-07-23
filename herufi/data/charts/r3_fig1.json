@@ -99,7 +99,7 @@
           "trigger": "axis"
         },
         "grid": {
-          "left": 110,
+          "left": 16,
           "right": 36,
           "top": 44,
           "bottom": 44,
