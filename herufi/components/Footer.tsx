@@ -7,7 +7,6 @@ const footerLinks = {
     { label: 'Publications', href: '/publications' },
     { label: 'Venture Strategy', href: '/blogs?pillar=venture-strategy' },
     { label: 'Markets and Economies', href: '/blogs?pillar=markets-systems' },
-    { label: 'Climate and Energy', href: '/blogs?pillar=climate-energy' },
     { label: 'Data and Analytics', href: '/blogs?pillar=data-analytics' },
   ],
   Company: [

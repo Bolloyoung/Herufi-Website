@@ -13,7 +13,6 @@ import {
 const pillarData = [
   { name: 'Venture Strategy', value: 1, color: '#1B4332' },
   { name: 'Markets and Economies', value: 1, color: '#2D6A4F' },
-  { name: 'Climate and Energy', value: 1, color: '#4A8C6F' },
   { name: 'Data and Analytics', value: 1, color: '#C9A84C' },
   { name: 'Culture and Context', value: 1, color: '#8B7355' },
 ]
@@ -29,7 +28,7 @@ const timelineData = [
 const platformStats = [
   { label: 'Blog posts', value: 0 },
   { label: 'Publications', value: 0 },
-  { label: 'Research pillars', value: 5 },
+  { label: 'Research pillars', value: 4 },
   { label: 'Frameworks in development', value: 10 },
 ]
 

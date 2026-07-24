@@ -26,7 +26,7 @@
           "left": 64,
           "right": 32,
           "top": 70,
-          "bottom": 48,
+          "bottom": 60,
           "containLabel": true
         },
         "series": [
@@ -67,7 +67,9 @@
           },
           "axisLabel": {
             "fontSize": 10
-          }
+          },
+          "nameLocation": "middle",
+          "nameGap": 28
         },
         "yAxis": {
           "type": "category",

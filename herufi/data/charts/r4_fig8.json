@@ -139,7 +139,7 @@
         },
         "grid": {
           "left": 16,
-          "right": 36,
+          "right": 20,
           "top": 44,
           "bottom": 44,
           "containLabel": true
@@ -198,8 +198,9 @@
                 {
                   "yAxis": 3.0,
                   "label": {
-                    "formatter": "Carta top-quartile fund benchmark: 3.0x+ TVPI",
-                    "fontSize": 9.5
+                    "formatter": "Carta benchmark: 3x+ TVPI",
+                    "fontSize": 9.5,
+                    "position": "insideStartTop"
                   }
                 }
               ]

@@ -39,22 +39,8 @@ export const pillars: Pillar[] = [
     color: 'forest',
   },
   {
-    id: 'climate-energy',
-    number: '03',
-    title: 'Climate, Energy, Food and Infrastructure',
-    description: 'Opportunity intelligence for the transition economy: climate, energy access, agriculture and African resilience.',
-    topics: [
-      'Climate adaptation', 'Energy access', 'Mobility',
-      'Agriculture', 'Food systems', 'Waste to value',
-      'Productive use of energy', 'Climate finance', 'Infrastructure gaps',
-      'African resilience models', 'Green growth opportunities',
-    ],
-    icon: 'Leaf',
-    color: 'forest',
-  },
-  {
     id: 'data-analytics',
-    number: '04',
+    number: '03',
     title: 'Data, Predictive Analytics and Decision Intelligence',
     description: 'Turning data into structured insight through forecasting, models, dashboards and research workflows assisted by AI.',
     topics: [
@@ -68,7 +54,7 @@ export const pillars: Pillar[] = [
   },
   {
     id: 'culture-context',
-    number: '05',
+    number: '04',
     title: 'Culture, Context and Intelligence Notes',
     description: 'Analytical notes on the cultural, behavioural and contextual factors that shape strategy and market outcomes in Africa.',
     topics: [

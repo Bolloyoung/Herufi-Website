@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Herufi produces structured research, original frameworks and insights grounded in data for investors, founders and institutions working across African markets.',
   metadataBase: new URL('https://herufi.org'),
-  keywords: ['African markets research', 'venture strategy Africa', 'African investment intelligence', 'climate finance Africa', 'Herufi'],
+  keywords: ['African markets research', 'venture strategy Africa', 'African investment intelligence', 'Herufi'],
   openGraph: {
     siteName: 'Herufi',
     locale: 'en_US',

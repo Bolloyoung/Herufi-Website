@@ -33,7 +33,7 @@ export default async function HomePage() {
           <p className="text-charcoal/55 leading-relaxed max-w-2xl mx-auto">
             Depth over speed. Evidence over opinion. Every finding is rooted in
             African market realities: venture strategy, economies and systems,
-            climate and energy, data intelligence and culture and context.
+            data intelligence and culture and context.
           </p>
         </div>
       </section>

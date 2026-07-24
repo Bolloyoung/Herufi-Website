@@ -1,7 +1,7 @@
 {
   "id": "r4_fig2",
   "title": "The African VC landscape, mid-2026: fund size vs. cheque size",
-  "caption": "Fund size against typical cheque size for the most-cited active Africa-focused GPs, mid-2026. Bubble size scales with fund size. Gold-marked funds are the only three that reach into the $2-10M Series A band; every other fund clusters at sub-$1M seed or $10M+ growth cheques. Sources: firm disclosures, TechCabal, TechCrunch, IFC (full list in report references).",
+  "caption": "Fund size against typical cheque size for the most-cited active Africa-focused GPs, mid-2026. Bubble size scales with fund size. Gold-marked funds are the only three that reach into the $2-10M Series A band; every other fund clusters at sub-$1M seed or $10M+ growth cheques. Three of those clustered funds (Founders Factory Africa, Ingressive Capital II, Launch Africa Ventures) sit too close together on this scale to label inline; see Table 1 above for their exact figures. Sources: firm disclosures, TechCabal, TechCrunch, IFC (full list in report references).",
   "panels": [
     {
       "title": null,
@@ -13,7 +13,7 @@
         "grid": {
           "left": 64,
           "right": 40,
-          "top": 24,
+          "top": 40,
           "bottom": 50,
           "containLabel": true
         },
@@ -56,7 +56,7 @@
                 },
                 "label": {
                   "show": true,
-                  "position": "top",
+                  "position": "bottom",
                   "formatter": "Partech Africa",
                   "fontSize": 9.5,
                   "color": "#1C1C1E"
@@ -139,7 +139,7 @@
                   "borderWidth": 1
                 },
                 "label": {
-                  "show": true,
+                  "show": false,
                   "position": "top",
                   "formatter": "Founders Factory Africa",
                   "fontSize": 9.5,
@@ -181,7 +181,7 @@
                   "borderWidth": 1
                 },
                 "label": {
-                  "show": true,
+                  "show": false,
                   "position": "top",
                   "formatter": "Ingressive Capital II",
                   "fontSize": 9.5,
@@ -202,7 +202,7 @@
                   "borderWidth": 1
                 },
                 "label": {
-                  "show": true,
+                  "show": false,
                   "position": "top",
                   "formatter": "Launch Africa Ventures",
                   "fontSize": 9.5,
@@ -224,13 +224,16 @@
                 },
                 "label": {
                   "show": true,
-                  "position": "top",
+                  "position": "bottom",
                   "formatter": "Ventures Platform",
                   "fontSize": 9.5,
                   "color": "#1C1C1E"
                 }
               }
             ],
+            "labelLayout": {
+              "moveOverlap": "shiftY"
+            },
             "markArea": {
               "itemStyle": {
                 "color": "#c53030",

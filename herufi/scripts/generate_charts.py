@@ -298,30 +298,44 @@ def xy_line_option(series_list, x_name=None, y_name=None, colors=None, x_min=Non
         "color": colors,
         "tooltip": {"trigger": "axis"},
         "legend": {"top": 4, "textStyle": {"fontSize": 10.5}},
-        "grid": {"left": 60, "right": 32, "top": 46, "bottom": 46, "containLabel": True},
+        "grid": {"left": 70, "right": 32, "top": 46, "bottom": 46, "containLabel": True},
         "xAxis": xaxis,
-        "yAxis": {"type": "value", "name": y_name, "nameGap": 24, "nameTextStyle": {"fontSize": 11}},
+        # A vertical, side-anchored y-axis name (nameLocation "middle" + nameRotate 90) instead
+        # of the default top-anchored one, which collided with a top-positioned legend entry.
+        "yAxis": {"type": "value", "name": y_name, "nameLocation": "middle", "nameGap": 34,
+                  "nameRotate": 90, "nameTextStyle": {"fontSize": 11}},
         "series": series,
     }
 
 
 def bubble_scatter_option(points, x_name=None, y_name=None, mark_area=None, log_x=True):
-    """points: list of (label, x, y, size, color)."""
+    """points: list of (label, x, y, size, color) or (label, x, y, size, color, label_position).
+    label_position of "hide" suppresses the inline label (marker and tooltip still show) for
+    points packed too tightly against neighbours for any inline position to stay legible."""
     data = []
-    for label, x, y, size, color in points:
+    for point in points:
+        label, x, y, size, color = point[:5]
+        label_pos = point[5] if len(point) > 5 else "top"
+        show_label = label_pos != "hide"
         data.append({
             "name": label, "value": [x, y],
             "symbolSize": size, "itemStyle": {"color": color, "opacity": 0.85, "borderColor": "#fff", "borderWidth": 1},
-            "label": {"show": True, "position": "top", "formatter": label, "fontSize": 9.5, "color": INK},
+            "label": {"show": show_label, "position": label_pos if show_label else "top", "formatter": label,
+                      "fontSize": 9.5, "color": INK},
         })
     xaxis = {"type": "log" if log_x else "value", "name": x_name, "nameLocation": "middle", "nameGap": 30,
              "nameTextStyle": {"fontSize": 11}, "axisLabel": {"fontSize": 10}}
-    series = {"type": "scatter", "data": data}
+    # labelLayout is a safety net on top of the manual per-point positions above: it nudges any
+    # labels that still collide (e.g. at narrower mobile widths) apart vertically instead of
+    # letting them overlap illegibly.
+    series = {"type": "scatter", "data": data, "labelLayout": {"moveOverlap": "shiftY"}}
     if mark_area:
         series["markArea"] = mark_area
     return {
         "tooltip": {"trigger": "item", "formatter": "{b}<br/>fund size: {c}"},
-        "grid": {"left": 64, "right": 40, "top": 24, "bottom": 50, "containLabel": True},
+        # top: 24 left no room for the y-axis name, which ECharts places above the axis by
+        # default ("end" location) -- it was rendering above the canvas edge and getting clipped.
+        "grid": {"left": 64, "right": 40, "top": 40, "bottom": 50, "containLabel": True},
         "xAxis": xaxis,
         "yAxis": {"type": "value", "name": y_name, "nameGap": 24, "nameTextStyle": {"fontSize": 11}},
         "series": [series],
@@ -890,6 +904,13 @@ def r4_fig1():
     y2025 = [27, 21, 41, 25]
     option = grouped_bar_option(cats, [("2022-24 average", avg), ("2025", y2025)],
                                  y_name="Share of LP commitments (%)", colors=[GREY, FOREST], horizontal=True)
+    # grouped_bar_option's value-axis name defaults to ECharts' "end" location (top-right of the
+    # axis line), which pushes this longer name past the chart's right edge on a horizontal bar.
+    # Move it to a centered, bottom-anchored title instead, matching how the value axis name
+    # reads on every vertical bar figure elsewhere in this file.
+    option["xAxis"]["nameLocation"] = "middle"
+    option["xAxis"]["nameGap"] = 28
+    option["grid"]["bottom"] = 60
     write_figure(
         "r4_fig1",
         "Who funds the funds: the 2025 LP mix shift in African VC",
@@ -911,12 +932,29 @@ def r4_fig2():
         ("Ventures Platform", 46, 0.1, 1.5),
     ]
     reaches_band = {"Partech Africa", "Novastar Ventures III", "Ventures Platform"}
+    # Founders Factory Africa, Ingressive Capital II and Launch Africa Ventures sit within a few
+    # percent of each other on both the log cheque-size axis and the fund-size axis, close enough
+    # that no inline label position stays clear of its neighbours (or, at "left", of its own
+    # marker this near the axis edge). Hide their inline labels; all nine funds, including these
+    # three, are already named with exact figures in Table 1 just above this chart. 4DX Ventures
+    # and Ventures Platform share the same cheque-size midpoint but sit far enough apart in fund
+    # size (80 vs 46) to read cleanly split top/bottom.
+    label_pos = {
+        "Founders Factory Africa": "hide",
+        "Ingressive Capital II": "hide",
+        "Launch Africa Ventures": "hide",
+        "4DX Ventures": "top",
+        "Ventures Platform": "bottom",
+        # Partech Africa sits at the y-axis max (fund size 300); a "top" label would render
+        # above the chart canvas and get clipped, so anchor it below its marker instead.
+        "Partech Africa": "bottom",
+    }
     points = []
     for name, fund_size, lo, hi in gps:
         mid = (lo * hi) ** 0.5
         size = 16 + 2.4 * (fund_size ** 0.5)
         color = GOLD if name in reaches_band else FOREST
-        points.append((name, round(mid, 3), fund_size, round(size, 1), color))
+        points.append((name, round(mid, 3), fund_size, round(size, 1), color, label_pos.get(name, "top")))
     mark_area = {
         "itemStyle": {"color": RED, "opacity": 0.08},
         "label": {"show": True, "position": "insideTop", "formatter": "the $2-10M Series A gap", "fontSize": 10, "color": RED},
@@ -927,7 +965,7 @@ def r4_fig2():
     write_figure(
         "r4_fig2",
         "The African VC landscape, mid-2026: fund size vs. cheque size",
-        "Fund size against typical cheque size for the most-cited active Africa-focused GPs, mid-2026. Bubble size scales with fund size. Gold-marked funds are the only three that reach into the $2-10M Series A band; every other fund clusters at sub-$1M seed or $10M+ growth cheques. Sources: firm disclosures, TechCabal, TechCrunch, IFC (full list in report references).",
+        "Fund size against typical cheque size for the most-cited active Africa-focused GPs, mid-2026. Bubble size scales with fund size. Gold-marked funds are the only three that reach into the $2-10M Series A band; every other fund clusters at sub-$1M seed or $10M+ growth cheques. Three of those clustered funds (Founders Factory Africa, Ingressive Capital II, Launch Africa Ventures) sit too close together on this scale to label inline; see Table 1 above for their exact figures. Sources: firm disclosures, TechCabal, TechCrunch, IFC (full list in report references).",
         [panel(None, option, height=420)],
     )
 
@@ -939,6 +977,11 @@ def r4_fig3():
     option = per_point_bar_option(regions, "YoY change in investor deal appearances", vals, colors,
                                    y_name="% change", horizontal=True)
     option["xAxis"]["axisLine"] = {"onZero": True}
+    # per_point_bar_option's value-axis name defaults to ECharts' "end" location, which sits
+    # right at the axis's top-right corner and clips against the grid edge; center it instead.
+    option["xAxis"]["nameLocation"] = "middle"
+    option["xAxis"]["nameGap"] = 28
+    option["grid"]["bottom"] = 56
     write_figure(
         "r4_fig3",
         "Investor deal-appearance growth, H1 2026 vs 2025 run-rate",
@@ -948,15 +991,15 @@ def r4_fig3():
 
 
 def r4_fig4():
-    cats = ["Total dry powder", "Climate-mandated\n(30+ vehicles)", "Gender-lens\n(<10 funds)"]
-    vals = [15000, 5500, 100]
-    labels = ["$15.0B", "$5.5B", "$100M"]
+    cats = ["Total dry powder", "Gender-lens vehicles\n(<10 funds)"]
+    vals = [15000, 100]
+    labels = ["$15.0B", "$100M"]
     option = log_bar_option(cats, "Committed capital (USD millions, log scale)", vals,
-                             [FOREST, BLUE, RED], y_name="USD millions (log)", value_labels=labels)
+                             [FOREST, RED], y_name="USD millions (log)", value_labels=labels)
     write_figure(
         "r4_fig4",
-        "The $15B in African tech-fund dry powder: where mandates concentrate",
-        "Total committed capital across Africa-focused tech funds versus two mandate slices: climate (illustrative, 30-plus of an unenumerated ~150-200 vehicle landscape) and gender-lens (a hard reported cap, not illustrative). Source: Launch Base Africa (Mar 2026).",
+        "The $15B in African tech-fund dry powder against its most marginal mandate slice",
+        "Total committed capital across Africa-focused tech funds versus gender-lens vehicles, a hard reported cap (not illustrative), under 1% of the total. Source: Launch Base Africa (Mar 2026).",
         [panel(None, option, height=320)],
     )
 
@@ -1021,10 +1064,15 @@ def r4_fig8():
     labels = ["p10", "p25", "median", "p75", "p90", "p95"]
     right = per_point_bar_option(labels, "Simulated MOIC percentile", [round(v, 2) for v in q.tolist()],
                                   [RED, GREY, FOREST, BLUE, BLUE, GREEN], y_name="Gross MOIC")
+    # The markLine label defaults to "end" position (right at the line's right endpoint), which
+    # clipped past the grid edge with the fuller wording; shortened text plus an explicit
+    # inside/left-anchored position keeps it inside the panel at this narrower (2-up) width.
     right["series"][0]["markLine"] = {
         "silent": True, "symbol": "none", "lineStyle": {"type": "dashed", "color": INK2},
-        "data": [{"yAxis": 3.0, "label": {"formatter": "Carta top-quartile fund benchmark: 3.0x+ TVPI", "fontSize": 9.5}}],
+        "data": [{"yAxis": 3.0, "label": {"formatter": "Carta benchmark: 3x+ TVPI", "fontSize": 9.5,
+                                           "position": "insideStartTop"}}],
     }
+    right["grid"]["right"] = 20
     write_figure(
         "r4_fig8",
         "The base-case fund simulation: 25 positions, 40% reserve, 2-for-1 follow-on, 7% graduation",
@@ -1070,6 +1118,9 @@ def r4_fig10():
         vals.append(round(float(np.median(m)), 3))
     cats = [f"{rs:.0%}" for rs in shares]
     option = per_point_bar_option(cats, "Median gross MOIC", vals, [BLUE_LIGHT, FOREST, GOLD, RED], y_name="Median gross MOIC")
+    # per_point_bar_option's default left margin (16px) is sized for a bare value axis with no
+    # name; this y-axis name ("Median gross MOIC") needs more room or it clips on the left.
+    option["grid"]["left"] = 44
     write_figure(
         "r4_fig10",
         "Reserving beyond your realistic graduation rate is a drag, not a hedge",
@@ -1111,16 +1162,17 @@ def r4_fig12():
     centers = [round((edges[i] + edges[i + 1]) / 2, 2) for i in range(len(edges) - 1)]
     option = {
         "tooltip": {"trigger": "axis"},
-        "legend": {"top": 4, "textStyle": {"fontSize": 10}},
+        "legend": {"top": 4, "left": "center", "textStyle": {"fontSize": 10}, "itemGap": 16,
+                   "data": ["Standard blind-seed fund (25 pos.)", "Series-A specialist (15 pos.)"]},
         "grid": {"left": 56, "right": 24, "top": 44, "bottom": 44, "containLabel": True},
         "xAxis": {"type": "category", "data": [f"{c:.1f}x" for c in centers], "name": "Gross MOIC",
                   "nameLocation": "middle", "nameGap": 28, "axisLabel": {"fontSize": 9, "interval": 4}},
         "yAxis": {"type": "value", "name": "Density", "nameGap": 30},
         "series": [
-            {"name": f"Standard blind-seed fund (25 pos.) — median {np.median(blind):.2f}x", "type": "bar",
+            {"name": "Standard blind-seed fund (25 pos.)", "type": "bar",
              "data": [round(c, 4) for c in counts_b.tolist()], "itemStyle": {"color": GREY, "opacity": 0.65},
              "barGap": "-100%", "barCategoryGap": "0%"},
-            {"name": f"Series-A specialist (15 pos.) — median {np.median(seriesA):.2f}x", "type": "bar",
+            {"name": "Series-A specialist (15 pos.)", "type": "bar",
              "data": [round(c, 4) for c in counts_s.tolist()], "itemStyle": {"color": FOREST, "opacity": 0.65},
              "barCategoryGap": "0%"},
         ],

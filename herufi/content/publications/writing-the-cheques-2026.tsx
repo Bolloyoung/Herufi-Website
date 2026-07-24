@@ -98,23 +98,22 @@ export default function WritingTheCheques2026() {
           <h3 className="sub">4.3 The deployment slowdown: 2025 versus H1 2026</h3>
           <p>Dry powder sitting uninvested is its own signal. Africa based investor deal appearances fell from 295 in full year 2025 to an annualised 235 in H1 2026, a 21% decline, a steeper regional pullback than North America (6%) or Asia (1%), though gentler than Europe&apos;s 35%. Named funds absent from 2026 deal flow include All On, Aruwa Capital, E Squared Investments, ANZA Capital, Knife Capital, Verod-Kepple Africa Ventures and AfricInvest. Funds that stayed active include Partech, FMO, British International Investment, IFC, Norrsken22, Enza Capital and Ventures Platform.</p>
           <Figure n={3} data={r4fig3 as FigureData} />
-          <p>Three cited reasons explain why funds went quiet. Many 2020 to 2022 vintage funds are now fully deployed and their successor fundraising has slowed, exactly the fundraising collapse quantified in Section 4.1. Currency volatility in Nigeria and Egypt complicates dollar denominated return modelling, the same foreign exchange lesson Report 2 drew from Nigeria&apos;s 2023 to 2025 slide. And a rising rate environment has pushed some capital toward debt instruments instead of equity. Fintech and clean energy, the two sectors that relied most on broad coalitions of local co investors, saw the steepest pullback.</p>
+          <p>Three cited reasons explain why funds went quiet. Many 2020 to 2022 vintage funds are now fully deployed and their successor fundraising has slowed, exactly the fundraising collapse quantified in Section 4.1. Currency volatility in Nigeria and Egypt complicates dollar denominated return modelling, the same foreign exchange lesson Report 2 drew from Nigeria&apos;s 2023 to 2025 slide. And a rising rate environment has pushed some capital toward debt instruments instead of equity. The sectors that relied most on broad coalitions of local co investors saw the steepest pullback.</p>
 
           <h3 className="sub">4.4 The dry powder puzzle: $15B committed, and where it does not reach</h3>
-          <p>A March 2026 survey of the current fund landscape puts total committed capital across Africa focused tech funds at $15B and identifies eight structural trends in how it is organised. Read together, they describe an asset class that has scaled its capital base faster than it has solved its structural gaps.</p>
+          <p>A March 2026 survey of the current fund landscape puts total committed capital across Africa focused tech funds at $15B and identifies seven structural trends in how it is organised. Read together, they describe an asset class that has scaled its capital base faster than it has solved its structural gaps.</p>
           <div className="tblwrap">
-            <p className="tblcap">Table 2: Eight structural trends in Africa&apos;s $15B tech fund dry powder, March 2026.</p>
+            <p className="tblcap">Table 2: Seven structural trends in Africa&apos;s $15B tech fund dry powder, March 2026.</p>
             <table>
               <thead><tr><th>Trend</th><th>What it means</th></tr></thead>
               <tbody>
                 <tr><td className="metric-col">1. Missing Series A layer</td><td>Capital clusters at sub $500K seed and $20M plus growth; the $2M to $10M range is thin</td></tr>
-                <tr><td className="metric-col">2. Climate capital concentration</td><td>30 plus vehicles now carry explicit climate mandates</td></tr>
-                <tr><td className="metric-col">3. Capital mandate mismatch</td><td>Median fund $30M to $60M: too small for growth, too diffuse for pure seed</td></tr>
-                <tr><td className="metric-col">4. Abidjan&apos;s regional hub growth</td><td>Saviu and Ring Capital establish presence; deployment has not followed yet</td></tr>
-                <tr><td className="metric-col">5. Francophone Africa, foreign or state led</td><td>Partech, Saviu and Digital Africa dominate; Morocco ties VC to industrial policy</td></tr>
-                <tr><td className="metric-col">6. Thicker debt layer emerging</td><td>Non dilutive vehicles such as the Verdant Capital Hybrid Fund are gaining share</td></tr>
-                <tr><td className="metric-col">7. Japanese corporate capital</td><td>Sector focused vehicles such as Uncovered-Monex and Sony Innovation Fund seek market intelligence</td></tr>
-                <tr><td className="metric-col">8. Gender lens funding marginal</td><td>Fewer than ten funds carry explicit gender mandates; combined capital under $100M</td></tr>
+                <tr><td className="metric-col">2. Capital mandate mismatch</td><td>Median fund $30M to $60M: too small for growth, too diffuse for pure seed</td></tr>
+                <tr><td className="metric-col">3. Abidjan&apos;s regional hub growth</td><td>Saviu and Ring Capital establish presence; deployment has not followed yet</td></tr>
+                <tr><td className="metric-col">4. Francophone Africa, foreign or state led</td><td>Partech, Saviu and Digital Africa dominate; Morocco ties VC to industrial policy</td></tr>
+                <tr><td className="metric-col">5. Thicker debt layer emerging</td><td>Non dilutive vehicles such as the Verdant Capital Hybrid Fund are gaining share</td></tr>
+                <tr><td className="metric-col">6. Japanese corporate capital</td><td>Sector focused vehicles such as Uncovered-Monex and Sony Innovation Fund seek market intelligence</td></tr>
+                <tr><td className="metric-col">7. Gender lens funding marginal</td><td>Fewer than ten funds carry explicit gender mandates; combined capital under $100M</td></tr>
               </tbody>
             </table>
           </div>

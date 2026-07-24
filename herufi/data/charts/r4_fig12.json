@@ -11,9 +11,15 @@
         },
         "legend": {
           "top": 4,
+          "left": "center",
           "textStyle": {
             "fontSize": 10
-          }
+          },
+          "itemGap": 16,
+          "data": [
+            "Standard blind-seed fund (25 pos.)",
+            "Series-A specialist (15 pos.)"
+          ]
         },
         "grid": {
           "left": 56,
@@ -81,7 +87,7 @@
         },
         "series": [
           {
-            "name": "Standard blind-seed fund (25 pos.) \u2014 median 1.52x",
+            "name": "Standard blind-seed fund (25 pos.)",
             "type": "bar",
             "data": [
               0.0,
@@ -133,7 +139,7 @@
             "barCategoryGap": "0%"
           },
           {
-            "name": "Series-A specialist (15 pos.) \u2014 median 5.05x",
+            "name": "Series-A specialist (15 pos.)",
             "type": "bar",
             "data": [
               0.0,

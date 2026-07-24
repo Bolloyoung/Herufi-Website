@@ -72,7 +72,7 @@ Five-tab site structure: **Home, Blogs, Publications, About Us, Contact Us.**
 
 Old routes (`/our-work`, `/research`, `/research/:slug`, `/analytics`, `/frameworks`, `/services`, `/platform`, `/data-lab`, `/reports`, `/projects`) permanently redirect via `next.config.js`.
 
-**Copy style:** site copy avoids hyphens and dashes entirely (no em dashes, no hyphenated compounds like "evidence-backed"). Rephrase instead. Sports content was removed from the site; there are five research pillars.
+**Copy style:** site copy avoids hyphens and dashes entirely (no em dashes, no hyphenated compounds like "evidence-backed"). Rephrase instead. No serial/Oxford comma before "and" in lists either. Sports content was removed from the site; there are four research pillars (the climate, energy, food and infrastructure pillar was removed).
 
 **Spline note:** `@splinetool/react-spline` is pinned to `2.2.6` — 4.x is ESM-only and breaks the Next 14 webpack build. The 3D hero lives in `components/SplineHero.tsx` (loaded client-side via `next/dynamic`, `ssr: false`).
 
@@ -155,8 +155,8 @@ publication: "publication-id"   # optional, matches an id in data/publications.t
 ---
 ```
 
-`pillar` must exactly match one of the five titles in `data/pillars.ts`:
-Venture Strategy and Capital Intelligence | Markets, Systems and African Economies | Climate, Energy, Food and Infrastructure | Data, Predictive Analytics and Decision Intelligence | Culture, Context and Intelligence Notes
+`pillar` must exactly match one of the four titles in `data/pillars.ts`:
+Venture Strategy and Capital Intelligence | Markets, Systems and African Economies | Data, Predictive Analytics and Decision Intelligence | Culture, Context and Intelligence Notes
 
 ## Adding Publications
 

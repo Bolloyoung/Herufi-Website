@@ -46,7 +46,7 @@ export default function AboutPage() {
               Herufi is a research intelligence platform. It is a hybrid of research institution, analytics laboratory, venture intelligence engine and strategic foresight system. It was built to fill a specific gap: structured intelligence rooted in African context, for decision makers who need evidence, not opinion.
             </p>
             <p>
-              The platform produces blogs, detailed publications, original frameworks, quantitative models and interactive dashboards across venture strategy, African market systems, climate and energy, data analytics and policy analysis. The common thread is methodological rigour applied to real decisions.
+              The platform produces blogs, detailed publications, original frameworks, quantitative models and interactive dashboards across venture strategy, African market systems, data analytics and policy analysis. The common thread is methodological rigour applied to real decisions.
             </p>
             <p>
               Every finding passes a reliability layer before publication. Confidence levels are classified. Sources are linked. Methodology is made explicit. The goal is not to produce more content. It is to produce intelligence that holds up over time.
@@ -191,7 +191,7 @@ export default function AboutPage() {
                 The platform emerged from a consistent observation: too much research about African markets is either too shallow, too generic, or built for a different audience. Decision makers working in and around these markets need something different. They need structured intelligence, aware of context, that actually helps them act.
               </p>
               <p>
-                The research spans five core pillars because that is where the genuine analytical demand sits: venture strategy, market systems, climate and development, data intelligence and culture and context. The common thread is rigour applied to real decisions.
+                The research spans four core pillars because that is where the genuine analytical demand sits: venture strategy, market systems, data intelligence and culture and context. The common thread is rigour applied to real decisions.
               </p>
               <div className="grid grid-cols-2 gap-3 pt-3">
                 {[
@@ -199,7 +199,6 @@ export default function AboutPage() {
                   'Impact and development finance',
                   'Data and decision modelling',
                   'Market entry and strategy',
-                  'Climate and energy investment',
                   'Research methodology',
                 ].map((skill) => (
                   <div key={skill} className="flex items-center gap-2">

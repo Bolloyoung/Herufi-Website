@@ -12,7 +12,6 @@ import type { Pillar } from '@/data/pillars'
 const pillarTitleToId: Record<string, string> = {
   'Venture Strategy and Capital Intelligence': 'venture-strategy',
   'Markets, Systems and African Economies': 'markets-systems',
-  'Climate, Energy, Food and Infrastructure': 'climate-energy',
   'Data, Predictive Analytics and Decision Intelligence': 'data-analytics',
   'Culture, Context and Intelligence Notes': 'culture-context',
 }

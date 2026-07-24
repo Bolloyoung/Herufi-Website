@@ -10,7 +10,7 @@ import { getAllArticles } from '@/lib/content'
 export const metadata: Metadata = {
   title: 'Blogs',
   description:
-    'Blog posts from Herufi covering venture strategy, African markets, climate and energy, data analytics and culture and context.',
+    'Blog posts from Herufi covering venture strategy, African markets, data analytics and culture and context.',
 }
 
 export default function BlogsPage() {

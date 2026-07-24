@@ -1,7 +1,7 @@
 {
   "id": "r4_fig4",
-  "title": "The $15B in African tech-fund dry powder: where mandates concentrate",
-  "caption": "Total committed capital across Africa-focused tech funds versus two mandate slices: climate (illustrative, 30-plus of an unenumerated ~150-200 vehicle landscape) and gender-lens (a hard reported cap, not illustrative). Source: Launch Base Africa (Mar 2026).",
+  "title": "The $15B in African tech-fund dry powder against its most marginal mandate slice",
+  "caption": "Total committed capital across Africa-focused tech funds versus gender-lens vehicles, a hard reported cap (not illustrative), under 1% of the total. Source: Launch Base Africa (Mar 2026).",
   "panels": [
     {
       "title": null,
@@ -20,8 +20,7 @@
           "type": "category",
           "data": [
             "Total dry powder",
-            "Climate-mandated\n(30+ vehicles)",
-            "Gender-lens\n(<10 funds)"
+            "Gender-lens vehicles\n(<10 funds)"
           ],
           "axisLabel": {
             "fontSize": 10,
@@ -52,19 +51,6 @@
                   "show": true,
                   "position": "top",
                   "formatter": "$15.0B",
-                  "fontSize": 11,
-                  "fontWeight": "bold"
-                }
-              },
-              {
-                "value": 5500,
-                "itemStyle": {
-                  "color": "#2b6cb0"
-                },
-                "label": {
-                  "show": true,
-                  "position": "top",
-                  "formatter": "$5.5B",
                   "fontSize": 11,
                   "fontWeight": "bold"
                 }
