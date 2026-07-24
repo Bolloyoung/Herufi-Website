@@ -1,0 +1,84 @@
+{
+  "id": "r4_fig3",
+  "title": "Investor deal-appearance growth, H1 2026 vs 2025 run-rate",
+  "caption": "Year-on-year change in investor deal appearances by region, H1 2026 (annualised) versus the 2025 full-year run-rate. Africa: 295 appearances in 2025 falling to an annualised ~235 in H1 2026. Source: Launch Base Africa cap-table tracking (Jun 2026).",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 16,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "YoY change in investor deal appearances",
+            "type": "bar",
+            "data": [
+              {
+                "value": -35,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": -21,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                }
+              },
+              {
+                "value": -6,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": -1,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              }
+            ],
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "value",
+          "name": "% change",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          },
+          "axisLine": {
+            "onZero": true
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Europe",
+            "Africa",
+            "North America",
+            "Asia"
+          ],
+          "axisLabel": {
+            "fontSize": 10,
+            "width": 92,
+            "overflow": "break",
+            "lineHeight": 13
+          }
+        }
+      },
+      "height": 280
+    }
+  ]
+}

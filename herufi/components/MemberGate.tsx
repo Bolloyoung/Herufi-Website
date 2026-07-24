@@ -50,7 +50,7 @@ export default function MemberGate({ children, preview, featureLabel = 'full acc
         </div>
         <h3 className="text-base font-semibold text-charcoal mb-2">Members only</h3>
         <p className="text-sm text-charcoal/55 mb-5 max-w-xs mx-auto">
-          Sign in or request access to unlock {featureLabel}, advanced dashboards, full methodology, and source data.
+          Sign in or request access to unlock {featureLabel}, advanced dashboards, full methodology and source data.
         </p>
         <div className="flex gap-3 justify-center">
           <Link

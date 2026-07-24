@@ -1,0 +1,301 @@
+{
+  "id": "r4_fig9",
+  "title": "Portfolio size \u00d7 follow-on discipline: median MOIC and loss risk",
+  "caption": "Median gross MOIC and probability of losing money (MOIC < 1x), by number of initial positions and follow-on multiple, at a fixed 40% reserve share and 7% graduation probability (20,000-15,000 simulations per cell, independently re-run for this report). More initial positions lowers loss risk sharply; a higher follow-on multiple lifts the median while barely moving loss risk \u2014 the two levers are complementary, not substitutes.",
+  "panels": [
+    {
+      "title": "Median gross MOIC",
+      "option": {
+        "tooltip": {
+          "formatter": "{b}: {@[2]}x"
+        },
+        "grid": {
+          "left": 90,
+          "right": 24,
+          "top": 30,
+          "bottom": 60,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "name": "Follow-on multiple (k-for-1)",
+          "nameLocation": "middle",
+          "nameGap": 32,
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "splitArea": {
+            "show": true
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "15",
+            "25",
+            "40"
+          ],
+          "name": "Initial positions",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "splitArea": {
+            "show": true
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "visualMap": {
+          "min": 0,
+          "max": 1.8,
+          "calculable": false,
+          "show": false,
+          "inRange": {
+            "color": [
+              "#eaf1ea",
+              "#2D6A4F",
+              "#1B4332"
+            ]
+          }
+        },
+        "series": [
+          {
+            "type": "heatmap",
+            "data": [
+              [
+                0,
+                0,
+                1.34
+              ],
+              [
+                1,
+                0,
+                1.39
+              ],
+              [
+                2,
+                0,
+                1.44
+              ],
+              [
+                3,
+                0,
+                1.49
+              ],
+              [
+                0,
+                1,
+                1.37
+              ],
+              [
+                1,
+                1,
+                1.48
+              ],
+              [
+                2,
+                1,
+                1.52
+              ],
+              [
+                3,
+                1,
+                1.56
+              ],
+              [
+                0,
+                2,
+                1.41
+              ],
+              [
+                1,
+                2,
+                1.54
+              ],
+              [
+                2,
+                2,
+                1.64
+              ],
+              [
+                3,
+                2,
+                1.72
+              ]
+            ],
+            "label": {
+              "show": true,
+              "fontSize": 11,
+              "fontWeight": "bold",
+              "formatter": "{@[2]}x"
+            },
+            "emphasis": {
+              "itemStyle": {
+                "shadowBlur": 6,
+                "shadowColor": "rgba(0,0,0,0.3)"
+              }
+            }
+          }
+        ]
+      },
+      "height": 300
+    },
+    {
+      "title": "P(fund returns < 1x)",
+      "option": {
+        "tooltip": {
+          "formatter": "{b}: {@[2]}%"
+        },
+        "grid": {
+          "left": 90,
+          "right": 24,
+          "top": 30,
+          "bottom": 60,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "name": "Follow-on multiple (k-for-1)",
+          "nameLocation": "middle",
+          "nameGap": 32,
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "splitArea": {
+            "show": true
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "15",
+            "25",
+            "40"
+          ],
+          "name": "Initial positions",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "splitArea": {
+            "show": true
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "visualMap": {
+          "min": 0,
+          "max": 35,
+          "calculable": false,
+          "show": false,
+          "inRange": {
+            "color": [
+              "#fdecec",
+              "#e88b85",
+              "#c53030"
+            ]
+          }
+        },
+        "series": [
+          {
+            "type": "heatmap",
+            "data": [
+              [
+                0,
+                0,
+                31.43
+              ],
+              [
+                1,
+                0,
+                27.81
+              ],
+              [
+                2,
+                0,
+                26.97
+              ],
+              [
+                3,
+                0,
+                28.23
+              ],
+              [
+                0,
+                1,
+                18.19
+              ],
+              [
+                1,
+                1,
+                17.37
+              ],
+              [
+                2,
+                1,
+                16.79
+              ],
+              [
+                3,
+                1,
+                16.87
+              ],
+              [
+                0,
+                2,
+                12.35
+              ],
+              [
+                1,
+                2,
+                10.06
+              ],
+              [
+                2,
+                2,
+                9.53
+              ],
+              [
+                3,
+                2,
+                9.68
+              ]
+            ],
+            "label": {
+              "show": true,
+              "fontSize": 11,
+              "fontWeight": "bold",
+              "formatter": "{@[2]}%"
+            },
+            "emphasis": {
+              "itemStyle": {
+                "shadowBlur": 6,
+                "shadowColor": "rgba(0,0,0,0.3)"
+              }
+            }
+          }
+        ]
+      },
+      "height": 300
+    }
+  ]
+}

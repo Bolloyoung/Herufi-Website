@@ -1,0 +1,100 @@
+{
+  "id": "r4_fig5",
+  "title": "Pension-fund headroom for private equity/VC: Kenya and Nigeria",
+  "caption": "Approximate current PE/VC allocation versus headroom to the regulatory cap, Kenya and Nigeria pension funds. Kenya: KES 2.81 trillion in total pension assets, roughly 1% currently in PE/VC, 10% regulatory cap (RBA guidelines; Cytonn Q1 2026). Nigeria: pension assets approaching NGN 29.5 trillion, allocation \u201cbarely 1%\u201d of net asset value, cap raised from 5% to 10% (up to 15% for some funds) in a September 2025 PenCom regulation. USD conversions are approximate (July 2026 FX, ~130 KES/USD and ~1,550 NGN/USD) and current-allocation shares are order-of-magnitude estimates, not audited figures \u2014 treat the headroom as directional, not precise.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "color": [
+          "#1B4332",
+          "#cfe0f7"
+        ],
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          }
+        },
+        "legend": {
+          "top": 4,
+          "textStyle": {
+            "fontSize": 11
+          }
+        },
+        "grid": {
+          "left": 64,
+          "right": 32,
+          "top": 60,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Kenya (cap 10%)",
+            "Nigeria (cap raised 5%\u219210%, Sep 2025)"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "USD billions, approximate",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "series": [
+          {
+            "name": "Currently allocated to PE/VC",
+            "type": "bar",
+            "stack": "total",
+            "data": [
+              0.23,
+              0.19
+            ],
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "barMaxWidth": 70,
+            "label": {
+              "show": true,
+              "position": "inside",
+              "fontSize": 11,
+              "fontWeight": "bold",
+              "color": "#fff",
+              "formatter": "${c}B"
+            }
+          },
+          {
+            "name": "Headroom to regulatory cap",
+            "type": "bar",
+            "stack": "total",
+            "data": [
+              1.93,
+              1.71
+            ],
+            "itemStyle": {
+              "color": "#cfe0f7"
+            },
+            "barMaxWidth": 70,
+            "label": {
+              "show": true,
+              "position": "inside",
+              "fontSize": 11,
+              "fontWeight": "bold",
+              "color": "#1C1C1E",
+              "formatter": "${c}B"
+            }
+          }
+        ]
+      },
+      "height": 340
+    }
+  ]
+}

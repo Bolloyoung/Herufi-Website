@@ -52,4 +52,16 @@ export const blogPosts: BlogPost[] = [
     tags: ['Forecasting', 'Venture Capital', 'Scenarios', 'Exits'],
     publication: 'continent-heading-2026-2030',
   },
+  {
+    id: 'who-writes-the-cheques-african-vc',
+    title: "Who Is Actually Writing Africa's VC Cheques Now",
+    category: 'Explainer',
+    pillar: 'Venture Strategy and Capital Intelligence',
+    summary: 'Development finance pulled back harder than ever in 2025 and local capital surged to fill the gap. Here is what that shift, and a portfolio model built on it, mean for how a fund should actually be built.',
+    date: '2026-07-24',
+    readingTime: '10 min read',
+    fileUrl: '/blogs/who-writes-the-cheques-african-vc',
+    tags: ['Venture Capital', 'LP Capital', 'Portfolio Construction', 'Fund Strategy'],
+    publication: 'writing-the-cheques-2026',
+  },
 ]

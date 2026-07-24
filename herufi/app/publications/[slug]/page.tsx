@@ -7,6 +7,7 @@ const contentMap: Record<string, () => Promise<{ default: React.ComponentType }>
   'broken-ladder-2014-baseline': () => import('@/content/publications/broken-ladder-2014-baseline'),
   'frontier-to-market-2014-2026': () => import('@/content/publications/frontier-to-market-2014-2026'),
   'continent-heading-2026-2030': () => import('@/content/publications/continent-heading-2026-2030'),
+  'writing-the-cheques-2026': () => import('@/content/publications/writing-the-cheques-2026'),
 }
 
 type Props = { params: { slug: string } }

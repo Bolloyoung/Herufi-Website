@@ -1,0 +1,236 @@
+{
+  "id": "r4_fig8",
+  "title": "The base-case fund simulation: 25 positions, 40% reserve, 2-for-1 follow-on, 7% graduation",
+  "caption": "Monte-Carlo simulated fund-level gross MOIC (20,000 simulations; independently re-run for this report). Median 1.52x, 17% of simulations lose money, and it is the top decile (p90 \u2248 3.1x) that approaches the 3x+ TVPI benchmark top-quartile funds report \u2014 not the median, which is the expected relationship between a fully-realised simulated multiple and a still-maturing reported benchmark. Return distribution: Correlation Ventures. Fund benchmark: Carta Q4 2025/2026 VC Fund Performance data.",
+  "panels": [
+    {
+      "title": "Simulated fund-level MOIC distribution",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 60,
+          "right": 24,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "0.10x",
+            "0.30x",
+            "0.50x",
+            "0.70x",
+            "0.90x",
+            "1.10x",
+            "1.30x",
+            "1.50x",
+            "1.70x",
+            "1.90x",
+            "2.10x",
+            "2.30x",
+            "2.50x",
+            "2.70x",
+            "2.90x",
+            "3.10x",
+            "3.30x",
+            "3.50x",
+            "3.70x",
+            "3.90x",
+            "4.10x",
+            "4.30x",
+            "4.50x",
+            "4.70x",
+            "4.90x",
+            "5.10x",
+            "5.30x",
+            "5.50x",
+            "5.70x",
+            "5.90x",
+            "6.10x",
+            "6.30x",
+            "6.50x",
+            "6.70x",
+            "6.90x",
+            "7.10x",
+            "7.30x",
+            "7.50x",
+            "7.70x",
+            "7.90x"
+          ],
+          "name": "Gross MOIC",
+          "nameLocation": "middle",
+          "nameGap": 28,
+          "axisLabel": {
+            "fontSize": 9,
+            "interval": 4
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Simulations",
+          "nameGap": 24,
+          "nameTextStyle": {
+            "fontSize": 11
+          }
+        },
+        "series": [
+          {
+            "name": "Simulations",
+            "type": "bar",
+            "data": [
+              0,
+              0,
+              125,
+              1079,
+              2113,
+              2635,
+              2762,
+              2050,
+              1620,
+              1108,
+              1060,
+              1017,
+              925,
+              789,
+              571,
+              367,
+              254,
+              190,
+              164,
+              149,
+              118,
+              82,
+              58,
+              29,
+              20,
+              27,
+              63,
+              104,
+              94,
+              99,
+              71,
+              42,
+              33,
+              42,
+              29,
+              27,
+              19,
+              15,
+              7,
+              9
+            ],
+            "itemStyle": {
+              "color": "#2b6cb0"
+            },
+            "barCategoryGap": "0%",
+            "barGap": "0%"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Percentiles vs. the Carta top-quartile benchmark",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 16,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Simulated MOIC percentile",
+            "type": "bar",
+            "data": [
+              {
+                "value": 0.88,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 1.13,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 1.52,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 2.28,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                }
+              },
+              {
+                "value": 3.07,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                }
+              },
+              {
+                "value": 4.03,
+                "itemStyle": {
+                  "color": "#38a169"
+                }
+              }
+            ],
+            "barMaxWidth": 26,
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "type": "dashed",
+                "color": "#52514e"
+              },
+              "data": [
+                {
+                  "yAxis": 3.0,
+                  "label": {
+                    "formatter": "Carta top-quartile fund benchmark: 3.0x+ TVPI",
+                    "fontSize": 9.5
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "p10",
+            "p25",
+            "median",
+            "p75",
+            "p90",
+            "p95"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Gross MOIC",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}

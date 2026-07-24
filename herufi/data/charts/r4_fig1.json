@@ -1,0 +1,89 @@
+{
+  "id": "r4_fig1",
+  "title": "Who funds the funds: the 2025 LP mix shift in African VC",
+  "caption": "Share of LP commitments by source, 2022-24 average versus 2025. DFI and European VC/DFI commitments fell sharply while African corporates and local LPs rose. Source: AVCA 2025 African Private Capital Activity Report, via TechCabal (Feb 2026).",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "color": [
+          "#a0aec0",
+          "#1B4332"
+        ],
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          }
+        },
+        "legend": {
+          "top": 4,
+          "textStyle": {
+            "fontSize": 11
+          }
+        },
+        "grid": {
+          "left": 64,
+          "right": 32,
+          "top": 70,
+          "bottom": 48,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "2022-24 average",
+            "type": "bar",
+            "data": [
+              45,
+              70,
+              7,
+              18
+            ],
+            "itemStyle": {
+              "color": "#a0aec0"
+            },
+            "barMaxWidth": 26
+          },
+          {
+            "name": "2025",
+            "type": "bar",
+            "data": [
+              27,
+              21,
+              41,
+              25
+            ],
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "value",
+          "name": "Share of LP commitments (%)",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "DFIs",
+            "European VC / DFI",
+            "African corporates",
+            "African / local LPs"
+          ],
+          "axisLabel": {
+            "rotate": 0,
+            "fontSize": 10
+          }
+        }
+      },
+      "height": 320
+    }
+  ]
+}

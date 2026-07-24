@@ -33,7 +33,7 @@ const engagementTypes = [
       </svg>
     ),
     title: 'Data and analytics',
-    body: 'Dashboards, models, and scoring tools.',
+    body: 'Dashboards, models and scoring tools.',
   },
   {
     icon: (

@@ -13,7 +13,7 @@ export const pillars: Pillar[] = [
     id: 'venture-strategy',
     number: '01',
     title: 'Venture Strategy and Capital Intelligence',
-    description: 'Research and analysis for investors, founders, and venture builders navigating African startup and capital markets.',
+    description: 'Research and analysis for investors, founders and venture builders navigating African startup and capital markets.',
     topics: [
       'Venture studio strategy', 'Investment readiness', 'Startup diagnostics',
       'Due diligence', 'Market sizing', 'Investor mapping',
@@ -42,7 +42,7 @@ export const pillars: Pillar[] = [
     id: 'climate-energy',
     number: '03',
     title: 'Climate, Energy, Food and Infrastructure',
-    description: 'Opportunity intelligence for the transition economy: climate, energy access, agriculture, and African resilience.',
+    description: 'Opportunity intelligence for the transition economy: climate, energy access, agriculture and African resilience.',
     topics: [
       'Climate adaptation', 'Energy access', 'Mobility',
       'Agriculture', 'Food systems', 'Waste to value',
@@ -56,7 +56,7 @@ export const pillars: Pillar[] = [
     id: 'data-analytics',
     number: '04',
     title: 'Data, Predictive Analytics and Decision Intelligence',
-    description: 'Turning data into structured insight through forecasting, models, dashboards, and research workflows assisted by AI.',
+    description: 'Turning data into structured insight through forecasting, models, dashboards and research workflows assisted by AI.',
     topics: [
       'Forecasting', 'Python analysis', 'Dashboards',
       'Data storytelling', 'Predictive models', 'Scenario analysis',
@@ -70,7 +70,7 @@ export const pillars: Pillar[] = [
     id: 'culture-context',
     number: '05',
     title: 'Culture, Context and Intelligence Notes',
-    description: 'Analytical notes on the cultural, behavioural, and contextual factors that shape strategy and market outcomes in Africa.',
+    description: 'Analytical notes on the cultural, behavioural and contextual factors that shape strategy and market outcomes in Africa.',
     topics: [
       'African business culture', 'Local market behavior', 'Founder psychology',
       'Trust systems', 'Community dynamics', 'Language and markets',

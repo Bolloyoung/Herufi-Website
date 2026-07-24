@@ -1,0 +1,263 @@
+{
+  "id": "r4_fig2",
+  "title": "The African VC landscape, mid-2026: fund size vs. cheque size",
+  "caption": "Fund size against typical cheque size for the most-cited active Africa-focused GPs, mid-2026. Bubble size scales with fund size. Gold-marked funds are the only three that reach into the $2-10M Series A band; every other fund clusters at sub-$1M seed or $10M+ growth cheques. Sources: firm disclosures, TechCabal, TechCrunch, IFC (full list in report references).",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "item",
+          "formatter": "{b}<br/>fund size: {c}"
+        },
+        "grid": {
+          "left": 64,
+          "right": 40,
+          "top": 24,
+          "bottom": 50,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "log",
+          "name": "Typical cheque size (USD millions, log scale)",
+          "nameLocation": "middle",
+          "nameGap": 30,
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Fund size (USD millions)",
+          "nameGap": 24,
+          "nameTextStyle": {
+            "fontSize": 11
+          }
+        },
+        "series": [
+          {
+            "type": "scatter",
+            "data": [
+              {
+                "name": "Partech Africa",
+                "value": [
+                  3.162,
+                  300
+                ],
+                "symbolSize": 57.6,
+                "itemStyle": {
+                  "color": "#C9A84C",
+                  "opacity": 0.85,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "Partech Africa",
+                  "fontSize": 9.5,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "name": "TLcom Capital",
+                "value": [
+                  0.548,
+                  159
+                ],
+                "symbolSize": 46.3,
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.85,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "TLcom Capital",
+                  "fontSize": 9.5,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "name": "Novastar Ventures III",
+                "value": [
+                  2.828,
+                  147
+                ],
+                "symbolSize": 45.1,
+                "itemStyle": {
+                  "color": "#C9A84C",
+                  "opacity": 0.85,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "Novastar Ventures III",
+                  "fontSize": 9.5,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "name": "Norrsken22",
+                "value": [
+                  24.495,
+                  205
+                ],
+                "symbolSize": 50.4,
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.85,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "Norrsken22",
+                  "fontSize": 9.5,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "name": "Founders Factory Africa",
+                "value": [
+                  0.194,
+                  40
+                ],
+                "symbolSize": 31.2,
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.85,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "Founders Factory Africa",
+                  "fontSize": 9.5,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "name": "4DX Ventures",
+                "value": [
+                  0.387,
+                  80
+                ],
+                "symbolSize": 37.5,
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.85,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "4DX Ventures",
+                  "fontSize": 9.5,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "name": "Ingressive Capital II",
+                "value": [
+                  0.158,
+                  50
+                ],
+                "symbolSize": 33.0,
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.85,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "Ingressive Capital II",
+                  "fontSize": 9.5,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "name": "Launch Africa Ventures",
+                "value": [
+                  0.112,
+                  36
+                ],
+                "symbolSize": 30.4,
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.85,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "Launch Africa Ventures",
+                  "fontSize": 9.5,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "name": "Ventures Platform",
+                "value": [
+                  0.387,
+                  46
+                ],
+                "symbolSize": 32.3,
+                "itemStyle": {
+                  "color": "#C9A84C",
+                  "opacity": 0.85,
+                  "borderColor": "#fff",
+                  "borderWidth": 1
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "Ventures Platform",
+                  "fontSize": 9.5,
+                  "color": "#1C1C1E"
+                }
+              }
+            ],
+            "markArea": {
+              "itemStyle": {
+                "color": "#c53030",
+                "opacity": 0.08
+              },
+              "label": {
+                "show": true,
+                "position": "insideTop",
+                "formatter": "the $2-10M Series A gap",
+                "fontSize": 10,
+                "color": "#c53030"
+              },
+              "data": [
+                [
+                  {
+                    "xAxis": 2
+                  },
+                  {
+                    "xAxis": 10
+                  }
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "height": 420
+    }
+  ]
+}

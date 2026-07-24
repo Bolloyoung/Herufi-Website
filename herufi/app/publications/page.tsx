@@ -8,7 +8,7 @@ import { publications } from '@/data/publications'
 export const metadata: Metadata = {
   title: 'Publications',
   description:
-    'Detailed publications from Herufi: structured reports with full methodology, sources, and analysis for decision makers working across African markets.',
+    'Detailed publications from Herufi: structured reports with full methodology, sources and analysis for decision makers working across African markets.',
 }
 
 export default function PublicationsPage() {
@@ -17,7 +17,7 @@ export default function PublicationsPage() {
       <PageHeader
         label="Publications"
         title="Detailed reports and structured analysis"
-        description="The full depth behind our blogs: long form publications with explicit methodology, linked sources, and findings that hold up over time."
+        description="The full depth behind our blogs: long form publications with explicit methodology, linked sources and findings that hold up over time."
       />
 
       <section className="py-16 px-6 bg-cream min-h-[40vh]">

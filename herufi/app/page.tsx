@@ -33,7 +33,7 @@ export default async function HomePage() {
           <p className="text-charcoal/55 leading-relaxed max-w-2xl mx-auto">
             Depth over speed. Evidence over opinion. Every finding is rooted in
             African market realities: venture strategy, economies and systems,
-            climate and energy, data intelligence, and culture and context.
+            climate and energy, data intelligence and culture and context.
           </p>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default async function HomePage() {
       <CTASection
         label="Get started"
         headline="Looking for research, analytics, or strategy support?"
-        body="Herufi works with investors, founders, and institutions on research, strategy, and analytics engagements."
+        body="Herufi works with investors, founders and institutions on research, strategy and analytics engagements."
         primaryCta={{ label: "Let's talk", href: '/contact' }}
         secondaryCta={{ label: 'Read the blogs', href: '/blogs' }}
       />

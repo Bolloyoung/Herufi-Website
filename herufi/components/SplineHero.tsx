@@ -28,8 +28,8 @@ export default function SplineHero({ hue = 0 }: SplineHeroProps) {
             Structured intelligence for decision makers.
           </h1>
           <p className="text-base sm:text-lg text-cream/60 leading-relaxed max-w-xl mb-10">
-            Research grounded in evidence, original frameworks, and rigorous analysis
-            across African markets, ventures, climate, and data.
+            Research grounded in evidence, original frameworks and rigorous analysis
+            across African markets, ventures, climate and data.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <Link

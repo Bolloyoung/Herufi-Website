@@ -28,7 +28,7 @@ export default function Footer() {
               <Logo variant="light" />
             </Link>
             <p className="text-sm leading-relaxed text-cream/50 max-w-xs mb-6">
-              Research and analytics for markets, ventures, and systems.
+              Research and analytics for markets, ventures and systems.
               Built for decision makers working across African markets.
             </p>
             <div className="flex items-center gap-4">

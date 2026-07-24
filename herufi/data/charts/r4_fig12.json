@@ -1,0 +1,191 @@
+{
+  "id": "r4_fig12",
+  "title": "Blind-seed vs. a dedicated Series-A vehicle, same simulator",
+  "caption": "Simulated gross MOIC density, standard blind-seed fund versus a Series-A specialist buying only into already seed-graduated companies (independently re-run for this report; entry distribution derived via Bayes' rule from Section 6's graduation data). Median lifts from 1.52x to 5.05x and loss probability drops from 17% to 1%. Read the direction, not the exact magnitude: the uplift size depends on a stated (not fitted) assumption about how strongly graduation correlates with quality, since no public dataset splits African returns by prior-graduation status.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 4,
+          "textStyle": {
+            "fontSize": 10
+          }
+        },
+        "grid": {
+          "left": 56,
+          "right": 24,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "0.2x",
+            "0.6x",
+            "0.9x",
+            "1.3x",
+            "1.7x",
+            "2.1x",
+            "2.4x",
+            "2.8x",
+            "3.2x",
+            "3.6x",
+            "3.9x",
+            "4.3x",
+            "4.7x",
+            "5.1x",
+            "5.4x",
+            "5.8x",
+            "6.2x",
+            "6.6x",
+            "6.9x",
+            "7.3x",
+            "7.7x",
+            "8.1x",
+            "8.4x",
+            "8.8x",
+            "9.2x",
+            "9.6x",
+            "9.9x",
+            "10.3x",
+            "10.7x",
+            "11.1x",
+            "11.4x",
+            "11.8x",
+            "12.2x",
+            "12.6x",
+            "12.9x",
+            "13.3x",
+            "13.7x",
+            "14.1x",
+            "14.4x",
+            "14.8x"
+          ],
+          "name": "Gross MOIC",
+          "nameLocation": "middle",
+          "nameGap": 28,
+          "axisLabel": {
+            "fontSize": 9,
+            "interval": 4
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Density",
+          "nameGap": 30
+        },
+        "series": [
+          {
+            "name": "Standard blind-seed fund (25 pos.) \u2014 median 1.52x",
+            "type": "bar",
+            "data": [
+              0.0,
+              0.0965,
+              0.57,
+              0.6365,
+              0.4047,
+              0.2699,
+              0.2361,
+              0.1668,
+              0.0777,
+              0.0469,
+              0.0356,
+              0.0201,
+              0.0085,
+              0.0072,
+              0.0229,
+              0.0233,
+              0.0148,
+              0.0089,
+              0.0081,
+              0.0044,
+              0.0025,
+              0.0013,
+              0.0008,
+              0.0004,
+              0.0001,
+              0.0001,
+              0.0005,
+              0.0007,
+              0.0004,
+              0.0003,
+              0.0003,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "itemStyle": {
+              "color": "#a0aec0",
+              "opacity": 0.65
+            },
+            "barGap": "-100%",
+            "barCategoryGap": "0%"
+          },
+          {
+            "name": "Series-A specialist (15 pos.) \u2014 median 5.05x",
+            "type": "bar",
+            "data": [
+              0.0,
+              0.0055,
+              0.0315,
+              0.0703,
+              0.1024,
+              0.124,
+              0.1179,
+              0.1091,
+              0.1244,
+              0.1502,
+              0.1644,
+              0.1607,
+              0.1518,
+              0.1216,
+              0.1162,
+              0.1118,
+              0.1031,
+              0.0891,
+              0.0715,
+              0.0551,
+              0.047,
+              0.0469,
+              0.0456,
+              0.0466,
+              0.0445,
+              0.0467,
+              0.0388,
+              0.0343,
+              0.044,
+              0.0385,
+              0.0421,
+              0.0423,
+              0.0351,
+              0.0251,
+              0.0243,
+              0.0252,
+              0.0217,
+              0.0151,
+              0.0129,
+              0.0095
+            ],
+            "itemStyle": {
+              "color": "#1B4332",
+              "opacity": 0.65
+            },
+            "barCategoryGap": "0%"
+          }
+        ]
+      },
+      "height": 340
+    }
+  ]
+}

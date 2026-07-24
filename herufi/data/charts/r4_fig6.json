@@ -1,0 +1,155 @@
+{
+  "id": "r4_fig6",
+  "title": "The graduation crisis, updated: seed-to-Series-A by cohort",
+  "caption": "Seed-to-Series-A conversion rate and time-to-close, by seed cohort year. The 2022 cohort converts at roughly a third of the 2019 rate, over more than 1.5x the time. A thinner seed pipeline (42 seed rounds in 2025 vs. over 100 in 2022) means fewer, more selectively funded companies are still converting at a similar-or-worse rate. Source: Partech 2025 Africa Tech VC Report, via Tech In Africa and The Condia.",
+  "panels": [
+    {
+      "title": "Seed \u2192 Series A conversion by cohort",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 16,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Seed \u2192 Series A conversion",
+            "type": "bar",
+            "data": [
+              {
+                "value": 12.7,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                }
+              },
+              {
+                "value": 5.1,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                }
+              },
+              {
+                "value": 4.2,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              }
+            ],
+            "barMaxWidth": 26,
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "type": "dashed",
+                "color": "#1C1C1E"
+              },
+              "data": [
+                {
+                  "yAxis": 15.6,
+                  "label": {
+                    "formatter": "North America 2014 baseline: 15.6%",
+                    "fontSize": 9.5
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2019",
+            "2021",
+            "2022"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "% converting",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Time from seed to Series A close",
+      "option": {
+        "color": [
+          "#1B4332"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 6,
+          "textStyle": {
+            "fontSize": 10
+          },
+          "type": "scroll",
+          "itemGap": 14,
+          "show": false
+        },
+        "grid": {
+          "left": 70,
+          "right": 32,
+          "top": 76,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "2019",
+            "2021",
+            "2022"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Months",
+          "nameGap": 18,
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "series": [
+          {
+            "name": "Months, seed to Series A",
+            "type": "line",
+            "data": [
+              18,
+              18,
+              29
+            ],
+            "smooth": false,
+            "symbolSize": 6,
+            "lineStyle": {
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

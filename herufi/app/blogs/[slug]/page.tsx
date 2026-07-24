@@ -8,6 +8,7 @@ const contentMap: Record<string, () => Promise<{ default: React.ComponentType }>
   'why-african-startups-stall': () => import('@/content/blogs/why-african-startups-stall'),
   'real-story-african-startup-growth': () => import('@/content/blogs/real-story-african-startup-growth'),
   'africa-2030-better-than-the-hype': () => import('@/content/blogs/africa-2030-better-than-the-hype'),
+  'who-writes-the-cheques-african-vc': () => import('@/content/blogs/who-writes-the-cheques-african-vc'),
 }
 
 type Props = { params: { slug: string } }

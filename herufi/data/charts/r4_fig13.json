@@ -1,0 +1,110 @@
+{
+  "id": "r4_fig13",
+  "title": "The gender-lens gap across every layer of the market",
+  "caption": "Gender-lens capital against the total African VC market, log scale. Female-CEO and women-only-team funding shares are applied to 2025's ~$3.2B Big Deal Africa tracker total (the same tracker series used throughout this trilogy). Sources: TechCabal (Sept 2025), Launch Base Africa, Fintech News Africa.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 16,
+          "right": 70,
+          "top": 20,
+          "bottom": 34,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "log",
+          "name": "USD millions (log scale)",
+          "nameLocation": "middle",
+          "nameGap": 28,
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Total African VC dry powder",
+            "Female-CEO funding share (2025)",
+            "Women-only-team funding share (2025)",
+            "Explicit gender-lens fund capital"
+          ],
+          "axisLabel": {
+            "fontSize": 10,
+            "width": 150,
+            "overflow": "break"
+          },
+          "inverse": true
+        },
+        "series": [
+          {
+            "type": "bar",
+            "data": [
+              {
+                "value": 15000,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                },
+                "label": {
+                  "show": true,
+                  "position": "right",
+                  "fontSize": 11,
+                  "fontWeight": "bold",
+                  "formatter": "$15.0B"
+                }
+              },
+              {
+                "value": 70.4,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                },
+                "label": {
+                  "show": true,
+                  "position": "right",
+                  "fontSize": 11,
+                  "fontWeight": "bold",
+                  "formatter": "$70M"
+                }
+              },
+              {
+                "value": 28.8,
+                "itemStyle": {
+                  "color": "#c53030"
+                },
+                "label": {
+                  "show": true,
+                  "position": "right",
+                  "fontSize": 11,
+                  "fontWeight": "bold",
+                  "formatter": "$29M"
+                }
+              },
+              {
+                "value": 95,
+                "itemStyle": {
+                  "color": "#1B4332"
+                },
+                "label": {
+                  "show": true,
+                  "position": "right",
+                  "fontSize": 11,
+                  "fontWeight": "bold",
+                  "formatter": "$95M"
+                }
+              }
+            ],
+            "barMaxWidth": 26
+          }
+        ]
+      },
+      "height": 300
+    }
+  ]
+}

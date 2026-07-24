@@ -1,0 +1,85 @@
+{
+  "id": "r4_fig7",
+  "title": "The venture power law: 65% of deals lose money, 0.4% return 50x+",
+  "caption": "Distribution of deal-level outcomes across roughly 21,000-27,000 US venture financings, 2004-2018. This is the global (not Africa-specific) base-rate distribution the portfolio simulator below is calibrated to \u2014 no African deal-level return dataset of comparable size exists. Source: Correlation Ventures, as summarised by Nicola Wealth and VC Beast.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 16,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Share of all venture deals",
+            "type": "bar",
+            "data": [
+              {
+                "value": 65,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 24,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 7,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 3.6,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                }
+              },
+              {
+                "value": 0.4,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              }
+            ],
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Total loss / <1x",
+            "1x - 5x",
+            "5x - 10x",
+            "10x - 50x",
+            ">50x"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "% of deals",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      },
+      "height": 300
+    }
+  ]
+}

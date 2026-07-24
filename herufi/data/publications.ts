@@ -44,4 +44,14 @@ export const publications: Publication[] = [
     fileUrl: '/publications/continent-heading-2026-2030',
     tags: ['Venture Capital', 'Africa', 'Forecasting', 'Scenarios'],
   },
+  {
+    id: 'writing-the-cheques-2026',
+    title: 'Who Is Actually Writing the Cheques',
+    category: 'Capital Supply and Portfolio Construction',
+    summary: "African VC's capital supply layer, mapped and turned into a validated Monte Carlo portfolio model. Report 4 of the African Startup Investment series.",
+    date: '2026',
+    format: 'HTML',
+    fileUrl: '/publications/writing-the-cheques-2026',
+    tags: ['Venture Capital', 'Africa', 'LP Capital', 'Portfolio Construction'],
+  },
 ]

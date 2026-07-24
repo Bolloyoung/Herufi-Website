@@ -5,7 +5,7 @@ import CTASection from '@/components/CTASection'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Herufi combines analytical methods, venture strategy, field knowledge, and African market context to produce useful intelligence.',
+  description: 'Herufi combines analytical methods, venture strategy, field knowledge and African market context to produce useful intelligence.',
 }
 
 const values = [
@@ -21,8 +21,7 @@ const expertise = [
   'Investment readiness and due diligence frameworks',
   'Impact investing and development finance',
   'Informal market dynamics and local context',
-  'Climate, energy, and food systems',
-  'Data analysis, forecasting, and decision modelling',
+  'Data analysis, forecasting and decision modelling',
   'Market entry and growth strategy',
 ]
 
@@ -32,7 +31,7 @@ export default function AboutPage() {
       <PageHeader
         label="About Us"
         title="A research intelligence platform for African markets"
-        description="Herufi combines analytical methods, original frameworks, and intelligence grounded in data to produce structured insights for decision makers who cannot afford to be wrong."
+        description="Herufi combines analytical methods, original frameworks and intelligence grounded in data to produce structured insights for decision makers who cannot afford to be wrong."
       />
 
       {/* Mission */}
@@ -44,10 +43,10 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-4 text-charcoal/65 leading-relaxed">
             <p>
-              Herufi is a research intelligence platform. It is a hybrid of research institution, analytics laboratory, venture intelligence engine, and strategic foresight system. It was built to fill a specific gap: structured intelligence rooted in African context, for decision makers who need evidence, not opinion.
+              Herufi is a research intelligence platform. It is a hybrid of research institution, analytics laboratory, venture intelligence engine and strategic foresight system. It was built to fill a specific gap: structured intelligence rooted in African context, for decision makers who need evidence, not opinion.
             </p>
             <p>
-              The platform produces blogs, detailed publications, original frameworks, quantitative models, and interactive dashboards across venture strategy, African market systems, climate and energy, data analytics, and policy analysis. The common thread is methodological rigour applied to real decisions.
+              The platform produces blogs, detailed publications, original frameworks, quantitative models and interactive dashboards across venture strategy, African market systems, climate and energy, data analytics and policy analysis. The common thread is methodological rigour applied to real decisions.
             </p>
             <p>
               Every finding passes a reliability layer before publication. Confidence levels are classified. Sources are linked. Methodology is made explicit. The goal is not to produce more content. It is to produce intelligence that holds up over time.
@@ -84,11 +83,11 @@ export default function AboutPage() {
             {[
               { label: 'Research Institution', desc: 'Durable analysis grounded in evidence' },
               { label: 'Venture Intelligence', desc: 'Investment readiness and deal intelligence' },
-              { label: 'Analytics Laboratory', desc: 'Models, forecasts, and quantitative rigour' },
+              { label: 'Analytics Laboratory', desc: 'Models, forecasts and quantitative rigour' },
               { label: 'Economic Strategy', desc: 'Market systems and structural analysis' },
               { label: 'Policy Research Hub', desc: 'Development finance and policy frameworks' },
               { label: 'Mixed Methods Engine', desc: 'Qualitative depth with quantitative rigour' },
-              { label: 'Interactive Intelligence', desc: 'Dashboards, tools, and visual outputs' },
+              { label: 'Interactive Intelligence', desc: 'Dashboards, tools and visual outputs' },
             ].map((c) => (
               <div key={c.label} className="bg-gray-soft border border-border-soft rounded-xl p-4">
                 <p className="text-xs font-semibold text-charcoal mb-1 leading-snug">{c.label}</p>
@@ -186,13 +185,13 @@ export default function AboutPage() {
             {/* Bio */}
             <div className="md:col-span-2 space-y-4 text-charcoal/65 leading-relaxed text-sm">
               <p>
-                Herufi was founded by a researcher and analyst with a background spanning venture strategy, impact investment, and African market intelligence. The work is grounded in real engagement with founders, investors, and institutions operating across African markets, not theoretical frameworks built from a distance.
+                Herufi was founded by a researcher and analyst with a background spanning venture strategy, impact investment and African market intelligence. The work is grounded in real engagement with founders, investors and institutions operating across African markets, not theoretical frameworks built from a distance.
               </p>
               <p>
                 The platform emerged from a consistent observation: too much research about African markets is either too shallow, too generic, or built for a different audience. Decision makers working in and around these markets need something different. They need structured intelligence, aware of context, that actually helps them act.
               </p>
               <p>
-                The research spans five core pillars because that is where the genuine analytical demand sits: venture strategy, market systems, climate and development, data intelligence, and culture and context. The common thread is rigour applied to real decisions.
+                The research spans five core pillars because that is where the genuine analytical demand sits: venture strategy, market systems, climate and development, data intelligence and culture and context. The common thread is rigour applied to real decisions.
               </p>
               <div className="grid grid-cols-2 gap-3 pt-3">
                 {[

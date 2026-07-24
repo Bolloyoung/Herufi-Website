@@ -1,7 +1,11 @@
 """
 Generates ECharts option JSON (herufi/data/charts/<fig_id>.json) for the 16 figures across
-the three African Startup Investment Trilogy publications, from the exact underlying data
-extracted from the source Jupyter notebooks in "Research Works/Investment strategies copy/".
+the three African Startup Investment Trilogy publications, plus the 13 R4 figures for
+"Who's Actually Writing the Cheques" (the capital-supply/portfolio-construction follow-up),
+from the exact underlying data extracted from the source Jupyter notebooks in
+"Research Works/Investment strategies copy/". The R4 Monte-Carlo fund simulator (below) is
+re-implemented and re-run here rather than copied from the notebook's printed output, so the
+figures reflect an independently reproduced run of the model, not a transcription of it.
 
 Every option dict below conforms exactly to the schema pyecharts.charts.Bar/Line.dump_options()
 itself produces (verified interactively against pyecharts 2.1.0) -- dump_options() is pyecharts'
@@ -19,6 +23,8 @@ Run: python3 scripts/generate_charts.py
 import json
 import os
 
+import numpy as np
+
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "charts")
 os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -32,6 +38,8 @@ BLUE = "#2b6cb0"
 BLUE_LIGHT = "#a0c4e8"
 GREEN = "#38a169"
 GREY = "#a0aec0"
+INK = CHARCOAL
+INK2 = "#52514e"
 
 
 def write_figure(fig_id, title, caption, panels):
@@ -185,6 +193,188 @@ def band_series(name, lower, upper, color, dash_name=None, dash_values=None):
          "itemStyle": {"color": color}, "silent": True},
     ]
     return series
+
+
+def log_bar_option(categories, series_name, values, colors, y_name=None, value_labels=None):
+    """Vertical bar on a log value axis, for series spanning multiple orders of magnitude."""
+    data = [{"value": v, "itemStyle": {"color": c}} for v, c in zip(values, colors)]
+    option = {
+        "tooltip": {"trigger": "axis"},
+        "grid": {"left": 64, "right": 32, "top": 44, "bottom": 60, "containLabel": True},
+        "xAxis": {"type": "category", "data": categories, "axisLabel": {"fontSize": 10, "rotate": 8}},
+        "yAxis": {"type": "log", "name": y_name, "nameTextStyle": {"fontSize": 11}, "axisLabel": {"fontSize": 10}},
+        "series": [{"name": series_name, "type": "bar", "data": data, "barMaxWidth": 60}],
+    }
+    if value_labels:
+        for d, lab in zip(option["series"][0]["data"], value_labels):
+            d["label"] = {"show": True, "position": "top", "formatter": lab, "fontSize": 11, "fontWeight": "bold"}
+        option["series"][0]["label"] = {"show": True, "position": "top", "fontSize": 11, "fontWeight": "bold"}
+    return option
+
+
+def stacked_bar_option(categories, series_list, y_name=None, colors=None, value_formatter=None):
+    """series_list: list of (name, values). Bars stack in the order given."""
+    colors = colors or [FOREST, "#cfe0f7"]
+    series = []
+    for i, (name, values) in enumerate(series_list):
+        series.append({
+            "name": name, "type": "bar", "stack": "total", "data": values,
+            "itemStyle": {"color": colors[i % len(colors)]}, "barMaxWidth": 70,
+            "label": {"show": True, "position": "inside", "fontSize": 11, "fontWeight": "bold",
+                      "color": "#fff" if i == 0 else INK,
+                      **({"formatter": value_formatter} if value_formatter else {})},
+        })
+    return {
+        "color": colors,
+        "tooltip": {"trigger": "axis", "axisPointer": {"type": "shadow"}},
+        "legend": {"top": 4, "textStyle": {"fontSize": 11}},
+        "grid": {"left": 64, "right": 32, "top": 60, "bottom": 44, "containLabel": True},
+        "xAxis": {"type": "category", "data": categories, "axisLabel": {"fontSize": 10}},
+        "yAxis": {"type": "value", "name": y_name, "nameTextStyle": {"fontSize": 11}, "axisLabel": {"fontSize": 10}},
+        "series": series,
+    }
+
+
+def histogram_option(edges, counts, color=BLUE, x_name=None, y_name="Simulations", mark_lines=None):
+    """Bar histogram from precomputed (edges, counts) -- edges has len(counts)+1."""
+    centers = [round((edges[i] + edges[i + 1]) / 2, 3) for i in range(len(counts))]
+    series = {"name": y_name, "type": "bar", "data": counts, "itemStyle": {"color": color},
+              "barCategoryGap": "0%", "barGap": "0%"}
+    if mark_lines:
+        series["markLine"] = mark_lines
+    return {
+        "tooltip": {"trigger": "axis"},
+        "grid": {"left": 60, "right": 24, "top": 44, "bottom": 44, "containLabel": True},
+        "xAxis": {"type": "category", "data": [f"{c:.2f}x" for c in centers], "name": x_name,
+                  "nameLocation": "middle", "nameGap": 28, "axisLabel": {"fontSize": 9, "interval": 4}},
+        "yAxis": {"type": "value", "name": y_name, "nameGap": 24, "nameTextStyle": {"fontSize": 11}},
+        "series": [series],
+    }
+
+
+def heatmap_option(x_cats, y_cats, values, color_scheme, value_max, y_name=None, x_name=None, unit=""):
+    """values: 2D list [len(y_cats)][len(x_cats)]. color_scheme: list of hex colors, low->high.
+    Label/tooltip formatters use ECharts' string-template syntax ({c} etc.) only, never JS
+    functions, since these options are serialized straight to static JSON (no function values)."""
+    data = []
+    for yi, row in enumerate(values):
+        for xi, v in enumerate(row):
+            data.append([xi, yi, round(v, 2)])
+    return {
+        "tooltip": {"formatter": f"{{b}}: {{@[2]}}{unit}"},
+        "grid": {"left": 90, "right": 24, "top": 30, "bottom": 60, "containLabel": True},
+        "xAxis": {"type": "category", "data": x_cats, "name": x_name, "nameLocation": "middle", "nameGap": 32,
+                   "nameTextStyle": {"fontSize": 11}, "splitArea": {"show": True}, "axisLabel": {"fontSize": 10}},
+        "yAxis": {"type": "category", "data": y_cats, "name": y_name, "nameTextStyle": {"fontSize": 11},
+                   "splitArea": {"show": True}, "axisLabel": {"fontSize": 10}},
+        "visualMap": {"min": 0, "max": value_max, "calculable": False, "show": False,
+                      "inRange": {"color": color_scheme}},
+        "series": [{
+            "type": "heatmap",
+            "data": data,
+            "label": {"show": True, "fontSize": 11, "fontWeight": "bold", "formatter": f"{{@[2]}}{unit}"},
+            "emphasis": {"itemStyle": {"shadowBlur": 6, "shadowColor": "rgba(0,0,0,0.3)"}},
+        }],
+    }
+
+
+def xy_line_option(series_list, x_name=None, y_name=None, colors=None, x_min=None, x_max=None):
+    """series_list: list of (name, [x...], [y...]) -- true (x, y) pairs, for non-shared x-axes (e.g. CDFs)."""
+    colors = colors or [RED, FOREST, GREEN, BLUE, GOLD]
+    series = []
+    for i, (name, xs, ys) in enumerate(series_list):
+        series.append({
+            "name": name, "type": "line", "data": [[x, y] for x, y in zip(xs, ys)],
+            "showSymbol": False, "lineStyle": {"width": 2.4, "color": colors[i % len(colors)]},
+            "itemStyle": {"color": colors[i % len(colors)]},
+        })
+    xaxis = {"type": "value", "name": x_name, "nameLocation": "middle", "nameGap": 28,
+             "nameTextStyle": {"fontSize": 11}, "axisLabel": {"fontSize": 10}}
+    if x_min is not None:
+        xaxis["min"] = x_min
+    if x_max is not None:
+        xaxis["max"] = x_max
+    return {
+        "color": colors,
+        "tooltip": {"trigger": "axis"},
+        "legend": {"top": 4, "textStyle": {"fontSize": 10.5}},
+        "grid": {"left": 60, "right": 32, "top": 46, "bottom": 46, "containLabel": True},
+        "xAxis": xaxis,
+        "yAxis": {"type": "value", "name": y_name, "nameGap": 24, "nameTextStyle": {"fontSize": 11}},
+        "series": series,
+    }
+
+
+def bubble_scatter_option(points, x_name=None, y_name=None, mark_area=None, log_x=True):
+    """points: list of (label, x, y, size, color)."""
+    data = []
+    for label, x, y, size, color in points:
+        data.append({
+            "name": label, "value": [x, y],
+            "symbolSize": size, "itemStyle": {"color": color, "opacity": 0.85, "borderColor": "#fff", "borderWidth": 1},
+            "label": {"show": True, "position": "top", "formatter": label, "fontSize": 9.5, "color": INK},
+        })
+    xaxis = {"type": "log" if log_x else "value", "name": x_name, "nameLocation": "middle", "nameGap": 30,
+             "nameTextStyle": {"fontSize": 11}, "axisLabel": {"fontSize": 10}}
+    series = {"type": "scatter", "data": data}
+    if mark_area:
+        series["markArea"] = mark_area
+    return {
+        "tooltip": {"trigger": "item", "formatter": "{b}<br/>fund size: {c}"},
+        "grid": {"left": 64, "right": 40, "top": 24, "bottom": 50, "containLabel": True},
+        "xAxis": xaxis,
+        "yAxis": {"type": "value", "name": y_name, "nameGap": 24, "nameTextStyle": {"fontSize": 11}},
+        "series": [series],
+    }
+
+
+# ---------------------------------------------------------------------------
+# R4 Monte-Carlo fund simulator -- re-implemented and re-run from the source
+# notebook (African_VC_Investor_Portfolio_Layer.ipynb) rather than copied from
+# its printed output, so every R4 model figure below reflects an independently
+# reproduced run.
+# ---------------------------------------------------------------------------
+
+R4_RNG_SEED = 42
+R4_RETURN_BINS = np.array([0.2, 2.5, 7.0, 22.0, 75.0])
+R4_RETURN_PROBS = np.array([0.65, 0.24, 0.07, 0.036, 0.004])
+R4_GRAD_WEIGHTS = np.array([1, 1.5, 3, 5, 7], dtype=float)
+R4_WMEAN = (R4_RETURN_PROBS * R4_GRAD_WEIGHTS).sum()
+
+
+def r4_bucket_grad_probs(overall_grad_prob):
+    return np.clip(overall_grad_prob * R4_GRAD_WEIGHTS / R4_WMEAN, 0, 1)
+
+
+def r4_conditional_dist(overall_grad_prob):
+    joint = R4_RETURN_PROBS * r4_bucket_grad_probs(overall_grad_prob)
+    return joint / joint.sum()
+
+
+def r4_simulate_fund(n_positions, reserve_share, follow_on_mult, grad_prob, entry_probs=None,
+                      fund_size=30.0, fee_drag=0.15, n_sims=20_000, seed=R4_RNG_SEED):
+    entry_probs = R4_RETURN_PROBS if entry_probs is None else entry_probs
+    rng = np.random.default_rng(seed)
+    investable = fund_size * (1 - fee_drag)
+    initial_check = investable * (1 - reserve_share) / n_positions
+    reserve_budget = investable * reserve_share
+
+    bgp = r4_bucket_grad_probs(grad_prob)
+    outcome_idx = rng.choice(len(R4_RETURN_BINS), size=(n_sims, n_positions), p=entry_probs)
+    multiples = R4_RETURN_BINS[outcome_idx]
+    graduated = rng.random((n_sims, n_positions)) < bgp[outcome_idx]
+    initial_proceeds = (initial_check * multiples).sum(axis=1)
+
+    desired_reserve_per_co = follow_on_mult * initial_check
+    n_grad = graduated.sum(axis=1)
+    desired_total = n_grad * desired_reserve_per_co
+    scale = np.minimum(1.0, np.where(desired_total > 0, reserve_budget / np.maximum(desired_total, 1e-9), 1.0))
+    reserve_check = desired_reserve_per_co * scale
+    reserve_proceeds = (reserve_check[:, None] * np.where(graduated, multiples, 0)).sum(axis=1)
+    leftover = np.maximum(reserve_budget - reserve_check * n_grad, 0)
+
+    total_proceeds = initial_proceeds + reserve_proceeds + leftover
+    return total_proceeds / fund_size
 
 
 # ---------------------------------------------------------------------------
@@ -690,8 +880,287 @@ def r3_fig5():
     )
 
 
+# ---------------------------------------------------------------------------
+# R4 -- Who's Actually Writing the Cheques (capital supply & portfolio construction)
+# ---------------------------------------------------------------------------
+
+def r4_fig1():
+    cats = ["DFIs", "European VC / DFI", "African corporates", "African / local LPs"]
+    avg = [45, 70, 7, 18]
+    y2025 = [27, 21, 41, 25]
+    option = grouped_bar_option(cats, [("2022-24 average", avg), ("2025", y2025)],
+                                 y_name="Share of LP commitments (%)", colors=[GREY, FOREST], horizontal=True)
+    write_figure(
+        "r4_fig1",
+        "Who funds the funds: the 2025 LP mix shift in African VC",
+        "Share of LP commitments by source, 2022-24 average versus 2025. DFI and European VC/DFI commitments fell sharply while African corporates and local LPs rose. Source: AVCA 2025 African Private Capital Activity Report, via TechCabal (Feb 2026).",
+        [panel(None, option, height=320)],
+    )
+
+
+def r4_fig2():
+    gps = [
+        ("Partech Africa", 300, 0.5, 20),
+        ("TLcom Capital", 159, 0.1, 3),
+        ("Novastar Ventures III", 147, 1.0, 8),
+        ("Norrsken22", 205, 10.0, 60),
+        ("Founders Factory Africa", 40, 0.15, 0.25),
+        ("4DX Ventures", 80, 0.3, 0.5),
+        ("Ingressive Capital II", 50, 0.05, 0.5),
+        ("Launch Africa Ventures", 36, 0.05, 0.25),
+        ("Ventures Platform", 46, 0.1, 1.5),
+    ]
+    reaches_band = {"Partech Africa", "Novastar Ventures III", "Ventures Platform"}
+    points = []
+    for name, fund_size, lo, hi in gps:
+        mid = (lo * hi) ** 0.5
+        size = 16 + 2.4 * (fund_size ** 0.5)
+        color = GOLD if name in reaches_band else FOREST
+        points.append((name, round(mid, 3), fund_size, round(size, 1), color))
+    mark_area = {
+        "itemStyle": {"color": RED, "opacity": 0.08},
+        "label": {"show": True, "position": "insideTop", "formatter": "the $2-10M Series A gap", "fontSize": 10, "color": RED},
+        "data": [[{"xAxis": 2}, {"xAxis": 10}]],
+    }
+    option = bubble_scatter_option(points, x_name="Typical cheque size (USD millions, log scale)",
+                                    y_name="Fund size (USD millions)", mark_area=mark_area, log_x=True)
+    write_figure(
+        "r4_fig2",
+        "The African VC landscape, mid-2026: fund size vs. cheque size",
+        "Fund size against typical cheque size for the most-cited active Africa-focused GPs, mid-2026. Bubble size scales with fund size. Gold-marked funds are the only three that reach into the $2-10M Series A band; every other fund clusters at sub-$1M seed or $10M+ growth cheques. Sources: firm disclosures, TechCabal, TechCrunch, IFC (full list in report references).",
+        [panel(None, option, height=420)],
+    )
+
+
+def r4_fig3():
+    regions = ["Europe", "Africa", "North America", "Asia"]
+    vals = [-35, -21, -6, -1]
+    colors = [RED, BLUE, GREY, GREY]
+    option = per_point_bar_option(regions, "YoY change in investor deal appearances", vals, colors,
+                                   y_name="% change", horizontal=True)
+    option["xAxis"]["axisLine"] = {"onZero": True}
+    write_figure(
+        "r4_fig3",
+        "Investor deal-appearance growth, H1 2026 vs 2025 run-rate",
+        "Year-on-year change in investor deal appearances by region, H1 2026 (annualised) versus the 2025 full-year run-rate. Africa: 295 appearances in 2025 falling to an annualised ~235 in H1 2026. Source: Launch Base Africa cap-table tracking (Jun 2026).",
+        [panel(None, option, height=280)],
+    )
+
+
+def r4_fig4():
+    cats = ["Total dry powder", "Climate-mandated\n(30+ vehicles)", "Gender-lens\n(<10 funds)"]
+    vals = [15000, 5500, 100]
+    labels = ["$15.0B", "$5.5B", "$100M"]
+    option = log_bar_option(cats, "Committed capital (USD millions, log scale)", vals,
+                             [FOREST, BLUE, RED], y_name="USD millions (log)", value_labels=labels)
+    write_figure(
+        "r4_fig4",
+        "The $15B in African tech-fund dry powder: where mandates concentrate",
+        "Total committed capital across Africa-focused tech funds versus two mandate slices: climate (illustrative, 30-plus of an unenumerated ~150-200 vehicle landscape) and gender-lens (a hard reported cap, not illustrative). Source: Launch Base Africa (Mar 2026).",
+        [panel(None, option, height=320)],
+    )
+
+
+def r4_fig5():
+    cats = ["Kenya (cap 10%)", "Nigeria (cap raised 5%→10%, Sep 2025)"]
+    current = [0.23, 0.19]
+    headroom = [1.93, 1.71]
+    option = stacked_bar_option(cats, [("Currently allocated to PE/VC", current), ("Headroom to regulatory cap", headroom)],
+                                 y_name="USD billions, approximate", colors=[FOREST, "#cfe0f7"],
+                                 value_formatter="{@[1]}")
+    for s in option["series"]:
+        s["label"]["formatter"] = "${c}B"
+    write_figure(
+        "r4_fig5",
+        "Pension-fund headroom for private equity/VC: Kenya and Nigeria",
+        "Approximate current PE/VC allocation versus headroom to the regulatory cap, Kenya and Nigeria pension funds. Kenya: KES 2.81 trillion in total pension assets, roughly 1% currently in PE/VC, 10% regulatory cap (RBA guidelines; Cytonn Q1 2026). Nigeria: pension assets approaching NGN 29.5 trillion, allocation “barely 1%” of net asset value, cap raised from 5% to 10% (up to 15% for some funds) in a September 2025 PenCom regulation. USD conversions are approximate (July 2026 FX, ~130 KES/USD and ~1,550 NGN/USD) and current-allocation shares are order-of-magnitude estimates, not audited figures — treat the headroom as directional, not precise.",
+        [panel(None, option, height=340)],
+    )
+
+
+def r4_fig6():
+    years = [2019, 2021, 2022]
+    conv = [12.7, 5.1, 4.2]
+    months = [18, 18, 29]
+    left = per_point_bar_option([str(y) for y in years], "Seed → Series A conversion", conv,
+                                 [BLUE, GOLD, RED], y_name="% converting")
+    left["series"][0]["markLine"] = {
+        "silent": True, "symbol": "none", "lineStyle": {"type": "dashed", "color": CHARCOAL},
+        "data": [{"yAxis": 15.6, "label": {"formatter": "North America 2014 baseline: 15.6%", "fontSize": 9.5}}],
+    }
+    right = multi_line_option(years, [("Months, seed to Series A", months)], y_name="Months", colors=[FOREST])
+    right["legend"]["show"] = False
+    write_figure(
+        "r4_fig6",
+        "The graduation crisis, updated: seed-to-Series-A by cohort",
+        "Seed-to-Series-A conversion rate and time-to-close, by seed cohort year. The 2022 cohort converts at roughly a third of the 2019 rate, over more than 1.5x the time. A thinner seed pipeline (42 seed rounds in 2025 vs. over 100 in 2022) means fewer, more selectively funded companies are still converting at a similar-or-worse rate. Source: Partech 2025 Africa Tech VC Report, via Tech In Africa and The Condia.",
+        [panel("Seed → Series A conversion by cohort", left),
+         panel("Time from seed to Series A close", right)],
+    )
+
+
+def r4_fig7():
+    cats = ["Total loss / <1x", "1x - 5x", "5x - 10x", "10x - 50x", ">50x"]
+    vals = [65, 24, 7, 3.6, 0.4]
+    colors = [RED, GREY, GREY, BLUE, FOREST]
+    option = per_point_bar_option(cats, "Share of all venture deals", vals, colors, y_name="% of deals")
+    write_figure(
+        "r4_fig7",
+        "The venture power law: 65% of deals lose money, 0.4% return 50x+",
+        "Distribution of deal-level outcomes across roughly 21,000-27,000 US venture financings, 2004-2018. This is the global (not Africa-specific) base-rate distribution the portfolio simulator below is calibrated to — no African deal-level return dataset of comparable size exists. Source: Correlation Ventures, as summarised by Nicola Wealth and VC Beast.",
+        [panel(None, option, height=300)],
+    )
+
+
+def r4_fig8():
+    moic_demo = r4_simulate_fund(25, 0.40, 2.0, 0.07)
+    counts, edges = np.histogram(moic_demo, bins=40, range=(0, 8))
+    left = histogram_option(edges.tolist(), counts.tolist(), color=BLUE, x_name="Gross MOIC", y_name="Simulations")
+
+    q = np.percentile(moic_demo, [10, 25, 50, 75, 90, 95])
+    labels = ["p10", "p25", "median", "p75", "p90", "p95"]
+    right = per_point_bar_option(labels, "Simulated MOIC percentile", [round(v, 2) for v in q.tolist()],
+                                  [RED, GREY, FOREST, BLUE, BLUE, GREEN], y_name="Gross MOIC")
+    right["series"][0]["markLine"] = {
+        "silent": True, "symbol": "none", "lineStyle": {"type": "dashed", "color": INK2},
+        "data": [{"yAxis": 3.0, "label": {"formatter": "Carta top-quartile fund benchmark: 3.0x+ TVPI", "fontSize": 9.5}}],
+    }
+    write_figure(
+        "r4_fig8",
+        "The base-case fund simulation: 25 positions, 40% reserve, 2-for-1 follow-on, 7% graduation",
+        f"Monte-Carlo simulated fund-level gross MOIC (20,000 simulations; independently re-run for this report). Median {np.median(moic_demo):.2f}x, {(moic_demo < 1).mean() * 100:.0f}% of simulations lose money, and it is the top decile (p90 ≈ {np.percentile(moic_demo, 90):.1f}x) that approaches the 3x+ TVPI benchmark top-quartile funds report — not the median, which is the expected relationship between a fully-realised simulated multiple and a still-maturing reported benchmark. Return distribution: Correlation Ventures. Fund benchmark: Carta Q4 2025/2026 VC Fund Performance data.",
+        [panel("Simulated fund-level MOIC distribution", left),
+         panel("Percentiles vs. the Carta top-quartile benchmark", right)],
+    )
+
+
+def r4_fig9():
+    positions = [15, 25, 40]
+    ks = [0, 1, 2, 3]
+    median_grid, ploss_grid = [], []
+    for n_pos in positions:
+        med_row, loss_row = [], []
+        for k in ks:
+            m = r4_simulate_fund(n_pos, 0.40, k, 0.07, n_sims=15_000)
+            med_row.append(float(np.median(m)))
+            loss_row.append(float((m < 1).mean() * 100))
+        median_grid.append(med_row)
+        ploss_grid.append(loss_row)
+
+    left = heatmap_option([str(k) for k in ks], [str(p) for p in positions], median_grid,
+                           ["#eaf1ea", FOREST_LIGHT, FOREST], value_max=1.8,
+                           x_name="Follow-on multiple (k-for-1)", y_name="Initial positions", unit="x")
+    right = heatmap_option([str(k) for k in ks], [str(p) for p in positions], ploss_grid,
+                            ["#fdecec", "#e88b85", RED], value_max=35,
+                            x_name="Follow-on multiple (k-for-1)", y_name="Initial positions", unit="%")
+    write_figure(
+        "r4_fig9",
+        "Portfolio size × follow-on discipline: median MOIC and loss risk",
+        "Median gross MOIC and probability of losing money (MOIC < 1x), by number of initial positions and follow-on multiple, at a fixed 40% reserve share and 7% graduation probability (20,000-15,000 simulations per cell, independently re-run for this report). More initial positions lowers loss risk sharply; a higher follow-on multiple lifts the median while barely moving loss risk — the two levers are complementary, not substitutes.",
+        [panel("Median gross MOIC", left, height=300),
+         panel("P(fund returns < 1x)", right, height=300)],
+    )
+
+
+def r4_fig10():
+    shares = [0.20, 0.40, 0.60, 0.80]
+    vals = []
+    for rs in shares:
+        m = r4_simulate_fund(25, rs, 2.0, 0.07, n_sims=15_000)
+        vals.append(round(float(np.median(m)), 3))
+    cats = [f"{rs:.0%}" for rs in shares]
+    option = per_point_bar_option(cats, "Median gross MOIC", vals, [BLUE_LIGHT, FOREST, GOLD, RED], y_name="Median gross MOIC")
+    write_figure(
+        "r4_fig10",
+        "Reserving beyond your realistic graduation rate is a drag, not a hedge",
+        f"Median simulated gross MOIC at 25 positions, 2-for-1 follow-on, 7% graduation probability, across four reserve shares (independently re-run for this report). Reserving 80% of the fund when only ~7% of positions ever graduate leaves most of that capital idle at a 1.0x placeholder, dragging the median down from {vals[0]:.2f}x at 20% reserve to {vals[3]:.2f}x at 80%. Reserve strategy has to be sized to a realistic graduation rate, not an industry rule-of-thumb percentage.",
+        [panel(None, option, height=300)],
+    )
+
+
+def r4_fig11():
+    scenarios = [("Bear (4.2% graduation)", 0.042, RED), ("Base (7% graduation)", 0.07, FOREST), ("Bull (12.7% graduation)", 0.127, GREEN)]
+    series_list = []
+    medians = {}
+    for name, gp, _ in scenarios:
+        m = r4_simulate_fund(25, 0.40, 2.0, gp, n_sims=20_000)
+        sm = np.sort(m)
+        idx = np.linspace(0, len(sm) - 1, 140).astype(int)
+        xs = [round(v, 3) for v in sm[idx].tolist()]
+        cdf = [round(v, 4) for v in ((idx + 1) / len(sm)).tolist()]
+        med = float(np.median(m))
+        medians[name] = med
+        series_list.append((f"{name} — median {med:.2f}x", xs, cdf))
+    colors = [c for _, _, c in scenarios]
+    option = xy_line_option(series_list, x_name="Gross MOIC", y_name="Cumulative probability", colors=colors, x_min=0, x_max=6)
+    write_figure(
+        "r4_fig11",
+        "Fund outcome across the 2030 bear/base/bull scenarios",
+        f"Cumulative distribution of simulated fund-level gross MOIC (25 positions, 40% reserve, 2-for-1 follow-on) across the three graduation-probability scenarios from Notebook 3's 2030 forecast (independently re-run for this report). Median outcome moves from {medians[scenarios[0][0]]:.2f}x (bear) to {medians[scenarios[2][0]]:.2f}x (bull) — real, but smaller than intuition suggests, since most of a fund's return still comes from initial-check selection, not the reserve mechanism.",
+        [panel(None, option, height=360)],
+    )
+
+
+def r4_fig12():
+    specialist_entry = r4_conditional_dist(0.15)
+    blind = r4_simulate_fund(25, 0.40, 2.0, 0.07, n_sims=20_000)
+    seriesA = r4_simulate_fund(15, 0.40, 2.0, 0.15, entry_probs=specialist_entry, n_sims=20_000)
+    edges = np.linspace(0, 15, 41)
+    counts_b, _ = np.histogram(blind, bins=edges, density=True)
+    counts_s, _ = np.histogram(seriesA, bins=edges, density=True)
+    centers = [round((edges[i] + edges[i + 1]) / 2, 2) for i in range(len(edges) - 1)]
+    option = {
+        "tooltip": {"trigger": "axis"},
+        "legend": {"top": 4, "textStyle": {"fontSize": 10}},
+        "grid": {"left": 56, "right": 24, "top": 44, "bottom": 44, "containLabel": True},
+        "xAxis": {"type": "category", "data": [f"{c:.1f}x" for c in centers], "name": "Gross MOIC",
+                  "nameLocation": "middle", "nameGap": 28, "axisLabel": {"fontSize": 9, "interval": 4}},
+        "yAxis": {"type": "value", "name": "Density", "nameGap": 30},
+        "series": [
+            {"name": f"Standard blind-seed fund (25 pos.) — median {np.median(blind):.2f}x", "type": "bar",
+             "data": [round(c, 4) for c in counts_b.tolist()], "itemStyle": {"color": GREY, "opacity": 0.65},
+             "barGap": "-100%", "barCategoryGap": "0%"},
+            {"name": f"Series-A specialist (15 pos.) — median {np.median(seriesA):.2f}x", "type": "bar",
+             "data": [round(c, 4) for c in counts_s.tolist()], "itemStyle": {"color": FOREST, "opacity": 0.65},
+             "barCategoryGap": "0%"},
+        ],
+    }
+    write_figure(
+        "r4_fig12",
+        "Blind-seed vs. a dedicated Series-A vehicle, same simulator",
+        f"Simulated gross MOIC density, standard blind-seed fund versus a Series-A specialist buying only into already seed-graduated companies (independently re-run for this report; entry distribution derived via Bayes' rule from Section 6's graduation data). Median lifts from {np.median(blind):.2f}x to {np.median(seriesA):.2f}x and loss probability drops from {(blind < 1).mean() * 100:.0f}% to {(seriesA < 1).mean() * 100:.0f}%. Read the direction, not the exact magnitude: the uplift size depends on a stated (not fitted) assumption about how strongly graduation correlates with quality, since no public dataset splits African returns by prior-graduation status.",
+        [panel(None, option, height=340)],
+    )
+
+
+def r4_fig13():
+    cats = ["Total African VC dry powder", "Female-CEO funding share (2025)", "Women-only-team funding share (2025)", "Explicit gender-lens fund capital"]
+    vals = [15000, 70.4, 28.8, 95]
+    colors = [GREY, GOLD, RED, FOREST]
+    data = [{"value": v, "itemStyle": {"color": c},
+             "label": {"show": True, "position": "right", "fontSize": 11, "fontWeight": "bold",
+                       "formatter": (f"${v / 1000:.1f}B" if v >= 1000 else f"${v:.0f}M")}}
+            for v, c in zip(vals, colors)]
+    option = {
+        "tooltip": {"trigger": "axis"},
+        "grid": {"left": 16, "right": 70, "top": 20, "bottom": 34, "containLabel": True},
+        "xAxis": {"type": "log", "name": "USD millions (log scale)", "nameLocation": "middle", "nameGap": 28,
+                  "nameTextStyle": {"fontSize": 11}, "axisLabel": {"fontSize": 10}},
+        "yAxis": {"type": "category", "data": cats, "axisLabel": {"fontSize": 10, "width": 150, "overflow": "break"}, "inverse": True},
+        "series": [{"type": "bar", "data": data, "barMaxWidth": 26}],
+    }
+    write_figure(
+        "r4_fig13",
+        "The gender-lens gap across every layer of the market",
+        "Gender-lens capital against the total African VC market, log scale. Female-CEO and women-only-team funding shares are applied to 2025's ~$3.2B Big Deal Africa tracker total (the same tracker series used throughout this trilogy). Sources: TechCabal (Sept 2025), Launch Base Africa, Fintech News Africa.",
+        [panel(None, option, height=300)],
+    )
+
+
 if __name__ == "__main__":
     r1_fig1(); r1_fig2(); r1_fig3(); r1_fig4(); r1_fig5(); r1_fig6(); r1_fig7()
     r2_fig1(); r2_fig2(); r2_fig3(); r2_fig4()
     r3_fig1(); r3_fig2(); r3_fig3(); r3_fig4(); r3_fig5()
+    r4_fig1(); r4_fig2(); r4_fig3(); r4_fig4(); r4_fig5(); r4_fig6(); r4_fig7()
+    r4_fig8(); r4_fig9(); r4_fig10(); r4_fig11(); r4_fig12(); r4_fig13()
     print("done")
