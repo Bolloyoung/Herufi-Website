@@ -1,0 +1,187 @@
+{
+  "id": "r5_fig8",
+  "title": "A blended $5M Series A round, priced instrument by instrument",
+  "caption": "A representative $5M Series A for an asset light, recurring revenue fintech, split across all four mechanisms, with each instrument's cost taken straight from the models above rather than assumed. The weighted average cost of capital across the stack is 9.7% and the founder gives up 25.8% of the company in total, against roughly 25% for the same $5M raised as pure equity. The point is not a guaranteed dilution discount. It is that a founder pays a market rate cost only on the slice of the round that needs it, and spreads the round across providers with genuinely different return requirements. Model independently re run for this report.",
+  "panels": [
+    {
+      "title": "How the round is split",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 44,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Amount in the round",
+            "type": "bar",
+            "data": [
+              {
+                "value": 2.0,
+                "itemStyle": {
+                  "color": "#1B4332"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "$2.0M",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 1.5,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "$1.5M",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 1.0,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "$1.0M",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 0.5,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "$0.5M",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              }
+            ],
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Straight equity",
+            "Venture debt",
+            "Revenue based financing",
+            "Syndicated equity"
+          ],
+          "axisLabel": {
+            "fontSize": 9.5,
+            "rotate": 12
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "USD millions",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "What each slice costs the company",
+      "option": {
+        "color": [
+          "#2b6cb0",
+          "#c53030"
+        ],
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          }
+        },
+        "legend": {
+          "top": 4,
+          "textStyle": {
+            "fontSize": 11
+          }
+        },
+        "grid": {
+          "left": 64,
+          "right": 32,
+          "top": 70,
+          "bottom": 48,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Annualised cost of capital (%)",
+            "type": "bar",
+            "data": [
+              0.0,
+              23.1,
+              13.9,
+              0.0
+            ],
+            "itemStyle": {
+              "color": "#2b6cb0"
+            },
+            "barMaxWidth": 26
+          },
+          {
+            "name": "Equity given up (%)",
+            "type": "bar",
+            "data": [
+              20.0,
+              0.75,
+              0.0,
+              5.0
+            ],
+            "itemStyle": {
+              "color": "#c53030"
+            },
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Straight equity",
+            "Venture debt",
+            "Revenue based financing",
+            "Syndicated equity"
+          ],
+          "axisLabel": {
+            "rotate": 12,
+            "fontSize": 9.5
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Percent",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}

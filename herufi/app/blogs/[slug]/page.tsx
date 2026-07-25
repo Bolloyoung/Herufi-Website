@@ -9,6 +9,7 @@ const contentMap: Record<string, () => Promise<{ default: React.ComponentType }>
   'real-story-african-startup-growth': () => import('@/content/blogs/real-story-african-startup-growth'),
   'africa-2030-better-than-the-hype': () => import('@/content/blogs/africa-2030-better-than-the-hype'),
   'who-writes-the-cheques-african-vc': () => import('@/content/blogs/who-writes-the-cheques-african-vc'),
+  'how-to-fill-africas-missing-middle': () => import('@/content/blogs/how-to-fill-africas-missing-middle'),
 }
 
 type Props = { params: { slug: string } }

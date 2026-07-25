@@ -1,0 +1,285 @@
+{
+  "id": "r5_fig5",
+  "title": "First loss capital: how a small junior tranche buys a lot of senior protection",
+  "caption": "A pool of 20 Series A stage companies financed by a junior tranche that absorbs losses first and a senior tranche capped at a 1.08x preferred claim, 30,000 simulations. Left: every dollar of junior capital carries several dollars of senior capital, and the dotted lines mark the leverage ratios the African Guarantee Fund and MIGA actually report. Right: senior loss probability falls steadily as the junior tranche grows. The step shape is the simulation's own granularity, not a modelled threshold. Model independently re run for this report.",
+  "panels": [
+    {
+      "title": "Leverage: senior capital per junior dollar",
+      "option": {
+        "color": [
+          "#2b6cb0"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 4,
+          "textStyle": {
+            "fontSize": 10.5
+          },
+          "show": false
+        },
+        "grid": {
+          "left": 70,
+          "right": 32,
+          "top": 46,
+          "bottom": 46,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "value",
+          "name": "Junior (first loss) tranche, % of pool",
+          "nameLocation": "middle",
+          "nameGap": 28,
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Leverage ratio",
+          "nameLocation": "middle",
+          "nameGap": 34,
+          "nameRotate": 90,
+          "nameTextStyle": {
+            "fontSize": 11
+          }
+        },
+        "series": [
+          {
+            "name": "Senior dollars per junior dollar",
+            "type": "line",
+            "data": [
+              [
+                5.0,
+                19.0
+              ],
+              [
+                8.0,
+                11.5
+              ],
+              [
+                11.0,
+                8.09
+              ],
+              [
+                14.0,
+                6.14
+              ],
+              [
+                17.0,
+                4.88
+              ],
+              [
+                20.0,
+                4.0
+              ],
+              [
+                23.0,
+                3.35
+              ],
+              [
+                26.0,
+                2.85
+              ],
+              [
+                29.0,
+                2.45
+              ],
+              [
+                32.0,
+                2.12
+              ],
+              [
+                35.0,
+                1.86
+              ]
+            ],
+            "showSymbol": false,
+            "lineStyle": {
+              "width": 2.4,
+              "color": "#2b6cb0"
+            },
+            "itemStyle": {
+              "color": "#2b6cb0"
+            },
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "data": [
+                {
+                  "xAxis": 8.3,
+                  "lineStyle": {
+                    "type": "dotted",
+                    "color": "#52514e"
+                  },
+                  "label": {
+                    "formatter": "AGF, about 11x",
+                    "fontSize": 9,
+                    "color": "#52514e",
+                    "position": "insideEndTop"
+                  }
+                },
+                {
+                  "xAxis": 10.6,
+                  "lineStyle": {
+                    "type": "dotted",
+                    "color": "#52514e"
+                  },
+                  "label": {
+                    "formatter": "MIGA, 8.4x",
+                    "fontSize": 9,
+                    "color": "#52514e",
+                    "position": "insideEndBottom"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Senior tranche loss probability",
+      "option": {
+        "color": [
+          "#c53030"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 4,
+          "textStyle": {
+            "fontSize": 10.5
+          },
+          "show": false
+        },
+        "grid": {
+          "left": 70,
+          "right": 32,
+          "top": 46,
+          "bottom": 46,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "value",
+          "name": "Junior (first loss) tranche, % of pool",
+          "nameLocation": "middle",
+          "nameGap": 28,
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "P(senior returns under 1x), %",
+          "nameLocation": "middle",
+          "nameGap": 34,
+          "nameRotate": 90,
+          "nameTextStyle": {
+            "fontSize": 11
+          }
+        },
+        "series": [
+          {
+            "name": "Senior tranche loss probability",
+            "type": "line",
+            "data": [
+              [
+                5.0,
+                9.98
+              ],
+              [
+                8.0,
+                9.98
+              ],
+              [
+                11.0,
+                9.62
+              ],
+              [
+                14.0,
+                6.26
+              ],
+              [
+                17.0,
+                6.26
+              ],
+              [
+                20.0,
+                6.26
+              ],
+              [
+                23.0,
+                4.39
+              ],
+              [
+                26.0,
+                3.5
+              ],
+              [
+                29.0,
+                3.5
+              ],
+              [
+                32.0,
+                3.5
+              ],
+              [
+                35.0,
+                1.71
+              ]
+            ],
+            "showSymbol": false,
+            "lineStyle": {
+              "width": 2.4,
+              "color": "#c53030"
+            },
+            "itemStyle": {
+              "color": "#c53030"
+            },
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "data": [
+                {
+                  "xAxis": 8.3,
+                  "lineStyle": {
+                    "type": "dotted",
+                    "color": "#52514e"
+                  },
+                  "label": {
+                    "formatter": "AGF, about 11x",
+                    "fontSize": 9,
+                    "color": "#52514e",
+                    "position": "insideEndTop"
+                  }
+                },
+                {
+                  "xAxis": 10.6,
+                  "lineStyle": {
+                    "type": "dotted",
+                    "color": "#52514e"
+                  },
+                  "label": {
+                    "formatter": "MIGA, 8.4x",
+                    "fontSize": 9,
+                    "color": "#52514e",
+                    "position": "insideEndBottom"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

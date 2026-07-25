@@ -1,0 +1,196 @@
+{
+  "id": "r5_fig6",
+  "title": "What the two sides of a first loss structure each get",
+  "caption": "Senior loss probability and junior median return across four junior tranche sizes, same 20 company pool and 30,000 simulations. A junior tranche of 15% of the pool cuts senior loss probability from 11.4% to 6.3%, roughly half, which is the risk transformation that could bring loss averse local capital such as pension funds into venture exposure for the first time. The junior side is not charity: it sits behind the senior claim and keeps everything above it, so its median outcome is high and its own loss probability is the price of that position. Model independently re run for this report.",
+  "panels": [
+    {
+      "title": "Senior tranche loss probability",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 44,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Senior tranche loss probability",
+            "type": "bar",
+            "data": [
+              {
+                "value": 11.4,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "11.4%",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 10.0,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "10.0%",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 6.3,
+                "itemStyle": {
+                  "color": "#1B4332"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "6.3%",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 3.5,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "3.5%",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              }
+            ],
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "No junior tranche",
+            "10% junior",
+            "15% junior",
+            "25% junior"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "P(loss), %",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Junior tranche median return",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 44,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Junior tranche median return",
+            "type": "bar",
+            "data": [
+              {
+                "value": null,
+                "itemStyle": {
+                  "color": "#a0aec0"
+                }
+              },
+              {
+                "value": 10.08,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "10.08x",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 7.08,
+                "itemStyle": {
+                  "color": "#1B4332"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "7.08x",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 4.68,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "4.68x",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              }
+            ],
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "No junior tranche",
+            "10% junior",
+            "15% junior",
+            "25% junior"
+          ],
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Median MOIC",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}

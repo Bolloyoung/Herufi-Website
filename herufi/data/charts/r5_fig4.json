@@ -1,0 +1,177 @@
+{
+  "id": "r5_fig4",
+  "title": "Revenue based financing: the faster the company grows, the more the capital costs",
+  "caption": "A $1 advance repaid at 8% of monthly revenue until a 1.4x cap, across three revenue growth paths. The cap never changes, so growth decides everything: a slow growing company takes 60 months and still repays only 70% of the cap, leaving the investor at -0.7% annualised, while a fast growing company clears the same cap in 36 months and hands the investor 18.8% annualised. Read from the founder's side, that means revenue based financing is cheapest for steady, predictable businesses and most expensive for the fastest growing ones, the opposite of what a growth equity investor is looking for. Terms sourced from re-cap.com and Qubit Capital. Model independently re run for this report.",
+  "panels": [
+    {
+      "title": "Time to repay the cap",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 44,
+          "right": 36,
+          "top": 44,
+          "bottom": 56,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Months to hit the repayment cap",
+            "type": "bar",
+            "data": [
+              {
+                "value": 60,
+                "itemStyle": {
+                  "color": "#c53030"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "60 months",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 51,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "51 months",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 36,
+                "itemStyle": {
+                  "color": "#38a169"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "36 months",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              }
+            ],
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Slow\n12% a year",
+            "Moderate\n43% a year",
+            "Fast\n100%+ a year"
+          ],
+          "axisLabel": {
+            "fontSize": 10,
+            "lineHeight": 13
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Months",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Investor annualised return on the same 1.4x cap",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 48,
+          "right": 36,
+          "top": 44,
+          "bottom": 56,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Investor annualised IRR",
+            "type": "bar",
+            "data": [
+              {
+                "value": -0.7,
+                "itemStyle": {
+                  "color": "#c53030"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "-0.7%",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 13.9,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "13.9%",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 18.8,
+                "itemStyle": {
+                  "color": "#38a169"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "18.8%",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              }
+            ],
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Slow\n12% a year",
+            "Moderate\n43% a year",
+            "Fast\n100%+ a year"
+          ],
+          "axisLabel": {
+            "fontSize": 10,
+            "lineHeight": 13
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Annualised IRR (%)",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    }
+  ]
+}

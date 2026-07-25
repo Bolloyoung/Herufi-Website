@@ -160,13 +160,13 @@ Venture Strategy and Capital Intelligence | Markets, Systems and African Economi
 
 ## Adding Publications
 
-Add an entry to the `publications` array in `data/publications.ts` (id, title, category, summary, date, format, fileUrl, tags). For a PDF, host the file and point `fileUrl` at it. For a full interactive report (the current three-part African Startup Investment Trilogy), `fileUrl` instead points at an internal `/publications/<id>` route — see below.
+Add an entry to the `publications` array in `data/publications.ts` (id, title, category, summary, date, format, fileUrl, tags). For a PDF, host the file and point `fileUrl` at it. For a full interactive report (the current five-part African Startup Investment series), `fileUrl` instead points at an internal `/publications/<id>` route — see below.
 
-## Trilogy reports and chart pipeline (pyecharts → JSON → ECharts)
+## Series reports and chart pipeline (pyecharts → JSON → ECharts)
 
-`The Broken Ladder`, `From Frontier to Market` and `Where the Continent Is Heading` are real Next.js routes, not static HTML:
+All five reports (`The Broken Ladder`, `From Frontier to Market`, `Where the Continent Is Heading`, `Who Is Actually Writing the Cheques`, `Filling the Missing Middle`) are real Next.js routes, not static HTML:
 
-- `scripts/generate_charts.py` (pyecharts, run via `python3 scripts/generate_charts.py`) builds the 16 figures' ECharts option JSON from the source data and writes one file per figure to `data/charts/<fig_id>.json` (`{ id, title, caption, panels: [{ title, option }] }`).
+- `scripts/generate_charts.py` (pyecharts, run via `python3 scripts/generate_charts.py`) builds every figure's ECharts option JSON (16 trilogy figures, 13 R4 figures, 9 R5 figures) from the source data and writes one file per figure to `data/charts/<fig_id>.json` (`{ id, title, caption, panels: [{ title, option }] }`).
 - `components/charts/EChart.tsx` renders one panel's raw option via `echarts-for-react`; `components/charts/Figure.tsx` (publications) and `BlogFigure.tsx` (blogs) lay out a figure's panels in a responsive grid with the report's callout box styling.
 - `app/publications/[slug]/page.tsx` and `app/blogs/[slug]/page.tsx` map a slug to a content module in `content/publications/` / `content/blogs/` — hand-ported JSX bodies (1:1 with the original report copy) that import the chart JSON and render `<Figure>`/`<BlogFigure>` in place of what used to be static `<img>` figures. Shared visual design lives in `app/publications/report.css` and `app/blogs/explainer.css` (scoped under `.report-doc` / `.explainer-doc`, ported from the former inline `<style>` blocks).
 - The r1_fig3 Africa bubble map registers a world GeoJSON basemap (`data/geo/world.json`) client-side via `components/charts/geoWorldMap.ts`.

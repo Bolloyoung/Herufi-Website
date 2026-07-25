@@ -1,0 +1,253 @@
+{
+  "id": "r5_fig3",
+  "title": "Venture debt: what the lender actually earns, and how much default risk it can absorb",
+  "caption": "Left: lender IRR on a representative African venture debt facility, a $1 loan at a 15% coupon over three years with a 1.5% upfront fee, a 4% success fee and 1% warrant coverage. Fees and the warrant lift the full repayment return to 27%, well above the headline coupon, and the probability weighted expectation at a 15% default rate is 23%. Right: how that expected return falls as the assumed default rate rises. The structure only stops paying at a default rate of 83%, far above any realistic African venture debt loss experience, because a 50% recovery assumption carries most of the downside. Terms sourced from LumiBrief, Techpoint Africa and Venture Debt Hub. Model independently re run for this report.",
+  "panels": [
+    {
+      "title": "Lender IRR by repayment path",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 48,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Lender IRR",
+            "type": "bar",
+            "data": [
+              {
+                "value": 27.1,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": -8.1,
+                "itemStyle": {
+                  "color": "#c53030"
+                }
+              },
+              {
+                "value": 23.1,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                }
+              }
+            ],
+            "barMaxWidth": 26,
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "type": "dashed",
+                "color": "#52514e"
+              },
+              "data": [
+                {
+                  "yAxis": 15,
+                  "label": {
+                    "formatter": "Headline 15% coupon",
+                    "fontSize": 9.5,
+                    "position": "insideStartTop"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Repaid on schedule",
+            "Default at maturity,\n50% recovery",
+            "Expected, at a 15%\ndefault probability"
+          ],
+          "axisLabel": {
+            "fontSize": 9.5
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Lender IRR (%)",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Expected IRR against assumed default rate",
+      "option": {
+        "color": [
+          "#2b6cb0"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 4,
+          "textStyle": {
+            "fontSize": 10.5
+          },
+          "show": false
+        },
+        "grid": {
+          "left": 70,
+          "right": 32,
+          "top": 46,
+          "bottom": 46,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "value",
+          "name": "Assumed probability of default at maturity (%)",
+          "nameLocation": "middle",
+          "nameGap": 28,
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Expected lender IRR (%)",
+          "nameLocation": "middle",
+          "nameGap": 34,
+          "nameRotate": 90,
+          "nameTextStyle": {
+            "fontSize": 11
+          }
+        },
+        "series": [
+          {
+            "name": "Expected lender IRR",
+            "type": "line",
+            "data": [
+              [
+                5.0,
+                25.81
+              ],
+              [
+                10.0,
+                24.49
+              ],
+              [
+                15.0,
+                23.13
+              ],
+              [
+                20.0,
+                21.73
+              ],
+              [
+                25.0,
+                20.3
+              ],
+              [
+                30.0,
+                18.84
+              ],
+              [
+                35.0,
+                17.33
+              ],
+              [
+                40.0,
+                15.78
+              ],
+              [
+                45.0,
+                14.18
+              ],
+              [
+                50.0,
+                12.53
+              ],
+              [
+                55.0,
+                10.83
+              ],
+              [
+                60.0,
+                9.07
+              ],
+              [
+                65.0,
+                7.24
+              ],
+              [
+                70.0,
+                5.34
+              ],
+              [
+                75.0,
+                3.36
+              ],
+              [
+                80.0,
+                1.3
+              ],
+              [
+                85.0,
+                -0.87
+              ],
+              [
+                90.0,
+                -3.14
+              ],
+              [
+                95.0,
+                -5.55
+              ]
+            ],
+            "showSymbol": false,
+            "lineStyle": {
+              "width": 2.4,
+              "color": "#2b6cb0"
+            },
+            "itemStyle": {
+              "color": "#2b6cb0"
+            },
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "data": [
+                {
+                  "yAxis": 0,
+                  "lineStyle": {
+                    "type": "dotted",
+                    "color": "#52514e"
+                  }
+                },
+                {
+                  "xAxis": 83.0,
+                  "lineStyle": {
+                    "type": "dashed",
+                    "color": "#c53030"
+                  },
+                  "label": {
+                    "formatter": "breakeven at 83%",
+                    "fontSize": 9.5,
+                    "color": "#c53030",
+                    "position": "insideEndTop"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

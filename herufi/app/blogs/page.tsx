@@ -27,7 +27,7 @@ export default function BlogsPage() {
       <section className="py-16 px-6 bg-cream">
         <div className="max-w-7xl mx-auto">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/40 mb-8">
-            The African Startup Investment Trilogy
+            The African Startup Investment Series
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post) => (

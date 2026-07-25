@@ -64,4 +64,16 @@ export const blogPosts: BlogPost[] = [
     tags: ['Venture Capital', 'LP Capital', 'Portfolio Construction', 'Fund Strategy'],
     publication: 'writing-the-cheques-2026',
   },
+  {
+    id: 'how-to-fill-africas-missing-middle',
+    title: "Four Ways to Fill Africa's Missing Middle, and What Each One Really Costs",
+    category: 'Explainer',
+    pillar: 'Venture Strategy and Capital Intelligence',
+    summary: 'African startups get funded once and then stall. Four financing tools already used on the continent could change that. This is what the math says each one earns, costs and can realistically deliver.',
+    date: '2026-07-25',
+    readingTime: '9 min read',
+    fileUrl: '/blogs/how-to-fill-africas-missing-middle',
+    tags: ['Venture Capital', 'Venture Debt', 'Blended Finance', 'Series A'],
+    publication: 'filling-the-missing-middle-2026',
+  },
 ]

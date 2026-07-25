@@ -1,11 +1,13 @@
 """
 Generates ECharts option JSON (herufi/data/charts/<fig_id>.json) for the 16 figures across
 the three African Startup Investment Trilogy publications, plus the 13 R4 figures for
-"Who's Actually Writing the Cheques" (the capital-supply/portfolio-construction follow-up),
-from the exact underlying data extracted from the source Jupyter notebooks in
-"Research Works/Investment strategies copy/". The R4 Monte-Carlo fund simulator (below) is
-re-implemented and re-run here rather than copied from the notebook's printed output, so the
-figures reflect an independently reproduced run of the model, not a transcription of it.
+"Who's Actually Writing the Cheques" (the capital-supply/portfolio-construction follow-up)
+and the 9 R5 figures for "Filling the Missing Middle" (the Series-A/B fill-mechanism return
+math), from the exact underlying data extracted from the source Jupyter notebooks in
+"Research Works/Investment strategies copy/". The R4 Monte-Carlo fund simulator and the four
+R5 mechanism models (below) are re-implemented and re-run here rather than copied from the
+notebooks' printed output, so those figures reflect an independently reproduced run of each
+model, not a transcription of it.
 
 Every option dict below conforms exactly to the schema pyecharts.charts.Bar/Line.dump_options()
 itself produces (verified interactively against pyecharts 2.1.0) -- dump_options() is pyecharts'
@@ -1209,10 +1211,394 @@ def r4_fig13():
     )
 
 
+# ---------------------------------------------------------------------------
+# R5 -- Filling the Missing Middle (Series A/B fill mechanisms)
+#
+# The four mechanism models below are re-implemented and re-run from the source
+# notebook (African_Missing_Middle_Fill_Mechanisms.ipynb) rather than copied from
+# its printed output, so every R5 figure reflects an independently reproduced run.
+# They share R4's Correlation Ventures return distribution, which keeps the
+# first-loss pool model directly comparable to R4's fund simulator.
+# ---------------------------------------------------------------------------
+
+R5_RNG_SEED = 42
+
+
+def r5_irr(cashflows):
+    """IRR by bisection on the NPV function (no scipy dependency added for one root solve)."""
+    def npv(r):
+        return sum(cf / (1 + r) ** t for t, cf in enumerate(cashflows))
+
+    lo, hi = -0.9899, 5.0
+    f_lo, f_hi = npv(lo), npv(hi)
+    if f_lo * f_hi > 0:
+        return float("nan")
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        f_mid = npv(mid)
+        if f_lo * f_mid <= 0:
+            hi, f_hi = mid, f_mid
+        else:
+            lo, f_lo = mid, f_mid
+    return (lo + hi) / 2
+
+
+def r5_debt_cashflows(principal=1.0, rate=0.15, term_yrs=3, upfront_fee=0.015,
+                       end_fee=0.04, warrant_pct=0.01, entry_val=20.0, exit_val_mult=3.0):
+    """Lender cash flows with no default: interest only, bullet repayment, warrant kicker at maturity."""
+    cashflows = [-principal * (1 - upfront_fee)]
+    for t in range(1, term_yrs + 1):
+        cf = principal * rate
+        if t == term_yrs:
+            cf += principal * (1 + end_fee)
+        cashflows.append(cf)
+    cashflows[-1] += warrant_pct * entry_val * (exit_val_mult - 1)
+    return cashflows
+
+
+def r5_default_cashflows(principal=1.0, rate=0.15, term_yrs=3, upfront_fee=0.015, recovery=0.5):
+    """The company fails to refinance at maturity: interest paid until then, only `recovery` of principal back."""
+    cashflows = [-principal * (1 - upfront_fee)]
+    for t in range(1, term_yrs + 1):
+        cashflows.append(principal * rate if t < term_yrs else principal * recovery)
+    return cashflows
+
+
+def r5_blended_lender_irr(pd_default=0.15):
+    """Probability weighted expected lender return across the repay and default paths."""
+    cf_ok = r5_debt_cashflows()
+    cf_bad = r5_default_cashflows()
+    blended = [(1 - pd_default) * a + pd_default * b for a, b in zip(cf_ok, cf_bad)]
+    return r5_irr(blended), r5_irr(cf_ok), r5_irr(cf_bad)
+
+
+def r5_rbf_schedule(financing=1.0, cap_mult=1.4, revenue_share=0.08, m0_revenue=0.15,
+                     monthly_growth=0.03, max_months=60):
+    """Revenue compounds monthly; the investor takes revenue_share of revenue until the cap is hit."""
+    total_cap = financing * cap_mult
+    revenue, cumulative = m0_revenue, 0.0
+    cashflows = [-financing]
+    for _ in range(max_months):
+        payment = min(revenue * revenue_share, total_cap - cumulative)
+        cashflows.append(payment)
+        cumulative += payment
+        revenue *= (1 + monthly_growth)
+        if cumulative >= total_cap - 1e-9:
+            break
+    return cashflows, cumulative / total_cap
+
+
+def r5_rbf_outcome(**kwargs):
+    cashflows, pct_repaid = r5_rbf_schedule(**kwargs)
+    r_month = r5_irr(cashflows)
+    return len(cashflows) - 1, (1 + r_month) ** 12 - 1, pct_repaid
+
+
+def r5_tranche_outcomes(n_companies=20, check_size=1.0, junior_frac=0.15, preferred=1.08,
+                         n_sims=30_000, seed=R5_RNG_SEED):
+    """Two tranche pool: junior absorbs losses first, senior is capped at its preferred claim."""
+    rng = np.random.default_rng(seed)
+    idx = rng.choice(len(R4_RETURN_BINS), size=(n_sims, n_companies), p=R4_RETURN_PROBS)
+    proceeds = R4_RETURN_BINS[idx] * check_size
+    total_proceeds = proceeds.sum(axis=1)
+    total_invested = n_companies * check_size
+    senior_capital = total_invested * (1 - junior_frac)
+    junior_capital = total_invested * junior_frac
+    senior_claim = senior_capital * preferred
+    senior_moic = np.minimum(total_proceeds, senior_claim) / senior_capital
+    junior_moic = (np.maximum(total_proceeds - senior_claim, 0) / junior_capital
+                   if junior_capital > 0 else np.full_like(senior_moic, np.nan))
+    return senior_moic, junior_moic, total_proceeds / total_invested
+
+
+# Two-line category labels: at a narrow (mobile) panel width the single-line versions of these
+# three scenario names collide with each other even at a rotation, and rotating them far enough
+# to clear costs more vertical room than the wrap does.
+R5_GROWTH_SCENARIOS = [("Slow\n12% a year", 0.01), ("Moderate\n43% a year", 0.03), ("Fast\n100%+ a year", 0.06)]
+
+
+def r5_fig1():
+    cohorts = ["2019 cohort", "2021 cohort", "2022 cohort"]
+    conv = [12.7, 5.1, 4.2]
+    left = per_point_bar_option(cohorts, "Seed to Series A conversion", conv, [BLUE, GOLD, RED],
+                                 y_name="% converting")
+    left["grid"]["left"] = 44
+
+    cats = ["Total 2025 African\nstartup funding", "Unmet Series A gap,\nlow estimate", "Unmet Series A gap,\nhigh estimate"]
+    vals = [3200, 300, 750]
+    right = per_point_bar_option(cats, "USD millions", vals, [GREY, GOLD, RED], y_name="USD millions")
+    for d, lab in zip(right["series"][0]["data"], ["$3.2B", "$300M", "$750M"]):
+        d["label"] = {"show": True, "position": "top", "formatter": lab, "fontSize": 11, "fontWeight": "bold"}
+    right["grid"]["left"] = 52
+    write_figure(
+        "r5_fig1",
+        "The Series A gap, sized in companies and in dollars",
+        "Left: seed to Series A conversion by cohort year (Partech 2025 Africa Tech VC Report). Right: the implied unmet annual financing gap set against total 2025 African startup funding. Applying the drop from a 12.7% to a 4.2% conversion rate to recent seed cohorts leaves roughly 100 to 150 companies a year unfunded but fundable, which at a $3M to $5M Series A cheque implies $300M to $750M of unmet annual demand. Treat the dollar range as an order of magnitude, not a precise estimate.",
+        [panel("Seed to Series A conversion by cohort", left),
+         panel("Implied annual financing gap", right)],
+    )
+
+
+def r5_fig2():
+    cats = ["Total loss, under 1x", "1x to 5x", "5x to 10x", "10x to 50x", "Over 50x"]
+    vals = [65, 24, 7, 3.6, 0.4]
+    colors = [RED, GREY, GREY, BLUE, FOREST]
+    option = per_point_bar_option(cats, "Share of all venture deals", vals, colors, y_name="% of deals")
+    option["grid"]["left"] = 44
+    write_figure(
+        "r5_fig2",
+        "The company outcome distribution every model in this report shares",
+        "Distribution of deal level outcomes across roughly 24,000 US venture financings, 2004 to 2018. Both the first loss pool model and the syndication model below draw company outcomes from this distribution, which keeps the four mechanisms comparable on one footing and consistent with Report 4's fund simulator. This is a global rather than Africa specific base rate, used because no African deal level return dataset of comparable size exists publicly. Source: Correlation Ventures.",
+        [panel(None, option, height=300)],
+    )
+
+
+def r5_fig3():
+    blended, ok, bad = r5_blended_lender_irr(0.15)
+    cats = ["Repaid on schedule", "Default at maturity,\n50% recovery", "Expected, at a 15%\ndefault probability"]
+    vals = [round(ok * 100, 1), round(bad * 100, 1), round(blended * 100, 1)]
+    left = per_point_bar_option(cats, "Lender IRR", vals, [FOREST, RED, BLUE], y_name="Lender IRR (%)")
+    left["xAxis"]["axisLabel"]["fontSize"] = 9.5
+    left["grid"]["left"] = 48
+    left["series"][0]["markLine"] = {
+        "silent": True, "symbol": "none", "lineStyle": {"type": "dashed", "color": INK2},
+        "data": [{"yAxis": 15, "label": {"formatter": "Headline 15% coupon", "fontSize": 9.5,
+                                          "position": "insideStartTop"}}],
+    }
+
+    pds = [round(p, 3) for p in np.linspace(0.05, 0.95, 19).tolist()]
+    irrs = [round(r5_blended_lender_irr(p)[0] * 100, 2) for p in pds]
+    # solve the zero crossing directly rather than reading it off the plotted grid
+    lo, hi = 0.5, 0.99
+    for _ in range(80):
+        mid = (lo + hi) / 2
+        if r5_blended_lender_irr(mid)[0] > 0:
+            lo = mid
+        else:
+            hi = mid
+    breakeven = (lo + hi) / 2
+    right = xy_line_option([("Expected lender IRR", [round(p * 100, 1) for p in pds], irrs)],
+                            x_name="Assumed probability of default at maturity (%)",
+                            y_name="Expected lender IRR (%)", colors=[BLUE])
+    right["legend"]["show"] = False
+    right["series"][0]["markLine"] = {
+        "silent": True, "symbol": "none",
+        "data": [
+            {"yAxis": 0, "lineStyle": {"type": "dotted", "color": INK2}},
+            {"xAxis": round(breakeven * 100, 1),
+             "lineStyle": {"type": "dashed", "color": RED},
+             "label": {"formatter": f"breakeven at {breakeven:.0%}", "fontSize": 9.5, "color": RED,
+                        "position": "insideEndTop"}},
+        ],
+    }
+    write_figure(
+        "r5_fig3",
+        "Venture debt: what the lender actually earns, and how much default risk it can absorb",
+        f"Left: lender IRR on a representative African venture debt facility, a $1 loan at a 15% coupon over three years with a 1.5% upfront fee, a 4% success fee and 1% warrant coverage. Fees and the warrant lift the full repayment return to {ok:.0%}, well above the headline coupon, and the probability weighted expectation at a 15% default rate is {blended:.0%}. Right: how that expected return falls as the assumed default rate rises. The structure only stops paying at a default rate of {breakeven:.0%}, far above any realistic African venture debt loss experience, because a 50% recovery assumption carries most of the downside. Terms sourced from LumiBrief, Techpoint Africa and Venture Debt Hub. Model independently re run for this report.",
+        [panel("Lender IRR by repayment path", left),
+         panel("Expected IRR against assumed default rate", right)],
+    )
+
+
+def r5_fig4():
+    labels, months, irrs, repaid = [], [], [], []
+    for label, g in R5_GROWTH_SCENARIOS:
+        m, i, pct = r5_rbf_outcome(monthly_growth=g)
+        labels.append(label)
+        months.append(m)
+        irrs.append(round(i * 100, 1))
+        repaid.append(round(pct * 100, 0))
+    left = per_point_bar_option(labels, "Months to hit the repayment cap", months, [RED, BLUE, GREEN],
+                                 y_name="Months")
+    for d, v in zip(left["series"][0]["data"], months):
+        d["label"] = {"show": True, "position": "top", "formatter": f"{v} months", "fontSize": 10.5, "fontWeight": "bold"}
+    left["grid"]["left"] = 44
+    left["grid"]["bottom"] = 56
+    left["xAxis"]["axisLabel"]["lineHeight"] = 13
+
+    right = per_point_bar_option(labels, "Investor annualised IRR", irrs, [RED, BLUE, GREEN],
+                                  y_name="Annualised IRR (%)")
+    for d, v in zip(right["series"][0]["data"], irrs):
+        d["label"] = {"show": True, "position": "top", "formatter": f"{v}%", "fontSize": 10.5, "fontWeight": "bold"}
+    right["grid"]["left"] = 48
+    right["grid"]["bottom"] = 56
+    right["xAxis"]["axisLabel"]["lineHeight"] = 13
+    write_figure(
+        "r5_fig4",
+        "Revenue based financing: the faster the company grows, the more the capital costs",
+        f"A $1 advance repaid at 8% of monthly revenue until a 1.4x cap, across three revenue growth paths. The cap never changes, so growth decides everything: a slow growing company takes {months[0]} months and still repays only {repaid[0]:.0f}% of the cap, leaving the investor at {irrs[0]}% annualised, while a fast growing company clears the same cap in {months[2]} months and hands the investor {irrs[2]}% annualised. Read from the founder's side, that means revenue based financing is cheapest for steady, predictable businesses and most expensive for the fastest growing ones, the opposite of what a growth equity investor is looking for. Terms sourced from re-cap.com and Qubit Capital. Model independently re run for this report.",
+        [panel("Time to repay the cap", left),
+         panel("Investor annualised return on the same 1.4x cap", right)],
+    )
+
+
+def r5_fig5():
+    jfs = [round(v, 3) for v in np.linspace(0.05, 0.35, 11).tolist()]
+    leverage, ploss = [], []
+    for jf in jfs:
+        senior, _, _ = r5_tranche_outcomes(junior_frac=jf)
+        leverage.append(round((1 - jf) / jf, 2))
+        ploss.append(round(float((senior < 1).mean() * 100), 2))
+    xs = [round(jf * 100, 1) for jf in jfs]
+
+    ref_lines = [
+        {"xAxis": round(100 / (11 + 1), 1), "lineStyle": {"type": "dotted", "color": INK2},
+         "label": {"formatter": "AGF, about 11x", "fontSize": 9, "color": INK2, "position": "insideEndTop"}},
+        {"xAxis": round(100 / (8.4 + 1), 1), "lineStyle": {"type": "dotted", "color": INK2},
+         "label": {"formatter": "MIGA, 8.4x", "fontSize": 9, "color": INK2, "position": "insideEndBottom"}},
+    ]
+    left = xy_line_option([("Senior dollars per junior dollar", xs, leverage)],
+                           x_name="Junior (first loss) tranche, % of pool",
+                           y_name="Leverage ratio", colors=[BLUE])
+    left["legend"]["show"] = False
+    left["series"][0]["markLine"] = {"silent": True, "symbol": "none", "data": ref_lines}
+
+    right = xy_line_option([("Senior tranche loss probability", xs, ploss)],
+                            x_name="Junior (first loss) tranche, % of pool",
+                            y_name="P(senior returns under 1x), %", colors=[RED])
+    right["legend"]["show"] = False
+    right["series"][0]["markLine"] = {"silent": True, "symbol": "none", "data": ref_lines}
+    write_figure(
+        "r5_fig5",
+        "First loss capital: how a small junior tranche buys a lot of senior protection",
+        "A pool of 20 Series A stage companies financed by a junior tranche that absorbs losses first and a senior tranche capped at a 1.08x preferred claim, 30,000 simulations. Left: every dollar of junior capital carries several dollars of senior capital, and the dotted lines mark the leverage ratios the African Guarantee Fund and MIGA actually report. Right: senior loss probability falls steadily as the junior tranche grows. The step shape is the simulation's own granularity, not a modelled threshold. Model independently re run for this report.",
+        [panel("Leverage: senior capital per junior dollar", left),
+         panel("Senior tranche loss probability", right)],
+    )
+
+
+def r5_fig6():
+    configs = [("No junior tranche", 0.0), ("10% junior", 0.10), ("15% junior", 0.15), ("25% junior", 0.25)]
+    senior_ploss, junior_med = [], []
+    for _, jf in configs:
+        senior, junior, _ = r5_tranche_outcomes(junior_frac=jf)
+        senior_ploss.append(round(float((senior < 1).mean() * 100), 1))
+        junior_med.append(None if jf == 0 else round(float(np.median(junior)), 2))
+    cats = [c for c, _ in configs]
+
+    left = per_point_bar_option(cats, "Senior tranche loss probability", senior_ploss,
+                                 [GREY, GOLD, FOREST, BLUE], y_name="P(loss), %")
+    for d, v in zip(left["series"][0]["data"], senior_ploss):
+        d["label"] = {"show": True, "position": "top", "formatter": f"{v}%", "fontSize": 10.5, "fontWeight": "bold"}
+    left["grid"]["left"] = 44
+
+    right = per_point_bar_option(cats, "Junior tranche median return", junior_med,
+                                  [GREY, GOLD, FOREST, BLUE], y_name="Median MOIC")
+    for d, v in zip(right["series"][0]["data"], junior_med):
+        if v is not None:
+            d["label"] = {"show": True, "position": "top", "formatter": f"{v}x", "fontSize": 10.5, "fontWeight": "bold"}
+    right["grid"]["left"] = 44
+    write_figure(
+        "r5_fig6",
+        "What the two sides of a first loss structure each get",
+        f"Senior loss probability and junior median return across four junior tranche sizes, same 20 company pool and 30,000 simulations. A junior tranche of 15% of the pool cuts senior loss probability from {senior_ploss[0]}% to {senior_ploss[2]}%, roughly half, which is the risk transformation that could bring loss averse local capital such as pension funds into venture exposure for the first time. The junior side is not charity: it sits behind the senior claim and keeps everything above it, so its median outcome is high and its own loss probability is the price of that position. Model independently re run for this report.",
+        [panel("Senior tranche loss probability", left),
+         panel("Junior tranche median return", right)],
+    )
+
+
+def r5_fig7():
+    round_size = 5.0
+    models = [("Future Africa style,\n$50K cheques", 0.05), ("iHub style, low end,\n$20K cheques", 0.02),
+              ("iHub style, high end,\n$250K cheques", 0.25)]
+    backers = [round(round_size / v) for _, v in models]
+    cats = [m for m, _ in models]
+    left = per_point_bar_option(cats, "Backers needed", backers, [BLUE, RED, GREEN], y_name="Number of backers")
+    for d, v in zip(left["series"][0]["data"], backers):
+        d["label"] = {"show": True, "position": "top", "formatter": f"{v} backers", "fontSize": 10.5, "fontWeight": "bold"}
+    left["grid"]["left"] = 48
+    left["xAxis"]["axisLabel"]["fontSize"] = 9.5
+
+    carry = 0.25
+    gross = [round(v, 2) for v in np.linspace(1, 10, 37).tolist()]
+    net = [round(1 + (g - 1) * (1 - carry), 3) for g in gross]
+    right = xy_line_option([("Gross company return", gross, gross),
+                             ("What the backer keeps, after 25% carry", gross, net)],
+                            x_name="Gross company return multiple", y_name="Realised multiple",
+                            colors=[GREY, BLUE])
+    right["series"][0]["lineStyle"]["type"] = "dashed"
+    write_figure(
+        "r5_fig7",
+        "Syndication: aggregating small cheques, and what that aggregation costs",
+        "Left: how many individual backers a syndicate needs to assemble a $5M Series A round at three real cheque sizes. Future Africa writes a standard $50,000 cheque through its AngelList syndicate; iHub's network writes $20,000 to $250,000. Right: the carry drag on a backer's return, at a 20% lead carry plus roughly 5% platform carry on profit only. A 5x company becomes 4.0x in a backer's hands and a 10x becomes 7.75x. Syndication creates no new capital. It manufactures a round sized cheque out of capital that had no path into the round at all, and charges about a quarter of the upside for doing it. Sources: AngelList, VC4Africa.",
+        [panel("Backers needed to fill a $5M round", left),
+         panel("Carry drag on the backer's return", right)],
+    )
+
+
+def r5_fig8():
+    irr_blend = r5_blended_lender_irr(0.15)[0]
+    _, rbf_mod, _ = r5_rbf_outcome(monthly_growth=0.03)
+    rows = [
+        ("Straight equity", 2.0, 0.0, 20.0, FOREST),
+        ("Venture debt", 1.5, irr_blend * 100, 0.75, BLUE),
+        ("Revenue based financing", 1.0, rbf_mod * 100, 0.0, GOLD),
+        ("Syndicated equity", 0.5, 0.0, 5.0, GREY),
+    ]
+    cats = [r[0] for r in rows]
+    amounts = [r[1] for r in rows]
+    costs = [round(r[2], 1) for r in rows]
+    dils = [r[3] for r in rows]
+    colors = [r[4] for r in rows]
+    weights = np.array(amounts) / sum(amounts)
+    blended_cost = float((weights * np.array(costs)).sum())
+    total_dilution = sum(dils)
+
+    left = per_point_bar_option(cats, "Amount in the round", amounts, colors, y_name="USD millions")
+    for d, v in zip(left["series"][0]["data"], amounts):
+        d["label"] = {"show": True, "position": "top", "formatter": f"${v}M", "fontSize": 10.5, "fontWeight": "bold"}
+    left["grid"]["left"] = 44
+    left["xAxis"]["axisLabel"]["rotate"] = 12
+    left["xAxis"]["axisLabel"]["fontSize"] = 9.5
+
+    right = grouped_bar_option(cats, [("Annualised cost of capital (%)", costs), ("Equity given up (%)", dils)],
+                                y_name="Percent", colors=[BLUE, RED], rotate_x=12)
+    right["xAxis"]["axisLabel"]["fontSize"] = 9.5
+    write_figure(
+        "r5_fig8",
+        "A blended $5M Series A round, priced instrument by instrument",
+        f"A representative $5M Series A for an asset light, recurring revenue fintech, split across all four mechanisms, with each instrument's cost taken straight from the models above rather than assumed. The weighted average cost of capital across the stack is {blended_cost:.1f}% and the founder gives up {total_dilution:.1f}% of the company in total, against roughly 25% for the same $5M raised as pure equity. The point is not a guaranteed dilution discount. It is that a founder pays a market rate cost only on the slice of the round that needs it, and spreads the round across providers with genuinely different return requirements. Model independently re run for this report.",
+        [panel("How the round is split", left),
+         panel("What each slice costs the company", right)],
+    )
+
+
+def r5_fig9():
+    cats = ["Venture debt", "Blended and first loss capital", "Syndication", "Revenue based financing"]
+    low = [150, 100, 0, 0]
+    high = [300, 250, 50, 0]
+    option = grouped_bar_option(cats, [("Low estimate", low), ("High estimate", high)],
+                                 # Short axis name deliberately: the fuller wording ("mobilised by
+                                 # 2030") runs past the panel edge at mobile width. The caption and
+                                 # panel prose carry the rest.
+                                 y_name="USD millions a year",
+                                 colors=[GREY, FOREST], horizontal=True)
+    option["xAxis"]["nameLocation"] = "middle"
+    option["xAxis"]["nameGap"] = 28
+    option["grid"]["bottom"] = 60
+    option["series"][-1]["markLine"] = {
+        "silent": True, "symbol": "none",
+        "data": [
+            {"xAxis": 300, "lineStyle": {"type": "dashed", "color": GOLD},
+             "label": {"formatter": "gap, low end", "fontSize": 9, "color": GOLD, "position": "insideEndTop"}},
+            {"xAxis": 750, "lineStyle": {"type": "dashed", "color": RED},
+             "label": {"formatter": "gap, high end", "fontSize": 9, "color": RED, "position": "insideEndTop"}},
+        ],
+    }
+    write_figure(
+        "r5_fig9",
+        "What each mechanism could realistically contribute against the gap by 2030",
+        "Plausible annual mobilisation by mechanism against the $300M to $750M annual gap from Figure 1. Venture debt scales off a base where debt already accounts for 41% of 2025 African funding. Blended and first loss capital scales off the African Guarantee Fund's $500M by 2028 target and the roughly 10x mobilisation ratio it and MIGA already report. Syndication stays structurally small while organised angel deployment sits near $4.4M a year. Revenue based financing contributes nothing at all today because no dedicated African vehicle exists at scale, which makes it the one genuinely open lane of the four. These are judgement based scaling estimates anchored on named vehicles, not forecasts.",
+        [panel(None, option, height=340)],
+    )
+
+
 if __name__ == "__main__":
     r1_fig1(); r1_fig2(); r1_fig3(); r1_fig4(); r1_fig5(); r1_fig6(); r1_fig7()
     r2_fig1(); r2_fig2(); r2_fig3(); r2_fig4()
     r3_fig1(); r3_fig2(); r3_fig3(); r3_fig4(); r3_fig5()
     r4_fig1(); r4_fig2(); r4_fig3(); r4_fig4(); r4_fig5(); r4_fig6(); r4_fig7()
     r4_fig8(); r4_fig9(); r4_fig10(); r4_fig11(); r4_fig12(); r4_fig13()
+    r5_fig1(); r5_fig2(); r5_fig3(); r5_fig4(); r5_fig5(); r5_fig6(); r5_fig7()
+    r5_fig8(); r5_fig9()
     print("done")

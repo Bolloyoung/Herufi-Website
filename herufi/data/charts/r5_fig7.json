@@ -1,0 +1,465 @@
+{
+  "id": "r5_fig7",
+  "title": "Syndication: aggregating small cheques, and what that aggregation costs",
+  "caption": "Left: how many individual backers a syndicate needs to assemble a $5M Series A round at three real cheque sizes. Future Africa writes a standard $50,000 cheque through its AngelList syndicate; iHub's network writes $20,000 to $250,000. Right: the carry drag on a backer's return, at a 20% lead carry plus roughly 5% platform carry on profit only. A 5x company becomes 4.0x in a backer's hands and a 10x becomes 7.75x. Syndication creates no new capital. It manufactures a round sized cheque out of capital that had no path into the round at all, and charges about a quarter of the upside for doing it. Sources: AngelList, VC4Africa.",
+  "panels": [
+    {
+      "title": "Backers needed to fill a $5M round",
+      "option": {
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "grid": {
+          "left": 48,
+          "right": 36,
+          "top": 44,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "series": [
+          {
+            "name": "Backers needed",
+            "type": "bar",
+            "data": [
+              {
+                "value": 100,
+                "itemStyle": {
+                  "color": "#2b6cb0"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "100 backers",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 250,
+                "itemStyle": {
+                  "color": "#c53030"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "250 backers",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              },
+              {
+                "value": 20,
+                "itemStyle": {
+                  "color": "#38a169"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "20 backers",
+                  "fontSize": 10.5,
+                  "fontWeight": "bold"
+                }
+              }
+            ],
+            "barMaxWidth": 26
+          }
+        ],
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Future Africa style,\n$50K cheques",
+            "iHub style, low end,\n$20K cheques",
+            "iHub style, high end,\n$250K cheques"
+          ],
+          "axisLabel": {
+            "fontSize": 9.5
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Number of backers",
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        }
+      }
+    },
+    {
+      "title": "Carry drag on the backer's return",
+      "option": {
+        "color": [
+          "#a0aec0",
+          "#2b6cb0"
+        ],
+        "tooltip": {
+          "trigger": "axis"
+        },
+        "legend": {
+          "top": 4,
+          "textStyle": {
+            "fontSize": 10.5
+          }
+        },
+        "grid": {
+          "left": 70,
+          "right": 32,
+          "top": 46,
+          "bottom": 46,
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "value",
+          "name": "Gross company return multiple",
+          "nameLocation": "middle",
+          "nameGap": 28,
+          "nameTextStyle": {
+            "fontSize": 11
+          },
+          "axisLabel": {
+            "fontSize": 10
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Realised multiple",
+          "nameLocation": "middle",
+          "nameGap": 34,
+          "nameRotate": 90,
+          "nameTextStyle": {
+            "fontSize": 11
+          }
+        },
+        "series": [
+          {
+            "name": "Gross company return",
+            "type": "line",
+            "data": [
+              [
+                1.0,
+                1.0
+              ],
+              [
+                1.25,
+                1.25
+              ],
+              [
+                1.5,
+                1.5
+              ],
+              [
+                1.75,
+                1.75
+              ],
+              [
+                2.0,
+                2.0
+              ],
+              [
+                2.25,
+                2.25
+              ],
+              [
+                2.5,
+                2.5
+              ],
+              [
+                2.75,
+                2.75
+              ],
+              [
+                3.0,
+                3.0
+              ],
+              [
+                3.25,
+                3.25
+              ],
+              [
+                3.5,
+                3.5
+              ],
+              [
+                3.75,
+                3.75
+              ],
+              [
+                4.0,
+                4.0
+              ],
+              [
+                4.25,
+                4.25
+              ],
+              [
+                4.5,
+                4.5
+              ],
+              [
+                4.75,
+                4.75
+              ],
+              [
+                5.0,
+                5.0
+              ],
+              [
+                5.25,
+                5.25
+              ],
+              [
+                5.5,
+                5.5
+              ],
+              [
+                5.75,
+                5.75
+              ],
+              [
+                6.0,
+                6.0
+              ],
+              [
+                6.25,
+                6.25
+              ],
+              [
+                6.5,
+                6.5
+              ],
+              [
+                6.75,
+                6.75
+              ],
+              [
+                7.0,
+                7.0
+              ],
+              [
+                7.25,
+                7.25
+              ],
+              [
+                7.5,
+                7.5
+              ],
+              [
+                7.75,
+                7.75
+              ],
+              [
+                8.0,
+                8.0
+              ],
+              [
+                8.25,
+                8.25
+              ],
+              [
+                8.5,
+                8.5
+              ],
+              [
+                8.75,
+                8.75
+              ],
+              [
+                9.0,
+                9.0
+              ],
+              [
+                9.25,
+                9.25
+              ],
+              [
+                9.5,
+                9.5
+              ],
+              [
+                9.75,
+                9.75
+              ],
+              [
+                10.0,
+                10.0
+              ]
+            ],
+            "showSymbol": false,
+            "lineStyle": {
+              "width": 2.4,
+              "color": "#a0aec0",
+              "type": "dashed"
+            },
+            "itemStyle": {
+              "color": "#a0aec0"
+            }
+          },
+          {
+            "name": "What the backer keeps, after 25% carry",
+            "type": "line",
+            "data": [
+              [
+                1.0,
+                1.0
+              ],
+              [
+                1.25,
+                1.188
+              ],
+              [
+                1.5,
+                1.375
+              ],
+              [
+                1.75,
+                1.562
+              ],
+              [
+                2.0,
+                1.75
+              ],
+              [
+                2.25,
+                1.938
+              ],
+              [
+                2.5,
+                2.125
+              ],
+              [
+                2.75,
+                2.312
+              ],
+              [
+                3.0,
+                2.5
+              ],
+              [
+                3.25,
+                2.688
+              ],
+              [
+                3.5,
+                2.875
+              ],
+              [
+                3.75,
+                3.062
+              ],
+              [
+                4.0,
+                3.25
+              ],
+              [
+                4.25,
+                3.438
+              ],
+              [
+                4.5,
+                3.625
+              ],
+              [
+                4.75,
+                3.812
+              ],
+              [
+                5.0,
+                4.0
+              ],
+              [
+                5.25,
+                4.188
+              ],
+              [
+                5.5,
+                4.375
+              ],
+              [
+                5.75,
+                4.562
+              ],
+              [
+                6.0,
+                4.75
+              ],
+              [
+                6.25,
+                4.938
+              ],
+              [
+                6.5,
+                5.125
+              ],
+              [
+                6.75,
+                5.312
+              ],
+              [
+                7.0,
+                5.5
+              ],
+              [
+                7.25,
+                5.688
+              ],
+              [
+                7.5,
+                5.875
+              ],
+              [
+                7.75,
+                6.062
+              ],
+              [
+                8.0,
+                6.25
+              ],
+              [
+                8.25,
+                6.438
+              ],
+              [
+                8.5,
+                6.625
+              ],
+              [
+                8.75,
+                6.812
+              ],
+              [
+                9.0,
+                7.0
+              ],
+              [
+                9.25,
+                7.188
+              ],
+              [
+                9.5,
+                7.375
+              ],
+              [
+                9.75,
+                7.562
+              ],
+              [
+                10.0,
+                7.75
+              ]
+            ],
+            "showSymbol": false,
+            "lineStyle": {
+              "width": 2.4,
+              "color": "#2b6cb0"
+            },
+            "itemStyle": {
+              "color": "#2b6cb0"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

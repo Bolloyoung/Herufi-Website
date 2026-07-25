@@ -54,4 +54,14 @@ export const publications: Publication[] = [
     fileUrl: '/publications/writing-the-cheques-2026',
     tags: ['Venture Capital', 'Africa', 'LP Capital', 'Portfolio Construction'],
   },
+  {
+    id: 'filling-the-missing-middle-2026',
+    title: 'Filling the Missing Middle',
+    category: 'Instruments and Return Math',
+    summary: "Return math for Africa's Series A and B gap. Four financing mechanisms already active on the continent, priced instrument by instrument and sized against the gap. Report 5 of the African Startup Investment series.",
+    date: '2026',
+    format: 'HTML',
+    fileUrl: '/publications/filling-the-missing-middle-2026',
+    tags: ['Venture Capital', 'Africa', 'Venture Debt', 'Blended Finance'],
+  },
 ]
