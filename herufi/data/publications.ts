@@ -8,6 +8,10 @@ export type Publication = {
   format: string
   fileUrl: string
   tags: string[]
+  /** Original author(s), for publications not authored by Herufi. */
+  author?: string
+  /** Originating institution, for curated third party research. */
+  source?: string
 }
 
 // Publications are the detailed, long form reports behind the blog posts.
@@ -63,5 +67,41 @@ export const publications: Publication[] = [
     format: 'HTML',
     fileUrl: '/publications/filling-the-missing-middle-2026',
     tags: ['Venture Capital', 'Africa', 'Venture Debt', 'Blended Finance'],
+  },
+  {
+    id: 'gvc-firm-participation-kenya-2022',
+    title: 'Firm Level Analysis of Global Value Chain Participation in Kenya',
+    category: 'Global Value Chains',
+    summary: 'A firm level study of 358 Kenyan enterprises finds a global value chain participation index of just 18.65 per cent, driven by firm size, productivity, research and development, and access to finance.',
+    date: '2022',
+    format: 'PDF',
+    fileUrl: '/publications/gvc-firm-participation-kenya-2022.pdf',
+    tags: ['Trade', 'Kenya', 'SMEs', 'Global Value Chains'],
+    author: 'Kevin Wanjala and Mohamed Omar Abdullahi',
+    source: 'Kenya Institute for Public Policy Research and Analysis (KIPPRA), Discussion Paper No. 285',
+  },
+  {
+    id: 'sme-gvc-financial-interventions-2022-23',
+    title: 'Integrating Small and Medium Enterprises into Global Value Chain through Financial Interventions',
+    category: 'Policy Brief',
+    summary: 'Only 15 per cent of Kenyan SMEs engage in global value chains, mostly because of financial constraints. This brief sets out six financing interventions that could close the gap.',
+    date: '2022/2023',
+    format: 'PDF',
+    fileUrl: '/publications/sme-gvc-financial-interventions-2022-23.pdf',
+    tags: ['Trade', 'Kenya', 'SMEs', 'Access to Finance'],
+    author: 'Kevin Wafula and Mohamed Abdulahi',
+    source: 'Kenya Institute for Public Policy Research and Analysis (KIPPRA), Policy Brief No. 19/2022-2023',
+  },
+  {
+    id: 'export-levies-hides-skins-leather-2024',
+    title: "Effect of Export Levies on Hides and Skins on Competitiveness of Kenya's Leather Products",
+    category: 'Trade Policy',
+    summary: "Testing four export levy regimes on raw hides and skins against Kenya's leather export competitiveness, this paper finds higher levies broadened market reach but argues value addition needs support across the whole value chain.",
+    date: '2024',
+    format: 'PDF',
+    fileUrl: '/publications/export-levies-hides-skins-leather-2024.pdf',
+    tags: ['Trade', 'Kenya', 'Leather Industry', 'Export Policy'],
+    author: 'Mohamed Ramadhan, Kenneth Malot, Kevin Wanjala and John Karanja',
+    source: 'Kenya Institute for Public Policy Research and Analysis (KIPPRA), Discussion Paper No. 360',
   },
 ]

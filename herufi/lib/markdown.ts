@@ -10,6 +10,8 @@ export function markdownToHtml(md: string): string {
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
     // H4 headings
     .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
+    // Links
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
     // Bold + italic combined
     .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
     // Bold
