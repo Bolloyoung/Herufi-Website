@@ -37,10 +37,13 @@ export default function PublicationsPage() {
                     {pub.title}
                   </h3>
                   {pub.author && (
-                    <p className="text-xs text-charcoal/45 mb-2">
+                    <p className="text-xs text-charcoal/45 mb-1">
                       {pub.author}
                       {pub.source && <> &middot; {pub.source}</>}
                     </p>
+                  )}
+                  {pub.authorNote && (
+                    <p className="text-xs text-forest/80 mb-2">{pub.authorNote}</p>
                   )}
                   <p className="text-sm text-charcoal/55 leading-relaxed mb-5 flex-1">
                     {pub.summary}

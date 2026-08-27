@@ -15,7 +15,7 @@ publication: "gvc-firm-participation-kenya-2022"
 
 Kenyan firms score 18.65 out of 100 on a global value chain participation index built from four things: whether a firm exports directly, whether it exports indirectly through a third country, whether it sources inputs from abroad and whether it sits inside an international production network. In plain terms, roughly two in every ten Kenyan firms are meaningfully plugged into global production, and eight are not.
 
-This is the central finding of a KIPPRA Discussion Paper by Kevin Wanjala and Mohamed Omar Abdullahi, who built the index from World Bank Enterprise Survey data covering 358 Kenyan firms and tested what predicts a higher score.
+This is the central finding of a KIPPRA Discussion Paper by Kevin Wanjala, now a co-founder of Herufi, and Mohamed Omar Abdullahi, who built the index from World Bank Enterprise Survey data covering 358 Kenyan firms and tested what predicts a higher score.
 
 ## Which sectors are already in and which are stuck outside
 

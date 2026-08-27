@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: Props) {
             <h3>{relatedPublication.title}</h3>
             <p>
               {relatedPublication.author
-                ? `By ${relatedPublication.author}${relatedPublication.source ? `. ${relatedPublication.source}.` : ''}`
+                ? `By ${relatedPublication.author}${relatedPublication.source ? `. ${relatedPublication.source}.` : ''}${relatedPublication.authorNote ? ` ${relatedPublication.authorNote}` : ''}`
                 : 'This blog draws on a detailed publication. Read the full analysis, methodology and sources.'}
             </p>
             <span className="btn">Read the publication</span>

@@ -15,7 +15,7 @@ publication: "export-levies-hides-skins-leather-2024"
 
 Since 2003, Kenya has taxed exports of raw hides and skins to discourage shipping the raw material abroad and encourage local tanning and manufacturing instead. The levy has moved four times: 20 per cent from 2003 to 2006, 40 per cent from 2007 to 2011, 80 per cent from 2012 to 2022, and 50 per cent from 2023 onward. That is more than two decades of policy variation, which is exactly the kind of natural experiment a trade economist wants.
 
-A KIPPRA Discussion Paper by Mohamed Ramadhan, Kenneth Malot, Kevin Wanjala and John Karanja uses that variation to test whether the levy actually achieved its goal, using three separate measures of export competitiveness across three product categories: raw hides and skins, articles of leather such as bags and saddlery, and footwear.
+A KIPPRA Discussion Paper by Mohamed Ramadhan, Kenneth Malot, Kevin Wanjala (now a co-founder of Herufi) and John Karanja uses that variation to test whether the levy actually achieved its goal, using three separate measures of export competitiveness across three product categories: raw hides and skins, articles of leather such as bags and saddlery, and footwear.
 
 ## Why this matters beyond one commodity
 

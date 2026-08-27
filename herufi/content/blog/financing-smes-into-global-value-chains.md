@@ -15,7 +15,7 @@ publication: "sme-gvc-financial-interventions-2022-23"
 
 Just 15 per cent of Kenyan small and medium enterprises take part in global value chains, and the gap between those that do and those that do not is primarily financial, not geographic or logistical. Kenya has strong geographic and logistics positioning for global trade, yet most SMEs still produce only for the domestic market.
 
-That is the starting point of a KIPPRA Policy Brief by Kevin Wafula and Mohamed Abdulahi, which turns firm level research on the same subject into a short list of financing interventions policy makers could act on directly.
+That is the starting point of a KIPPRA Policy Brief by Kevin Wanjala, now a co-founder of Herufi, and Mohamed Abdulahi, which turns firm level research on the same subject into a short list of financing interventions policy makers could act on directly.
 
 ## Why finance is the binding constraint
 
@@ -38,4 +38,4 @@ This brief distils the same underlying research covered in the firm level KIPPRA
 
 ---
 
-*Summary of [Integrating Small and Medium Enterprises into Global Value Chain through Financial Interventions](/publications/sme-gvc-financial-interventions-2022-23), KIPPRA Policy Brief No. 19/2022-2023, by Kevin Wafula and Mohamed Abdulahi, Kenya Institute for Public Policy Research and Analysis. Read the full brief at the link above.*
+*Summary of [Integrating Small and Medium Enterprises into Global Value Chain through Financial Interventions](/publications/sme-gvc-financial-interventions-2022-23), KIPPRA Policy Brief No. 19/2022-2023, by Kevin Wanjala and Mohamed Abdulahi, Kenya Institute for Public Policy Research and Analysis. Printed as "Kevin Wafula" on the brief itself; corrected here to match his byline on the related discussion papers. Read the full brief at the link above.*

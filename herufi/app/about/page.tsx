@@ -150,10 +150,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder */}
+      {/* Founders */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-6">Founder</p>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-forest mb-6">Founders</p>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
             {/* Avatar */}
             <div className="flex flex-col items-center md:items-start gap-4">
@@ -200,6 +201,55 @@ export default function AboutPage() {
                   'Data and decision modelling',
                   'Market entry and strategy',
                   'Research methodology',
+                ].map((skill) => (
+                  <div key={skill} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-forest flex-shrink-0" />
+                    <span className="text-xs text-charcoal/60">{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-border-soft my-14" />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+            {/* Avatar */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <div className="w-24 h-24 rounded-2xl bg-forest flex items-center justify-center">
+                <span className="text-3xl font-bold text-cream">KW</span>
+              </div>
+              <div>
+                <p className="font-semibold text-charcoal text-lg">Kevin Wanjala</p>
+                <p className="text-sm text-charcoal/50">Co-Founder, Herufi</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href="mailto:hello@herufi.org"
+                  className="text-xs font-medium text-forest hover:text-forest-light transition-colors"
+                >
+                  hello@herufi.org
+                </a>
+              </div>
+            </div>
+            {/* Bio */}
+            <div className="md:col-span-2 space-y-4 text-charcoal/65 leading-relaxed text-sm">
+              <p>
+                Kevin Wanjala is co-founder of Herufi, bringing a background in applied public policy research from Kenya&apos;s public policy research community. His published research spans firm level global value chain participation, the financing constraints facing small and medium enterprises, and the effect of trade policy instruments such as export levies on sector competitiveness.
+              </p>
+              <p>
+                That work is built on the same standard Herufi applies to every publication: indices and models built from real survey and trade data, econometric analysis of what actually drives outcomes, and recommendations tied directly to what the evidence shows rather than to what is convenient to argue.
+              </p>
+              <p>
+                His research sits primarily within Markets, Systems and African Economies, Herufi&apos;s pillar for how African markets and trade actually function beneath the headline numbers.
+              </p>
+              <div className="grid grid-cols-2 gap-3 pt-3">
+                {[
+                  'Trade policy and global value chains',
+                  'SME finance and access to capital',
+                  'Applied econometric research',
+                  'Kenyan and East African markets',
+                  'Public policy research',
                 ].map((skill) => (
                   <div key={skill} className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-forest flex-shrink-0" />

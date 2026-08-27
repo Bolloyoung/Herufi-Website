@@ -12,6 +12,8 @@ export type Publication = {
   author?: string
   /** Originating institution, for curated third party research. */
   source?: string
+  /** Extra credit context, e.g. noting a Herufi affiliation for one of the authors. */
+  authorNote?: string
 }
 
 // Publications are the detailed, long form reports behind the blog posts.
@@ -79,6 +81,7 @@ export const publications: Publication[] = [
     tags: ['Trade', 'Kenya', 'SMEs', 'Global Value Chains'],
     author: 'Kevin Wanjala and Mohamed Omar Abdullahi',
     source: 'Kenya Institute for Public Policy Research and Analysis (KIPPRA), Discussion Paper No. 285',
+    authorNote: 'Kevin Wanjala is a co-founder of Herufi.',
   },
   {
     id: 'sme-gvc-financial-interventions-2022-23',
@@ -89,8 +92,9 @@ export const publications: Publication[] = [
     format: 'PDF',
     fileUrl: '/publications/sme-gvc-financial-interventions-2022-23.pdf',
     tags: ['Trade', 'Kenya', 'SMEs', 'Access to Finance'],
-    author: 'Kevin Wafula and Mohamed Abdulahi',
+    author: 'Kevin Wanjala and Mohamed Abdulahi',
     source: 'Kenya Institute for Public Policy Research and Analysis (KIPPRA), Policy Brief No. 19/2022-2023',
+    authorNote: 'Kevin Wanjala is a co-founder of Herufi. Printed as "Kevin Wafula" on this brief, corrected here to match his byline on the related discussion papers.',
   },
   {
     id: 'export-levies-hides-skins-leather-2024',
@@ -103,5 +107,6 @@ export const publications: Publication[] = [
     tags: ['Trade', 'Kenya', 'Leather Industry', 'Export Policy'],
     author: 'Mohamed Ramadhan, Kenneth Malot, Kevin Wanjala and John Karanja',
     source: 'Kenya Institute for Public Policy Research and Analysis (KIPPRA), Discussion Paper No. 360',
+    authorNote: 'Kevin Wanjala is a co-founder of Herufi.',
   },
 ]
