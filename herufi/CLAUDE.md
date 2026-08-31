@@ -62,7 +62,7 @@ Five-tab site structure: **Home, Blogs, Publications, About Us, Contact Us.**
 /blogs               → Blog listing with search + pillar filter (?pillar=<id>)
 /blogs/[slug]        → Individual blog posts with Comments (Giscus)
 /publications        → Detailed long form reports (data/publications.ts)
-/about               → About Us + founder profile + platform approach
+/about               → About Us + founder profiles + platform approach
 /contact             → Contact Us form
 /login               → Magic link authentication (Supabase)
 /dashboard           → Member portal (authenticated users only)
@@ -173,10 +173,13 @@ All five reports (`The Broken Ladder`, `From Frontier to Market`, `Where the Con
 
 To regenerate charts after a data change: edit `scripts/generate_charts.py`, re-run it, and the updated JSON is picked up automatically (no code changes needed in the content modules).
 
-## Founder
+## Founders
 
 **Michael Omega** — Founder, Herufi
 LinkedIn: https://www.linkedin.com/in/michael-omega-a179b3195/
+Email: hello@herufi.org
+
+**Kevin Wanjala** — Co-Founder, Herufi. Applied public policy researcher (trade policy, global value chains, SME finance) from Kenya's public policy research community; co-author of the three KIPPRA papers curated under Publications (see "Adding Publications" above).
 Email: hello@herufi.org
 
 ## Wiring Up Pending Features
