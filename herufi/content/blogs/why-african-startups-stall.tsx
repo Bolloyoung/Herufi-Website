@@ -11,7 +11,7 @@ export default function WhyAfricanStartupsStall() {
       <div className="chips"><span className="pill green">Venture Strategy and Capital Intelligence</span><span className="pill outline">Explainer</span></div>
       <h1>Why African Startups Stall After Their First Cheque</h1>
       <p className="summary">We analysed 49,000 companies worldwide to find out what really holds African startups back. The answer is not talent, sectors or geography. It is the size and shape of the money.</p>
-      <div className="meta"><span>Michael Omega</span><span>·</span><span>2026-07-16</span><span>·</span><span>6 min read</span></div>
+      <div className="meta"><span>Michael Omega</span><span>16 July 2026</span><span>6 min read</span></div>
       <div className="prose">
         <p><em>The African Startup Investment Trilogy. Explainer 1 of 3.</em></p>
         <p>Here is the puzzle. Back in 2014, African startups actually got funded faster than almost anywhere else, about 13 months after founding, quicker than in the United States or China. The ecosystem was growing fast too: the number of newly funded African startups quadrupled in five years. And yet almost none of these companies ever grew big. Why?</p>

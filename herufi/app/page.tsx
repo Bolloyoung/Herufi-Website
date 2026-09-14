@@ -1,130 +1,128 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import SplineHero from '@/components/SplineHero'
+import { ArrowRight } from 'lucide-react'
+import HomeHero from '@/components/HomeHero'
 import SectionHeader from '@/components/SectionHeader'
-import ResearchCard from '@/components/ResearchCard'
-import BlogPostCard from '@/components/BlogPostCard'
+import Tag from '@/components/Tag'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import CTASection from '@/components/CTASection'
 import { pillars } from '@/data/pillars'
-import { blogPosts } from '@/data/blogPosts'
+import { publications } from '@/data/publications'
 import { getAllArticles } from '@/lib/content'
+import { formatDate } from '@/lib/format'
 
 export const metadata: Metadata = {
   title: 'Herufi | Research and Analytics for African Markets and Ventures',
 }
 
+const FEATURED_PUBLICATION_ID = 'filling-the-missing-middle-2026'
+
 export default async function HomePage() {
-  const articles = getAllArticles().slice(0, 3)
+  const featured = publications.find((p) => p.id === FEATURED_PUBLICATION_ID) ?? publications[0]
+  const [lead, ...rest] = getAllArticles().slice(0, 4)
 
   return (
     <>
-      {/* 3D Hero */}
-      <SplineHero />
+      <HomeHero
+        featured={featured}
+        stat={{
+          value: '$300M to $750M',
+          label: "Illustrative unmet annual Series A financing demand across Africa's venture market",
+        }}
+      />
 
-      {/* What we do */}
-      <section className="py-14 px-6 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-forest mb-5">What we do</p>
-          <h2 className="text-2xl sm:text-3xl font-semibold text-charcoal leading-snug mb-6">
-            Herufi produces structured research and analytics grounded in evidence,
-            built for decision makers working across African markets.
-          </h2>
-          <p className="text-charcoal/55 leading-relaxed max-w-2xl mx-auto">
-            Depth over speed. Evidence over opinion. Every finding is rooted in
-            African market realities: venture strategy, economies and systems,
-            data intelligence and culture and context.
-          </p>
+      {/* Statement */}
+      <section className="py-16 lg:py-20 px-6 bg-cream">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl">
+            <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight">
+              Depth over speed. Evidence over opinion. African context first.
+            </h2>
+            <p className="mt-5 text-base md:text-lg text-charcoal/65 leading-relaxed">
+              Herufi is a research intelligence platform. Every publication states its methodology, links its sources and names its uncertainty, so that the analysis is still useful long after the news cycle has moved on.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Research domains */}
-      <section className="py-14 px-6 bg-cream border-t border-border-soft">
+      {/* Research pillars */}
+      <section className="py-16 lg:py-20 px-6 bg-white border-y border-border-soft">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-8">
-            <SectionHeader
-              label="Research Domains"
-              title="Where we focus"
-              className="mb-0"
-            />
-            <Link
-              href="/blogs"
-              className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-forest hover:text-forest-light transition-colors"
-            >
-              All blogs
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border-soft rounded-xl overflow-hidden border border-border-soft">
+          <SectionHeader title="Four research pillars" className="mb-10" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border-soft border border-border-soft">
             {pillars.map((pillar) => (
               <Link
                 key={pillar.id}
                 href={`/blogs?pillar=${pillar.id}`}
-                className="group bg-white p-8 hover:bg-gray-soft transition-colors duration-200"
+                className="group flex flex-col bg-white p-7 hover:bg-gray-soft transition-colors duration-150"
               >
-                <p className="text-xs font-semibold text-gold mb-4">{pillar.number}</p>
-                <h3 className="text-base font-semibold text-charcoal mb-2 group-hover:text-forest transition-colors">
+                <h3 className="font-serif text-lg font-normal text-charcoal leading-snug mb-3">
                   {pillar.title}
                 </h3>
-                <p className="text-sm text-charcoal/50 leading-relaxed">{pillar.description}</p>
+                <p className="text-sm text-charcoal/65 leading-relaxed mb-6">{pillar.description}</p>
+                <span className="mt-auto text-link group-hover:text-forest-light">
+                  View blogs
+                  <ArrowRight size={14} strokeWidth={1.5} aria-hidden />
+                </span>
               </Link>
             ))}
-            {/* Publications tile completes the grid */}
-            <Link
-              href="/publications"
-              className="group bg-forest p-8 hover:bg-forest-light transition-colors duration-200"
-            >
-              <p className="text-xs font-semibold text-gold mb-4">+</p>
-              <h3 className="text-base font-semibold text-cream mb-2">
-                Publications
-              </h3>
-              <p className="text-sm text-cream/60 leading-relaxed">
-                Detailed reports with full methodology and sources. The depth behind every blog.
-              </p>
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Latest blogs */}
-      <section className="py-14 px-6 bg-white border-t border-border-soft">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-8">
-            <SectionHeader
-              label="Latest"
-              title="Recent blogs"
-              className="mb-0"
-            />
-            <Link
-              href="/blogs"
-              className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-forest hover:text-forest-light transition-colors"
-            >
-              View all blogs
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {articles.length > 0
-              ? articles.map((article) => <ResearchCard key={article.slug} article={article} />)
-              : blogPosts.map((post) => <BlogPostCard key={post.id} post={post} />)}
-          </div>
-        </div>
-      </section>
+      {/* Latest blogs: one lead piece and a short list */}
+      {lead && (
+        <section className="py-16 lg:py-20 px-6 bg-cream">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-end justify-between gap-6 mb-10">
+              <SectionHeader title="Latest from the blog" />
+              <Link href="/blogs" className="text-link whitespace-nowrap">
+                All blogs
+                <ArrowRight size={14} strokeWidth={1.5} aria-hidden />
+              </Link>
+            </div>
 
-      {/* Newsletter */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+              <Link href={`/blogs/${lead.slug}`} className="group lg:col-span-7">
+                <Tag label={lead.pillar} variant="green" />
+                <h3 className="mt-3 font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight group-hover:underline underline-offset-4 decoration-charcoal/40">
+                  {lead.title}
+                </h3>
+                <p className="mt-4 text-base text-charcoal/65 leading-relaxed max-w-2xl">{lead.summary}</p>
+                <p className="mt-4 text-sm text-charcoal/55">
+                  {lead.author}, {formatDate(lead.date)}. {lead.readingTime}
+                </p>
+              </Link>
+
+              <div className="lg:col-span-5 divide-y divide-border-soft border-t border-border-soft lg:border-t-0">
+                {rest.map((article) => (
+                  <Link
+                    key={article.slug}
+                    href={`/blogs/${article.slug}`}
+                    className="group block py-5 first:lg:pt-0"
+                  >
+                    <Tag label={article.pillar} variant="green" />
+                    <h3 className="mt-2 font-serif text-lg font-normal text-charcoal leading-snug group-hover:underline underline-offset-4 decoration-charcoal/40">
+                      {article.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-charcoal/55">
+                      {formatDate(article.date)}. {article.readingTime}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <NewsletterSignup />
 
-      {/* CTA */}
       <CTASection
-        label="Get started"
-        headline="Looking for research, analytics, or strategy support?"
-        body="Herufi works with investors, founders and institutions on research, strategy and analytics engagements."
-        primaryCta={{ label: "Let's talk", href: '/contact' }}
-        secondaryCta={{ label: 'Read the blogs', href: '/blogs' }}
+        headline="Research, analytics or strategy support for a decision you need to get right?"
+        body="Herufi works with investors, founders and institutions on commissioned research, venture strategy and analytics engagements."
+        primaryCta={{ label: 'Work with Herufi', href: '/contact' }}
+        secondaryCta={{ label: 'About Herufi', href: '/about' }}
       />
     </>
   )

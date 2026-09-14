@@ -16,6 +16,14 @@ const pillarTitleToId: Record<string, string> = {
   'Culture, Context and Intelligence Notes': 'culture-context',
 }
 
+// Short chip labels for the filter row
+const pillarShortLabel: Record<string, string> = {
+  'venture-strategy': 'Venture strategy',
+  'markets-systems': 'Markets and economies',
+  'data-analytics': 'Data and analytics',
+  'culture-context': 'Culture and context',
+}
+
 type Props = {
   articles: ArticleFrontmatter[]
   pillars: Pillar[]
@@ -45,103 +53,88 @@ export default function BlogFilter({ articles, pillars }: Props) {
     })
   }, [articles, query, activePillar])
 
+  const chipClass = (active: boolean) =>
+    `text-sm font-medium px-3 py-1.5 rounded-md border transition-colors duration-150 ${
+      active
+        ? 'bg-charcoal text-cream border-charcoal'
+        : 'bg-white text-charcoal/70 border-border-soft hover:border-charcoal/40 hover:text-charcoal'
+    }`
+
+  const activeTitle = activePillar ? pillars.find((p) => p.id === activePillar)?.title : null
+  const count = filteredArticles.length
+  const countLabel = `${count} ${count === 1 ? 'post' : 'posts'}`
+
   return (
-    <>
-      {/* Search bar */}
-      <section className="py-8 px-6 bg-white border-b border-border-soft sticky top-16 z-40 backdrop-blur-sm bg-white/95">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-            <div className="relative flex-1 max-w-xl">
-              <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-charcoal/30" />
-              <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search blogs, domains, tags..."
-                className="w-full pl-9 pr-9 py-2.5 text-sm border border-border-soft rounded-lg bg-gray-soft focus:outline-none focus:border-forest transition-colors text-charcoal placeholder-charcoal/30"
-              />
-              {query && (
-                <button
-                  onClick={() => setQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-charcoal/30 hover:text-charcoal"
-                >
-                  <X size={14} />
-                </button>
-              )}
-            </div>
-            {(query || activePillar) && (
-              <p className="text-sm text-charcoal/40 flex-shrink-0">
-                {filteredArticles.length} result{filteredArticles.length !== 1 ? 's' : ''}
-              </p>
+    <section className="py-16 px-6 bg-cream">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight mb-8">
+          All blogs
+        </h2>
+
+        <div className="flex flex-col lg:flex-row lg:items-center gap-4 mb-8">
+          <div className="relative flex-1 max-w-md">
+            <label htmlFor="blog-search" className="sr-only">Search blogs</label>
+            <Search size={16} strokeWidth={1.5} className="absolute left-3 top-1/2 -translate-y-1/2 text-charcoal/45" aria-hidden />
+            <input
+              id="blog-search"
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search by title, topic or tag"
+              className="field pl-9 pr-9"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-charcoal/50 hover:text-charcoal"
+                aria-label="Clear search"
+              >
+                <X size={14} strokeWidth={1.5} />
+              </button>
             )}
           </div>
 
-          {/* Pillar filter pills */}
-          <div className="flex flex-wrap gap-2 mt-3">
-            <button
-              onClick={() => setActivePillar(null)}
-              className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-all duration-150 ${
-                activePillar === null
-                  ? 'bg-forest text-cream border-forest'
-                  : 'bg-white text-charcoal/50 border-border-soft hover:border-forest/30 hover:text-charcoal'
-              }`}
-            >
-              All domains
+          <div className="flex flex-wrap gap-2">
+            <button type="button" onClick={() => setActivePillar(null)} className={chipClass(activePillar === null)} aria-pressed={activePillar === null}>
+              All pillars
             </button>
             {pillars.map((p) => (
               <button
                 key={p.id}
+                type="button"
                 onClick={() => setActivePillar(activePillar === p.id ? null : p.id)}
-                className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-all duration-150 ${
-                  activePillar === p.id
-                    ? 'bg-forest text-cream border-forest'
-                    : 'bg-white text-charcoal/50 border-border-soft hover:border-forest/30 hover:text-charcoal'
-                }`}
+                className={chipClass(activePillar === p.id)}
+                aria-pressed={activePillar === p.id}
               >
-                {p.number} {p.title.split(' ').slice(0, 2).join(' ')}
+                {pillarShortLabel[p.id] ?? p.title}
               </button>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Articles */}
-      <section className="py-16 px-6 bg-cream">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/40">
-              {activePillar
-                ? `${pillars.find((p) => p.id === activePillar)?.title ?? 'Domain'}: ${filteredArticles.length} post${filteredArticles.length !== 1 ? 's' : ''}`
-                : `All blogs: ${filteredArticles.length} post${filteredArticles.length !== 1 ? 's' : ''}`}
-            </p>
-            {activePillar && (
-              <button
-                onClick={() => setActivePillar(null)}
-                className="text-xs text-charcoal/40 hover:text-charcoal flex items-center gap-1"
-              >
-                <X size={12} /> Clear filter
-              </button>
-            )}
+        <p className="text-sm text-charcoal/60 mb-6" aria-live="polite">
+          {activeTitle ? `${activeTitle}: ${countLabel}` : countLabel}
+          {query ? ` matching "${query}"` : ''}
+        </p>
+
+        {filteredArticles.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {filteredArticles.map((article) => (
+              <ResearchCard key={article.slug} article={article} />
+            ))}
           </div>
-
-          {filteredArticles.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredArticles.map((article) => (
-                <ResearchCard key={article.slug} article={article} />
-              ))}
-            </div>
-          ) : (
-            <EmptyState
-              title="No blogs yet"
-              description={
-                query
-                  ? `No results for "${query}". Try a different search term.`
-                  : 'The first post is on its way. Check back soon.'
-              }
-            />
-          )}
-        </div>
-      </section>
-    </>
+        ) : (
+          <EmptyState
+            title="No blogs match"
+            description={
+              query
+                ? `Nothing found for "${query}". Try a different term or clear the pillar filter.`
+                : 'No posts in this pillar yet.'
+            }
+          />
+        )}
+      </div>
+    </section>
   )
 }

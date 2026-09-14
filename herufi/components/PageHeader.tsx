@@ -1,26 +1,18 @@
-import Tag from './Tag'
-
 type PageHeaderProps = {
-  label?: string
   title: string
   description?: string
   centered?: boolean
 }
 
-export default function PageHeader({ label, title, description, centered = false }: PageHeaderProps) {
+export default function PageHeader({ title, description, centered = false }: PageHeaderProps) {
   return (
-    <div className={`pt-24 pb-14 px-6 bg-white border-b border-border-soft ${centered ? 'text-center' : ''}`}>
-      <div className="max-w-4xl mx-auto">
-        {label && (
-          <div className="mb-4">
-            <Tag label={label} variant="green" size="md" />
-          </div>
-        )}
-        <h1 className="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight leading-tight mb-4">
+    <div className={`pt-16 pb-12 px-6 bg-white border-b border-border-soft ${centered ? 'text-center' : ''}`}>
+      <div className="max-w-7xl mx-auto">
+        <h1 className="font-serif text-4xl md:text-5xl font-normal text-charcoal leading-[1.1] max-w-3xl">
           {title}
         </h1>
         {description && (
-          <p className="text-lg text-charcoal/60 max-w-2xl leading-relaxed">
+          <p className="mt-5 text-lg text-charcoal/65 max-w-2xl leading-relaxed">
             {description}
           </p>
         )}

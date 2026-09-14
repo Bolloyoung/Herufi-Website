@@ -3,7 +3,7 @@
   --charcoal:#1C1C1E; --forest:#1B4332; --forest-light:#2D6A4F;
   --gold:#C9A84C; --gold-light:#E8C96A; --cream:#FAFAF8;
   --border:#E5E5E3; --ink-60:rgba(28,28,30,.60); --ink-45:rgba(28,28,30,.45);
-  --sans:'Inter',system-ui,sans-serif; --serif:'Merriweather',Georgia,serif; --mono:'IBM Plex Mono',monospace;
+  --sans:var(--font-inter),system-ui,sans-serif; --serif:var(--font-merriweather),Georgia,serif; --mono:var(--font-plex-mono),ui-monospace,SFMono-Regular,Menlo,monospace;
   background:var(--cream);color:var(--charcoal);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;
 }
 .report-doc *{box-sizing:border-box}
@@ -32,19 +32,19 @@
 
 .report-doc .lede{font-family:var(--serif);font-size:19px;line-height:1.7;color:var(--charcoal)}
 
-.report-doc .exec{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px 34px;margin:8px 0 12px}
+.report-doc .exec{background:#fff;border:1px solid var(--border);border-radius:8px;padding:32px 34px;margin:8px 0 12px}
 .report-doc .exec .eyebrow{color:var(--forest);margin-bottom:14px}
 .report-doc .exec p{font-family:var(--serif);font-size:16px}
 
 .report-doc .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0}
-.report-doc .stat{background:var(--forest);color:var(--cream);border-radius:12px;padding:20px 18px}
+.report-doc .stat{background:var(--forest);color:var(--cream);border-radius:8px;padding:20px 18px}
 .report-doc .stat .v{font-family:var(--mono);font-weight:600;font-size:30px;letter-spacing:-.02em;line-height:1}
 .report-doc .stat .l{font-size:12.5px;color:rgba(250,250,248,.72);margin-top:10px;line-height:1.35}
 .report-doc .stat.gold{background:var(--gold);color:var(--charcoal)}
 .report-doc .stat.gold .l{color:rgba(28,28,30,.66)}
 .report-doc .stat.dark{background:var(--charcoal)}
 
-.report-doc figure.fig{margin:26px 0;background:#fff;border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:10px;padding:18px 22px}
+.report-doc figure.fig{margin:26px 0;background:#fff;border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:18px 22px}
 .report-doc figure.fig .tag{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--forest);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:12px}
 .report-doc figure.fig .panels{display:grid;grid-template-columns:1fr;gap:28px}
 .report-doc figure.fig .panel-title{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink-60);margin:0 0 6px}
@@ -52,7 +52,7 @@
 
 .report-doc .tblwrap{margin:26px 0;overflow-x:auto}
 .report-doc .tblcap{font-size:13px;color:var(--ink-45);margin:0 0 10px;font-weight:500}
-.report-doc table{border-collapse:collapse;width:100%;font-size:14px;background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.report-doc table{border-collapse:collapse;width:100%;font-size:14px;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .report-doc th,.report-doc td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
 .report-doc thead th{background:var(--charcoal);color:var(--cream);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
 .report-doc tbody tr:last-child td{border-bottom:none}
@@ -66,7 +66,7 @@
 .report-doc .b-bull{color:#9a7d2c;font-weight:600}
 
 .report-doc ol.recs{list-style:none;counter-reset:r;padding:0;margin:24px 0}
-.report-doc ol.recs li{counter-increment:r;position:relative;padding:18px 20px 18px 62px;background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:12px}
+.report-doc ol.recs li{counter-increment:r;position:relative;padding:18px 20px 18px 62px;background:#fff;border:1px solid var(--border);border-radius:8px;margin-bottom:12px}
 .report-doc ol.recs li::before{content:counter(r);position:absolute;left:18px;top:18px;width:30px;height:30px;background:var(--forest);color:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:600;font-size:14px}
 .report-doc ol.recs b{display:block;font-family:var(--sans);font-size:16px;margin-bottom:4px;color:var(--charcoal)}
 .report-doc ol.recs p{margin:0;font-size:15px}
@@ -76,8 +76,8 @@
 .report-doc ul.limits li::before{content:'';position:absolute;left:0;top:22px;width:8px;height:8px;background:var(--gold);border-radius:50%}
 
 .report-doc .series{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:44px 0 8px}
-.report-doc .series a{display:block;background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 22px;transition:all .18s ease}
-.report-doc .series a:hover{border-color:var(--forest);box-shadow:0 6px 22px rgba(28,28,30,.07)}
+.report-doc .series a{display:block;background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px 22px;transition:border-color .15s ease}
+.report-doc .series a:hover{border-color:rgba(28,28,30,.4)}
 .report-doc .series .k{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:#9a7d2c;margin-bottom:8px}
 .report-doc .series .t{font-weight:600;font-size:15.5px;line-height:1.35;color:var(--charcoal)}
 

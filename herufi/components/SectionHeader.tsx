@@ -1,7 +1,4 @@
-import Tag from './Tag'
-
 type SectionHeaderProps = {
-  label?: string
   title: string
   description?: string
   centered?: boolean
@@ -9,24 +6,18 @@ type SectionHeaderProps = {
 }
 
 export default function SectionHeader({
-  label,
   title,
   description,
   centered = false,
   className = '',
 }: SectionHeaderProps) {
   return (
-    <div className={`mb-12 ${centered ? 'text-center mx-auto max-w-2xl' : ''} ${className}`}>
-      {label && (
-        <div className="mb-3">
-          <Tag label={label} variant="green" />
-        </div>
-      )}
-      <h2 className="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight mb-3">
+    <div className={`${centered ? 'text-center mx-auto max-w-2xl' : 'max-w-2xl'} ${className}`}>
+      <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight">
         {title}
       </h2>
       {description && (
-        <p className="text-base text-charcoal/55 leading-relaxed">{description}</p>
+        <p className="mt-3 text-base text-charcoal/65 leading-relaxed">{description}</p>
       )}
     </div>
   )

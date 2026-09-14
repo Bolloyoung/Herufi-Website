@@ -11,7 +11,7 @@ export default function Africa2030BetterThanTheHype() {
       <div className="chips"><span className="pill green">Venture Strategy and Capital Intelligence</span><span className="pill outline">Explainer</span></div>
       <h1>Africa 2030: The $5.5 Billion Story That Beats the Hype</h1>
       <p className="summary">Forecasts of $60 to $90 billion make headlines. The math says something more modest and more useful. Here is where African startup funding is actually heading.</p>
-      <div className="meta"><span>Michael Omega</span><span>·</span><span>2026-07-14</span><span>·</span><span>6 min read</span></div>
+      <div className="meta"><span>Michael Omega</span><span>14 July 2026</span><span>6 min read</span></div>
       <div className="prose">
         <p><em>The African Startup Investment Trilogy. Explainer 3 of 3.</em></p>
         <p>We tested the forecasting methods before trusting them. The test was humbling. We trained the standard &quot;draw a growth line&quot; model on 2015 to 2022 data and asked it to predict 2023 to 2025. It predicted $18 billion for 2025. Reality: $3.2 billion. Off by a factor of six. That failed method is exactly how the eye catching &quot;$62 to $94 billion by 2030&quot; projections are produced. They would require the market to grow 81% to 97% per year, five years running. It has never once done that sustainably.</p>

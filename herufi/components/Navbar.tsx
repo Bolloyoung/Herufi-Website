@@ -16,15 +16,8 @@ function isActive(href: string, pathname: string): boolean {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const [user, setUser] = useState<User | null>(null)
   const pathname = usePathname()
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => { setOpen(false) }, [pathname])
 
@@ -41,41 +34,33 @@ export default function Navbar() {
   const initial = user?.email?.charAt(0).toUpperCase() ?? ''
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-border-soft transition-shadow duration-300 ${
-        scrolled ? 'shadow-sm' : ''
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-cream border-b border-border-soft">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center" aria-label="Herufi home">
           <Logo />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-8" aria-label="Primary">
           {navLinks.map((link) => {
             const active = isActive(link.href, pathname)
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative nav-link text-sm font-medium transition-colors duration-200 pb-0.5 ${
-                  active ? 'text-forest after:!w-full' : 'text-charcoal/60 hover:text-charcoal'
+                aria-current={active ? 'page' : undefined}
+                className={`text-sm font-medium transition-colors duration-150 ${
+                  active ? 'text-charcoal' : 'text-charcoal/60 hover:text-charcoal'
                 }`}
               >
                 {link.label}
-                <span
-                  className={`absolute bottom-0 left-0 h-px bg-forest transition-all duration-300 ${
-                    active ? 'w-full' : 'w-0'
-                  }`}
-                />
               </Link>
             )
           })}
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-4">
           {user ? (
             <>
               <Link
@@ -86,68 +71,60 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/dashboard"
-                className="w-8 h-8 rounded-full bg-forest text-cream text-xs font-bold flex items-center justify-center hover:bg-forest-light transition-colors"
+                className="w-8 h-8 rounded-full bg-forest text-cream text-xs font-semibold flex items-center justify-center hover:bg-forest-light transition-colors"
                 title={user.email}
               >
                 {initial}
               </Link>
             </>
           ) : (
-            <Link
-              href="/contact"
-              className="text-sm font-medium bg-charcoal text-cream px-4 py-2 rounded hover:bg-forest transition-colors duration-200"
-            >
-              Work With Herufi
+            <Link href="/contact" className="btn-primary px-4 py-2">
+              Work with Herufi
             </Link>
           )}
         </div>
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 text-charcoal"
+          className="lg:hidden p-2 -mr-2 text-charcoal"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-cream border-t border-border-soft px-6 py-4 flex flex-col gap-1">
+        <nav className="lg:hidden bg-cream border-t border-border-soft px-6 py-3" aria-label="Primary">
           {navLinks.map((link) => {
             const active = isActive(link.href, pathname)
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`py-2.5 text-sm font-medium border-b border-border-soft last:border-0 flex items-center justify-between ${
-                  active ? 'text-forest' : 'text-charcoal/70'
+                aria-current={active ? 'page' : undefined}
+                className={`block py-3 text-base border-b border-border-soft last:border-0 ${
+                  active ? 'font-semibold text-charcoal' : 'font-medium text-charcoal/70'
                 }`}
               >
                 {link.label}
-                {active && <span className="w-1.5 h-1.5 rounded-full bg-forest" />}
               </Link>
             )
           })}
-          <div className="mt-3 flex flex-col gap-2">
+          <div className="py-4">
             {user ? (
-              <Link
-                href="/dashboard"
-                className="text-center text-sm font-medium bg-forest text-cream px-4 py-2.5 rounded"
-              >
-                Dashboard ({user.email})
+              <Link href="/dashboard" className="btn-primary w-full">
+                Dashboard
               </Link>
             ) : (
-              <Link
-                href="/contact"
-                className="text-center text-sm font-medium bg-charcoal text-cream px-4 py-2.5 rounded"
-              >
-                Work With Herufi
+              <Link href="/contact" className="btn-primary w-full">
+                Work with Herufi
               </Link>
             )}
           </div>
-        </div>
+        </nav>
       )}
     </header>
   )

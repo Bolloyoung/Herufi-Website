@@ -6,6 +6,7 @@ import { blogPosts } from '@/data/blogPosts'
 import { publications } from '@/data/publications'
 import { getAllArticles, getArticleBySlug } from '@/lib/content'
 import { markdownToHtml } from '@/lib/markdown'
+import { formatDate } from '@/lib/format'
 import '../explainer.css'
 
 const contentMap: Record<string, () => Promise<{ default: React.ComponentType }>> = {
@@ -66,9 +67,7 @@ export default async function BlogPostPage({ params }: Props) {
         <p className="summary">{article.summary}</p>
         <div className="meta">
           <span>{article.author}</span>
-          <span>&middot;</span>
-          <span>{article.date}</span>
-          <span>&middot;</span>
+          <span>{formatDate(article.date)}</span>
           <span>{article.readingTime}</span>
         </div>
         <div className="prose" dangerouslySetInnerHTML={{ __html: markdownToHtml(article.content) }} />

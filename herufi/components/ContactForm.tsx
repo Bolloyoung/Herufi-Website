@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Check } from 'lucide-react'
 
 type FormData = {
   name: string
@@ -36,40 +37,39 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-forest/10 border border-forest/20 rounded-xl p-8 text-center">
-        <div className="text-3xl mb-4">✓</div>
+      <div className="bg-white border border-border-soft rounded-lg p-10" role="status">
+        <div className="w-10 h-10 rounded-full bg-forest/10 text-forest flex items-center justify-center mb-5">
+          <Check size={18} strokeWidth={2} aria-hidden />
+        </div>
         <h3 className="text-xl font-semibold text-charcoal mb-2">Message received</h3>
-        <p className="text-charcoal/55 text-sm">
-          We will review your message and get back to you. Thanks for reaching out.
+        <p className="text-charcoal/65 text-sm leading-relaxed max-w-prose">
+          Thank you. We will review your message and reply within two business days.
         </p>
       </div>
     )
   }
 
-  const inputClass = "w-full text-sm border border-border-soft rounded-lg px-4 py-3 bg-white text-charcoal placeholder:text-charcoal/35 focus:outline-none focus:border-forest transition-colors"
-  const labelClass = "block text-xs font-semibold uppercase tracking-wide text-charcoal/50 mb-1.5"
-
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-border-soft rounded-xl p-8 space-y-5">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <form onSubmit={handleSubmit} className="bg-white border border-border-soft rounded-lg p-8 space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
-          <label className={labelClass}>Name</label>
-          <input required type="text" placeholder="Your name" className={inputClass} value={form.name} onChange={(e) => update('name', e.target.value)} />
+          <label htmlFor="contact-name" className="field-label">Name</label>
+          <input id="contact-name" name="name" required type="text" autoComplete="name" className="field" value={form.name} onChange={(e) => update('name', e.target.value)} />
         </div>
         <div>
-          <label className={labelClass}>Email</label>
-          <input required type="email" placeholder="your@email.com" className={inputClass} value={form.email} onChange={(e) => update('email', e.target.value)} />
+          <label htmlFor="contact-email" className="field-label">Email</label>
+          <input id="contact-email" name="email" required type="email" autoComplete="email" className="field" value={form.email} onChange={(e) => update('email', e.target.value)} />
         </div>
       </div>
 
       <div>
-        <label className={labelClass}>Organisation</label>
-        <input type="text" placeholder="Organisation or fund" className={inputClass} value={form.organisation} onChange={(e) => update('organisation', e.target.value)} />
+        <label htmlFor="contact-organisation" className="field-label">Organisation <span className="font-normal text-charcoal/50">(optional)</span></label>
+        <input id="contact-organisation" name="organisation" type="text" autoComplete="organization" className="field" value={form.organisation} onChange={(e) => update('organisation', e.target.value)} />
       </div>
 
       <div>
-        <label className={labelClass}>Type of engagement</label>
-        <select className={inputClass} value={form.type} onChange={(e) => update('type', e.target.value)}>
+        <label htmlFor="contact-type" className="field-label">Type of engagement</label>
+        <select id="contact-type" name="type" className="field" value={form.type} onChange={(e) => update('type', e.target.value)}>
           <option value="">Select one</option>
           <option>Commission a report</option>
           <option>Venture strategy support</option>
@@ -80,35 +80,31 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className={labelClass}>What do you need?</label>
+        <label htmlFor="contact-message" className="field-label">What do you need?</label>
         <textarea
+          id="contact-message"
+          name="message"
           required
-          rows={5}
-          placeholder="Describe the decision you need to make, the problem you need to understand, or the project you have in mind..."
-          className={`${inputClass} resize-none`}
+          rows={6}
+          className="field resize-y"
           value={form.message}
           onChange={(e) => update('message', e.target.value)}
         />
+        <p className="mt-1.5 text-xs text-charcoal/55">
+          The decision you need to make, the problem you need to understand, or the project you have in mind.
+        </p>
       </div>
 
       {status === 'error' && (
-        <p className="text-sm text-red-600 text-center">
+        <p className="text-sm text-red-700" role="alert">
           Something went wrong sending your message. Please try again or email{' '}
           <a href="mailto:hello@herufi.org" className="underline">hello@herufi.org</a> directly.
         </p>
       )}
 
-      <button
-        type="submit"
-        disabled={status === 'loading'}
-        className="w-full bg-charcoal text-cream text-sm font-medium py-3 rounded-lg hover:bg-forest transition-colors duration-200 disabled:opacity-60"
-      >
-        {status === 'loading' ? 'Sending...' : 'Send message'}
+      <button type="submit" disabled={status === 'loading'} className="btn-primary w-full sm:w-auto">
+        {status === 'loading' ? 'Sending' : 'Send message'}
       </button>
-
-      <p className="text-xs text-charcoal/35 text-center">
-        We respond to all enquiries within 2 business days.
-      </p>
     </form>
   )
 }

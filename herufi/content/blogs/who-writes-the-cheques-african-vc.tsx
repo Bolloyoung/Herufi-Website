@@ -12,7 +12,7 @@ export default function WhoWritesTheChequesAfricanVC() {
       <div className="chips"><span className="pill green">Venture Strategy and Capital Intelligence</span><span className="pill outline">Explainer</span></div>
       <h1>Who Is Actually Writing Africa&apos;s VC Cheques Now</h1>
       <p className="summary">The African Startup Investment series looked at what the money does. This is what I found when I went one layer deeper, to who supplies it and how a fund manager should actually build a portfolio around it.</p>
-      <div className="meta"><span>Michael Omega</span><span>·</span><span>2026-07-24</span><span>·</span><span>10 min read</span></div>
+      <div className="meta"><span>Michael Omega</span><span>24 July 2026</span><span>10 min read</span></div>
       <div className="prose">
         <p><em>The fourth notebook in the African Startup Investment series.</em></p>
         <p>I have sat on the fund facing side of this problem: building investor pipelines, preparing board and LP materials, and working through how a debt facility gets structured to plug a working capital gap a pure equity vehicle cannot reach. So when people ask me where African VC is headed, the honest answer starts with who is actually funding the funds, because that has changed faster in the past eighteen months than at any point I have tracked.</p>

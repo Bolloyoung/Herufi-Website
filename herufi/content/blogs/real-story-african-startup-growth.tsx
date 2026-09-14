@@ -11,7 +11,7 @@ export default function RealStoryAfricanStartupGrowth() {
       <div className="chips"><span className="pill green">Venture Strategy and Capital Intelligence</span><span className="pill outline">Explainer</span></div>
       <h1>African Startups Raise 10x More Than a Decade Ago. That Is Not the Real Story.</h1>
       <p className="summary">One modern year of African startup funding now beats everything recorded up to 2014, twice over. But the numbers that matter most are not the big ones.</p>
-      <div className="meta"><span>Michael Omega</span><span>·</span><span>2026-07-15</span><span>·</span><span>6 min read</span></div>
+      <div className="meta"><span>Michael Omega</span><span>15 July 2026</span><span>6 min read</span></div>
       <div className="prose">
         <p><em>The African Startup Investment Trilogy. Explainer 2 of 3.</em></p>
         <p>First, the scale. In 2014, the entire recorded history of African startup funding amounted to $1.7 billion across 194 companies. In 2025 alone, African startups raised between $3.2 and $4.1 billion (trackers count slightly differently) across roughly 500 deals. The whole arc includes a boom in 2021 and 2022, a painful crash in 2023 (down 46%) and a recovery in 2025, when Africa was the only region in the world where deal activity actually grew.</p>

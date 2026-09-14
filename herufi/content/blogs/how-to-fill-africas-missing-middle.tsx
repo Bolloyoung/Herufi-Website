@@ -12,7 +12,7 @@ export default function HowToFillAfricasMissingMiddle() {
       <div className="chips"><span className="pill green">Venture Strategy and Capital Intelligence</span><span className="pill outline">Explainer</span></div>
       <h1>Four Ways to Fill Africa&apos;s Missing Middle, and What Each One Really Costs</h1>
       <p className="summary">African startups get funded once and then stall. Four financing tools already used on the continent could change that. This is what the math says each one earns, costs and can realistically deliver.</p>
-      <div className="meta"><span>Michael Omega</span><span>·</span><span>2026-07-25</span><span>·</span><span>9 min read</span></div>
+      <div className="meta"><span>Michael Omega</span><span>25 July 2026</span><span>9 min read</span></div>
       <div className="prose">
         <p><em>The fifth report in the African Startup Investment series.</em></p>
         <p>Four reports into this series, one problem keeps refusing to move. African startups raise a first cheque and then run out of road. The 2014 baseline measured it. The 2026 comparison found it had not improved. The 2030 forecast called it the biggest risk of the decade. Report 4 showed the money that would fix it simply is not organised to arrive. Every one of those reports measured the gap. This one asks a different question: what could actually fill it, and what would each option cost the people on both sides of the table.</p>

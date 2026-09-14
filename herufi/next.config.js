@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  transpilePackages: ['@splinetool/react-spline', '@splinetool/runtime'],
   experimental: {
     mdxRs: false,
   },
@@ -22,14 +21,6 @@ const nextConfig = {
       { source: '/services', destination: '/about', permanent: true },
       { source: '/platform', destination: '/about', permanent: true },
     ]
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
   },
 }
 

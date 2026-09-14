@@ -37,8 +37,7 @@ Core principles: **depth over speed, evidence over opinion, reproducibility over
 | Framework | Next.js 14 App Router |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
-| Animation | Framer Motion |
-| Charts | Recharts (dashboard); ECharts via `echarts-for-react` (publication/blog figures) |
+| Charts | ECharts via `echarts-for-react` (publication and blog figures) |
 | Auth/DB | Supabase |
 | Content | Markdown (gray-matter) |
 | Icons | Lucide React |
@@ -58,7 +57,7 @@ Blogs link to publications: a blog's optional `publication` frontmatter field re
 Five-tab site structure: **Home, Blogs, Publications, About Us, Contact Us.**
 
 ```
-/                    → Home (Spline 3D hero + domains + latest blogs)
+/                    → Home (editorial hero with featured publication + pillars + latest blogs)
 /blogs               → Blog listing with search + pillar filter (?pillar=<id>)
 /blogs/[slug]        → Individual blog posts with Comments (Giscus)
 /publications        → Detailed long form reports (data/publications.ts)
@@ -74,7 +73,7 @@ Old routes (`/our-work`, `/research`, `/research/:slug`, `/analytics`, `/framewo
 
 **Copy style:** site copy avoids hyphens and dashes entirely (no em dashes, no hyphenated compounds like "evidence-backed"). Rephrase instead. No serial/Oxford comma before "and" in lists either. Sports content was removed from the site; there are four research pillars (the climate, energy, food and infrastructure pillar was removed).
 
-**Spline note:** `@splinetool/react-spline` is pinned to `2.2.6` — 4.x is ESM-only and breaks the Next 14 webpack build. The 3D hero lives in `components/SplineHero.tsx` (loaded client-side via `next/dynamic`, `ssr: false`).
+**Home hero:** `components/HomeHero.tsx` is a static split hero with a featured publication panel. The earlier Spline 3D hero and its `@splinetool/*` packages were removed; if a 3D scene is ever wanted again, note that `@splinetool/react-spline` 4.x is ESM only and breaks the Next 14 webpack build (2.2.6 was the last version that worked).
 
 ### Tiered Access Model
 
@@ -91,10 +90,10 @@ Authentication uses Supabase magic links (email OTP). No passwords.
 | Component | Purpose |
 |-----------|---------|
 | `Logo.tsx` | SVG H-mark logo, accepts `variant` (dark/light) and `size` props |
-| `Navbar.tsx` | Active tab via `startsWith`, closes on route change |
-| `AnimatedSection.tsx` | Framer Motion scroll-triggered fade-in wrapper |
-| `AnimatedCounter.tsx` | Framer Motion number counter on scroll-in |
-| `MemberGate.tsx` | Content gating — shows lock UI if not authenticated |
+| `Navbar.tsx` | Fixed 64px header; active tab via `startsWith`, closes on route change. `<main>` carries the matching `pt-16`, so pages do not add their own top offset |
+| `HomeHero.tsx` | Home split hero: headline + CTAs on the left, featured publication panel with one headline stat on the right |
+| `PageHeader.tsx` / `SectionHeader.tsx` | Serif page and section titles. No eyebrow labels: the site uses at most one small uppercase kicker per few sections |
+| `Tag.tsx` | Typographic category label (uppercase text, no pill background) |
 | `Comments.tsx` | Giscus GitHub Discussions comments embed |
 
 ### Styling
@@ -105,7 +104,9 @@ Custom Tailwind palette in `tailwind.config.ts`:
 - `gold` (#C9A84C) / `gold-light` (#E8C96A) — accent
 - `cream` (#FAFAF8) — background
 
-Fonts: `font-sans` → Inter, `font-serif` → Merriweather.
+Fonts: `font-sans` → Inter, `font-serif` → Merriweather, both loaded with `next/font/google` in `app/layout.tsx` (no Google Fonts `<link>`/`@import`). Marketing pages set page and section titles in Merriweather at regular weight; UI, cards and body copy stay in Inter. `lib/format.ts` formats ISO dates for bylines.
+
+Shared primitives live in `app/globals.css` under `@layer components`: `.btn-primary` / `.btn-secondary` (and `-inverse` variants for dark surfaces), `.field` / `.field-label` for inputs, `.kicker` and `.text-link`. One radius scale site wide: buttons, inputs and filter chips are `rounded-md` (6px), panels and cards are `rounded-lg` (8px), avatars are circles. Motion is limited to hover and `:active` states; no scroll listeners, load-in fades or hover lifts. Icons come from `lucide-react` at `strokeWidth={1.5}`; do not hand roll SVG icons. Gold is reserved for the logo mark and the featured publication kicker.
 
 ### Environment Variables
 
@@ -130,7 +131,7 @@ RESEND_API_KEY=                   # From resend.com, herufi.org domain verified 
 - Elasticsearch/Typesense search
 
 ### Frontend (in scope for Next.js)
-- Recharts/D3.js enhanced dashboards on analytics page
+- Enhanced dashboards on the member portal (ECharts is already a dependency)
 - Research Studio page (upload datasets, PDFs, connect APIs)
 - Confidence level badges on research articles
 - Source transparency panel on article pages
@@ -188,7 +189,7 @@ Email: hello@herufi.org
 
 **Supabase Auth:** Create a Supabase project, copy URL + anon key to `.env.local`, enable Email OTP auth in Supabase dashboard. Create an `approved_members` table with an `email` column for allowlist.
 
-**Hero image:** The home page uses an Unsplash placeholder. Replace `imageSrc` in `app/page.tsx` with `/founder.jpg` (or another image in `public/`) when ready.
+**Home hero stat:** `app/page.tsx` pins `FEATURED_PUBLICATION_ID` and the headline stat shown in the hero panel. Update both when a new report is published.
 
 **Contact form (Resend):** `components/ContactForm.tsx` posts to `app/api/contact/route.ts`, which sends an email via Resend to hello@herufi.org (reply-to set to the submitter's address). Requires `RESEND_API_KEY` in the environment and the herufi.org domain verified in the Resend dashboard.
 

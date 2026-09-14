@@ -19,17 +19,21 @@ export default function BlogsPage() {
   return (
     <>
       <PageHeader
-        label="Blogs"
         title="Ideas, analysis and field notes"
         description="Shorter reads built on the same evidence standards as our publications. Each blog links to the detailed publication behind it."
       />
 
-      <section className="py-16 px-6 bg-cream">
+      <section className="py-16 px-6 bg-cream border-b border-border-soft">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/40 mb-8">
-            The African Startup Investment Series
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="max-w-2xl mb-8">
+            <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight">
+              The African Startup Investment Series
+            </h2>
+            <p className="mt-3 text-base text-charcoal/65 leading-relaxed">
+              Five explainers, each drawing on a full report in the series.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {blogPosts.map((post) => (
               <BlogPostCard key={post.id} post={post} />
             ))}
