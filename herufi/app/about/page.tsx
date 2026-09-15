@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import PageHeader from '@/components/PageHeader'
+import PhotoHero from '@/components/PhotoHero'
+import Reveal from '@/components/Reveal'
+import { heroImages } from '@/data/heroes'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import CTASection from '@/components/CTASection'
 
@@ -95,14 +97,15 @@ const founders = [
 export default function AboutPage() {
   return (
     <>
-      <PageHeader
+      <PhotoHero
+        image={heroImages.about}
         title="A research intelligence platform for African markets"
-        description="Herufi combines analytical methods, original frameworks and intelligence grounded in data to produce structured insights for decision makers who cannot afford to be wrong."
+        description="Analytical methods, original frameworks and intelligence grounded in data, for decision makers who cannot afford to be wrong."
       />
 
       {/* Mission and philosophy: two essays side by side on wide screens */}
       <section className="py-16 lg:py-20 px-6 bg-cream">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <Reveal className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <div>
             <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight mb-6">
               Useful intelligence for decision makers who cannot afford to be wrong
@@ -135,12 +138,12 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Capabilities: definition list */}
       <section className="py-16 lg:py-20 px-6 bg-white border-y border-border-soft">
-        <div className="max-w-7xl mx-auto">
+        <Reveal className="max-w-7xl mx-auto">
           <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight mb-10">
             Seven capabilities, one platform
           </h2>
@@ -152,12 +155,12 @@ export default function AboutPage() {
               </div>
             ))}
           </dl>
-        </div>
+        </Reveal>
       </section>
 
       {/* Process and expertise */}
       <section className="py-16 lg:py-20 px-6 bg-cream">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <Reveal className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-7">
             <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight mb-8">
               How an engagement runs
@@ -186,12 +189,12 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Founders */}
       <section className="py-16 lg:py-20 px-6 bg-white border-y border-border-soft">
-        <div className="max-w-7xl mx-auto">
+        <Reveal className="max-w-7xl mx-auto">
           <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight mb-12">
             Founders
           </h2>
@@ -236,12 +239,12 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Values */}
       <section className="py-16 lg:py-20 px-6 bg-cream">
-        <div className="max-w-7xl mx-auto">
+        <Reveal className="max-w-7xl mx-auto">
           <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight mb-10">
             What Herufi stands for
           </h2>
@@ -253,7 +256,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <NewsletterSignup />

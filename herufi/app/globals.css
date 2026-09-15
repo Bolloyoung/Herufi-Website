@@ -40,7 +40,7 @@ body {
     @apply btn bg-cream text-charcoal hover:bg-white;
   }
   .btn-secondary-inverse {
-    @apply btn border border-cream/30 text-cream hover:border-cream/70;
+    @apply btn border border-cream/40 bg-charcoal/20 backdrop-blur-sm text-cream hover:border-cream/80 hover:bg-charcoal/35;
   }
 
   .field {

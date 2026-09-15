@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import PageHeader from '@/components/PageHeader'
+import PhotoHero from '@/components/PhotoHero'
+import Reveal from '@/components/Reveal'
+import { heroImages } from '@/data/heroes'
 import EmptyState from '@/components/EmptyState'
 import Tag from '@/components/Tag'
 import { publications } from '@/data/publications'
@@ -18,13 +20,14 @@ export default function PublicationsPage() {
 
   return (
     <>
-      <PageHeader
+      <PhotoHero
+        image={heroImages.publications}
         title="Detailed reports and structured analysis"
         description="The full depth behind our blogs: long form publications with explicit methodology, linked sources and findings that hold up over time."
       />
 
       <section className="py-16 px-6 bg-cream">
-        <div className="max-w-7xl mx-auto">
+        <Reveal className="max-w-7xl mx-auto">
           {publications.length === 0 ? (
             <EmptyState
               title="First publication coming soon"
@@ -47,7 +50,7 @@ export default function PublicationsPage() {
               )}
             </>
           )}
-        </div>
+        </Reveal>
       </section>
     </>
   )

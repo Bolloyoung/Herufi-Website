@@ -37,6 +37,7 @@ Core principles: **depth over speed, evidence over opinion, reproducibility over
 | Framework | Next.js 14 App Router |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
+| Animation | `motion` (`motion/react`): hero parallax and scroll reveals only |
 | Charts | ECharts via `echarts-for-react` (publication and blog figures) |
 | Auth/DB | Supabase |
 | Content | Markdown (gray-matter) |
@@ -57,7 +58,7 @@ Blogs link to publications: a blog's optional `publication` frontmatter field re
 Five-tab site structure: **Home, Blogs, Publications, About Us, Contact Us.**
 
 ```
-/                    → Home (editorial hero with featured publication + pillars + latest blogs)
+/                    → Home (photo hero + featured publication + pillars + latest blogs)
 /blogs               → Blog listing with search + pillar filter (?pillar=<id>)
 /blogs/[slug]        → Individual blog posts with Comments (Giscus)
 /publications        → Detailed long form reports (data/publications.ts)
@@ -73,7 +74,7 @@ Old routes (`/our-work`, `/research`, `/research/:slug`, `/analytics`, `/framewo
 
 **Copy style:** site copy avoids hyphens and dashes entirely (no em dashes, no hyphenated compounds like "evidence-backed"). Rephrase instead. No serial/Oxford comma before "and" in lists either. Sports content was removed from the site; there are four research pillars (the climate, energy, food and infrastructure pillar was removed).
 
-**Home hero:** `components/HomeHero.tsx` is a static split hero with a featured publication panel. The earlier Spline 3D hero and its `@splinetool/*` packages were removed; if a 3D scene is ever wanted again, note that `@splinetool/react-spline` 4.x is ESM only and breaks the Next 14 webpack build (2.2.6 was the last version that worked).
+**Page heroes:** every top level tab (Home, Blogs, Publications, About, Contact) opens with `components/PhotoHero.tsx`: a full bleed photograph from `public/heroes/` behind a soft scrim, parallax on scroll, copy set directly on the image with a soft text shadow, and a dissolve into the cream page background along the bottom edge. The photo for each page is chosen in `data/heroes.ts` (with `spareHeroImages` for future pages). Section content below the hero is wrapped in `components/Reveal.tsx`, which lifts it into view once on scroll. Both collapse to static under `prefers-reduced-motion`. The hero photographs are 2x upscales of ~500px crops; drop higher resolution originals into `public/heroes/` under the same filenames if they become available. The earlier Spline 3D hero and its `@splinetool/*` packages were removed; if a 3D scene is ever wanted again, note that `@splinetool/react-spline` 4.x is ESM only and breaks the Next 14 webpack build (2.2.6 was the last version that worked).
 
 ### Tiered Access Model
 
@@ -91,8 +92,10 @@ Authentication uses Supabase magic links (email OTP). No passwords.
 |-----------|---------|
 | `Logo.tsx` | SVG H-mark logo, accepts `variant` (dark/light) and `size` props |
 | `Navbar.tsx` | Fixed 64px header; active tab via `startsWith`, closes on route change. `<main>` carries the matching `pt-16`, so pages do not add their own top offset |
-| `HomeHero.tsx` | Home split hero: headline + CTAs on the left, featured publication panel with one headline stat on the right |
-| `PageHeader.tsx` / `SectionHeader.tsx` | Serif page and section titles. No eyebrow labels: the site uses at most one small uppercase kicker per few sections |
+| `PhotoHero.tsx` | Full bleed photo hero with parallax (client leaf); `size="tall"` on the home page |
+| `Reveal.tsx` | Scroll reveal wrapper for sections below a hero |
+| `FeaturedPublication.tsx` | Dark panel under the home hero: latest report plus one headline stat |
+| `SectionHeader.tsx` | Serif section titles. No eyebrow labels: the site uses at most one small uppercase kicker per few sections |
 | `Tag.tsx` | Typographic category label (uppercase text, no pill background) |
 | `Comments.tsx` | Giscus GitHub Discussions comments embed |
 
@@ -106,7 +109,7 @@ Custom Tailwind palette in `tailwind.config.ts`:
 
 Fonts: `font-sans` → Inter, `font-serif` → Merriweather, both loaded with `next/font/google` in `app/layout.tsx` (no Google Fonts `<link>`/`@import`). Marketing pages set page and section titles in Merriweather at regular weight; UI, cards and body copy stay in Inter. `lib/format.ts` formats ISO dates for bylines.
 
-Shared primitives live in `app/globals.css` under `@layer components`: `.btn-primary` / `.btn-secondary` (and `-inverse` variants for dark surfaces), `.field` / `.field-label` for inputs, `.kicker` and `.text-link`. One radius scale site wide: buttons, inputs and filter chips are `rounded-md` (6px), panels and cards are `rounded-lg` (8px), avatars are circles. Motion is limited to hover and `:active` states; no scroll listeners, load-in fades or hover lifts. Icons come from `lucide-react` at `strokeWidth={1.5}`; do not hand roll SVG icons. Gold is reserved for the logo mark and the featured publication kicker.
+Shared primitives live in `app/globals.css` under `@layer components`: `.btn-primary` / `.btn-secondary` (and `-inverse` variants for dark surfaces), `.field` / `.field-label` for inputs, `.kicker` and `.text-link`. One radius scale site wide: buttons, inputs and filter chips are `rounded-md` (6px), panels and cards are `rounded-lg` (8px), avatars are circles. Motion is limited to the hero parallax and entrance, the section reveal wrapper, and hover and `:active` states; no raw scroll listeners or hover lifts. Icons come from `lucide-react` at `strokeWidth={1.5}`; do not hand roll SVG icons. Gold is reserved for the logo mark and the featured publication kicker.
 
 ### Environment Variables
 
@@ -189,7 +192,7 @@ Email: hello@herufi.org
 
 **Supabase Auth:** Create a Supabase project, copy URL + anon key to `.env.local`, enable Email OTP auth in Supabase dashboard. Create an `approved_members` table with an `email` column for allowlist.
 
-**Home hero stat:** `app/page.tsx` pins `FEATURED_PUBLICATION_ID` and the headline stat shown in the hero panel. Update both when a new report is published.
+**Featured publication:** `app/page.tsx` pins `FEATURED_PUBLICATION_ID` and the headline stat shown in the panel under the home hero. Update both when a new report is published.
 
 **Contact form (Resend):** `components/ContactForm.tsx` posts to `app/api/contact/route.ts`, which sends an email via Resend to hello@herufi.org (reply-to set to the submitter's address). Requires `RESEND_API_KEY` in the environment and the herufi.org domain verified in the Resend dashboard.
 

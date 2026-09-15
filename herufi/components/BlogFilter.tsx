@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import { Search, X } from 'lucide-react'
 import ResearchCard from '@/components/ResearchCard'
 import EmptyState from '@/components/EmptyState'
+import Reveal from '@/components/Reveal'
 import type { ArticleFrontmatter } from '@/lib/content'
 import type { Pillar } from '@/data/pillars'
 
@@ -66,7 +67,7 @@ export default function BlogFilter({ articles, pillars }: Props) {
 
   return (
     <section className="py-16 px-6 bg-cream">
-      <div className="max-w-7xl mx-auto">
+      <Reveal className="max-w-7xl mx-auto">
         <h2 className="font-serif text-2xl md:text-3xl font-normal text-charcoal leading-tight mb-8">
           All blogs
         </h2>
@@ -134,7 +135,7 @@ export default function BlogFilter({ articles, pillars }: Props) {
             }
           />
         )}
-      </div>
+      </Reveal>
     </section>
   )
 }

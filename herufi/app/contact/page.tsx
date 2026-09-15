@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { FileText, Compass, BarChart2, Users, Mail, Linkedin } from 'lucide-react'
-import PageHeader from '@/components/PageHeader'
+import PhotoHero from '@/components/PhotoHero'
+import Reveal from '@/components/Reveal'
+import { heroImages } from '@/data/heroes'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
@@ -18,13 +20,14 @@ const engagementTypes = [
 export default function ContactPage() {
   return (
     <>
-      <PageHeader
+      <PhotoHero
+        image={heroImages.contact}
         title="Work with Herufi"
         description="Tell us about the decision you need to make or the problem you need to understand. We respond to every enquiry within two business days."
       />
 
       <section className="py-16 px-6 bg-cream">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <Reveal className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
             <h2 className="text-base font-semibold text-charcoal mb-6">Ways to engage</h2>
             <ul className="space-y-5">
@@ -62,7 +65,7 @@ export default function ContactPage() {
           <div className="lg:col-span-8">
             <ContactForm />
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   )
