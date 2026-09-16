@@ -74,7 +74,7 @@ Old routes (`/our-work`, `/research`, `/research/:slug`, `/analytics`, `/framewo
 
 **Copy style:** site copy avoids hyphens and dashes entirely (no em dashes, no hyphenated compounds like "evidence-backed"). Rephrase instead. No serial/Oxford comma before "and" in lists either. Sports content was removed from the site; there are four research pillars (the climate, energy, food and infrastructure pillar was removed).
 
-**Page heroes:** every top level tab (Home, Blogs, Publications, About, Contact) opens with `components/PhotoHero.tsx`: a full bleed photograph from `public/heroes/` behind a soft scrim, parallax on scroll, copy set directly on the image with a soft text shadow, and a dissolve into the cream page background along the bottom edge. The photo for each page is chosen in `data/heroes.ts` (with `spareHeroImages` for future pages). Section content below the hero is wrapped in `components/Reveal.tsx`, which lifts it into view once on scroll. Both collapse to static under `prefers-reduced-motion`. The hero photographs are 2x upscales of ~500px crops; drop higher resolution originals into `public/heroes/` under the same filenames if they become available. The earlier Spline 3D hero and its `@splinetool/*` packages were removed; if a 3D scene is ever wanted again, note that `@splinetool/react-spline` 4.x is ESM only and breaks the Next 14 webpack build (2.2.6 was the last version that worked).
+**Page heroes:** every top level tab (Home, Blogs, Publications, About, Contact) opens with `components/PhotoHero.tsx`: a full bleed illustration from `public/heroes/` (engraved style figures on Herufi blue `#02448B` with a dotted Africa map), parallax on scroll, copy set directly on the artwork with a soft text shadow, and a dissolve into the cream page background along the bottom edge. Each file is a 1:1 frame; PhotoHero anchors it to the right edge with `object-contain`, paints the same blue across the section and feathers the join with a CSS gradient, so the copy always sits on flat colour and a replacement only needs to be a square frame on that blue. The artwork for each page is chosen in `data/heroes.ts` (with `spareHeroImages` for future pages). Section content below the hero is wrapped in `components/Reveal.tsx`, which lifts it into view once on scroll. Both collapse to static under `prefers-reduced-motion`. The earlier Spline 3D hero and its `@splinetool/*` packages were removed; if a 3D scene is ever wanted again, note that `@splinetool/react-spline` 4.x is ESM only and breaks the Next 14 webpack build (2.2.6 was the last version that worked).
 
 ### Tiered Access Model
 
@@ -92,7 +92,7 @@ Authentication uses Supabase magic links (email OTP). No passwords.
 |-----------|---------|
 | `Logo.tsx` | SVG H-mark logo, accepts `variant` (dark/light) and `size` props |
 | `Navbar.tsx` | Fixed 64px header; active tab via `startsWith`, closes on route change. `<main>` carries the matching `pt-16`, so pages do not add their own top offset |
-| `PhotoHero.tsx` | Full bleed photo hero with parallax (client leaf); `size="tall"` on the home page |
+| `PhotoHero.tsx` | Full bleed illustrated hero with parallax (client leaf); `size="tall"` on the home page |
 | `Reveal.tsx` | Scroll reveal wrapper for sections below a hero |
 | `FeaturedPublication.tsx` | Dark panel under the home hero: latest report plus one headline stat |
 | `SectionHeader.tsx` | Serif section titles. No eyebrow labels: the site uses at most one small uppercase kicker per few sections |

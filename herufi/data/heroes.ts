@@ -1,10 +1,11 @@
 /**
- * Full bleed hero photograph for each top level page. Files live in
- * public/heroes/: six approved frames cropped from the founder supplied
- * photo set (the frames with chalkboards, whiteboards or drawn icon
- * overlays were deliberately left out).
- * `position` is the CSS object-position used when the photo is cropped to
- * the hero's aspect ratio, chosen so the subject stays clear of the copy.
+ * Full bleed hero artwork for each top level page. Files live in
+ * public/heroes/: six approved 1:1 engraved style illustrations on the
+ * Herufi blue (#02448B) with a dotted Africa map, cropped from the founder
+ * supplied composite. PhotoHero anchors the square to the right edge and
+ * paints the same blue behind the copy, so a replacement only needs to be
+ * a square frame on that blue. `position` is kept for future non square
+ * artwork and is currently unused.
  */
 export type HeroImage = {
   src: string
@@ -15,32 +16,32 @@ export type HeroImage = {
 export const heroImages = {
   home: {
     src: '/heroes/maize-tablet.webp',
-    alt: 'A farmer crouching in a maize field, reading a tablet',
-    position: '65% 40%',
+    alt: 'Illustration of a farmer in a hat crouching among crops',
+    position: 'right center',
   },
   blogs: {
     src: '/heroes/field-greens.webp',
-    alt: 'A smiling farmer holding freshly picked leafy greens in a field',
-    position: '70% 30%',
+    alt: 'Illustration of a smiling farmer holding freshly picked leafy greens',
+    position: 'right center',
   },
   publications: {
     src: '/heroes/shop-tablet.webp',
-    alt: 'A shopkeeper checking stock on a tablet in front of shelves of products',
-    position: '60% 40%',
+    alt: 'Illustration of a shopkeeper checking stock on a tablet in front of shelves',
+    position: 'right center',
   },
   about: {
     src: '/heroes/team-laptop.webp',
-    alt: 'A small team working together around a laptop',
-    position: '55% 40%',
+    alt: 'Illustration of four colleagues gathered around a laptop',
+    position: 'right center',
   },
   contact: {
     src: '/heroes/market-payment.webp',
-    alt: 'A market vendor taking a mobile payment at a vegetable stall',
-    position: '70% 40%',
+    alt: 'Illustration of a market vendor handing produce to a customer',
+    position: 'right center',
   },
 } satisfies Record<string, HeroImage>
 
-/** The one remaining photograph from the approved set, for a future page. */
+/** The one remaining illustration from the approved set, for a future page. */
 export const spareHeroImages: HeroImage[] = [
-  { src: '/heroes/tailor.webp', alt: 'A tailor at a sewing machine with a tape measure around her neck', position: '60% 40%' },
+  { src: '/heroes/tailor.webp', alt: 'Illustration of a tailor working at a sewing machine', position: 'right center' },
 ]

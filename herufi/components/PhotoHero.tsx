@@ -21,11 +21,11 @@ type PhotoHeroProps = {
 const ease = [0.22, 1, 0.36, 1] as const
 
 /**
- * Full bleed photographic hero. The photograph sits behind a soft scrim,
- * moves slower than the page on scroll (parallax) and dissolves into the
- * cream page background along its bottom edge. Copy is set straight on the
- * image with a soft shadow, no boxes. All motion collapses to static under
- * prefers-reduced-motion.
+ * Full bleed illustrated hero. The artwork (figure on the right, flat blue
+ * on the left) moves slower than the page on scroll (parallax) and
+ * dissolves into the cream page background along its bottom edge. Copy is
+ * set straight on the artwork with a soft shadow, no boxes. All motion
+ * collapses to static under prefers-reduced-motion.
  */
 export default function PhotoHero({
   image,
@@ -55,15 +55,17 @@ export default function PhotoHero({
   return (
     <section
       ref={ref}
-      className={`relative overflow-hidden bg-charcoal ${
+      className={`relative overflow-hidden bg-[#02448B] ${
         size === 'tall' ? 'min-h-[78svh] lg:min-h-[82svh]' : 'min-h-[52svh] lg:min-h-[56svh]'
       } flex items-end`}
     >
-      {/* Photograph, oversized so the parallax never exposes an edge */}
+      {/* Artwork: a square illustration anchored to the right edge. The section
+          paints the same blue as the artwork, so the copy always sits on flat
+          colour and the parallax can expose the top edge without a seam. */}
       <motion.div
-        className="absolute inset-x-0 -top-[10%] h-[130%]"
+        className="absolute inset-y-0 right-0 aspect-square max-w-full [mask-image:linear-gradient(to_right,transparent_0%,black_45%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_45%)]"
         style={{ y: imageY }}
-        initial={reduce ? false : { opacity: 0, scale: 1.06 }}
+        initial={reduce ? false : { opacity: 0, scale: 1.04 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.1, ease }}
       >
@@ -72,15 +74,16 @@ export default function PhotoHero({
           alt={image.alt}
           fill
           priority
-          sizes="100vw"
-          className="object-cover"
-          style={{ objectPosition: image.position }}
+          sizes="(max-width: 1024px) 100vw, 60vw"
+          className="object-contain object-right"
         />
       </motion.div>
 
-      {/* Scrim: darker where the copy sits, then a dissolve into the page background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/45 to-charcoal/15" aria-hidden />
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-charcoal/50 to-transparent" aria-hidden />
+      {/* Light tint behind the copy (matters on narrow screens, where the
+          artwork slides under it) and a dissolve into the page background
+          along the bottom edge. The artwork's own left edge is feathered by
+          the mask on its wrapper above. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/40 via-charcoal/10 via-50% to-transparent" aria-hidden />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-cream via-cream/60 to-transparent" aria-hidden />
 
       <motion.div
