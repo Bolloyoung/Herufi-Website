@@ -21,11 +21,11 @@ type PhotoHeroProps = {
 const ease = [0.22, 1, 0.36, 1] as const
 
 /**
- * Full bleed illustrated hero. The artwork (figure on the right, flat blue
- * on the left) moves slower than the page on scroll (parallax) and
- * dissolves into the cream page background along its bottom edge. Copy is
- * set straight on the artwork with a soft shadow, no boxes. All motion
- * collapses to static under prefers-reduced-motion.
+ * Full bleed illustrated hero. A cut out engraved figure stands on the
+ * right over the brand dot grid, moves slower than the page on scroll
+ * (parallax) and dissolves into the cream page background along the
+ * bottom edge. Copy is set straight on the pattern with a soft shadow, no
+ * boxes. All motion collapses to static under prefers-reduced-motion.
  */
 export default function PhotoHero({
   image,
@@ -55,16 +55,17 @@ export default function PhotoHero({
   return (
     <section
       ref={ref}
-      className={`relative overflow-hidden bg-[#02448B] ${
-        size === 'tall' ? 'min-h-[78svh] lg:min-h-[82svh]' : 'min-h-[52svh] lg:min-h-[56svh]'
+      className={`hero-pattern relative overflow-hidden ${
+        size === 'tall' ? 'min-h-[78svh] lg:min-h-[82svh]' : 'min-h-[56svh] lg:min-h-[62svh]'
       } flex items-end`}
     >
-      {/* Artwork: a square illustration anchored to the right edge. The section
-          paints the same blue as the artwork, so the copy always sits on flat
-          colour and the parallax can expose the top edge without a seam. */}
+      {/* Artwork: a cut out figure (transparent background) anchored to the
+          right edge and standing on the section's bottom edge. The section
+          paints the brand dot grid behind it, so the copy always sits on the
+          pattern and the parallax never exposes a seam. */}
       <motion.div
-        className="absolute inset-y-0 right-0 aspect-square max-w-full [mask-image:linear-gradient(to_right,transparent_0%,black_45%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_45%)]"
-        style={{ y: imageY }}
+        className="absolute inset-y-0 right-0 aspect-square max-w-full [mask-image:linear-gradient(to_right,transparent_0%,black_35%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_35%)]"
+        style={{ y: imageY, transformOrigin: "bottom right" }}
         initial={reduce ? false : { opacity: 0, scale: 1.04 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.1, ease }}
@@ -75,7 +76,7 @@ export default function PhotoHero({
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 60vw"
-          className="object-contain object-right"
+          className="object-contain object-right-bottom"
         />
       </motion.div>
 

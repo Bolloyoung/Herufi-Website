@@ -1,11 +1,12 @@
 /**
- * Full bleed hero artwork for each top level page. Files live in
- * public/heroes/: six approved 1:1 engraved style illustrations on the
- * Herufi blue (#02448B) with a dotted Africa map, cropped from the founder
- * supplied composite. PhotoHero anchors the square to the right edge and
- * paints the same blue behind the copy, so a replacement only needs to be
- * a square frame on that blue. `position` is kept for future non square
- * artwork and is currently unused.
+ * Hero artwork for each top level page. Files live in public/heroes/: six
+ * approved engraved style figures cut out of the founder supplied composite
+ * (brand green dot grid background removed), each on a transparent
+ * 1000x1000 canvas, bottom centred. PhotoHero paints the dot grid in CSS
+ * (`.hero-pattern` in globals.css) and stands the figure on the section's
+ * bottom right, so a replacement only needs to be a transparent square with
+ * the figure at the bottom. `position` is kept for future artwork and is
+ * currently unused.
  */
 export type HeroImage = {
   src: string
