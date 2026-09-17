@@ -7,7 +7,7 @@ import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Looking for research, analytics, or strategy support? Get in touch with Herufi.',
+  description: 'Looking for research, analytics or strategy support? Get in touch with Herufi.',
 }
 
 const engagementTypes = [

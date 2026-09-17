@@ -63,7 +63,7 @@ const founders = [
     ],
     bio: [
       'Herufi was founded by a researcher and analyst with a background spanning venture strategy, impact investment and African market intelligence. The work is grounded in real engagement with founders, investors and institutions operating across African markets, not theoretical frameworks built from a distance.',
-      'The platform emerged from a consistent observation: too much research about African markets is either too shallow, too generic, or built for a different audience. Decision makers working in and around these markets need structured intelligence, aware of context, that actually helps them act.',
+      'The platform emerged from a consistent observation: too much research about African markets is either too shallow, too generic or built for a different audience. Decision makers working in and around these markets need structured intelligence, aware of context, that actually helps them act.',
       'The research spans four pillars because that is where the genuine analytical demand sits: venture strategy, market systems, data intelligence and culture and context. The common thread is rigour applied to real decisions.',
     ],
     focus: [
@@ -76,12 +76,12 @@ const founders = [
   },
   {
     name: 'Kevin Wanjala',
-    role: 'Co-Founder',
+    role: 'Co Founder',
     initials: 'KW',
     links: [{ label: 'hello@herufi.org', href: 'mailto:hello@herufi.org', external: false }],
     bio: [
-      "Kevin Wanjala is co-founder of Herufi, bringing a background in applied public policy research from Kenya's public policy research community. His published research spans firm level global value chain participation, the financing constraints facing small and medium enterprises, and the effect of trade policy instruments such as export levies on sector competitiveness.",
-      'That work is built on the same standard Herufi applies to every publication: indices and models built from real survey and trade data, econometric analysis of what actually drives outcomes, and recommendations tied directly to what the evidence shows rather than to what is convenient to argue.',
+      "Kevin Wanjala is co founder of Herufi, bringing a background in applied public policy research from Kenya's policy research community. His published research spans firm level global value chain participation, the financing constraints facing small and medium enterprises and the effect of trade policy instruments such as export levies on sector competitiveness.",
+      'That work is built on the same standard Herufi applies to every publication: indices and models built from real survey and trade data, econometric analysis of what actually drives outcomes and recommendations tied directly to what the evidence shows rather than to what is convenient to argue.',
       "His research sits primarily within Markets, Systems and African Economies, Herufi's pillar for how African markets and trade actually function beneath the headline numbers.",
     ],
     focus: [
@@ -115,7 +115,7 @@ export default function AboutPage() {
                 Herufi is a research intelligence platform: part research institution, part analytics laboratory, part venture intelligence engine and part strategic foresight system. It was built to fill a specific gap: structured intelligence rooted in African context, for decision makers who need evidence, not opinion.
               </p>
               <p>
-                The platform produces blogs, detailed publications, original frameworks, quantitative models and interactive dashboards across venture strategy, African market systems, data analytics and policy analysis. The common thread is methodological rigour applied to real decisions.
+                The platform produces blogs, detailed publications, original frameworks, quantitative models and interactive dashboards across venture strategy, African market systems, data analytics and culture and context. The common thread is methodological rigour applied to real decisions.
               </p>
               <p>
                 Every finding passes a reliability layer before publication. Confidence levels are classified. Sources are linked. Methodology is made explicit. The goal is not to produce more content. It is to produce intelligence that holds up over time.

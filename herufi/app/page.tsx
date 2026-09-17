@@ -56,7 +56,7 @@ export default async function HomePage() {
               Depth over speed. Evidence over opinion. African context first.
             </h2>
             <p className="mt-5 text-base md:text-lg text-charcoal/65 leading-relaxed">
-              Herufi is a research intelligence platform. Every publication states its methodology, links its sources and names its uncertainty, so that the analysis is still useful long after the news cycle has moved on.
+              Every publication states its methodology, links its sources and names its uncertainty, so the analysis still holds up after the news cycle has moved on. Findings are built from data and attributed evidence, not house opinion. And every question starts from how African markets actually work, not a framework built for somewhere else.
             </p>
           </div>
         </Reveal>

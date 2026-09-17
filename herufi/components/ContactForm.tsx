@@ -91,7 +91,7 @@ export default function ContactForm() {
           onChange={(e) => update('message', e.target.value)}
         />
         <p className="mt-1.5 text-xs text-charcoal/55">
-          The decision you need to make, the problem you need to understand, or the project you have in mind.
+          The decision you need to make, the problem you need to understand or the project you have in mind.
         </p>
       </div>
 
