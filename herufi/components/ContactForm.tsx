@@ -74,6 +74,7 @@ export default function ContactForm() {
           <option>Commission a report</option>
           <option>Venture strategy support</option>
           <option>Data and analytics</option>
+          <option>Trade and policy research</option>
           <option>Research partnership</option>
           <option>Other</option>
         </select>

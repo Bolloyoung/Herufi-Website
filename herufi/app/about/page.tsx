@@ -23,7 +23,7 @@ const capabilities = [
   { label: 'Venture intelligence', desc: 'Investment readiness, due diligence and deal intelligence.' },
   { label: 'Analytics laboratory', desc: 'Quantitative models, forecasts and scenario analysis.' },
   { label: 'Economic strategy', desc: 'Market systems and structural analysis of African economies.' },
-  { label: 'Policy research', desc: 'Development finance, trade and public policy frameworks.' },
+  { label: 'Policy research', desc: 'Development finance, trade and public policy frameworks, including published work through KIPPRA.' },
   { label: 'Mixed methods', desc: 'Qualitative depth combined with quantitative rigour.' },
   { label: 'Interactive intelligence', desc: 'Dashboards, tools and visual outputs built on the research.' },
 ]
@@ -47,6 +47,7 @@ const expertise = [
   'African venture ecosystems and capital markets',
   'Investment readiness and due diligence frameworks',
   'Impact investing and development finance',
+  'Trade policy and SME competitiveness',
   'Informal market dynamics and local context',
   'Data analysis, forecasting and decision modelling',
   'Market entry and growth strategy',
@@ -80,7 +81,7 @@ const founders = [
     initials: 'KW',
     links: [{ label: 'hello@herufi.org', href: 'mailto:hello@herufi.org', external: false }],
     bio: [
-      "Kevin Wanjala is co founder of Herufi, bringing a background in applied public policy research from Kenya's policy research community. His published research spans firm level global value chain participation, the financing constraints facing small and medium enterprises and the effect of trade policy instruments such as export levies on sector competitiveness.",
+      "Kevin Wanjala is co founder of Herufi, bringing a background in applied public policy research from the Kenya Institute for Public Policy Research and Analysis (KIPPRA), the country's national policy think tank. His published research spans firm level global value chain participation, the financing constraints facing small and medium enterprises and the effect of trade policy instruments such as export levies on sector competitiveness.",
       'That work is built on the same standard Herufi applies to every publication: indices and models built from real survey and trade data, econometric analysis of what actually drives outcomes and recommendations tied directly to what the evidence shows rather than to what is convenient to argue.',
       "His research sits primarily within Markets, Systems and African Economies, Herufi's pillar for how African markets and trade actually function beneath the headline numbers.",
     ],

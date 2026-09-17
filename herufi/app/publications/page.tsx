@@ -43,7 +43,7 @@ export default function PublicationsPage() {
               {curated.length > 0 && (
                 <PublicationGroup
                   title="Published research by the Herufi team"
-                  intro="Peer reviewed papers and policy briefs published through other institutions, curated here with full attribution."
+                  intro="Discussion papers and policy briefs published through other institutions, curated here with full attribution."
                   items={curated}
                   className="mt-20"
                 />

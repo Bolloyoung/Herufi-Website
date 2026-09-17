@@ -28,7 +28,7 @@ export const pillars: Pillar[] = [
     id: 'markets-systems',
     number: '02',
     title: 'Markets, Systems and African Economies',
-    description: 'Deep structural analysis of how African markets actually work, beyond the formal data layer.',
+    description: 'Deep structural analysis of how African markets and trade actually work, beyond the formal data layer.',
     topics: [
       'African market trends', 'Informal markets', 'SME ecosystems',
       'Supply chains', 'Trade', 'Consumer behavior',

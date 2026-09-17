@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { FileText, Compass, BarChart2, Users, Mail, Linkedin } from 'lucide-react'
+import { FileText, Compass, BarChart2, Landmark, Users, Mail, Linkedin } from 'lucide-react'
 import PhotoHero from '@/components/PhotoHero'
 import Reveal from '@/components/Reveal'
 import { heroImages } from '@/data/heroes'
@@ -14,6 +14,7 @@ const engagementTypes = [
   { icon: FileText, title: 'Commission a report', body: 'Standalone research or market intelligence.' },
   { icon: Compass, title: 'Venture strategy support', body: 'Investment readiness, due diligence or market entry.' },
   { icon: BarChart2, title: 'Data and analytics', body: 'Dashboards, models and scoring tools.' },
+  { icon: Landmark, title: 'Trade and policy research', body: 'Applied economic research for policy institutions and development partners.' },
   { icon: Users, title: 'Research partnership', body: 'Ongoing support for funds and institutions.' },
 ]
 
