@@ -46,6 +46,8 @@ export default function DashboardPage() {
   }
 
   const initial = user?.email?.charAt(0).toUpperCase() ?? '?'
+  // Only a convenience for showing the link. The server checks administrator access on every request.
+  const isAdmin = !!user?.email && user.email.toLowerCase() === (process.env.NEXT_PUBLIC_ADMIN_EMAIL ?? '').toLowerCase()
 
   return (
     <div className="min-h-[calc(100vh-4rem)] bg-cream">
@@ -140,6 +142,7 @@ export default function DashboardPage() {
         {/* Quick links */}
         <div className="flex flex-wrap gap-3">
           {[
+            ...(isAdmin ? [{ label: 'Email platform', href: '/admin/email' }] : []),
             { label: 'Browse blogs', href: '/blogs' },
             { label: 'Publications', href: '/publications' },
             { label: 'About Herufi', href: '/about' },

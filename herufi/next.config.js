@@ -3,6 +3,9 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   experimental: {
     mdxRs: false,
+    // Server only libraries used by the email platform API routes. Keeping them
+    // out of the webpack bundle avoids optional native module warnings from pg.
+    serverComponentsExternalPackages: ['pg', 'sanitize-html'],
   },
   async redirects() {
     return [

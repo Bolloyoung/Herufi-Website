@@ -213,3 +213,19 @@ create policy "Allow public insert" on newsletter_subscribers
 ```
 
 No select policy is added, so the subscriber list is not publicly readable — view it from the Supabase dashboard's table editor.
+
+## Email platform (Listmonk, consent, Google Sheets)
+
+Full documentation is in `docs/email-platform/`. Start with `README.md`. In short:
+
+* Herufi keeps contacts, consent, audiences and campaign records in its own Postgres (`email_*` tables, migration in `supabase/migrations/`). Listmonk (pinned `v6.2.0`, hosted on Render) only sends. The browser never talks to Listmonk, Google or SMTP.
+* Layout: `lib/domain/` (consent state machine, text hygiene), `lib/integrations/{google-sheets,listmonk,email}/` (provider code), `lib/services/` (business logic, all DB access), `lib/server/` (env, auth, http, db, tokens), `app/api/**` (thin routes), `app/admin/email/**` (admin screens), `app/subscribe`, `app/unsubscribe` (public pages), `components/admin`, `components/email`.
+* Database access uses `pg` and `DATABASE_URL` (not supabase-js) so consent changes are transactional. Admin auth verifies the Supabase bearer token against `/auth/v1/user`; admins are listed in `ADMIN_EMAILS` or `NEXT_PUBLIC_ADMIN_EMAIL`.
+* **Never** make a contact `subscribed` except through `confirmSubscription` (double opt in) or `recordExternalConsent` (admin evidence). Imports and syncs may only restrict. The rules live in `lib/domain/consent.ts` and are tested exhaustively.
+* Never "add" a subscriber to a Listmonk list blindly: on 6.2 it re-confirms people who unsubscribed. Go through `decidePush` in `lib/integrations/listmonk/sync.ts`.
+* Editor content may only contain known merge tags (`{{first_name|fallback}}`). Listmonk templates can call Sprig functions, so anything else that looks like a template action must be rejected (`validateTemplateSyntax`).
+* `EMAIL_SEND_MODE` (`disabled` default, `allowlist`, `live`) guards all sending. `live` is refused unless `APP_ENV=production`.
+* Commands: `npm run test` (unit, no services), `npm run test:integration` (needs `deploy/listmonk/docker-compose.dev.yml`; real Postgres, Listmonk and a mail catcher, sends no real email), `npm run email:check` (read only readiness check).
+* Vitest config sets an inline PostCSS config on purpose: otherwise vitest loads `postcss.config.js` and stalls.
+* Source files must not contain literal control or zero width characters. Run `python3 scripts/fix-invisible-chars.py <files>` after writing regexes that use `\uXXXX` escapes.
+* This project lives in a cloud synced folder where first reads of old files are slow (the first `tsc` or `next build` can take many minutes, then they are fast), and the sync can leave empty `* 2` duplicate directories in `node_modules`.

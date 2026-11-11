@@ -1,0 +1,33 @@
+# Runs the Herufi email sync on a schedule: pulls unsubscribes, bounces and
+# blocklists from Listmonk into Herufi, then pushes pending contact changes, then
+# refreshes campaign statistics. Works on any Vercel plan, unlike Vercel Cron,
+# which only allows once a day on the free plan.
+#
+# Needs two repository secrets (Settings, Secrets and variables, Actions):
+#   EMAIL_SYNC_URL        https://herufi.org/api/internal/sync
+#   INTERNAL_JOB_SECRET   the same value as INTERNAL_JOB_SECRET on Vercel
+# Until both exist, the job does nothing and succeeds.
+name: Email sync
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Call the sync endpoint
+        env:
+          EMAIL_SYNC_URL: ${{ secrets.EMAIL_SYNC_URL }}
+          INTERNAL_JOB_SECRET: ${{ secrets.INTERNAL_JOB_SECRET }}
+        run: |
+          if [ -z "$EMAIL_SYNC_URL" ] || [ -z "$INTERNAL_JOB_SECRET" ]; then
+            echo "EMAIL_SYNC_URL or INTERNAL_JOB_SECRET is not set. Skipping."
+            exit 0
+          fi
+          curl --fail --silent --show-error --max-time 60 -X POST \
+            -H "Authorization: Bearer $INTERNAL_JOB_SECRET" \
+            "$EMAIL_SYNC_URL" | head -c 2000
