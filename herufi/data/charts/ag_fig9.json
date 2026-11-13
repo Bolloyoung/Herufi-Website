@@ -1,0 +1,347 @@
+{
+  "id": "ag_fig9",
+  "title": "The two targets Aceli missed are the same sentence as the targets it beat",
+  "caption": "Nine metrics from Aceli Africa's first five years, each expressed as a percentage of what it projected, so measures on nine different scales can be compared. Two lines fall, and both are about money. Every line about reach rises.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 48,
+          "right": 220,
+          "top": 24,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "item",
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          },
+          "formatter": "<b>{a}</b><br/>{c}% of what was projected"
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "What Aceli\nprojected",
+            "What Aceli\ndelivered"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "lineHeight": 14
+          },
+          "axisLine": {
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          },
+          "boundaryGap": false
+        },
+        "yAxis": {
+          "type": "value",
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "formatter": "{value}%"
+          },
+          "splitLine": {
+            "show": true,
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": 0,
+          "max": 400
+        },
+        "series": [
+          {
+            "name": "Average loan size",
+            "type": "line",
+            "data": [
+              100,
+              19.8
+            ],
+            "lineStyle": {
+              "color": "#A8442F",
+              "width": 2.2
+            },
+            "itemStyle": {
+              "color": "#A8442F"
+            },
+            "symbolSize": 8,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}  {@[1]}%",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#A8442F"
+            },
+            "emphasis": {
+              "focus": "series"
+            },
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "color": "#1C1C1E",
+                "width": 1.4
+              },
+              "label": {
+                "show": true,
+                "formatter": "target",
+                "position": "start",
+                "fontFamily": "Inter, system-ui, sans-serif",
+                "fontSize": 10,
+                "color": "#91918F"
+              },
+              "data": [
+                {
+                  "yAxis": 100
+                }
+              ]
+            }
+          },
+          {
+            "name": "Leverage ratio",
+            "type": "line",
+            "data": [
+              100,
+              66.7
+            ],
+            "lineStyle": {
+              "color": "#A8442F",
+              "width": 2.2
+            },
+            "itemStyle": {
+              "color": "#A8442F"
+            },
+            "symbolSize": 8,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}  {@[1]}%",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#A8442F"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Capital mobilised",
+            "type": "line",
+            "data": [
+              100,
+              73.3
+            ],
+            "lineStyle": {
+              "color": "#A8442F",
+              "width": 2.2
+            },
+            "itemStyle": {
+              "color": "#A8442F"
+            },
+            "symbolSize": 8,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}  {@[1]}%",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#A8442F"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Borrower revenues",
+            "type": "line",
+            "data": [
+              100,
+              160.0
+            ],
+            "lineStyle": {
+              "color": "#1B4332",
+              "width": 2.2
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "symbolSize": 8,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}  {@[1]}%",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1B4332"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Crop bought from farmers",
+            "type": "line",
+            "data": [
+              100,
+              160.0
+            ],
+            "lineStyle": {
+              "color": "#1B4332",
+              "width": 2.2
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "symbolSize": 8,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}  {@[1]}%",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1B4332"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Share of first time borrowers",
+            "type": "line",
+            "data": [
+              100,
+              180.0
+            ],
+            "lineStyle": {
+              "color": "#1B4332",
+              "width": 2.2
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "symbolSize": 8,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}  {@[1]}%",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1B4332"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Farmers and workers reached",
+            "type": "line",
+            "data": [
+              100,
+              209.1
+            ],
+            "lineStyle": {
+              "color": "#1B4332",
+              "width": 2.2
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "symbolSize": 8,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}  {@[1]}%",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1B4332"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Lenders recruited",
+            "type": "line",
+            "data": [
+              100,
+              275.0
+            ],
+            "lineStyle": {
+              "color": "#1B4332",
+              "width": 2.2
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "symbolSize": 8,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}  {@[1]}%",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1B4332"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Loans made",
+            "type": "line",
+            "data": [
+              100,
+              371.7
+            ],
+            "lineStyle": {
+              "color": "#1B4332",
+              "width": 2.2
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "symbolSize": 8,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}  {@[1]}%",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1B4332"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          }
+        ]
+      },
+      "height": 380
+    }
+  ]
+}

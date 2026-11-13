@@ -6,7 +6,7 @@ import Reveal from '@/components/Reveal'
 import { heroImages } from '@/data/heroes'
 import EmptyState from '@/components/EmptyState'
 import Tag from '@/components/Tag'
-import { publications } from '@/data/publications'
+import { publications, publicationSeries } from '@/data/publications'
 
 export const metadata: Metadata = {
   title: 'Publications',
@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 }
 
 export default function PublicationsPage() {
-  const herufiReports = publications.filter((p) => !p.source)
   const curated = publications.filter((p) => p.source)
 
   return (
@@ -35,11 +34,15 @@ export default function PublicationsPage() {
             />
           ) : (
             <>
-              <PublicationGroup
-                title="The African Startup Investment Series"
-                intro="Five reports, one dataset lineage: from a 2014 baseline to instrument level return math for the Series A and B gap."
-                items={herufiReports}
-              />
+              {publicationSeries.map((series, i) => (
+                <PublicationGroup
+                  key={series.id}
+                  title={series.title}
+                  intro={series.description}
+                  items={publications.filter((p) => p.series === series.id)}
+                  className={i === 0 ? '' : 'mt-20'}
+                />
+              ))}
               {curated.length > 0 && (
                 <PublicationGroup
                   title="Published research by the Herufi team"

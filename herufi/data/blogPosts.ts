@@ -10,7 +10,30 @@ export type BlogPost = {
   tags: string[]
   /** Id of the related publication in data/publications.ts. */
   publication: string
+  /** Id of the series in `blogSeries` below. */
+  series: string
 }
+
+export type BlogSeries = {
+  id: string
+  title: string
+  description: string
+}
+
+// Each series renders as its own section on /blogs, in this order.
+export const blogSeries: BlogSeries[] = [
+  {
+    id: 'african-startup-investment',
+    title: 'The African Startup Investment Series',
+    description: 'Five explainers, each drawing on a full report in the series.',
+  },
+  {
+    id: 'agricultural-capital',
+    title: 'The Agricultural Capital Series',
+    description:
+      'Three explainers on why agriculture receives the wrong capital, built on one open model and the only decomposed loan level dataset in African agricultural finance.',
+  },
+]
 
 // Standalone explainers that tease a full publication. Rendered as real
 // Next.js routes at app/blogs/[slug]/page.tsx (each links back here and to
@@ -27,6 +50,7 @@ export const blogPosts: BlogPost[] = [
     fileUrl: '/blogs/why-african-startups-stall',
     tags: ['Startup Funding', 'Venture Capital', 'Seed Stage', 'Africa'],
     publication: 'broken-ladder-2014-baseline',
+    series: 'african-startup-investment',
   },
   {
     id: 'real-story-african-startup-growth',
@@ -39,6 +63,7 @@ export const blogPosts: BlogPost[] = [
     fileUrl: '/blogs/real-story-african-startup-growth',
     tags: ['Startup Funding', 'Venture Capital', 'Exits', 'Debt Financing'],
     publication: 'frontier-to-market-2014-2026',
+    series: 'african-startup-investment',
   },
   {
     id: 'africa-2030-better-than-the-hype',
@@ -51,6 +76,7 @@ export const blogPosts: BlogPost[] = [
     fileUrl: '/blogs/africa-2030-better-than-the-hype',
     tags: ['Forecasting', 'Venture Capital', 'Scenarios', 'Exits'],
     publication: 'continent-heading-2026-2030',
+    series: 'african-startup-investment',
   },
   {
     id: 'who-writes-the-cheques-african-vc',
@@ -63,6 +89,7 @@ export const blogPosts: BlogPost[] = [
     fileUrl: '/blogs/who-writes-the-cheques-african-vc',
     tags: ['Venture Capital', 'LP Capital', 'Portfolio Construction', 'Fund Strategy'],
     publication: 'writing-the-cheques-2026',
+    series: 'african-startup-investment',
   },
   {
     id: 'how-to-fill-africas-missing-middle',
@@ -75,5 +102,48 @@ export const blogPosts: BlogPost[] = [
     fileUrl: '/blogs/how-to-fill-africas-missing-middle',
     tags: ['Venture Capital', 'Venture Debt', 'Blended Finance', 'Series A'],
     publication: 'filling-the-missing-middle-2026',
+    series: 'african-startup-investment',
+  },
+  {
+    id: 'why-banks-turn-down-farm-loans',
+    title: 'Why Banks Turn Down Farm Loans They Expect to Be Repaid',
+    category: 'Explainer',
+    pillar: 'Venture Strategy and Capital Intelligence',
+    summary:
+      "Africa's agricultural finance problem is almost always described as a risk problem. Data covering 32,000 loans says something different. Small farm loans fail because they cost too much to make, not because borrowers fail to pay.",
+    date: '2026-10-28',
+    readingTime: '10 min read',
+    fileUrl: '/blogs/why-banks-turn-down-farm-loans',
+    tags: ['Agricultural Finance', 'Credit Risk', 'Blended Finance', 'Smallholder Farmers'],
+    publication: 'cost-of-a-small-loan-2026',
+    series: 'agricultural-capital',
+  },
+  {
+    id: 'good-business-wrong-money',
+    title: 'Good Business, Wrong Money',
+    category: 'Explainer',
+    pillar: 'Venture Strategy and Capital Intelligence',
+    summary:
+      'Equity funding for African agricultural technology fell by roughly three quarters in three years. That is usually read as investors losing faith. The balance sheets suggest something else.',
+    date: '2026-10-28',
+    readingTime: '12 min read',
+    fileUrl: '/blogs/good-business-wrong-money',
+    tags: ['Agritech', 'Venture Capital', 'Working Capital', 'Debt Financing'],
+    publication: 'matching-business-to-instrument-2026',
+    series: 'agricultural-capital',
+  },
+  {
+    id: 'spend-the-same-money-differently',
+    title: 'Spend the Same Money Differently',
+    category: 'Explainer',
+    pillar: 'Venture Strategy and Capital Intelligence',
+    summary:
+      'A model tests African agricultural lending under five futures. Moving donor money from guarantees to the cost of lending barely changes how much gets lent. It changes who gets it.',
+    date: '2026-10-28',
+    readingTime: '13 min read',
+    fileUrl: '/blogs/spend-the-same-money-differently',
+    tags: ['Blended Finance', 'Development Finance', 'Scenario Analysis', 'Agricultural Finance'],
+    publication: 'same-budget-different-result-2026',
+    series: 'agricultural-capital',
   },
 ]
