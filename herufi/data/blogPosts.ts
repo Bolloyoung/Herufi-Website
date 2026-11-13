@@ -113,7 +113,7 @@ export const blogPosts: BlogPost[] = [
     summary:
       'Africa\'s agricultural finance problem is almost always described as a risk problem. Data covering 32,000 loans says something different. Small farm loans fail because they cost too much to make, not because borrowers fail to pay. That one distinction changes which tools can work.',
     date: '2026-10-28',
-    readingTime: '15 min read',
+    readingTime: '11 min read',
     fileUrl: '/blogs/why-banks-turn-down-farm-loans',
     tags: ['Agricultural Finance', 'Credit Risk', 'Blended Finance', 'Smallholder Farmers'],
     publication: 'cost-of-a-small-loan-2026',
@@ -127,7 +127,7 @@ export const blogPosts: BlogPost[] = [
     summary:
       'Equity funding for African agricultural technology fell by roughly three quarters in three years. That is usually read as investors losing faith. The balance sheets suggest something else: capital finally finding the instrument these businesses can actually service.',
     date: '2026-10-28',
-    readingTime: '22 min read',
+    readingTime: '13 min read',
     fileUrl: '/blogs/good-business-wrong-money',
     tags: ['Agritech', 'Venture Capital', 'Working Capital', 'Debt Financing'],
     publication: 'matching-business-to-instrument-2026',
@@ -141,7 +141,7 @@ export const blogPosts: BlogPost[] = [
     summary:
       'A model tests African agricultural lending under five futures. The result was not the one the research set out to prove. Moving donor money from guarantees to the cost of lending barely changes how much gets lent. It changes who gets it, and that turns out to be the more useful finding.',
     date: '2026-10-28',
-    readingTime: '19 min read',
+    readingTime: '14 min read',
     fileUrl: '/blogs/spend-the-same-money-differently',
     tags: ['Blended Finance', 'Development Finance', 'Scenario Analysis', 'Agricultural Finance'],
     publication: 'same-budget-different-result-2026',
