@@ -9,6 +9,9 @@ const contentMap: Record<string, () => Promise<{ default: React.ComponentType }>
   'continent-heading-2026-2030': () => import('@/content/publications/continent-heading-2026-2030'),
   'writing-the-cheques-2026': () => import('@/content/publications/writing-the-cheques-2026'),
   'filling-the-missing-middle-2026': () => import('@/content/publications/filling-the-missing-middle-2026'),
+  'cost-of-a-small-loan-2026': () => import('@/content/publications/cost-of-a-small-loan-2026'),
+  'matching-business-to-instrument-2026': () => import('@/content/publications/matching-business-to-instrument-2026'),
+  'same-budget-different-result-2026': () => import('@/content/publications/same-budget-different-result-2026'),
 }
 
 type Props = { params: { slug: string } }

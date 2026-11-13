@@ -1,0 +1,188 @@
+{
+  "id": "ag_fig5",
+  "title": "Nearly three quarters of smallholder finance never passes through a bank or a lender",
+  "caption": "Annual flow of finance to smallholder farmers worldwide, by the kind of institution supplying it. Gold flows come from trading relationships and informal networks, green from financial institutions. Hover a ribbon to isolate it, or drag a node to untangle a crossing.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "tooltip": {
+          "trigger": "item",
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          },
+          "formatter": "{b}<br/>${c}bn a year"
+        },
+        "series": [
+          {
+            "type": "sankey",
+            "left": 8,
+            "right": 8,
+            "top": 12,
+            "bottom": 12,
+            "nodeGap": 14,
+            "nodeWidth": 13,
+            "draggable": true,
+            "emphasis": {
+              "focus": "adjacency"
+            },
+            "label": {
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1C1C1E"
+            },
+            "lineStyle": {
+              "curveness": 0.5
+            },
+            "data": [
+              {
+                "name": "Agribusiness value chain actors  $43.0bn",
+                "itemStyle": {
+                  "color": "#C9A84C",
+                  "borderColor": "#fff"
+                }
+              },
+              {
+                "name": "Informal and community based  $25.0bn",
+                "itemStyle": {
+                  "color": "#C9A84C",
+                  "borderColor": "#fff"
+                }
+              },
+              {
+                "name": "State banks  $13.0bn",
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "borderColor": "#fff"
+                }
+              },
+              {
+                "name": "Microfinance institutions  $10.0bn",
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "borderColor": "#fff"
+                }
+              },
+              {
+                "name": "Commercial banks  $2.0bn",
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "borderColor": "#fff"
+                }
+              },
+              {
+                "name": "Innovators (fintech and platforms)  $0.9bn",
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "borderColor": "#fff"
+                }
+              },
+              {
+                "name": "Never touches a bank or a lender  $68.0bn",
+                "itemStyle": {
+                  "color": "#C9A84C",
+                  "borderColor": "#fff"
+                }
+              },
+              {
+                "name": "Banks, state banks, microfinance, platforms  $25.9bn",
+                "itemStyle": {
+                  "color": "#1B4332",
+                  "borderColor": "#fff"
+                }
+              },
+              {
+                "name": "Smallholder farmers  $93.9bn a year",
+                "itemStyle": {
+                  "color": "#1C1C1E",
+                  "borderColor": "#fff"
+                }
+              }
+            ],
+            "links": [
+              {
+                "source": "Agribusiness value chain actors  $43.0bn",
+                "target": "Never touches a bank or a lender  $68.0bn",
+                "value": 43.0,
+                "lineStyle": {
+                  "color": "#C9A84C",
+                  "opacity": 0.32
+                }
+              },
+              {
+                "source": "Informal and community based  $25.0bn",
+                "target": "Never touches a bank or a lender  $68.0bn",
+                "value": 25.0,
+                "lineStyle": {
+                  "color": "#C9A84C",
+                  "opacity": 0.32
+                }
+              },
+              {
+                "source": "State banks  $13.0bn",
+                "target": "Banks, state banks, microfinance, platforms  $25.9bn",
+                "value": 13.0,
+                "lineStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.32
+                }
+              },
+              {
+                "source": "Microfinance institutions  $10.0bn",
+                "target": "Banks, state banks, microfinance, platforms  $25.9bn",
+                "value": 10.0,
+                "lineStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.32
+                }
+              },
+              {
+                "source": "Commercial banks  $2.0bn",
+                "target": "Banks, state banks, microfinance, platforms  $25.9bn",
+                "value": 2.0,
+                "lineStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.32
+                }
+              },
+              {
+                "source": "Innovators (fintech and platforms)  $0.9bn",
+                "target": "Banks, state banks, microfinance, platforms  $25.9bn",
+                "value": 0.9,
+                "lineStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.32
+                }
+              },
+              {
+                "source": "Never touches a bank or a lender  $68.0bn",
+                "target": "Smallholder farmers  $93.9bn a year",
+                "value": 68.0,
+                "lineStyle": {
+                  "color": "#C9A84C",
+                  "opacity": 0.32
+                }
+              },
+              {
+                "source": "Banks, state banks, microfinance, platforms  $25.9bn",
+                "target": "Smallholder farmers  $93.9bn a year",
+                "value": 25.9,
+                "lineStyle": {
+                  "color": "#1B4332",
+                  "opacity": 0.32
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "height": 420
+    }
+  ]
+}

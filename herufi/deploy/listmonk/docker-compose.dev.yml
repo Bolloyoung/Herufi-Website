@@ -1,0 +1,79 @@
+# Local development and integration testing stack. Not used in production.
+# Production deployment is described by render.yaml and docs/email-platform/.
+#
+# Start:  docker compose -f docker-compose.dev.yml --env-file .env.dev up -d
+# Stop:   docker compose -f docker-compose.dev.yml down        (add -v to wipe data)
+#
+# Listmonk is pinned to a tested stable release. Do not use :latest.
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5433:5432"
+    environment:
+      POSTGRES_USER: listmonk
+      POSTGRES_PASSWORD: ${LISTMONK_DB_PASSWORD:?set in .env.dev}
+      POSTGRES_DB: listmonk
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U listmonk"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - listmonk-dev-data:/var/lib/postgresql/data
+
+  # Herufi's own application database (contacts, consent, campaigns). Kept apart
+  # from Listmonk's database, as in production. Integration tests create and drop
+  # throwaway databases on this server.
+  appdb:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5434:5432"
+    environment:
+      POSTGRES_USER: herufi
+      POSTGRES_PASSWORD: ${APPDB_PASSWORD:?set in .env.dev}
+      POSTGRES_DB: herufi
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U herufi"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - herufi-appdb-data:/var/lib/postgresql/data
+
+  app:
+    image: listmonk/listmonk:v6.2.0
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:9000:9000"
+    command: [sh, -c, "./listmonk --install --idempotent --yes --config '' && ./listmonk --upgrade --yes --config '' && ./listmonk --config ''"]
+    environment:
+      LISTMONK_app__address: 0.0.0.0:9000
+      LISTMONK_db__user: listmonk
+      LISTMONK_db__password: ${LISTMONK_DB_PASSWORD}
+      LISTMONK_db__database: listmonk
+      LISTMONK_db__host: db
+      LISTMONK_db__port: 5432
+      LISTMONK_db__ssl_mode: disable
+      LISTMONK_ADMIN_USER: ${LISTMONK_ADMIN_USER:?set in .env.dev}
+      LISTMONK_ADMIN_PASSWORD: ${LISTMONK_ADMIN_PASSWORD:?set in .env.dev}
+      # Creates an API user on first install. The token is printed once in the app logs.
+      LISTMONK_ADMIN_API_USER: herufi_api
+
+  # Local mail catcher so campaigns can be tested end to end without sending
+  # any real email. SMTP on 1025, web UI and API on 8025.
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:1025:1025"
+      - "127.0.0.1:8025:8025"
+
+volumes:
+  listmonk-dev-data:
+  herufi-appdb-data:

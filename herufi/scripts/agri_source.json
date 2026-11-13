@@ -1,0 +1,1081 @@
+{
+ "loan_economics": [
+  {
+   "band": "$10-25k",
+   "band_lo_usd": 10000,
+   "band_hi_usd": 25000,
+   "loans": 18331,
+   "loan_value_musd": 291,
+   "avg_tenor_months": 26,
+   "interest_revenue": 16.7,
+   "origination_fees": 1.2,
+   "total_revenue": 17.9,
+   "origination_cost": 11.5,
+   "servicing_cost": 4.9,
+   "expected_credit_loss": 0.7,
+   "cost_of_funds": 3.0,
+   "net_margin": -2.2,
+   "source_id": "aceli_bench_2025",
+   "ticket_mid": 15811.3883008419,
+   "opex": 16.4,
+   "total_cost": 20.1
+  },
+  {
+   "band": "$25-50k",
+   "band_lo_usd": 25000,
+   "band_hi_usd": 50000,
+   "loans": 6042,
+   "loan_value_musd": 203,
+   "avg_tenor_months": 35,
+   "interest_revenue": 16.2,
+   "origination_fees": 1.0,
+   "total_revenue": 17.2,
+   "origination_cost": 8.2,
+   "servicing_cost": 3.3,
+   "expected_credit_loss": 0.9,
+   "cost_of_funds": 3.2,
+   "net_margin": 1.6,
+   "source_id": "aceli_bench_2025",
+   "ticket_mid": 35355.3390593274,
+   "opex": 11.5,
+   "total_cost": 15.6
+  },
+  {
+   "band": "$50-200k",
+   "band_lo_usd": 50000,
+   "band_hi_usd": 200000,
+   "loans": 4439,
+   "loan_value_musd": 427,
+   "avg_tenor_months": 30,
+   "interest_revenue": 14.0,
+   "origination_fees": 1.0,
+   "total_revenue": 15.0,
+   "origination_cost": 4.1,
+   "servicing_cost": 1.8,
+   "expected_credit_loss": 1.1,
+   "cost_of_funds": 3.0,
+   "net_margin": 5.0,
+   "source_id": "aceli_bench_2025",
+   "ticket_mid": 100000.0,
+   "opex": 5.9,
+   "total_cost": 10.0
+  },
+  {
+   "band": "$200-500k",
+   "band_lo_usd": 200000,
+   "band_hi_usd": 500000,
+   "loans": 1196,
+   "loan_value_musd": 361,
+   "avg_tenor_months": 25,
+   "interest_revenue": 12.8,
+   "origination_fees": 0.8,
+   "total_revenue": 13.6,
+   "origination_cost": 1.7,
+   "servicing_cost": 0.8,
+   "expected_credit_loss": 1.0,
+   "cost_of_funds": 3.0,
+   "net_margin": 7.1,
+   "source_id": "aceli_bench_2025",
+   "ticket_mid": 316227.7660168379,
+   "opex": 2.5,
+   "total_cost": 6.5
+  },
+  {
+   "band": "$500k-2M",
+   "band_lo_usd": 500000,
+   "band_hi_usd": 2000000,
+   "loans": 637,
+   "loan_value_musd": 576,
+   "avg_tenor_months": 33,
+   "interest_revenue": 12.7,
+   "origination_fees": 0.6,
+   "total_revenue": 13.3,
+   "origination_cost": 0.7,
+   "servicing_cost": 0.2,
+   "expected_credit_loss": 0.8,
+   "cost_of_funds": 3.2,
+   "net_margin": 8.4,
+   "source_id": "aceli_bench_2025",
+   "ticket_mid": 1000000.0,
+   "opex": 0.9,
+   "total_cost": 4.9
+  }
+ ],
+ "cost_curve": {
+  "a": 9.752668878207576,
+  "b": -0.7041936024124179,
+  "r2": 0.9881012803127052,
+  "n": 5
+ },
+ "revenue_curve": {
+  "a": 3.6417979191708008,
+  "b": -0.07866942531287503,
+  "r2": 0.9465095599798649
+ },
+ "cost_vs_risk": {
+  "opex_min": 0.8999999999999999,
+  "opex_max": 16.4,
+  "opex_swing": 15.499999999999998,
+  "ecl_min": 0.7,
+  "ecl_max": 1.1,
+  "ecl_swing": 0.40000000000000013,
+  "ratio": 38.749999999999986,
+  "revenue_premium_small_over_large": 4.599999999999998
+ },
+ "guarantee_ceiling": [
+  {
+   "band": "$10-25k",
+   "net_margin": -2.2,
+   "expected_credit_loss": 0.7,
+   "opex": 16.4,
+   "margin_with_full_guarantee": -1.5,
+   "still_short_of_breakeven": true,
+   "opex_to_ecl_ratio": 23.4285714286
+  },
+  {
+   "band": "$25-50k",
+   "net_margin": 1.6,
+   "expected_credit_loss": 0.9,
+   "opex": 11.5,
+   "margin_with_full_guarantee": 2.5,
+   "still_short_of_breakeven": false,
+   "opex_to_ecl_ratio": 12.7777777778
+  },
+  {
+   "band": "$50-200k",
+   "net_margin": 5.0,
+   "expected_credit_loss": 1.1,
+   "opex": 5.9,
+   "margin_with_full_guarantee": 6.1,
+   "still_short_of_breakeven": false,
+   "opex_to_ecl_ratio": 5.3636363636
+  },
+  {
+   "band": "$200-500k",
+   "net_margin": 7.1,
+   "expected_credit_loss": 1.0,
+   "opex": 2.5,
+   "margin_with_full_guarantee": 8.1,
+   "still_short_of_breakeven": false,
+   "opex_to_ecl_ratio": 2.5
+  },
+  {
+   "band": "$500k-2M",
+   "net_margin": 8.4,
+   "expected_credit_loss": 0.8,
+   "opex": 0.9,
+   "margin_with_full_guarantee": 9.2,
+   "still_short_of_breakeven": false,
+   "opex_to_ecl_ratio": 1.125
+  }
+ ],
+ "gap_by_tenor": [
+  {
+   "need_type": "Short-term agricultural",
+   "supply_usd_bn": 10.0,
+   "gap_usd_bn": 23.0,
+   "need_usd_bn": 33.0,
+   "pct_met": 30.303030303
+  },
+  {
+   "need_type": "Long-term agricultural",
+   "supply_usd_bn": 0.1,
+   "gap_usd_bn": 27.0,
+   "need_usd_bn": 27.1,
+   "pct_met": 0.36900369
+  },
+  {
+   "need_type": "Non-agricultural",
+   "supply_usd_bn": 9.0,
+   "gap_usd_bn": 9.0,
+   "need_usd_bn": 18.0,
+   "pct_met": 50.0
+  }
+ ],
+ "channels": [
+  {
+   "channel": "Agribusiness value chain actors",
+   "volume_usd_bn": 43.0,
+   "tenor_profile": "Short term",
+   "is_financial_institution": false,
+   "source_id": "isf_sos_2025"
+  },
+  {
+   "channel": "Informal and community based",
+   "volume_usd_bn": 25.0,
+   "tenor_profile": "Short term",
+   "is_financial_institution": false,
+   "source_id": "isf_sos_2025"
+  },
+  {
+   "channel": "State banks",
+   "volume_usd_bn": 13.0,
+   "tenor_profile": "Short to medium term",
+   "is_financial_institution": true,
+   "source_id": "isf_sos_2025"
+  },
+  {
+   "channel": "Microfinance institutions",
+   "volume_usd_bn": 10.0,
+   "tenor_profile": "Short term",
+   "is_financial_institution": true,
+   "source_id": "isf_sos_2025"
+  },
+  {
+   "channel": "Commercial banks",
+   "volume_usd_bn": 2.0,
+   "tenor_profile": "Seasonal with occasional asset finance",
+   "is_financial_institution": true,
+   "source_id": "isf_sos_2025"
+  },
+  {
+   "channel": "Innovators (fintech and platforms)",
+   "volume_usd_bn": 0.9,
+   "tenor_profile": "Mixed short term",
+   "is_financial_institution": true,
+   "source_id": "isf_sos_2025"
+  }
+ ],
+ "opportunity_cost": [
+  {
+   "benchmark": "Agri-SME lending (simple average)",
+   "value_pct": 3.5,
+   "description": "Average commercial bank net margin on agri-SME loans 2020-2023",
+   "source_id": "aceli_bench_2025"
+  },
+  {
+   "benchmark": "Agri-SME lending (value weighted)",
+   "value_pct": 5.3,
+   "description": "Same but weighted by loan value to capture market share",
+   "source_id": "aceli_bench_2025"
+  },
+  {
+   "benchmark": "Agri-SME lending plus Aceli incentives",
+   "value_pct": 6.5,
+   "description": "Aceli incentives lift agri-SME lending profitability by roughly 3 points",
+   "source_id": "aceli_bench_2025"
+  },
+  {
+   "benchmark": "Government bonds",
+   "value_pct": 16.2,
+   "description": "Average treasury bond yield across the five focus countries over four years",
+   "source_id": "aceli_bench_2025"
+  },
+  {
+   "benchmark": "Overall bank profitability",
+   "value_pct": 28.3,
+   "description": "Average overall profitability for commercial banks in the five countries",
+   "source_id": "aceli_bench_2025"
+  }
+ ],
+ "additionality_leverage": [
+  {
+   "band": "$10k-$49k",
+   "band_lo_usd": 10000,
+   "band_hi_usd": 49000,
+   "pct_new_borrowers": 84,
+   "leverage_ratio": 5,
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "band": "$50k-$99k",
+   "band_lo_usd": 50000,
+   "band_hi_usd": 99000,
+   "pct_new_borrowers": 35,
+   "leverage_ratio": 7,
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "band": "$100k-$249k",
+   "band_lo_usd": 100000,
+   "band_hi_usd": 249000,
+   "pct_new_borrowers": 26,
+   "leverage_ratio": 10,
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "band": "$250k-$499k",
+   "band_lo_usd": 250000,
+   "band_hi_usd": 499000,
+   "pct_new_borrowers": 16,
+   "leverage_ratio": 19,
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "band": "$500k-$1.75M",
+   "band_lo_usd": 500000,
+   "band_hi_usd": 1750000,
+   "pct_new_borrowers": 8,
+   "leverage_ratio": 29,
+   "source_id": "aceli_activating_2026"
+  }
+ ],
+ "targets_actuals": [
+  {
+   "metric": "Number of lenders",
+   "projected": 20.0,
+   "actual": 55.0,
+   "unit": "count",
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "metric": "Number of loans",
+   "projected": 1500.0,
+   "actual": 5576.0,
+   "unit": "count",
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "metric": "Average loan size",
+   "projected": 400000.0,
+   "actual": 79000.0,
+   "unit": "usd",
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "metric": "Capital mobilised",
+   "projected": 600.0,
+   "actual": 440.0,
+   "unit": "musd",
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "metric": "Leverage ratio",
+   "projected": 15.0,
+   "actual": 10.0,
+   "unit": "x",
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "metric": "Total SME revenues",
+   "projected": 2000.0,
+   "actual": 3200.0,
+   "unit": "musd",
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "metric": "SME crop purchases from farmers",
+   "projected": 1000.0,
+   "actual": 1600.0,
+   "unit": "musd",
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "metric": "Share of loans to first-time borrowers",
+   "projected": 35.0,
+   "actual": 63.0,
+   "unit": "pct",
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "metric": "Farmers and workers reached",
+   "projected": 1.1,
+   "actual": 2.3,
+   "unit": "millions",
+   "source_id": "aceli_activating_2026"
+  }
+ ],
+ "ownership": [
+  {
+   "ownership": "Women",
+   "avg_loan_usd": 49000,
+   "pct_new_borrowers": 77,
+   "npl_overall_pct": 3.3,
+   "npl_small_band_pct": 3.0,
+   "leverage_ratio": 7.0,
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "ownership": "Youth",
+   "avg_loan_usd": 36000,
+   "pct_new_borrowers": 79,
+   "npl_overall_pct": 2.5,
+   "npl_small_band_pct": 2.9,
+   "leverage_ratio": 6.0,
+   "source_id": "aceli_activating_2026"
+  },
+  {
+   "ownership": "Men 35+",
+   "avg_loan_usd": 95000,
+   "pct_new_borrowers": 56,
+   "npl_overall_pct": 4.6,
+   "npl_small_band_pct": 3.2,
+   "leverage_ratio": 10.5,
+   "source_id": "aceli_activating_2026"
+  }
+ ],
+ "scenario_table": [
+  {
+   "band": "$10-25k",
+   "ticket_mid": 15811.3883008419,
+   "baseline_net_margin": -2.2,
+   "net_margin": -3.525,
+   "uplift": -1.325,
+   "concessional_points": 0.175,
+   "allocation_share": 0.0162294442,
+   "viable": false,
+   "beats_alternative": false,
+   "policy": "Constrained",
+   "margin_per_concessional_point": -7.5714285714
+  },
+  {
+   "band": "$25-50k",
+   "ticket_mid": 35355.3390593274,
+   "baseline_net_margin": 1.6,
+   "net_margin": 0.325,
+   "uplift": -1.275,
+   "concessional_points": 0.225,
+   "allocation_share": 0.0221699113,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Constrained",
+   "margin_per_concessional_point": -5.6666666667
+  },
+  {
+   "band": "$50-200k",
+   "ticket_mid": 100000.0,
+   "baseline_net_margin": 5.0,
+   "net_margin": 3.775,
+   "uplift": -1.225,
+   "concessional_points": 0.275,
+   "allocation_share": 0.0290584637,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Constrained",
+   "margin_per_concessional_point": -4.4545454545
+  },
+  {
+   "band": "$200-500k",
+   "ticket_mid": 316227.7660168379,
+   "baseline_net_margin": 7.1,
+   "net_margin": 5.85,
+   "uplift": -1.25,
+   "concessional_points": 0.25,
+   "allocation_share": 0.0340224605,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Constrained",
+   "margin_per_concessional_point": -5.0
+  },
+  {
+   "band": "$500k-2M",
+   "ticket_mid": 1000000.0,
+   "baseline_net_margin": 8.4,
+   "net_margin": 7.1,
+   "uplift": -1.3,
+   "concessional_points": 0.2,
+   "allocation_share": 0.0373347721,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Constrained",
+   "margin_per_concessional_point": -6.5
+  },
+  {
+   "band": "$10-25k",
+   "ticket_mid": 15811.3883008419,
+   "baseline_net_margin": -2.2,
+   "net_margin": -0.933,
+   "uplift": 1.267,
+   "concessional_points": 0.85,
+   "allocation_share": 0.0249511063,
+   "viable": false,
+   "beats_alternative": false,
+   "policy": "Baseline",
+   "margin_per_concessional_point": 1.4905882353
+  },
+  {
+   "band": "$25-50k",
+   "ticket_mid": 35355.3390593274,
+   "baseline_net_margin": 1.6,
+   "net_margin": 2.82,
+   "uplift": 1.22,
+   "concessional_points": 0.95,
+   "allocation_share": 0.0333142638,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Baseline",
+   "margin_per_concessional_point": 1.2842105263
+  },
+  {
+   "band": "$50-200k",
+   "ticket_mid": 100000.0,
+   "baseline_net_margin": 5.0,
+   "net_margin": 6.152,
+   "uplift": 1.152,
+   "concessional_points": 1.05,
+   "allocation_share": 0.0425539959,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Baseline",
+   "margin_per_concessional_point": 1.0971428571
+  },
+  {
+   "band": "$200-500k",
+   "ticket_mid": 316227.7660168379,
+   "baseline_net_margin": 7.1,
+   "net_margin": 8.1,
+   "uplift": 1.0,
+   "concessional_points": 1.0,
+   "allocation_share": 0.0487998918,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Baseline",
+   "margin_per_concessional_point": 1.0
+  },
+  {
+   "band": "$500k-2M",
+   "ticket_mid": 1000000.0,
+   "baseline_net_margin": 8.4,
+   "net_margin": 9.252,
+   "uplift": 0.852,
+   "concessional_points": 0.9,
+   "allocation_share": 0.0527902459,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Baseline",
+   "margin_per_concessional_point": 0.9466666667
+  },
+  {
+   "band": "$10-25k",
+   "ticket_mid": 15811.3883008419,
+   "baseline_net_margin": -2.2,
+   "net_margin": 0.53,
+   "uplift": 2.73,
+   "concessional_points": 1.56,
+   "allocation_share": 0.0332140875,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Favourable",
+   "margin_per_concessional_point": 1.75
+  },
+  {
+   "band": "$25-50k",
+   "ticket_mid": 35355.3390593274,
+   "baseline_net_margin": 1.6,
+   "net_margin": 4.245,
+   "uplift": 2.645,
+   "concessional_points": 1.72,
+   "allocation_share": 0.0436079885,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Favourable",
+   "margin_per_concessional_point": 1.5377906977
+  },
+  {
+   "band": "$50-200k",
+   "ticket_mid": 100000.0,
+   "baseline_net_margin": 5.0,
+   "net_margin": 7.525,
+   "uplift": 2.525,
+   "concessional_points": 1.88,
+   "allocation_share": 0.0546739386,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Favourable",
+   "margin_per_concessional_point": 1.3430851064
+  },
+  {
+   "band": "$200-500k",
+   "ticket_mid": 316227.7660168379,
+   "baseline_net_margin": 7.1,
+   "net_margin": 9.375,
+   "uplift": 2.275,
+   "concessional_points": 1.8,
+   "allocation_share": 0.0616898132,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Favourable",
+   "margin_per_concessional_point": 1.2638888889
+  },
+  {
+   "band": "$500k-2M",
+   "ticket_mid": 1000000.0,
+   "baseline_net_margin": 8.4,
+   "net_margin": 10.435,
+   "uplift": 2.035,
+   "concessional_points": 1.64,
+   "allocation_share": 0.0659483766,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Favourable",
+   "margin_per_concessional_point": 1.2408536585
+  },
+  {
+   "band": "$10-25k",
+   "ticket_mid": 15811.3883008419,
+   "baseline_net_margin": -2.2,
+   "net_margin": 0.5502822928,
+   "uplift": 2.7502822928,
+   "concessional_points": 1.6209203445,
+   "allocation_share": 0.0332648516,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched",
+   "margin_per_concessional_point": 1.6967411768
+  },
+  {
+   "band": "$25-50k",
+   "ticket_mid": 35355.3390593274,
+   "baseline_net_margin": 1.6,
+   "net_margin": 4.2052822928,
+   "uplift": 2.6052822928,
+   "concessional_points": 1.7209203445,
+   "allocation_share": 0.0434849423,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched",
+   "margin_per_concessional_point": 1.5138889497
+  },
+  {
+   "band": "$50-200k",
+   "ticket_mid": 100000.0,
+   "baseline_net_margin": 5.0,
+   "net_margin": 7.4252822928,
+   "uplift": 2.4252822928,
+   "concessional_points": 1.8209203445,
+   "allocation_share": 0.0543113392,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched",
+   "margin_per_concessional_point": 1.3318991686
+  },
+  {
+   "band": "$200-500k",
+   "ticket_mid": 316227.7660168379,
+   "baseline_net_margin": 7.1,
+   "net_margin": 9.3052822928,
+   "uplift": 2.2052822928,
+   "concessional_points": 1.7709203445,
+   "allocation_share": 0.0614156712,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched",
+   "margin_per_concessional_point": 1.2452746956
+  },
+  {
+   "band": "$500k-2M",
+   "ticket_mid": 1000000.0,
+   "baseline_net_margin": 8.4,
+   "net_margin": 10.2,
+   "uplift": 1.8,
+   "concessional_points": 1.6709203445,
+   "allocation_share": 0.0649898269,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched",
+   "margin_per_concessional_point": 1.0772506337
+  },
+  {
+   "band": "$10-25k",
+   "ticket_mid": 15811.3883008419,
+   "baseline_net_margin": -2.2,
+   "net_margin": 4.6502822928,
+   "uplift": 6.8502822928,
+   "concessional_points": 1.6209203445,
+   "allocation_share": 0.0448785436,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched + operating model",
+   "margin_per_concessional_point": 4.2261683717
+  },
+  {
+   "band": "$25-50k",
+   "ticket_mid": 35355.3390593274,
+   "baseline_net_margin": 1.6,
+   "net_margin": 7.0802822928,
+   "uplift": 5.4802822928,
+   "concessional_points": 1.7209203445,
+   "allocation_share": 0.0530693479,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched + operating model",
+   "margin_per_concessional_point": 3.1845066568
+  },
+  {
+   "band": "$50-200k",
+   "ticket_mid": 100000.0,
+   "baseline_net_margin": 5.0,
+   "net_margin": 8.9002822928,
+   "uplift": 3.9002822928,
+   "concessional_points": 1.8209203445,
+   "allocation_share": 0.059837997,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched + operating model",
+   "margin_per_concessional_point": 2.14192911
+  },
+  {
+   "band": "$200-500k",
+   "ticket_mid": 316227.7660168379,
+   "baseline_net_margin": 7.1,
+   "net_margin": 9.9302822928,
+   "uplift": 2.8302822928,
+   "concessional_points": 1.7709203445,
+   "allocation_share": 0.0638997055,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched + operating model",
+   "margin_per_concessional_point": 1.5981985309
+  },
+  {
+   "band": "$500k-2M",
+   "ticket_mid": 1000000.0,
+   "baseline_net_margin": 8.4,
+   "net_margin": 10.2,
+   "uplift": 1.8,
+   "concessional_points": 1.6709203445,
+   "allocation_share": 0.0649898269,
+   "viable": true,
+   "beats_alternative": false,
+   "policy": "Matched + operating model",
+   "margin_per_concessional_point": 1.0772506337
+  }
+ ],
+ "reach_outcome": [
+  {
+   "scenario": "Constrained",
+   "lending_usd_bn": 2.0345816962,
+   "small_ticket_lending_usd_bn": 0.1806203307,
+   "small_ticket_share": 0.0887751674,
+   "additional_lending_usd_bn": 0.4490262752,
+   "bands_viable": 4,
+   "additional_vs_baseline_pct": -31.7084231653,
+   "small_ticket_vs_baseline_pct": -33.4521949564,
+   "total_vs_baseline_pct": -30.5136060286
+  },
+  {
+   "scenario": "Baseline",
+   "lending_usd_bn": 2.9280288988,
+   "small_ticket_lending_usd_bn": 0.2714144074,
+   "small_ticket_share": 0.0926952625,
+   "additional_lending_usd_bn": 0.6575134095,
+   "bands_viable": 4,
+   "additional_vs_baseline_pct": 0.0,
+   "small_ticket_vs_baseline_pct": 0.0,
+   "total_vs_baseline_pct": 0.0
+  },
+  {
+   "scenario": "Favourable",
+   "lending_usd_bn": 4.0984204633,
+   "small_ticket_lending_usd_bn": 0.743180282,
+   "small_ticket_share": 0.1813333426,
+   "additional_lending_usd_bn": 1.1703207709,
+   "bands_viable": 5,
+   "additional_vs_baseline_pct": 77.9919244334,
+   "small_ticket_vs_baseline_pct": 173.8175504595,
+   "total_vs_baseline_pct": 39.9719949803
+  },
+  {
+   "scenario": "Matched",
+   "lending_usd_bn": 4.065666505,
+   "small_ticket_lending_usd_bn": 0.7427706796,
+   "small_ticket_share": 0.1826934596,
+   "additional_lending_usd_bn": 1.1657043611,
+   "bands_viable": 5,
+   "additional_vs_baseline_pct": 77.2898231906,
+   "small_ticket_vs_baseline_pct": 173.6666364165,
+   "total_vs_baseline_pct": 38.853359905
+  },
+  {
+   "scenario": "Matched + operating model",
+   "lending_usd_bn": 4.4100853849,
+   "small_ticket_lending_usd_bn": 0.9564901483,
+   "small_ticket_share": 0.2168869908,
+   "additional_lending_usd_bn": 1.379400059,
+   "bands_viable": 5,
+   "additional_vs_baseline_pct": 109.790407178,
+   "small_ticket_vs_baseline_pct": 252.4094970885,
+   "total_vs_baseline_pct": 50.6161836965
+  }
+ ],
+ "portfolio_outcome": [
+  {
+   "scenario": "Constrained",
+   "weighted_net_margin": 3.6886840689,
+   "agri_share_of_credit": 0.0298267822,
+   "agri_lending_usd_bn": 2.2241227429,
+   "concessional_points_per_dollar_lent": 0.2257669537,
+   "bands_viable": 4,
+   "smallest_viable_band": "$25-50k",
+   "vs_baseline_pct": -30.915610663,
+   "lending_per_concessional_dollar": 442.9346206568,
+   "reaches_smallest_band": false,
+   "budget_vs_favourable": 0.1310728302,
+   "private_credit_base_usd_bn": 74.5679748833
+  },
+  {
+   "scenario": "Baseline",
+   "weighted_net_margin": 6.0178218515,
+   "agri_share_of_credit": 0.0431744167,
+   "agri_lending_usd_bn": 3.2194288236,
+   "concessional_points_per_dollar_lent": 0.9515339074,
+   "bands_viable": 4,
+   "smallest_viable_band": "$25-50k",
+   "vs_baseline_pct": 0.0,
+   "lending_per_concessional_dollar": 105.0934698379,
+   "reaches_smallest_band": false,
+   "budget_vs_favourable": 0.5524291321,
+   "private_credit_base_usd_bn": 74.5679748833
+  },
+  {
+   "scenario": "Favourable",
+   "weighted_net_margin": 7.3326560818,
+   "agri_share_of_credit": 0.0549622069,
+   "agri_lending_usd_bn": 4.0984204633,
+   "concessional_points_per_dollar_lent": 1.7224542519,
+   "bands_viable": 5,
+   "smallest_viable_band": "$10-25k",
+   "vs_baseline_pct": 27.3027200747,
+   "lending_per_concessional_dollar": 58.0566943306,
+   "reaches_smallest_band": true,
+   "budget_vs_favourable": 1.0,
+   "private_credit_base_usd_bn": 74.5679748833
+  },
+  {
+   "scenario": "Matched",
+   "weighted_net_margin": 7.2221780944,
+   "agri_share_of_credit": 0.0545229572,
+   "agri_lending_usd_bn": 4.065666505,
+   "concessional_points_per_dollar_lent": 1.7224542519,
+   "bands_viable": 5,
+   "smallest_viable_band": "$10-25k",
+   "vs_baseline_pct": 26.2853359338,
+   "lending_per_concessional_dollar": 58.0566943306,
+   "reaches_smallest_band": true,
+   "budget_vs_favourable": 1.0,
+   "private_credit_base_usd_bn": 74.5679748833
+  },
+  {
+   "scenario": "Matched + operating model",
+   "weighted_net_margin": 8.6388492462,
+   "agri_share_of_credit": 0.0591418151,
+   "agri_lending_usd_bn": 4.4100853849,
+   "concessional_points_per_dollar_lent": 1.7224542519,
+   "bands_viable": 5,
+   "smallest_viable_band": "$10-25k",
+   "vs_baseline_pct": 36.9834721191,
+   "lending_per_concessional_dollar": 58.0566943306,
+   "reaches_smallest_band": true,
+   "budget_vs_favourable": 1.0,
+   "private_credit_base_usd_bn": 74.5679748833
+  }
+ ],
+ "sensitivity": {
+  "0.05": {
+   "Baseline": 5.067440937556646,
+   "Constrained": 4.230431743979625,
+   "Favourable": 5.706549961115876,
+   "Matched": 5.685350422419136,
+   "Matched + operating model": 5.938718391744601
+  },
+  "0.0887": {
+   "Baseline": 3.2194288235691455,
+   "Constrained": 2.2241227429023733,
+   "Favourable": 4.098420463271711,
+   "Matched": 4.065666504994469,
+   "Matched + operating model": 4.410085384926829
+  },
+  "0.12": {
+   "Baseline": 2.162105914995454,
+   "Constrained": 1.2657117218615928,
+   "Favourable": 3.0723069959680087,
+   "Matched": 3.0345474990744985,
+   "Matched + operating model": 3.3847324087348896
+  },
+  "0.15": {
+   "Baseline": 1.4529878224436794,
+   "Constrained": 0.7237153043558869,
+   "Favourable": 2.3050224838877904,
+   "Matched": 2.265870105772228,
+   "Matched + operating model": 2.5862768960780804
+  },
+  "0.2": {
+   "Baseline": 0.7349810998169711,
+   "Constrained": 0.28025537093481484,
+   "Favourable": 1.4064900446547834,
+   "Matched": 1.3703447727647164,
+   "Matched + operating model": 1.6123713173708494
+  }
+ },
+ "decompose_constrained": [
+  {
+   "scenario": "Baseline",
+   "lending_usd_bn": 2.9280288988,
+   "small_ticket_lending_usd_bn": 0.2714144074,
+   "bands_viable": 4,
+   "vs_baseline_pct": 0.0,
+   "share_of_the_constrained_fall": 0.0
+  },
+  {
+   "scenario": "Donors retrench, macro holds",
+   "lending_usd_bn": 2.7961201074,
+   "small_ticket_lending_usd_bn": 0.2584007612,
+   "bands_viable": 4,
+   "vs_baseline_pct": -4.5050372106,
+   "share_of_the_constrained_fall": 14.7640275828
+  },
+  {
+   "scenario": "Macro deteriorates, donors hold",
+   "lending_usd_bn": 2.1546225344,
+   "small_ticket_lending_usd_bn": 0.1954683713,
+   "bands_viable": 4,
+   "vs_baseline_pct": -26.4138910897,
+   "share_of_the_constrained_fall": 86.5643053295
+  },
+  {
+   "scenario": "Constrained",
+   "lending_usd_bn": 2.0345816962,
+   "small_ticket_lending_usd_bn": 0.1806203307,
+   "bands_viable": 4,
+   "vs_baseline_pct": -30.5136060286,
+   "share_of_the_constrained_fall": 100.0
+  }
+ ],
+ "matching": {
+  "Input distributor": {
+   "Venture capital": [
+    0,
+    "Inventory turning twice a year cannot produce a power law return."
+   ],
+   "Impact and patient equity": [
+    1,
+    "Useful for a step change in scale, but the cheque is usually too large."
+   ],
+   "Local commercial banks": [
+    3,
+    "A revolving line secured on stock and receivables is exactly this balance sheet."
+   ],
+   "Specialist agri-lenders": [
+    3,
+    "Trade finance against confirmed orders matches the seasonal cycle."
+   ],
+   "Development finance institutions": [
+    1,
+    "Reachable only at wholesale, through a local bank."
+   ],
+   "Donors and philanthropy": [
+    2,
+    "An origination incentive is what makes the bank line viable at small tickets."
+   ]
+  },
+  "Offtaker and processor": {
+   "Venture capital": [
+    0,
+    "Volume scales with hectares and throughput, so growth costs cash."
+   ],
+   "Impact and patient equity": [
+    2,
+    "The plant itself needs money that can wait several seasons."
+   ],
+   "Local commercial banks": [
+    3,
+    "Stock in a warehouse and offtake contracts are securable."
+   ],
+   "Specialist agri-lenders": [
+    3,
+    "Warehouse receipt and trade finance were built for this."
+   ],
+   "Development finance institutions": [
+    2,
+    "Larger processors clear the minimum ticket."
+   ],
+   "Donors and philanthropy": [
+    2,
+    "First loss cover helps a bank take the harvest concentration."
+   ]
+  },
+  "Embedded agri-lender": {
+   "Venture capital": [
+    1,
+    "Fits the technology that finds and assesses borrowers, never the loan book."
+   ],
+   "Impact and patient equity": [
+    2,
+    "Equity for the platform, provided it is not funding the book."
+   ],
+   "Local commercial banks": [
+    2,
+    "Can fund the book, but needs the cost of origination addressed."
+   ],
+   "Specialist agri-lenders": [
+    3,
+    "On-lending against a receivables portfolio is their product."
+   ],
+   "Development finance institutions": [
+    3,
+    "Wholesale portfolio funding and guarantees are the DFI advantage."
+   ],
+   "Donors and philanthropy": [
+    3,
+    "First loss on the portfolio plus origination support, the highest value use."
+   ]
+  },
+  "Asset financier and mechanisation": {
+   "Venture capital": [
+    0,
+    "A seven year fund against a ten year asset is a mismatch by construction."
+   ],
+   "Impact and patient equity": [
+    2,
+    "Patient equity for the platform, not for the assets."
+   ],
+   "Local commercial banks": [
+    1,
+    "Deposit funded balance sheets cannot hold the tenor."
+   ],
+   "Specialist agri-lenders": [
+    2,
+    "Possible where the asset is the security and the tenor is tolerable."
+   ],
+   "Development finance institutions": [
+    3,
+    "Long dated local currency debt is the thing only a DFI supplies."
+   ],
+   "Donors and philanthropy": [
+    2,
+    "Tenor extension and first loss, to make the long end bankable at all."
+   ]
+  },
+  "Digital advisory and marketplace": {
+   "Venture capital": [
+    3,
+    "The one archetype with venture economics: low marginal cost and a real exit."
+   ],
+   "Impact and patient equity": [
+    3,
+    "Same economics, longer horizon, impact floor satisfied."
+   ],
+   "Local commercial banks": [
+    0,
+    "Nothing to secure and no predictable cash flow to lend against."
+   ],
+   "Specialist agri-lenders": [
+    0,
+    "No receivables portfolio to finance."
+   ],
+   "Development finance institutions": [
+    0,
+    "Far below any minimum ticket, and not a balance sheet."
+   ],
+   "Donors and philanthropy": [
+    1,
+    "Grant funding for early product and market discovery."
+   ]
+  }
+ },
+ "arch_order": [
+  "Input distributor",
+  "Offtaker and processor",
+  "Embedded agri-lender",
+  "Asset financier and mechanisation",
+  "Digital advisory and marketplace"
+ ],
+ "prov_order": [
+  "Venture capital",
+  "Impact and patient equity",
+  "Local commercial banks",
+  "Specialist agri-lenders",
+  "Development finance institutions",
+  "Donors and philanthropy"
+ ]
+}

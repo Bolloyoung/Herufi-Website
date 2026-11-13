@@ -1,0 +1,62 @@
+# Render Blueprint for the Listmonk campaign engine and its database.
+#
+# Herufi itself stays on Vercel. Only the services below belong on Render.
+#
+# Use it: Render dashboard, New, Blueprint, pick this repository, and set the
+# Blueprint file path to herufi/deploy/render/render.yaml. Render asks for the
+# values marked `sync: false`. Nothing secret is stored in this file.
+#
+# NOT VERIFIED: this file was written from Render's documentation without a
+# Render account to test against. Before applying, run `render blueprints validate`
+# (Render CLI) and confirm the plan names in the dashboard, because Render renames
+# plans from time to time. See docs/email-platform/01-deployment-guide.md.
+#
+# Do not use free plans. A free Render database expires after 30 days, and free web
+# services sleep when idle and block the outbound mail ports.
+
+databases:
+  - name: herufi-listmonk-db
+    plan: basic-256mb            # confirm the current plan name in the dashboard
+    region: frankfurt            # pick a region close to your Supabase project
+    postgresMajorVersion: "17"
+    databaseName: listmonk
+    user: listmonk
+    ipAllowList: []              # no public access: only services in the same region can connect
+
+services:
+  - type: web
+    name: herufi-listmonk
+    runtime: image
+    image:
+      # Pinned to a tested stable release. Never use :latest or :beta.
+      url: docker.io/listmonk/listmonk:v6.2.0
+    plan: starter                # paid plan, always on
+    region: frankfurt            # must match the database region
+    healthCheckPath: /health     # public, returns 200 when the app is up
+    # First start installs the schema, later starts apply upgrades, then it serves.
+    dockerCommand: sh -c "./listmonk --install --idempotent --yes --config '' && ./listmonk --upgrade --yes --config '' && ./listmonk --config ''"
+    envVars:
+      - key: PORT
+        value: "9000"
+      - key: LISTMONK_app__address
+        value: 0.0.0.0:9000
+      - key: LISTMONK_db__host
+        fromDatabase: { name: herufi-listmonk-db, property: host }
+      - key: LISTMONK_db__port
+        fromDatabase: { name: herufi-listmonk-db, property: port }
+      - key: LISTMONK_db__user
+        fromDatabase: { name: herufi-listmonk-db, property: user }
+      - key: LISTMONK_db__password
+        fromDatabase: { name: herufi-listmonk-db, property: password }
+      - key: LISTMONK_db__database
+        fromDatabase: { name: herufi-listmonk-db, property: database }
+      - key: LISTMONK_db__ssl_mode
+        value: prefer
+      # First install only: creates the super administrator and an API user. The API
+      # token is printed once in the service logs. Copy it into Vercel as LISTMONK_API_TOKEN.
+      - key: LISTMONK_ADMIN_USER
+        sync: false
+      - key: LISTMONK_ADMIN_PASSWORD
+        sync: false
+      - key: LISTMONK_ADMIN_API_USER
+        value: herufi_api

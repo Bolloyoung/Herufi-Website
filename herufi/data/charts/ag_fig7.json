@@ -1,0 +1,498 @@
+{
+  "id": "ag_fig7",
+  "title": "Only one of five agricultural business models has venture shaped economics, and it is the one furthest from the farm",
+  "caption": "The author's assessment of fit between five agricultural business models and six sources of capital, scored none, narrow, partial or strong. This is a judgement, not a dataset, so every cell carries its reasoning: hover any square to read why. The dots repeat the score for readers who cannot rely on colour.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 170,
+          "right": 70,
+          "top": 52,
+          "bottom": 12,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "item",
+          "confine": true,
+          "extraCssText": "max-width:300px;white-space:normal",
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          },
+          "formatter": "<b>{@[3]}</b>"
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Venture\ncapital",
+            "Impact and\npatient equity",
+            "Local\ncommercial banks",
+            "Specialist\nagri lenders",
+            "Development\nfinance institutions",
+            "Donors and\nphilanthropy"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "interval": 0,
+            "lineHeight": 13
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          },
+          "position": "top"
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Digital advisory and marketplace",
+            "Asset financier and mechanisation",
+            "Lender inside the supply chain",
+            "Crop buyer and processor",
+            "Input distributor"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "width": 160,
+            "overflow": "break"
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          }
+        },
+        "visualMap": {
+          "min": 0,
+          "max": 3,
+          "calculable": false,
+          "orient": "vertical",
+          "right": 0,
+          "top": "middle",
+          "itemHeight": 110,
+          "itemWidth": 11,
+          "text": [
+            "Strong",
+            "None"
+          ],
+          "dimension": 2,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 10,
+            "color": "#5A5A5E"
+          },
+          "inRange": {
+            "color": [
+              "#F5F5F3",
+              "#BBCFC2",
+              "#2D6A4F",
+              "#1B4332"
+            ]
+          }
+        },
+        "series": [
+          {
+            "type": "heatmap",
+            "data": [
+              {
+                "value": [
+                  0,
+                  0,
+                  3,
+                  "Strong fit. The one archetype with venture economics: low marginal cost and a real exit."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  1,
+                  0,
+                  3,
+                  "Strong fit. Same economics, longer horizon, impact floor satisfied."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  2,
+                  0,
+                  0,
+                  "No fit. Nothing to secure and no predictable cash flow to lend against."
+                ],
+                "label": {
+                  "show": false,
+                  "formatter": ""
+                }
+              },
+              {
+                "value": [
+                  3,
+                  0,
+                  0,
+                  "No fit. No receivables portfolio to finance."
+                ],
+                "label": {
+                  "show": false,
+                  "formatter": ""
+                }
+              },
+              {
+                "value": [
+                  4,
+                  0,
+                  0,
+                  "No fit. Far below any minimum ticket, and not a balance sheet."
+                ],
+                "label": {
+                  "show": false,
+                  "formatter": ""
+                }
+              },
+              {
+                "value": [
+                  5,
+                  0,
+                  1,
+                  "Narrow fit. Grant funding for early product and market discovery."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf"
+                }
+              },
+              {
+                "value": [
+                  0,
+                  1,
+                  0,
+                  "No fit. A seven year fund against a ten year asset is a mismatch by construction."
+                ],
+                "label": {
+                  "show": false,
+                  "formatter": ""
+                }
+              },
+              {
+                "value": [
+                  1,
+                  1,
+                  2,
+                  "Partial fit. Patient equity for the platform, not for the assets."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  2,
+                  1,
+                  1,
+                  "Narrow fit. Deposit funded balance sheets cannot hold the tenor."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf"
+                }
+              },
+              {
+                "value": [
+                  3,
+                  1,
+                  2,
+                  "Partial fit. Possible where the asset is the security and the tenor is tolerable."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  4,
+                  1,
+                  3,
+                  "Strong fit. Long dated local currency debt is the thing only a DFI supplies."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  5,
+                  1,
+                  2,
+                  "Partial fit. Tenor extension and first loss, to make the long end bankable at all."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  0,
+                  2,
+                  1,
+                  "Narrow fit. Fits the technology that finds and assesses borrowers, never the loan book."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf"
+                }
+              },
+              {
+                "value": [
+                  1,
+                  2,
+                  2,
+                  "Partial fit. Equity for the platform, provided it is not funding the book."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  2,
+                  2,
+                  2,
+                  "Partial fit. Can fund the book, but needs the cost of origination addressed."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  3,
+                  2,
+                  3,
+                  "Strong fit. On-lending against a receivables portfolio is their product."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  4,
+                  2,
+                  3,
+                  "Strong fit. Wholesale portfolio funding and guarantees are the DFI advantage."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  5,
+                  2,
+                  3,
+                  "Strong fit. First loss on the portfolio plus origination support, the highest value use."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  0,
+                  3,
+                  0,
+                  "No fit. Volume scales with hectares and throughput, so growth costs cash."
+                ],
+                "label": {
+                  "show": false,
+                  "formatter": ""
+                }
+              },
+              {
+                "value": [
+                  1,
+                  3,
+                  2,
+                  "Partial fit. The plant itself needs money that can wait several seasons."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  2,
+                  3,
+                  3,
+                  "Strong fit. Stock in a warehouse and offtake contracts are securable."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  3,
+                  3,
+                  3,
+                  "Strong fit. Warehouse receipt and trade finance were built for this."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  4,
+                  3,
+                  2,
+                  "Partial fit. Larger processors clear the minimum ticket."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  5,
+                  3,
+                  2,
+                  "Partial fit. First loss cover helps a bank take the harvest concentration."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  0,
+                  4,
+                  0,
+                  "No fit. Inventory turning twice a year cannot produce a power law return."
+                ],
+                "label": {
+                  "show": false,
+                  "formatter": ""
+                }
+              },
+              {
+                "value": [
+                  1,
+                  4,
+                  1,
+                  "Narrow fit. Useful for a step change in scale, but the cheque is usually too large."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf"
+                }
+              },
+              {
+                "value": [
+                  2,
+                  4,
+                  3,
+                  "Strong fit. A revolving line secured on stock and receivables is exactly this balance sheet."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  3,
+                  4,
+                  3,
+                  "Strong fit. Trade finance against confirmed orders matches the seasonal cycle."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf\u25cf"
+                }
+              },
+              {
+                "value": [
+                  4,
+                  4,
+                  1,
+                  "Narrow fit. Reachable only at wholesale, through a local bank."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf"
+                }
+              },
+              {
+                "value": [
+                  5,
+                  4,
+                  2,
+                  "Partial fit. An origination incentive is what makes the bank line viable at small tickets."
+                ],
+                "label": {
+                  "show": true,
+                  "formatter": "\u25cf\u25cf"
+                }
+              }
+            ],
+            "label": {
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 13,
+              "color": "#fff"
+            },
+            "itemStyle": {
+              "borderColor": "#fff",
+              "borderWidth": 3
+            },
+            "emphasis": {
+              "itemStyle": {
+                "borderColor": "#1C1C1E",
+                "borderWidth": 2
+              }
+            }
+          }
+        ]
+      },
+      "height": 360
+    }
+  ]
+}

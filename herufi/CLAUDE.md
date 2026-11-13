@@ -159,6 +159,8 @@ publication: "publication-id"   # optional, matches an id in data/publications.t
 ---
 ```
 
+`series` must match an id in `blogSeries` for posts listed in `data/blogPosts.ts`.
+
 `pillar` must exactly match one of the four titles in `data/pillars.ts`:
 Venture Strategy and Capital Intelligence | Markets, Systems and African Economies | Data, Predictive Analytics and Decision Intelligence | Culture, Context and Intelligence Notes
 
@@ -176,6 +178,58 @@ All five reports (`The Broken Ladder`, `From Frontier to Market`, `Where the Con
 - The r1_fig3 Africa bubble map registers a world GeoJSON basemap (`data/geo/world.json`) client-side via `components/charts/geoWorldMap.ts`.
 
 To regenerate charts after a data change: edit `scripts/generate_charts.py`, re-run it, and the updated JSON is picked up automatically (no code changes needed in the content modules).
+
+### The Agricultural Capital series (second series, added November 2026)
+
+A second three part series sits beside the first. Three publications, one per part of the
+research report, each with its own explainer:
+
+| Report | Publication | Explainer |
+| --- | --- | --- |
+| 1 | `cost-of-a-small-loan-2026` | `why-banks-turn-down-farm-loans` |
+| 2 | `matching-business-to-instrument-2026` | `good-business-wrong-money` |
+| 3 | `same-budget-different-result-2026` | `spend-the-same-money-differently` |
+
+Same pipeline as the first series, with three differences worth knowing.
+
+- `scripts/generate_agri_charts.py` builds its 14 figures (`data/charts/ag_fig*.json`) from
+  `scripts/agri_source.json`, which is a verbatim dump of the Agri Capital Matching research
+  project's model and source tables. Nothing in that script is hand transcribed. That project
+  holds the tests (`src/test_claims.py`, 69 figures verified against live model output), so when
+  a number moves there the dump is regenerated and the charts follow.
+- `scripts/port_agri_articles.py` converts the three articles from their source Markdown into
+  `content/blogs/*.tsx` and `content/blog/*.md`. The earlier five posts were hand ported, which
+  is fine for copy written once; these three are generated because the research is still under
+  test and the prose changes whenever a figure does. Point `--src` at the project's `blog/`
+  directory. **Do not hand edit the generated files**: edit the source Markdown and re-run.
+- The same run renders the whole research report in memory and hands it to
+  `scripts/agri_publication_split.py`, which cuts it into the three publications along the
+  report's own part boundaries. The whole report is never written out as a page of its own, so
+  no content is published twice. The splitter slices every claim bearing element out of that
+  render verbatim (prose, tables, figures, findings, limitations, falsification tests,
+  references) and writes only the per report framing itself: hero, headline statistics,
+  executive summary scaffolding, and which findings, limitations, tests and references belong
+  to which report. It selects those by text and by URL fragment, never by position, and
+  asserts on every selection, so a reordered or reworded source document either splits
+  correctly or fails loudly. Figures renumber from 1 within each report.
+
+Two figures (`ag_fig1`, `ag_fig11`) use an ECharts `timeline` to step through loan sizes and
+scenarios, so their `option` is `{baseOption, options}` rather than a flat option. `EChart.tsx`
+passes it straight to `setOption`, which handles both.
+
+These options are JSON and therefore carry no JavaScript, so every tooltip uses ECharts' own
+string templates. Where a figure needs to surface a sentence (the capital fit matrix carries
+the reasoning behind all thirty judgements), that sentence travels as an extra data dimension
+and is addressed with `{@[n]}`.
+
+### Series grouping, on both pages
+
+`data/blogPosts.ts` exports `blogSeries` alongside `blogPosts`, and `data/publications.ts`
+exports `publicationSeries` alongside `publications`. Every post and every Herufi authored
+publication carries a `series` id; curated third party research carries none and renders in
+its own trailing group. `/blogs` and `/publications` each render one section per series entry,
+in order. Adding a fourth series means adding one entry to each array and tagging its items;
+neither page needs a change.
 
 ## Founders
 
@@ -213,3 +267,19 @@ create policy "Allow public insert" on newsletter_subscribers
 ```
 
 No select policy is added, so the subscriber list is not publicly readable — view it from the Supabase dashboard's table editor.
+
+## Email platform (Listmonk, consent, Google Sheets)
+
+Full documentation is in `docs/email-platform/`. Start with `README.md`. In short:
+
+* Herufi keeps contacts, consent, audiences and campaign records in its own Postgres (`email_*` tables, migration in `supabase/migrations/`). Listmonk (pinned `v6.2.0`, hosted on Render) only sends. The browser never talks to Listmonk, Google or SMTP.
+* Layout: `lib/domain/` (consent state machine, text hygiene), `lib/integrations/{google-sheets,listmonk,email}/` (provider code), `lib/services/` (business logic, all DB access), `lib/server/` (env, auth, http, db, tokens), `app/api/**` (thin routes), `app/admin/email/**` (admin screens), `app/subscribe`, `app/unsubscribe` (public pages), `components/admin`, `components/email`.
+* Database access uses `pg` and `DATABASE_URL` (not supabase-js) so consent changes are transactional. Admin auth verifies the Supabase bearer token against `/auth/v1/user`; admins are listed in `ADMIN_EMAILS` or `NEXT_PUBLIC_ADMIN_EMAIL`.
+* **Never** make a contact `subscribed` except through `confirmSubscription` (double opt in) or `recordExternalConsent` (admin evidence). Imports and syncs may only restrict. The rules live in `lib/domain/consent.ts` and are tested exhaustively.
+* Never "add" a subscriber to a Listmonk list blindly: on 6.2 it re-confirms people who unsubscribed. Go through `decidePush` in `lib/integrations/listmonk/sync.ts`.
+* Editor content may only contain known merge tags (`{{first_name|fallback}}`). Listmonk templates can call Sprig functions, so anything else that looks like a template action must be rejected (`validateTemplateSyntax`).
+* `EMAIL_SEND_MODE` (`disabled` default, `allowlist`, `live`) guards all sending. `live` is refused unless `APP_ENV=production`.
+* Commands: `npm run test` (unit, no services), `npm run test:integration` (needs `deploy/listmonk/docker-compose.dev.yml`; real Postgres, Listmonk and a mail catcher, sends no real email), `npm run email:check` (read only readiness check).
+* Vitest config sets an inline PostCSS config on purpose: otherwise vitest loads `postcss.config.js` and stalls.
+* Source files must not contain literal control or zero width characters. Run `python3 scripts/fix-invisible-chars.py <files>` after writing regexes that use `\uXXXX` escapes.
+* This project lives in a cloud synced folder where first reads of old files are slow (the first `tsc` or `next build` can take many minutes, then they are fast), and the sync can leave empty `* 2` duplicate directories in `node_modules`.

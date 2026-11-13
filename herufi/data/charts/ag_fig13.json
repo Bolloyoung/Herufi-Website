@@ -1,0 +1,242 @@
+{
+  "id": "ag_fig13",
+  "title": "Across a fourfold range of the model's one free parameter, the dollar figures move sevenfold and the ranking never changes",
+  "caption": "Modelled agricultural lending under each scenario, recomputed across the plausible range of the parameter governing how strongly lenders shift their book when margins change. Follow any two lines across and check that they never touch. The ordering is the finding; the dollar amounts are illustration.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 56,
+          "right": 190,
+          "top": 24,
+          "bottom": 52,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "axis",
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          }
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "0.05",
+            "0.0887",
+            "0.12",
+            "0.15",
+            "0.2"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif"
+          },
+          "axisLine": {
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          },
+          "boundaryGap": false,
+          "name": "How strongly lenders shift their book when margins change",
+          "nameLocation": "middle",
+          "nameGap": 30,
+          "nameTextStyle": {
+            "fontSize": 11,
+            "color": "#91918F",
+            "fontFamily": "Inter, system-ui, sans-serif"
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "formatter": "${value}bn"
+          },
+          "splitLine": {
+            "show": true,
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": 0,
+          "max": 6.9
+        },
+        "series": [
+          {
+            "name": "Matched, plus cheaper lending",
+            "type": "line",
+            "data": [
+              5.939,
+              4.41,
+              3.385,
+              2.586,
+              1.612
+            ],
+            "lineStyle": {
+              "color": "#1B4332",
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#1B4332"
+            },
+            "symbolSize": 7,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1B4332"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Favourable",
+            "type": "line",
+            "data": [
+              5.707,
+              4.098,
+              3.072,
+              2.305,
+              1.406
+            ],
+            "lineStyle": {
+              "color": "#C9A84C",
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#C9A84C"
+            },
+            "symbolSize": 7,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#C9A84C"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Matched",
+            "type": "line",
+            "data": [
+              5.685,
+              4.066,
+              3.035,
+              2.266,
+              1.37
+            ],
+            "lineStyle": {
+              "color": "#2D6A4F",
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#2D6A4F"
+            },
+            "symbolSize": 7,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#2D6A4F"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Baseline",
+            "type": "line",
+            "data": [
+              5.067,
+              3.219,
+              2.162,
+              1.453,
+              0.735
+            ],
+            "lineStyle": {
+              "color": "#5A5A5E",
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#5A5A5E"
+            },
+            "symbolSize": 7,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#5A5A5E"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          },
+          {
+            "name": "Constrained",
+            "type": "line",
+            "data": [
+              4.23,
+              2.224,
+              1.266,
+              0.724,
+              0.28
+            ],
+            "lineStyle": {
+              "color": "#A8442F",
+              "width": 2.4
+            },
+            "itemStyle": {
+              "color": "#A8442F"
+            },
+            "symbolSize": 7,
+            "endLabel": {
+              "show": true,
+              "formatter": "{a}",
+              "distance": 8,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#A8442F"
+            },
+            "emphasis": {
+              "focus": "series"
+            }
+          }
+        ]
+      },
+      "height": 380
+    }
+  ]
+}

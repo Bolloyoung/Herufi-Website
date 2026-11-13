@@ -14,7 +14,31 @@ export type Publication = {
   source?: string
   /** Extra credit context, e.g. noting a Herufi affiliation for one of the authors. */
   authorNote?: string
+  /** Id of the series in `publicationSeries` below. Omitted for curated third party research. */
+  series?: string
 }
+
+export type PublicationSeries = {
+  id: string
+  title: string
+  description: string
+}
+
+// Each series renders as its own section on /publications, in this order.
+export const publicationSeries: PublicationSeries[] = [
+  {
+    id: 'african-startup-investment',
+    title: 'The African Startup Investment Series',
+    description:
+      'Five reports, one dataset lineage: from a 2014 baseline to instrument level return math for the Series A and B gap.',
+  },
+  {
+    id: 'agricultural-capital',
+    title: 'The Agricultural Capital Series',
+    description:
+      'Three reports on why African agriculture receives the wrong capital, built on one open model and the only decomposed loan level dataset in African agricultural finance.',
+  },
+]
 
 // Publications are the detailed, long form reports behind the blog posts.
 // Rendered as real Next.js routes at app/publications/[slug]/page.tsx, with
@@ -29,6 +53,7 @@ export const publications: Publication[] = [
     format: 'HTML',
     fileUrl: '/publications/broken-ladder-2014-baseline',
     tags: ['Venture Capital', 'Africa', 'Startup Funding', 'Baseline'],
+    series: 'african-startup-investment',
   },
   {
     id: 'frontier-to-market-2014-2026',
@@ -39,6 +64,7 @@ export const publications: Publication[] = [
     format: 'HTML',
     fileUrl: '/publications/frontier-to-market-2014-2026',
     tags: ['Venture Capital', 'Africa', 'Capital Structure', 'Retrospective'],
+    series: 'african-startup-investment',
   },
   {
     id: 'continent-heading-2026-2030',
@@ -49,6 +75,7 @@ export const publications: Publication[] = [
     format: 'HTML',
     fileUrl: '/publications/continent-heading-2026-2030',
     tags: ['Venture Capital', 'Africa', 'Forecasting', 'Scenarios'],
+    series: 'african-startup-investment',
   },
   {
     id: 'writing-the-cheques-2026',
@@ -59,6 +86,7 @@ export const publications: Publication[] = [
     format: 'HTML',
     fileUrl: '/publications/writing-the-cheques-2026',
     tags: ['Venture Capital', 'Africa', 'LP Capital', 'Portfolio Construction'],
+    series: 'african-startup-investment',
   },
   {
     id: 'filling-the-missing-middle-2026',
@@ -69,6 +97,43 @@ export const publications: Publication[] = [
     format: 'HTML',
     fileUrl: '/publications/filling-the-missing-middle-2026',
     tags: ['Venture Capital', 'Africa', 'Venture Debt', 'Blended Finance'],
+    series: 'african-startup-investment',
+  },
+  {
+    id: 'cost-of-a-small-loan-2026',
+    title: 'The Cost of a Small Loan',
+    category: 'Lender Economics',
+    summary:
+      "Agriculture's capital problem is treated as a risk problem. Across Aceli Africa's 32,000 loan dataset, expected credit loss moves 0.4 percentage points between the smallest and largest loans while operating cost moves 15.5. Report 1 of the Agricultural Capital series.",
+    date: '2026',
+    format: 'HTML',
+    fileUrl: '/publications/cost-of-a-small-loan-2026',
+    tags: ['Agricultural Finance', 'Credit Risk', 'Lender Economics', 'Africa'],
+    series: 'agricultural-capital',
+  },
+  {
+    id: 'matching-business-to-instrument-2026',
+    title: 'Matching the Business to the Instrument',
+    category: 'Business Models and Instruments',
+    summary:
+      'Five agricultural business models, the balance sheet each one has, and the capital each one is offered. One of the five has the economics venture equity requires, and it is the smallest. Report 2 of the Agricultural Capital series.',
+    date: '2026',
+    format: 'HTML',
+    fileUrl: '/publications/matching-business-to-instrument-2026',
+    tags: ['Agritech', 'Venture Capital', 'Working Capital', 'Blended Finance'],
+    series: 'agricultural-capital',
+  },
+  {
+    id: 'same-budget-different-result-2026',
+    title: 'The Same Budget, a Different Result',
+    category: 'Scenarios and Allocation',
+    summary:
+      'A lender allocation model run across five scenarios on a concessional budget held fixed to the decimal place. Moving that budget from credit risk cover to the cost of lending barely changes how much is lent. It changes who gets it. Report 3 of the Agricultural Capital series.',
+    date: '2026',
+    format: 'HTML',
+    fileUrl: '/publications/same-budget-different-result-2026',
+    tags: ['Blended Finance', 'Development Finance', 'Scenario Analysis', 'Agricultural Finance'],
+    series: 'agricultural-capital',
   },
   {
     id: 'gvc-firm-participation-kenya-2022',

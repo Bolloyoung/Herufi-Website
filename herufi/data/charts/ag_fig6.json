@@ -1,0 +1,219 @@
+{
+  "id": "ag_fig6",
+  "title": "A government bond pays more than four times what a farm loan pays, and asks nothing in return",
+  "caption": "Average returns available to a commercial bank in Kenya, Rwanda, Tanzania, Uganda and Zambia, 2020 to 2023. Green is agriculture, gold is the alternatives.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 180,
+          "right": 48,
+          "top": 20,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          },
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          }
+        },
+        "xAxis": {
+          "type": "value",
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "formatter": "{value}%"
+          },
+          "splitLine": {
+            "show": true,
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": 0,
+          "max": 33
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Lending to farm businesses",
+            "The same, weighted by loan size",
+            "The same, with donor support",
+            "Government bonds",
+            "Everything else the bank does"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "width": 170,
+            "overflow": "break"
+          },
+          "axisLine": {
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          }
+        },
+        "series": [
+          {
+            "name": "Return",
+            "type": "bar",
+            "data": [
+              {
+                "value": 3.5,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 5.3,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 6.5,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 16.2,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                }
+              },
+              {
+                "value": 28.3,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                }
+              }
+            ],
+            "barWidth": 3,
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "color": "#C9A84C",
+                "width": 1,
+                "type": "dotted"
+              },
+              "label": {
+                "show": true,
+                "formatter": "the risk free alternative",
+                "position": "insideEndTop",
+                "fontFamily": "Inter, system-ui, sans-serif",
+                "fontSize": 10,
+                "color": "#C9A84C"
+              },
+              "data": [
+                {
+                  "xAxis": 16.2
+                }
+              ]
+            }
+          },
+          {
+            "name": "dot",
+            "type": "scatter",
+            "data": [
+              {
+                "value": [
+                  3.5,
+                  0
+                ],
+                "itemStyle": {
+                  "color": "#1B4332"
+                },
+                "name": "Lending to farm businesses"
+              },
+              {
+                "value": [
+                  5.3,
+                  1
+                ],
+                "itemStyle": {
+                  "color": "#1B4332"
+                },
+                "name": "The same, weighted by loan size"
+              },
+              {
+                "value": [
+                  6.5,
+                  2
+                ],
+                "itemStyle": {
+                  "color": "#1B4332"
+                },
+                "name": "The same, with donor support"
+              },
+              {
+                "value": [
+                  16.2,
+                  3
+                ],
+                "itemStyle": {
+                  "color": "#C9A84C"
+                },
+                "name": "Government bonds"
+              },
+              {
+                "value": [
+                  28.3,
+                  4
+                ],
+                "itemStyle": {
+                  "color": "#C9A84C"
+                },
+                "name": "Everything else the bank does"
+              }
+            ],
+            "symbolSize": 15,
+            "itemStyle": {
+              "borderColor": "#fff",
+              "borderWidth": 1.5
+            },
+            "label": {
+              "show": true,
+              "position": "right",
+              "formatter": "{@[0]}%",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1C1C1E"
+            },
+            "tooltip": {
+              "show": false
+            }
+          }
+        ]
+      },
+      "height": 300
+    }
+  ]
+}

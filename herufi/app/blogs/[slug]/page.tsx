@@ -15,6 +15,9 @@ const contentMap: Record<string, () => Promise<{ default: React.ComponentType }>
   'africa-2030-better-than-the-hype': () => import('@/content/blogs/africa-2030-better-than-the-hype'),
   'who-writes-the-cheques-african-vc': () => import('@/content/blogs/who-writes-the-cheques-african-vc'),
   'how-to-fill-africas-missing-middle': () => import('@/content/blogs/how-to-fill-africas-missing-middle'),
+  'why-banks-turn-down-farm-loans': () => import('@/content/blogs/why-banks-turn-down-farm-loans'),
+  'good-business-wrong-money': () => import('@/content/blogs/good-business-wrong-money'),
+  'spend-the-same-money-differently': () => import('@/content/blogs/spend-the-same-money-differently'),
 }
 
 type Props = { params: { slug: string } }

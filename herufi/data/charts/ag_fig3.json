@@ -1,0 +1,192 @@
+{
+  "id": "ag_fig3",
+  "title": "A guarantee covering every expected shilling of loss still leaves the smallest loans losing money",
+  "caption": "The bar is what a lender keeps today. The gold diamond is the same loan with 100 per cent of expected credit loss covered at no cost, which is better than any real guarantee on offer. On every band except the smallest, the diamond clears breakeven.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 96,
+          "right": 40,
+          "top": 40,
+          "bottom": 44,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          },
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          }
+        },
+        "legend": {
+          "top": 0,
+          "left": 0,
+          "itemGap": 18,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 11,
+            "color": "#5A5A5E"
+          },
+          "data": [
+            "What the bank keeps today",
+            "With every shilling of expected loss covered free"
+          ]
+        },
+        "xAxis": {
+          "type": "value",
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "formatter": "{value}%"
+          },
+          "splitLine": {
+            "show": true,
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": -3.2,
+          "max": 11.4
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "500k to 2M",
+            "200 to 500k",
+            "50 to 200k",
+            "25 to 50k",
+            "10 to 25k"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif"
+          },
+          "axisLine": {
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          }
+        },
+        "series": [
+          {
+            "name": "What the bank keeps today",
+            "type": "bar",
+            "data": [
+              {
+                "value": 8.4,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 7.1,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 5.0,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 1.6,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": -2.2,
+                "itemStyle": {
+                  "color": "#A8442F"
+                }
+              }
+            ],
+            "barWidth": 14,
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "color": "#1C1C1E",
+                "width": 1.4,
+                "type": "solid"
+              },
+              "label": {
+                "show": true,
+                "formatter": "breakeven",
+                "position": "end",
+                "fontFamily": "Inter, system-ui, sans-serif",
+                "fontSize": 10,
+                "color": "#91918F"
+              },
+              "data": [
+                {
+                  "xAxis": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "With every shilling of expected loss covered free",
+            "type": "scatter",
+            "data": [
+              [
+                9.2,
+                0
+              ],
+              [
+                8.1,
+                1
+              ],
+              [
+                6.1,
+                2
+              ],
+              [
+                2.5,
+                3
+              ],
+              [
+                -1.5,
+                4
+              ]
+            ],
+            "symbol": "diamond",
+            "symbolSize": 15,
+            "itemStyle": {
+              "color": "#C9A84C",
+              "borderColor": "#fff",
+              "borderWidth": 1.5
+            }
+          }
+        ]
+      },
+      "height": 340
+    }
+  ]
+}

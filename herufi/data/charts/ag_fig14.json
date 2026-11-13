@@ -1,0 +1,199 @@
+{
+  "id": "ag_fig14",
+  "title": "Most of the damage in the worst case comes from the economy, not from donors leaving",
+  "caption": "Modelled agricultural lending, starting from today and applying each half of the Constrained scenario on its own. Donor retrenchment costs 4.5 per cent of lending. Higher funding costs and bond yields cost 26 per cent. The fourth bar is the interaction, and it is small, so the two effects are close to additive.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 54,
+          "right": 20,
+          "top": 34,
+          "bottom": 56,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          },
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          }
+        },
+        "xAxis": {
+          "type": "category",
+          "data": [
+            "Lending\ntoday",
+            "Donors\nretrench",
+            "Funding costs and\nbond yields rise",
+            "The two\ntogether",
+            "Constrained"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "interval": 0,
+            "lineHeight": 14,
+            "width": 84,
+            "overflow": "break"
+          },
+          "axisLine": {
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          }
+        },
+        "yAxis": {
+          "type": "value",
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "formatter": "${value}bn"
+          },
+          "splitLine": {
+            "show": true,
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": 0,
+          "max": 3.5
+        },
+        "series": [
+          {
+            "name": "base",
+            "type": "bar",
+            "stack": "w",
+            "silent": true,
+            "itemStyle": {
+              "color": "transparent"
+            },
+            "emphasis": {
+              "disabled": true
+            },
+            "data": [
+              0.0,
+              2.7961201074,
+              2.022713743,
+              2.022713743,
+              0.0
+            ],
+            "barMaxWidth": 56,
+            "tooltip": {
+              "show": false
+            }
+          },
+          {
+            "name": "amount",
+            "type": "bar",
+            "stack": "w",
+            "data": [
+              {
+                "value": 2.9280288988,
+                "itemStyle": {
+                  "color": "#1B4332"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "$2.93bn",
+                  "fontFamily": "Inter, system-ui, sans-serif",
+                  "fontSize": 11,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "value": 0.1319087913999999,
+                "itemStyle": {
+                  "color": "#A8442F"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "-0.13",
+                  "fontFamily": "Inter, system-ui, sans-serif",
+                  "fontSize": 11,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "value": 0.7734063644,
+                "itemStyle": {
+                  "color": "#A8442F"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "-0.77",
+                  "fontFamily": "Inter, system-ui, sans-serif",
+                  "fontSize": 11,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "value": 0.011867953199999892,
+                "itemStyle": {
+                  "color": "#2D6A4F"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "+0.01",
+                  "fontFamily": "Inter, system-ui, sans-serif",
+                  "fontSize": 11,
+                  "color": "#1C1C1E"
+                }
+              },
+              {
+                "value": 2.0345816962,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                },
+                "label": {
+                  "show": true,
+                  "position": "top",
+                  "formatter": "$2.03bn",
+                  "fontFamily": "Inter, system-ui, sans-serif",
+                  "fontSize": 11,
+                  "color": "#1C1C1E"
+                }
+              }
+            ],
+            "barMaxWidth": 56,
+            "label": {
+              "show": true,
+              "position": "top",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1C1C1E",
+              "formatter": "{c}"
+            }
+          }
+        ]
+      },
+      "height": 360
+    }
+  ]
+}

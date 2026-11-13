@@ -1,0 +1,200 @@
+{
+  "id": "ag_fig8",
+  "title": "The loans that move the most commercial money go to the borrowers who least needed help",
+  "caption": "Each point is one loan size band in Aceli Africa's portfolio. The vertical axis is the share of borrowers who had never held a formal loan. The horizontal axis is leverage: for every dollar of subsidy spent, how many dollars the lenders put in from their own balance sheets. The dotted path runs from the smallest band to the largest.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 56,
+          "right": 36,
+          "top": 26,
+          "bottom": 54,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "item",
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          },
+          "formatter": "<b>loans of {b}</b><br/>{@[1]}% of borrowers had never held a formal loan<br/>every $1 of subsidy brought ${@[0]} of the lenders' own money"
+        },
+        "xAxis": {
+          "type": "value",
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "formatter": "{value}x"
+          },
+          "splitLine": {
+            "show": false
+          },
+          "axisLine": {
+            "show": true,
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisTick": {
+            "show": false
+          },
+          "name": "Leverage: dollars the lenders put in per dollar of subsidy",
+          "nameTextStyle": {
+            "fontSize": 11,
+            "color": "#91918F",
+            "fontFamily": "Inter, system-ui, sans-serif"
+          },
+          "nameLocation": "middle",
+          "nameGap": 32,
+          "min": 2,
+          "max": 33
+        },
+        "yAxis": {
+          "type": "value",
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "formatter": "{value}%"
+          },
+          "splitLine": {
+            "show": true,
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": 0,
+          "max": 100
+        },
+        "series": [
+          {
+            "name": "path",
+            "type": "line",
+            "data": [
+              [
+                5,
+                84
+              ],
+              [
+                7,
+                35
+              ],
+              [
+                10,
+                26
+              ],
+              [
+                19,
+                16
+              ],
+              [
+                29,
+                8
+              ]
+            ],
+            "showSymbol": false,
+            "silent": true,
+            "lineStyle": {
+              "color": "#E5E5E3",
+              "width": 1.6,
+              "type": "dotted"
+            },
+            "tooltip": {
+              "show": false
+            }
+          },
+          {
+            "name": "band",
+            "type": "scatter",
+            "data": [
+              {
+                "value": [
+                  5,
+                  84
+                ],
+                "name": "10k to 49k"
+              },
+              {
+                "value": [
+                  7,
+                  35
+                ],
+                "name": "50k to 99k"
+              },
+              {
+                "value": [
+                  10,
+                  26
+                ],
+                "name": "100k to 249k"
+              },
+              {
+                "value": [
+                  19,
+                  16
+                ],
+                "name": "250k to 499k"
+              },
+              {
+                "value": [
+                  29,
+                  8
+                ],
+                "name": "500k to 1.75M"
+              }
+            ],
+            "symbolSize": 19,
+            "itemStyle": {
+              "color": "#1B4332",
+              "opacity": 0.9,
+              "borderColor": "#fff",
+              "borderWidth": 2
+            },
+            "label": {
+              "show": true,
+              "position": "right",
+              "formatter": "{b}",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#5A5A5E"
+            },
+            "markLine": {
+              "silent": true,
+              "symbol": "none",
+              "lineStyle": {
+                "color": "#E5E5E3",
+                "width": 1
+              },
+              "label": {
+                "show": false
+              },
+              "data": [
+                {
+                  "xAxis": 10
+                },
+                {
+                  "yAxis": 26
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "height": 360
+    }
+  ]
+}

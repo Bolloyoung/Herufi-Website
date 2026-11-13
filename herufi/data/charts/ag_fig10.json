@@ -1,0 +1,433 @@
+{
+  "id": "ag_fig10",
+  "title": "The borrowers the market treats as marginal default less often, not more",
+  "caption": "Agricultural SME borrowers in Aceli Africa's portfolio, by who owns the business. Three measures on three scales, each panel labelled with its values. Read the middle panel, then the left one: that is where the trap closes.",
+  "panels": [
+    {
+      "title": "Average loan taken",
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 150,
+          "right": 56,
+          "top": 14,
+          "bottom": 18,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          },
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          }
+        },
+        "xAxis": {
+          "type": "value",
+          "axisLabel": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": 0,
+          "max": 152000,
+          "show": false
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Businesses owned by\nyoung entrepreneurs",
+            "Businesses owned\nby women",
+            "Businesses owned\nby men over 35"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "width": 140,
+            "overflow": "break",
+            "lineHeight": 14
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          }
+        },
+        "series": [
+          {
+            "name": "Average loan taken",
+            "type": "bar",
+            "data": [
+              {
+                "value": 36000,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 49000,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              },
+              {
+                "value": 95000,
+                "itemStyle": {
+                  "color": "#1B4332"
+                }
+              }
+            ],
+            "barWidth": 2,
+            "itemStyle": {
+              "color": "#E5E5E3"
+            },
+            "tooltip": {
+              "show": false
+            }
+          },
+          {
+            "name": "Average loan taken",
+            "type": "scatter",
+            "data": [
+              {
+                "value": [
+                  36000,
+                  0
+                ]
+              },
+              {
+                "value": [
+                  49000,
+                  1
+                ]
+              },
+              {
+                "value": [
+                  95000,
+                  2
+                ]
+              }
+            ],
+            "symbolSize": 14,
+            "itemStyle": {
+              "color": "#1B4332",
+              "borderColor": "#fff",
+              "borderWidth": 1.4
+            },
+            "label": {
+              "show": true,
+              "position": "right",
+              "formatter": "${@[0]}",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1C1C1E"
+            }
+          }
+        ]
+      },
+      "height": 180
+    },
+    {
+      "title": "Loans going bad",
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 150,
+          "right": 56,
+          "top": 14,
+          "bottom": 18,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          },
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          }
+        },
+        "xAxis": {
+          "type": "value",
+          "axisLabel": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": 0,
+          "max": 7.6,
+          "show": false
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Businesses owned by\nyoung entrepreneurs",
+            "Businesses owned\nby women",
+            "Businesses owned\nby men over 35"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "width": 140,
+            "overflow": "break",
+            "lineHeight": 14
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          }
+        },
+        "series": [
+          {
+            "name": "Loans going bad",
+            "type": "bar",
+            "data": [
+              {
+                "value": 2.5,
+                "itemStyle": {
+                  "color": "#A8442F"
+                }
+              },
+              {
+                "value": 3.3,
+                "itemStyle": {
+                  "color": "#A8442F"
+                }
+              },
+              {
+                "value": 4.6,
+                "itemStyle": {
+                  "color": "#A8442F"
+                }
+              }
+            ],
+            "barWidth": 2,
+            "itemStyle": {
+              "color": "#E5E5E3"
+            },
+            "tooltip": {
+              "show": false
+            }
+          },
+          {
+            "name": "Loans going bad",
+            "type": "scatter",
+            "data": [
+              {
+                "value": [
+                  2.5,
+                  0
+                ]
+              },
+              {
+                "value": [
+                  3.3,
+                  1
+                ]
+              },
+              {
+                "value": [
+                  4.6,
+                  2
+                ]
+              }
+            ],
+            "symbolSize": 14,
+            "itemStyle": {
+              "color": "#A8442F",
+              "borderColor": "#fff",
+              "borderWidth": 1.4
+            },
+            "label": {
+              "show": true,
+              "position": "right",
+              "formatter": "{@[0]}%",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1C1C1E"
+            }
+          }
+        ]
+      },
+      "height": 180
+    },
+    {
+      "title": "Never had a formal loan",
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 150,
+          "right": 56,
+          "top": 14,
+          "bottom": 18,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "axis",
+          "axisPointer": {
+            "type": "shadow"
+          },
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          }
+        },
+        "xAxis": {
+          "type": "value",
+          "axisLabel": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": 0,
+          "max": 132,
+          "show": false
+        },
+        "yAxis": {
+          "type": "category",
+          "data": [
+            "Businesses owned by\nyoung entrepreneurs",
+            "Businesses owned\nby women",
+            "Businesses owned\nby men over 35"
+          ],
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "width": 140,
+            "overflow": "break",
+            "lineHeight": 14
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "splitLine": {
+            "show": false
+          }
+        },
+        "series": [
+          {
+            "name": "Never had a formal loan",
+            "type": "bar",
+            "data": [
+              {
+                "value": 79,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                }
+              },
+              {
+                "value": 77,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                }
+              },
+              {
+                "value": 56,
+                "itemStyle": {
+                  "color": "#C9A84C"
+                }
+              }
+            ],
+            "barWidth": 2,
+            "itemStyle": {
+              "color": "#E5E5E3"
+            },
+            "tooltip": {
+              "show": false
+            }
+          },
+          {
+            "name": "Never had a formal loan",
+            "type": "scatter",
+            "data": [
+              {
+                "value": [
+                  79,
+                  0
+                ]
+              },
+              {
+                "value": [
+                  77,
+                  1
+                ]
+              },
+              {
+                "value": [
+                  56,
+                  2
+                ]
+              }
+            ],
+            "symbolSize": 14,
+            "itemStyle": {
+              "color": "#C9A84C",
+              "borderColor": "#fff",
+              "borderWidth": 1.4
+            },
+            "label": {
+              "show": true,
+              "position": "right",
+              "formatter": "{@[0]}%",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1C1C1E"
+            }
+          }
+        ]
+      },
+      "height": 180
+    }
+  ]
+}
