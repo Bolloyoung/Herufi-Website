@@ -15,7 +15,7 @@ export default function WhyBanksTurnDownFarmLoans() {
       <div className="chips"><span className="pill green">Venture Strategy and Capital Intelligence</span><span className="pill outline">Explainer</span></div>
       <h1>Why Banks Turn Down Farm Loans They Expect to Be Repaid</h1>
       <p className="summary">Africa&apos;s agricultural finance problem is almost always described as a risk problem. Data covering 32,000 loans says something different. Small farm loans fail because they cost too much to make, not because borrowers fail to pay. That one distinction changes which tools can work.</p>
-      <div className="meta"><span>Michael Omega</span><span>28 October 2026</span><span>10 min read</span></div>
+      <div className="meta"><span>Michael Omega</span><span>28 October 2026</span><span>15 min read</span></div>
       <div className="prose">
         <p>Picture a maize trader. They buy grain from farmers nearby, store it, and sell it to a mill they have dealt with for years. They know which farmers deliver and which ones disappoint. They have an order in hand. The only thing they do not have is the cash to pay the farmers in the weeks before the mill pays them.</p>
         <p>So they go to the bank, and the bank says no. Not because it expects to lose the money. It agrees the loan will probably be repaid. It says no anyway.</p>
