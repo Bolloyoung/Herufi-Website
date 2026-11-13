@@ -1,0 +1,422 @@
+{
+  "id": "ag_fig11",
+  "title": "Donor money can push the smallest loans just across zero. Only a cheaper way of lending holds them there",
+  "caption": "Modelled net margin a lender keeps on each loan size under five scenarios. Left of the black line loses money, and the black tick on each row is today. Step through the scenarios along the bottom and watch the top row. These are illustrative model outputs built on published lending economics, not forecasts.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "baseOption": {
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "color": "#1C1C1E"
+          },
+          "grid": {
+            "left": 96,
+            "right": 64,
+            "top": 30,
+            "bottom": 76,
+            "containLabel": true
+          },
+          "tooltip": {
+            "trigger": "axis",
+            "axisPointer": {
+              "type": "shadow"
+            },
+            "confine": true,
+            "textStyle": {
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 12
+            }
+          },
+          "legend": {
+            "top": 0,
+            "left": 0,
+            "textStyle": {
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#5A5A5E"
+            },
+            "data": [
+              "Modelled net margin",
+              "Today, for comparison"
+            ]
+          },
+          "xAxis": {
+            "type": "value",
+            "axisLabel": {
+              "fontSize": 11,
+              "color": "#5A5A5E",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "formatter": "{value}%"
+            },
+            "splitLine": {
+              "show": true,
+              "lineStyle": {
+                "color": "#E5E5E3"
+              }
+            },
+            "axisLine": {
+              "show": false
+            },
+            "axisTick": {
+              "show": false
+            },
+            "min": -5.6,
+            "max": 13.2
+          },
+          "yAxis": {
+            "type": "category",
+            "data": [
+              "500k to 2M",
+              "200 to 500k",
+              "50 to 200k",
+              "25 to 50k",
+              "10 to 25k"
+            ],
+            "axisLabel": {
+              "fontSize": 11,
+              "color": "#5A5A5E",
+              "fontFamily": "Inter, system-ui, sans-serif"
+            },
+            "axisLine": {
+              "lineStyle": {
+                "color": "#E5E5E3"
+              }
+            },
+            "axisTick": {
+              "show": false
+            },
+            "splitLine": {
+              "show": false
+            }
+          },
+          "series": [
+            {
+              "name": "Modelled net margin",
+              "type": "bar",
+              "barWidth": 18,
+              "data": [
+                {
+                  "value": 0
+                },
+                {
+                  "value": 0
+                },
+                {
+                  "value": 0
+                },
+                {
+                  "value": 0
+                },
+                {
+                  "value": 0
+                }
+              ],
+              "label": {
+                "show": true,
+                "position": "right",
+                "formatter": "{c}%",
+                "fontFamily": "Inter, system-ui, sans-serif",
+                "fontSize": 11,
+                "color": "#1C1C1E"
+              },
+              "markLine": {
+                "silent": true,
+                "symbol": "none",
+                "lineStyle": {
+                  "color": "#1C1C1E",
+                  "width": 1.4
+                },
+                "label": {
+                  "show": false
+                },
+                "data": [
+                  {
+                    "xAxis": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Today, for comparison",
+              "type": "scatter",
+              "data": [
+                [
+                  9.252,
+                  0
+                ],
+                [
+                  8.1,
+                  1
+                ],
+                [
+                  6.152,
+                  2
+                ],
+                [
+                  2.82,
+                  3
+                ],
+                [
+                  -0.933,
+                  4
+                ]
+              ],
+              "symbol": "rect",
+              "symbolSize": [
+                3,
+                22
+              ],
+              "itemStyle": {
+                "color": "#1C1C1E"
+              }
+            }
+          ],
+          "timeline": {
+            "axisType": "category",
+            "data": [
+              "Constrained",
+              "Baseline",
+              "Favourable",
+              "Matched",
+              "Matched, plus cheaper lending"
+            ],
+            "autoPlay": false,
+            "currentIndex": 4,
+            "bottom": 0,
+            "left": 20,
+            "right": 20,
+            "label": {
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#5A5A5E"
+            },
+            "lineStyle": {
+              "color": "#E5E5E3"
+            },
+            "itemStyle": {
+              "color": "#91918F"
+            },
+            "checkpointStyle": {
+              "color": "#1B4332",
+              "borderColor": "#fff"
+            },
+            "controlStyle": {
+              "itemSize": 13,
+              "color": "#5A5A5E",
+              "borderColor": "#5A5A5E",
+              "showPlayBtn": false
+            },
+            "emphasis": {
+              "label": {
+                "color": "#1B4332"
+              },
+              "itemStyle": {
+                "color": "#1B4332"
+              }
+            }
+          }
+        },
+        "options": [
+          {
+            "series": [
+              {
+                "data": [
+                  {
+                    "value": 7.1,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 5.85,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 3.77,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 0.33,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": -3.52,
+                    "itemStyle": {
+                      "color": "#A8442F"
+                    }
+                  }
+                ]
+              },
+              {}
+            ]
+          },
+          {
+            "series": [
+              {
+                "data": [
+                  {
+                    "value": 9.25,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 8.1,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 6.15,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 2.82,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": -0.93,
+                    "itemStyle": {
+                      "color": "#A8442F"
+                    }
+                  }
+                ]
+              },
+              {}
+            ]
+          },
+          {
+            "series": [
+              {
+                "data": [
+                  {
+                    "value": 10.44,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 9.38,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 7.53,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 4.25,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 0.53,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  }
+                ]
+              },
+              {}
+            ]
+          },
+          {
+            "series": [
+              {
+                "data": [
+                  {
+                    "value": 10.2,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 9.31,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 7.43,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 4.21,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 0.55,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  }
+                ]
+              },
+              {}
+            ]
+          },
+          {
+            "series": [
+              {
+                "data": [
+                  {
+                    "value": 10.2,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 9.93,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 8.9,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 7.08,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "value": 4.65,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  }
+                ]
+              },
+              {}
+            ]
+          }
+        ]
+      },
+      "height": 400
+    }
+  ]
+}

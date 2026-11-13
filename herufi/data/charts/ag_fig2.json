@@ -1,0 +1,471 @@
+{
+  "id": "ag_fig2",
+  "title": "The cost of lending moves 39 times more than the risk of not being repaid",
+  "caption": "Each pair of circles is one loan size band. Circle area is the value lent in that band, so the biggest circles show where the market's money sits. The horizontal axis is logarithmic. Hover any circle for the band and the exact figure.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "grid": {
+          "left": 56,
+          "right": 28,
+          "top": 46,
+          "bottom": 52,
+          "containLabel": true
+        },
+        "tooltip": {
+          "trigger": "item",
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          },
+          "formatter": "<b>{b}</b><br/>{a}: {@[1]}% of loan value"
+        },
+        "legend": {
+          "top": 0,
+          "left": 0,
+          "itemGap": 18,
+          "icon": "circle",
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 11,
+            "color": "#5A5A5E"
+          },
+          "data": [
+            "Cost of making the loan",
+            "Expected credit loss"
+          ]
+        },
+        "xAxis": {
+          "type": "log",
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "formatter": "${value}"
+          },
+          "splitLine": {
+            "show": false
+          },
+          "axisLine": {
+            "show": true,
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": 12000,
+          "max": 1300000
+        },
+        "yAxis": {
+          "type": "value",
+          "axisLabel": {
+            "fontSize": 11,
+            "color": "#5A5A5E",
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "formatter": "{value}%"
+          },
+          "splitLine": {
+            "show": true,
+            "lineStyle": {
+              "color": "#E5E5E3"
+            }
+          },
+          "axisLine": {
+            "show": false
+          },
+          "axisTick": {
+            "show": false
+          },
+          "min": -1,
+          "max": 19
+        },
+        "series": [
+          {
+            "name": "Fitted cost curve",
+            "type": "line",
+            "data": [
+              [
+                12000.0,
+                23.067
+              ],
+              [
+                12991.78,
+                21.813
+              ],
+              [
+                14065.53,
+                20.626
+              ],
+              [
+                15228.03,
+                19.505
+              ],
+              [
+                16486.6,
+                18.444
+              ],
+              [
+                17849.2,
+                17.441
+              ],
+              [
+                19324.41,
+                16.492
+              ],
+              [
+                20921.54,
+                15.595
+              ],
+              [
+                22650.68,
+                14.747
+              ],
+              [
+                24522.72,
+                13.945
+              ],
+              [
+                26549.49,
+                13.187
+              ],
+              [
+                28743.77,
+                12.47
+              ],
+              [
+                31119.4,
+                11.791
+              ],
+              [
+                33691.37,
+                11.15
+              ],
+              [
+                36475.91,
+                10.544
+              ],
+              [
+                39490.59,
+                9.97
+              ],
+              [
+                42754.43,
+                9.428
+              ],
+              [
+                46288.02,
+                8.915
+              ],
+              [
+                50113.66,
+                8.43
+              ],
+              [
+                54255.48,
+                7.972
+              ],
+              [
+                58739.62,
+                7.538
+              ],
+              [
+                63594.36,
+                7.128
+              ],
+              [
+                68850.34,
+                6.741
+              ],
+              [
+                74540.72,
+                6.374
+              ],
+              [
+                80701.4,
+                6.027
+              ],
+              [
+                87371.26,
+                5.7
+              ],
+              [
+                94592.36,
+                5.39
+              ],
+              [
+                102410.28,
+                5.097
+              ],
+              [
+                110874.34,
+                4.819
+              ],
+              [
+                120037.95,
+                4.557
+              ],
+              [
+                129958.91,
+                4.309
+              ],
+              [
+                140699.82,
+                4.075
+              ],
+              [
+                152328.45,
+                3.853
+              ],
+              [
+                164918.18,
+                3.644
+              ],
+              [
+                178548.42,
+                3.446
+              ],
+              [
+                193305.19,
+                3.258
+              ],
+              [
+                209281.58,
+                3.081
+              ],
+              [
+                226578.4,
+                2.914
+              ],
+              [
+                245304.77,
+                2.755
+              ],
+              [
+                265578.85,
+                2.605
+              ],
+              [
+                287528.55,
+                2.464
+              ],
+              [
+                311292.37,
+                2.33
+              ],
+              [
+                337020.23,
+                2.203
+              ],
+              [
+                364874.45,
+                2.083
+              ],
+              [
+                395030.79,
+                1.97
+              ],
+              [
+                427679.51,
+                1.863
+              ],
+              [
+                463026.6,
+                1.761
+              ],
+              [
+                501295.07,
+                1.666
+              ],
+              [
+                542726.37,
+                1.575
+              ],
+              [
+                587581.91,
+                1.489
+              ],
+              [
+                636144.7,
+                1.408
+              ],
+              [
+                688721.13,
+                1.332
+              ],
+              [
+                745642.92,
+                1.259
+              ],
+              [
+                807269.22,
+                1.191
+              ],
+              [
+                873988.84,
+                1.126
+              ],
+              [
+                946222.74,
+                1.065
+              ],
+              [
+                1024426.66,
+                1.007
+              ],
+              [
+                1109094.03,
+                0.952
+              ],
+              [
+                1200759.02,
+                0.9
+              ],
+              [
+                1300000.0,
+                0.851
+              ]
+            ],
+            "showSymbol": false,
+            "lineStyle": {
+              "color": "#1B4332",
+              "width": 1.4,
+              "type": "dotted"
+            },
+            "tooltip": {
+              "show": false
+            },
+            "silent": true,
+            "legendHoverLink": false
+          },
+          {
+            "name": "Cost of making the loan",
+            "type": "scatter",
+            "data": [
+              {
+                "value": [
+                  15811.3883008419,
+                  16.4
+                ],
+                "symbolSize": 35.323402636539974,
+                "name": "$10-25k"
+              },
+              {
+                "value": [
+                  35355.3390593274,
+                  11.5
+                ],
+                "symbolSize": 31.80975856096876,
+                "name": "$25-50k"
+              },
+              {
+                "value": [
+                  100000.0,
+                  5.9
+                ],
+                "symbolSize": 39.829972899714775,
+                "name": "$50-200k"
+              },
+              {
+                "value": [
+                  316227.7660168379,
+                  2.5
+                ],
+                "symbolSize": 37.75,
+                "name": "$200-500k"
+              },
+              {
+                "value": [
+                  1000000.0,
+                  0.9
+                ],
+                "symbolSize": 44.0,
+                "name": "$500k-2M"
+              }
+            ],
+            "itemStyle": {
+              "color": "#1B4332",
+              "borderColor": "#fff",
+              "borderWidth": 1.5
+            },
+            "label": {
+              "show": true,
+              "position": "top",
+              "formatter": "{@[1]}%",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#1B4332"
+            }
+          },
+          {
+            "name": "Expected credit loss",
+            "type": "scatter",
+            "data": [
+              {
+                "value": [
+                  15811.3883008419,
+                  0.7
+                ],
+                "symbolSize": 35.323402636539974,
+                "name": "$10-25k"
+              },
+              {
+                "value": [
+                  35355.3390593274,
+                  0.9
+                ],
+                "symbolSize": 31.80975856096876,
+                "name": "$25-50k"
+              },
+              {
+                "value": [
+                  100000.0,
+                  1.1
+                ],
+                "symbolSize": 39.829972899714775,
+                "name": "$50-200k"
+              },
+              {
+                "value": [
+                  316227.7660168379,
+                  1.0
+                ],
+                "symbolSize": 37.75,
+                "name": "$200-500k"
+              },
+              {
+                "value": [
+                  1000000.0,
+                  0.8
+                ],
+                "symbolSize": 44.0,
+                "name": "$500k-2M"
+              }
+            ],
+            "itemStyle": {
+              "color": "#A8442F",
+              "borderColor": "#fff",
+              "borderWidth": 1.5
+            },
+            "label": {
+              "show": true,
+              "position": "bottom",
+              "formatter": "{@[1]}%",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#A8442F"
+            }
+          }
+        ]
+      },
+      "height": 400
+    }
+  ]
+}

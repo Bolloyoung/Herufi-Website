@@ -25,6 +25,20 @@
 .explainer-doc .prose a{color:var(--forest);text-decoration:underline;text-underline-offset:2px}
 .explainer-doc .prose blockquote{margin:26px 0;padding:16px 22px;border-left:3px solid var(--gold);background:#fff;font-family:var(--serif);font-style:italic;color:rgba(28,28,30,.62);font-size:15.5px;line-height:1.6}
 .explainer-doc .prose hr{border:none;border-top:1px solid var(--border);margin:40px 0}
+/* Added for the Agricultural Capital series, which uses data tables, source lists and a
+   bold lead on the sentences that carry the argument. Same type scale as .prose p. */
+.explainer-doc .prose strong{font-weight:700;color:var(--charcoal)}
+.explainer-doc .prose h3{font-family:var(--sans);font-weight:600;font-size:17px;margin:30px 0 10px;letter-spacing:-.005em}
+.explainer-doc .prose ul{font-family:var(--serif);font-size:16.5px;line-height:1.75;margin:0 0 22px;padding-left:20px;list-style:disc}
+.explainer-doc .prose li{margin:0 0 9px}
+.explainer-doc .prose li::marker{color:rgba(28,28,30,.3)}
+.explainer-doc .prose .tablewrap{margin:26px 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.explainer-doc .prose table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.explainer-doc .prose th{text-align:left;font-weight:600;color:var(--forest);background:#fff;border-bottom:1px solid var(--border);padding:10px 14px 10px 0;white-space:nowrap}
+.explainer-doc .prose td{border-bottom:1px solid var(--border);padding:10px 14px 10px 0;vertical-align:top;color:rgba(28,28,30,.82)}
+.explainer-doc .prose tr:last-child td{border-bottom:none}
+.explainer-doc .prose table .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.explainer-doc .prose .srcnote{font-family:var(--sans);font-size:13px;color:rgba(28,28,30,.45);line-height:1.55;margin:-14px 0 26px}
 .explainer-doc .figimg{margin:26px 0 12px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px 18px}
 .explainer-doc .figimg .panels{display:grid;grid-template-columns:1fr;gap:28px}
 .explainer-doc .figimg .panel-title{font-family:var(--sans);font-size:13px;font-weight:600;color:rgba(28,28,30,.6);margin:0 0 6px}

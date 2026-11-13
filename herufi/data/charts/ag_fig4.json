@@ -1,0 +1,152 @@
+{
+  "id": "ag_fig4",
+  "title": "Drawn to scale, the long term finance that makes farms more productive barely registers",
+  "caption": "The full 78.1 billion dollar annual smallholder finance need for Africa south of the Sahara, divided by purpose and then by whether it is supplied. Green is supplied, grey is unmet. Look for green inside the long term block. There is none to see: 0.1 billion dollars against 27.0 billion unmet is too thin a sliver to draw.",
+  "panels": [
+    {
+      "title": null,
+      "option": {
+        "textStyle": {
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "color": "#1C1C1E"
+        },
+        "tooltip": {
+          "trigger": "item",
+          "confine": true,
+          "textStyle": {
+            "fontFamily": "Inter, system-ui, sans-serif",
+            "fontSize": 12
+          },
+          "formatter": "{b}<br/>${c}bn a year"
+        },
+        "series": [
+          {
+            "type": "treemap",
+            "roam": false,
+            "nodeClick": "zoomToNode",
+            "breadcrumb": {
+              "show": true,
+              "bottom": 0,
+              "itemStyle": {
+                "color": "#E5E5E3",
+                "textStyle": {
+                  "color": "#5A5A5E",
+                  "fontFamily": "Inter, system-ui, sans-serif"
+                }
+              }
+            },
+            "upperLabel": {
+              "show": true,
+              "height": 24,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 11,
+              "color": "#fff"
+            },
+            "label": {
+              "show": true,
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 12,
+              "color": "#fff",
+              "formatter": "{b}"
+            },
+            "levels": [
+              {
+                "itemStyle": {
+                  "borderColor": "#fff",
+                  "borderWidth": 3,
+                  "gapWidth": 3
+                }
+              },
+              {
+                "itemStyle": {
+                  "borderColor": "#fff",
+                  "borderWidth": 2,
+                  "gapWidth": 2
+                },
+                "colorSaturation": [
+                  0.9,
+                  1
+                ]
+              }
+            ],
+            "data": [
+              {
+                "name": "Short term  $33.0bn needed",
+                "itemStyle": {
+                  "color": "#5A5A5E",
+                  "borderColor": "#fff",
+                  "borderWidth": 2
+                },
+                "children": [
+                  {
+                    "name": "Supplied $10.0bn",
+                    "value": 10.0,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "name": "Unmet $23.0bn",
+                    "value": 23.0,
+                    "itemStyle": {
+                      "color": "#D8D8D2"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Long term  $27.1bn needed",
+                "itemStyle": {
+                  "color": "#5A5A5E",
+                  "borderColor": "#fff",
+                  "borderWidth": 2
+                },
+                "children": [
+                  {
+                    "name": "Supplied $0.1bn",
+                    "value": 0.1,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "name": "Unmet $27.0bn",
+                    "value": 27.0,
+                    "itemStyle": {
+                      "color": "#D8D8D2"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Non farm household  $18.0bn needed",
+                "itemStyle": {
+                  "color": "#5A5A5E",
+                  "borderColor": "#fff",
+                  "borderWidth": 2
+                },
+                "children": [
+                  {
+                    "name": "Supplied $9.0bn",
+                    "value": 9.0,
+                    "itemStyle": {
+                      "color": "#1B4332"
+                    }
+                  },
+                  {
+                    "name": "Unmet $9.0bn",
+                    "value": 9.0,
+                    "itemStyle": {
+                      "color": "#D8D8D2"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "height": 380
+    }
+  ]
+}
