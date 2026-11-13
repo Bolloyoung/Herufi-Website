@@ -25,11 +25,11 @@ The bank ran two tests, not one. The first was whether the trader will pay the m
 
 ## Credit losses barely move across loan sizes. Costs move enormously.
 
-Testing a claim like this needs a rare kind of data. You need to know, loan by loan, not only whether borrowers repaid but what each loan earned and what each loan cost the lender to produce. Banks almost never publish that.
+Testing a claim like this needs a rare kind of data. It has to show, loan by loan, not only whether borrowers repaid but what each loan earned and what each loan cost the lender to produce. Banks almost never publish that.
 
-Aceli Africa does. Aceli is a market facility that pays lenders to make agricultural loans they would otherwise skip. As part of that work it publishes a full profit and loss breakdown covering roughly 32,000 agricultural business loans worth about 2 billion dollars, from 41 lenders in Kenya, Rwanda, Tanzania, Uganda and Zambia. As far as I can establish it is the only decomposed loan level dataset of its kind for African agriculture.
+Aceli Africa does. Aceli is a market facility that pays lenders to make agricultural loans they would otherwise skip. As part of that work it publishes a full profit and loss breakdown covering roughly 32,000 agricultural business loans worth about 2 billion dollars, from 41 lenders in Kenya, Rwanda, Tanzania, Uganda and Zambia. As far as this research can establish, it is the only decomposed loan level dataset of its kind for African agriculture.
 
-That lets us set two explanations against each other and watch which one the numbers support.
+That sets two explanations against each other and shows which one the numbers support.
 
 The risk explanation says small farm loans go bad more often, so lenders avoid them. If that is right, expected losses should climb as loans get smaller. The cost explanation says small farm loans are simply too expensive to produce. If that is right, losses should stay flat while costs climb.
 
@@ -53,7 +53,7 @@ The reason is almost dull once stated. Checking a business, visiting the site, w
 
 Put money on it. Suppose assessing and managing a loan costs a bank 180,000 shillings in staff time, travel and paperwork. On a 10 million shilling loan that is a rounding error. On a 1 million shilling loan it eats the margin whole. Same work, same cost, one tenth the income.
 
-A fair objection at this point is that lenders could simply charge more for the small ones. They already do. The smallest loans carry 4.6 percentage points more interest and fees than the largest, which is exactly what you would expect from a market that understands what it is dealing with. The pricing is not the failure. It is still not enough, because for every 1 per cent increase in loan size, cost falls about nine times faster than price does. A lender pricing rationally still cannot catch up.
+A fair objection at this point is that lenders could simply charge more for the small ones. They already do. The smallest loans carry 4.6 percentage points more interest and fees than the largest, which is exactly what a market that understands what it is dealing with would do. The pricing is not the failure. It is still not enough, because for every 1 per cent increase in loan size, cost falls about nine times faster than price does. A lender pricing rationally still cannot catch up.
 
 So the sentence to retire is that agriculture is too risky to lend to in small amounts. The accurate sentence is that agriculture is too expensive to assess in small amounts. They sound alike. They point at completely different solutions.
 
@@ -69,7 +69,7 @@ Now hand it a perfect guarantee. A donor covers the entire 1,000 shilling expect
 
 That is not a thought experiment. Run the same calculation across the real data and the smallest loan band moves from minus 2.2 per cent to minus 1.5 per cent. Still a loss. There is a ceiling on what any guarantee can achieve, and the ceiling is the size of the loss it covers.
 
-The lenders doing this work say the same thing with their behaviour. Aceli offers partner lenders two kinds of support: cover against losses, and payments that defray the cost of finding and assessing borrowers. Ninety per cent of partner lenders report that the cost support changed what they did. Seventy three per cent say that about the loss cover. When people paid to be careful with money tell you which subsidy actually moved them, that is worth more than most survey evidence.
+The lenders doing this work say the same thing with their behaviour. Aceli offers partner lenders two kinds of support: cover against losses, and payments that defray the cost of finding and assessing borrowers. Ninety per cent of partner lenders report that the cost support changed what they did. Seventy three per cent say that about the loss cover. When people paid to be careful with money name the subsidy that actually moved them, that is worth more than most survey evidence.
 
 None of which makes guarantees useless. They work, and they work where the arithmetic says they should. On a 300,000 dollar loan, a full percentage point of recovered loss against a cost base of 2.5 per cent is a meaningful gift, and often enough to tip a marginal credit into a yes. Guarantees also give a nervous credit committee a reason to approve something unfamiliar, which matters more than economists usually allow.
 
@@ -113,11 +113,11 @@ A farmer buying fertiliser needs cash for one season. A processor buying maize a
 
 One hundred million dollars supplied against twenty seven billion needed. **Long term agricultural finance in Africa south of the Sahara is 99.6 per cent unserved.** That is not a gap. It is an absence.
 
-Short term lending works better for a reason you can hold in your hand. It repays itself out of the thing it buys. Lend for fertiliser and the harvest pays you back. Lend a crop buyer the money to purchase maize and the sale repays you. Better still, the buyer can deduct the loan from what it pays the farmer next time. The repayment mechanism is built into the transaction.
+Short term lending works better for a reason anyone can picture. It repays itself out of the thing it buys. The harvest repays the fertiliser loan. The sale repays the loan that bought the maize. Better still, the buyer can deduct the loan from what it pays the farmer next time. The repayment mechanism is built into the transaction.
 
 Long term lending has no such mechanism. An irrigation system does not produce cash next month. A warehouse takes years to earn back its cost. A tractor pays for itself over many seasons, if the seasons cooperate. The lender has to wait, and most lenders are funded with deposits that cannot wait.
 
-This should change how we read the much discussed shift from equity toward working capital and trade finance. That shift is sensible, because short term lending is the part of the problem that can actually be solved commercially. It is also incomplete, because the part that is 99.6 per cent unserved is precisely the part that makes farms more productive rather than merely keeping the current season moving. Short term money keeps the season going. Long term money makes the next season better. Africa needs both and is getting one.
+That recasts the much discussed shift from equity toward working capital and trade finance. That shift is sensible, because short term lending is the part of the problem that can actually be solved commercially. It is also incomplete, because the part that is 99.6 per cent unserved is precisely the part that makes farms more productive rather than merely keeping the current season moving. Short term money keeps the season going. Long term money makes the next season better. Africa needs both and is getting one.
 
 ---
 

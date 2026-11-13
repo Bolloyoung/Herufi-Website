@@ -1,7 +1,7 @@
 ---
 title: "Spend the Same Money Differently"
 slug: "spend-the-same-money-differently"
-summary: "A model tests African agricultural lending under five futures. The result was not the one I set out to prove. Moving donor money from guarantees to the cost of lending barely changes how much gets lent. It changes who gets it, and that turns out to be the more useful finding."
+summary: "A model tests African agricultural lending under five futures. The result was not the one the research set out to prove. Moving donor money from guarantees to the cost of lending barely changes how much gets lent. It changes who gets it, and that turns out to be the more useful finding."
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-10-28"
@@ -11,11 +11,11 @@ tags: ["Blended Finance", "Development Finance", "Scenario Analysis", "Agricultu
 publication: "agri-capital-matching-2026"
 ---
 
-I built this model to prove something, and it refused.
+The research built this model to prove something. The model refused.
 
-The first two articles in this series established that small farm loans fail on cost rather than risk, and that different agricultural businesses need different instruments. The obvious next step was to show that a donor spending a fixed budget on the cost of lending, rather than on covering credit losses, would produce more lending. I expected a clean result. I got a flat one: holding the budget constant and switching what it buys moves total lending by less than 1 per cent, and in the wrong direction.
+The first two articles in this series established that small farm loans fail on cost rather than risk, and that different agricultural businesses need different instruments. The obvious next step was to show that a donor spending a fixed budget on the cost of lending, rather than on covering credit losses, would produce more lending. That prediction called for a clean result. The model produced a flat one: holding the budget constant and switching what it buys moves total lending by less than 1 per cent, and in the wrong direction.
 
-That null result turned out to be more useful than the finding I went looking for. The reason behind it is structural rather than accidental, and it points at something the sector systematically fails to measure.
+That null result turned out to be more useful than the finding the research went looking for. The reason behind it is structural rather than accidental, and it points at something the sector systematically fails to measure.
 
 **How much concessional money exists decides how much lending happens. What that money is spent on decides who gets the loan.** Those are two different questions, and almost every programme reports only the first.
 
@@ -41,7 +41,7 @@ For every loan size, it works out what the lender actually keeps. Start with int
 
 Then it asks how much of the bank's book flows to agriculture at that margin. Banks do not abandon farming entirely when it pays less than treasury bills, and they do not pour everything in when it pays more. They move at the edges. The model is calibrated so that it reproduces the one real world number available, which is agriculture sitting at about 4 per cent of these banks' loan books.
 
-That calibration is also the model's weakest point, and I return to it below rather than burying it.
+That calibration is also the model's weakest point, and this article returns to it below rather than burying it.
 
 ---
 
@@ -67,9 +67,9 @@ Favourable produces 4.10 billion dollars of lending. Matched produces 4.07 billi
 
 The reason is worth understanding, because it is not a flaw in the argument. Half of all agricultural loan value sits in loans above 200,000 dollars. In that range the cost of making the loan is already tiny, between 0.9 and 2.5 per cent, so paying it down achieves very little. A guarantee there still returns a full percentage point of expected loss, so on large loans it is simply the better gift.
 
-Large loans dominate the total, which makes the total a poor test of anything. If you only ever look at how many dollars flowed into agriculture, you cannot see whether the programme reached anybody it had not reached before.
+Large loans dominate the total, which makes the total a poor test of anything. A count of the dollars that flowed into agriculture cannot show whether the programme reached anybody it had not reached before.
 
-So the honest conclusion is narrower than the one I set out to prove, and considerably more useful. The amount of concessional money determines the volume of lending. It is close to indifferent to how that money is spent.
+So the honest conclusion is narrower than the one the research set out to prove, and considerably more useful. The amount of concessional money determines the volume of lending. It is close to indifferent to how that money is spent.
 
 Which means the sector has been measuring the wrong thing. Ask the other question.
 
@@ -143,7 +143,7 @@ The constrained scenario is not hypothetical. Development budgets are under pres
 
 A reader of the draft asked the right question about that scenario. Does it mean agricultural lending only works when economic conditions are good?
 
-As built, the scenario cannot answer that, because it changes two things at the same time. Donors retrench, so guarantee cover thins and the origination support disappears. The economy also deteriorates, so funding costs rise, government bonds pay more and loan sizes drift smaller. Bundling them is realistic, since budget pressure and macro stress tend to arrive together. It also makes the result impossible to attribute. So I ran each half on its own.
+As built, the scenario cannot answer that, because it changes two things at the same time. Donors retrench, so guarantee cover thins and the origination support disappears. The economy also deteriorates, so funding costs rise, government bonds pay more and loan sizes drift smaller. Bundling them is realistic, since budget pressure and macro stress tend to arrive together. It also makes the result impossible to attribute. So the model ran each half on its own.
 
 | What changes | Lending | Against today |
 |---|---|---|
@@ -154,7 +154,7 @@ As built, the scenario cannot answer that, because it changes two things at the 
 
 *Model output. The two halves do not sum exactly to the whole, because the allocation rule is a curve rather than a line. The gap between them is small, about 0.01 billion dollars.*
 
-So the answer to the question is yes, and more emphatically than I expected. Roughly six sevenths of the damage in the worst case comes from the economy, not from the aid budget. Donors withdrawing entirely from what they currently do costs about 4.5 per cent of lending. A worse macro environment costs about 26 per cent.
+So the answer to the question is yes, and emphatically so. Roughly six sevenths of the damage in the worst case comes from the economy, not from the aid budget. Donors withdrawing entirely from what they currently do costs about 4.5 per cent of lending. A worse macro environment costs about 26 per cent.
 
 That is uncomfortable for anyone reading this series as an argument purely about how donors spend, and it should be. It is also the first article's point arriving with a bill attached. When the risk free alternative improves, agriculture loses, whatever donors do. Uganda's policy rate went from 9.75 to 12 per cent in a single October meeting. That one decision moves the bar for every farm loan in the country by more than the entire origination support programme described in this series could move it back.
 
@@ -164,7 +164,7 @@ The first is that the case for attacking the cost of lending gets stronger, not 
 
 The second is a warning about how this research should be used. A programme that lowers the cost of lending by 30 per cent, and then meets a year like Uganda's 2026, will show disappointing numbers. The programme will not have failed. The denominator moved. Anyone evaluating this kind of intervention needs to say in advance what macro conditions they are assuming, or they will end up measuring the bond market and calling it a programme evaluation.
 
-But the model does not show that all agricultural lending can become commercially self sustaining, and I would not want it read that way. Some lending will still need loss cover. Some investments will still need patient money. Some activities produce public benefits that no commercial lender can capture, and those will always need a grant.
+But the model does not show that all agricultural lending can become commercially self sustaining. That reading would overstate it. Some lending will still need loss cover. Some investments will still need patient money. Some activities produce public benefits that no commercial lender can capture, and those will always need a grant.
 
 The aim is not to abolish concessional finance. It is to spend it where it changes the outcome, rather than spending it forever to compensate for inefficiency that could have been designed out.
 
@@ -178,9 +178,9 @@ The lending economics come from one programme. Aceli's data covers 2020 to 2023 
 
 The cost curve rests on five observations. The relationship between loan size and cost fits those five points almost perfectly, but five points cannot describe every market, and a near perfect fit on five points is a warning as much as a reassurance.
 
-The way banks respond to margins is calibrated on a single real world number. One observation fixes one parameter and tells you nothing about the shape of the curve anywhere else.
+The way banks respond to margins is calibrated on a single real world number. One observation fixes one parameter and says nothing about the shape of the curve anywhere else.
 
-That last one is the weakest link, so I tested whether it matters.
+That last one is the weakest link, so the analysis tested whether it matters.
 
 Running the model across a fourfold range for that parameter, the dollar figures move by a factor of about seven between the extremes. The ranking of the five scenarios does not change at all. The lines never cross. Matched with a cheaper operating model stays ahead of Favourable, which stays ahead of Matched, which stays ahead of Baseline, which stays ahead of Constrained.
 
@@ -190,7 +190,7 @@ The 30 per cent cost saving is an assumption rather than a measurement. If the t
 
 And the model only looks at one side of the market. It estimates how lenders respond to economics. It says nothing about whether enough suitable businesses exist to borrow, whether they can use more credit productively, or what happens to prices when credit expands.
 
-That last limitation is the one I would worry about most. A programme can make lending profitable for banks and still miss its targets because there are not enough businesses ready to borrow. Aceli mobilised 73 per cent of its capital target, which suggests pipeline is a live constraint rather than a theoretical one.
+That last limitation is the one that matters most. A programme can make lending profitable for banks and still miss its targets because there are not enough businesses ready to borrow. Aceli mobilised 73 per cent of its capital target, which suggests pipeline is a live constraint rather than a theoretical one.
 
 ---
 
