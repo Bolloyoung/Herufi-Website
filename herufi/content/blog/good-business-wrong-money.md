@@ -5,7 +5,7 @@ summary: "Equity funding for African agricultural technology fell by roughly thr
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-10-28"
-readingTime: "12 min read"
+readingTime: "22 min read"
 pillar: "Venture Strategy and Capital Intelligence"
 tags: ["Agritech", "Venture Capital", "Working Capital", "Debt Financing"]
 publication: "agri-capital-matching-2026"
@@ -69,7 +69,9 @@ A word first on what those cases can and cannot show. Naming companies is easy a
 
 **The digital advisory service or marketplace** sells software, advice or access, and can add customers without adding much cost. What fits is venture capital. This is the one case where it genuinely does.
 
-*The case.* Pula sells agricultural insurance, and it sells almost none of it directly. It works through more than a hundred partner organisations, including banks, governments and input suppliers, so the cost of reaching a farmer is carried by somebody who was reaching them anyway. It raised 20 million dollars in April 2024 and says it has covered more than 15 million farmers. Notice who wrote that cheque: BlueOrchard led it, with the International Finance Corporation and a World Bank managed fund alongside. Even the one archetype with genuinely venture shaped economics was funded here by impact and development investors rather than by classic venture funds. That is worth pausing on before anyone concludes the answer is simply more venture capital.
+*The case.* Pula sells agricultural insurance, and almost none of it directly. It works through more than a hundred partners: banks, governments, input suppliers. Somebody else was already reaching the farmer, so Pula does not pay to reach them. It raised 20 million dollars in April 2024 and says it has covered more than 15 million farmers.
+
+Now notice who wrote that cheque. BlueOrchard led it, with the International Finance Corporation and a World Bank managed fund alongside. So even the one model with genuinely venture shaped economics was funded here by impact and development investors, not by classic venture funds. That is worth pausing on before anyone concludes the answer is simply more venture capital.
 
 **The asset financier** finances tractors, irrigation and equipment that earn money over several years, with the asset itself as security. What fits is long term local currency debt, and eventually the ability to bundle and refinance the portfolio once there is a track record. What it often got was a seven year fund backing a ten year asset, which is a mismatch dressed up as an investment.
 
@@ -91,7 +93,7 @@ A large share of what gets written up as agricultural technology failure in Afri
 
 Twiga is the clearest illustration, and it is worth being precise about what it does and does not prove. Twiga expanded into new categories, bought distributors, built its own logistics estate and leased a hub that insiders later described as a financial millstone. Each of those is a defensible decision for a company that has to show a steep line. None of them is how you would run a produce distribution business funded by trade finance against its own stock. The company has not said the instrument was the cause, and plenty else went wrong. But the direction of its 2025 restructuring, which was explicitly toward an asset light model, is the clearest evidence available that the shape of the business and the shape of the money had come apart.
 
-The people tracking the sector describe the same mechanism. Briter attributes the equity retreat to how asset heavy these businesses are, with logistics, input distribution and farmer lending all needing cash upfront rather than growth capital. It also notes that commercial investors who came back did so through structured arrangements alongside development finance institutions, rather than by leading equity rounds. That is not a market losing interest. That is a market changing instrument.
+The people tracking the sector describe the same mechanism. Briter puts the equity retreat down to what these businesses own. Lorries, warehouses full of seed and fertiliser, loan books owed by farmers. Each needs cash up front, and none of it is what equity is good at funding. Briter also notes how the commercial investors who did come back came back: not by leading equity rounds, but in structured deals alongside development finance institutions. That is not a market losing interest. That is a market changing instrument.
 
 ---
 
@@ -111,7 +113,7 @@ That is not a coincidence, and the mechanism is not mysterious. A business that 
 
 This reframes how we should read a set of results that looks, at first glance, like underperformance.
 
-Aceli mobilised 440 million dollars against a 600 million target and generated 10x leverage against a projected 15x. Two misses. It also made 5,576 loans against a projection of 1,500, reached 2.3 million farmers and workers against a projected 1.1 million, and lent to first time borrowers at 63 per cent against a projected 35.
+Aceli missed two of its targets. It mobilised 440 million dollars, not 600. It reached 10x leverage, not 15x. On everything else it overshot, and not by a little. It made 5,576 loans where it had projected 1,500. It reached 2.3 million farmers and workers where it had projected 1.1 million. And 63 per cent of its borrowers had never held a formal loan, against a projection of 35 per cent.
 
 Those are not separate results. The misses and the overshoots are the same sentence. Aceli mobilised less money and generated less leverage because it went much further down market than planned, with an average loan of 79,000 dollars against a projected 400,000. Its 10x is still more than double the roughly 4x average across blended finance globally. It outperformed the field while serving harder borrowers, and still looked like a miss against its own forecast.
 
@@ -133,21 +135,23 @@ One caution, because the data is narrow. These figures describe one programme in
 
 If the binding constraint is the cost of reaching a borrower, then viability comes from attacking that cost. Four approaches do, and a fifth fixes a different problem that is just as expensive.
 
-Finance the group rather than the individual. Assess a cooperative, an outgrower scheme or a buyer's supplier list instead of opening a file on every farmer. One assessment covers many borrowers, which is the largest single saving available.
+**Finance the group, not the individual.** A dairy cooperative with 400 members is one credit file. Four hundred farmers are four hundred. So assess the cooperative, the outgrower scheme or the buyer's supplier list. One assessment then covers many borrowers, and this is the largest single saving available.
 
-Build lending into a transaction that is already happening. Lend through the input seller, the crop buyer or the mobile money account, where the cost of finding the customer has already been paid by the commercial relationship.
+**Build the loan into a sale that is happening anyway.** The input seller already has the farmer in the shop. The crop buyer already has the lorry at the gate. Lend at that moment and the cost of finding the customer has already been paid by somebody else.
 
-Replace the field visit with data that predicts repayment as well. Purchase records from the buyer, mobile money history, warehouse receipts, satellite estimates of yield. Each one removes a line from the cost of assessment.
+**Replace the field visit with data that predicts repayment just as well.** What the buyer paid the farmer last season. What the mobile money account shows. What sits in the warehouse. What the satellite says the yield will be. Each one takes a line out of the cost of assessment.
 
-Price the portfolio rather than the name. Losses turned out to be flat and predictable across loan sizes, between 0.7 and 1.1 per cent. That is precisely the condition under which assessing a book as a whole works, and under which assessing every borrower from scratch is waste.
+**Price the book, not the name.** Losses turned out to be flat across loan sizes, between 0.7 and 1.1 per cent. Flat and predictable is exactly the condition under which you can price a whole book at once. It is also the condition under which assessing every borrower from scratch is waste.
 
-And match the currency of the loan to the currency of the revenue. A business earning shillings and repaying dollars is carrying an exchange rate bet it is not paid to take. Research by TCX suggests that in any given year, one in eight low income countries sees its currency fall by a fifth or more.
+**And lend in the currency the business earns.** A trader who earns shillings and repays dollars is carrying a bet on the exchange rate, and nobody is paying them to carry it. Research by TCX suggests that in any given year, one in eight low income countries sees its currency fall by a fifth or more.
 
 Uganda spent most of 2026 being that one in eight. The shilling went from about 3,604 to the dollar in March to nearly 4,500 by late October. A business that borrowed dollars in March and was repaying in October watched the debt grow by roughly a quarter in shilling terms, without borrowing another cent. The maize it was buying and the grain it was selling were priced in shillings throughout. Nothing about the business changed. The loan simply got bigger.
 
 Then the second blow landed, and it came from the same event. On 14 October the Bank of Uganda raised its policy rate from 9.75 per cent to 12 per cent to defend the currency. It also lifted the share of deposits banks must hold in reserve, from 11 per cent to 13.5 per cent. For a farm borrower that is three things at once. Dollar debt costs more to service. Shilling debt costs more to take on. And banks have less to lend, because more of every deposit is now parked at the central bank rather than working. None of it had anything to do with farming.
 
-That last point explains a shift that deserves more attention than it gets. Of Aceli's 55 partner lenders, 45 are African institutions, and they made 96 per cent of the loans, in local currency, to businesses international investors could not reach. The original plan assumed international impact investors would do about half the work. Local banks did almost all of it. The same substitution has been running through African venture capital, which I traced in [Who Is Actually Writing the Cheques](https://herufi.org/blogs/who-writes-the-cheques-african-vc). In agriculture it matters more, because local banks have the two things offshore capital cannot manufacture: branches near the farms, and deposits in the right currency.
+That last point explains a shift that deserves more attention than it gets. Aceli expected international impact investors to do about half the lending. They did almost none of it. Of its 55 partner lenders, 45 are African institutions, and they made 96 per cent of the loans, in local currency, to businesses offshore investors could not reach.
+
+The same substitution has been running through African venture capital, which I traced in [Who Is Actually Writing the Cheques](https://herufi.org/blogs/who-writes-the-cheques-african-vc). In agriculture it matters more. A local bank has two things offshore capital cannot manufacture: branches near the farms, and deposits in the currency the farms earn.
 
 ---
 
@@ -159,7 +163,7 @@ Some genuinely good companies were starved when the only instrument on offer sto
 
 The danger now is the opposite mistake. The sector spent a decade offering equity to businesses that needed working capital. It could spend the next decade offering working capital to businesses that need patient long term money for irrigation, storage and processing. That is the 27 billion dollar layer that is 99.6 per cent unserved, and no revolving trade line will ever reach it. Fixing one mismatch by installing another is not progress, it is a different mistake with better press.
 
-Which leaves a practical question, and it is the one a donor or a development bank actually has to answer. If we know the constraint is cost, and we know different businesses need different instruments, what would measurably change if development money were spent accordingly?
+Which leaves the question a donor actually has to answer. If the constraint is cost, and different businesses need different instruments, what would change if the money were spent that way?
 
 That is what the final article tests.
 

@@ -5,7 +5,7 @@ summary: "A model tests African agricultural lending under five futures. The res
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-10-28"
-readingTime: "13 min read"
+readingTime: "19 min read"
 pillar: "Venture Strategy and Capital Intelligence"
 tags: ["Blended Finance", "Development Finance", "Scenario Analysis", "Agricultural Finance"]
 publication: "agri-capital-matching-2026"
@@ -123,13 +123,13 @@ It is also why the model does not recommend abandoning guarantees. On larger loa
 
 The 30 per cent cost reduction is an assumption, so it is worth being concrete about what would have to happen for it to be real.
 
-Reach borrowers through networks that already exist. Work through cooperatives, crop buyers, processors and input suppliers instead of finding every business separately. One relationship opens the door to many borrowers, and the partner already knows who is reliable.
+**Reach borrowers through networks that already exist.** A crop buyer deals with 300 suppliers and knows which of them deliver. Work through that buyer, or through a cooperative, a processor or an input seller, rather than finding 300 businesses one at a time. One relationship opens many doors, and the partner already knows who is reliable.
 
-Use the trading records instead of starting from scratch. A crop buyer knows how much a supplier delivers, how often and whether quality holds. Where those records are solid they can replace work a loan officer would otherwise do from the beginning.
+**Use the trading records instead of starting from scratch.** A crop buyer knows how much a supplier delivers, how often, and whether the quality holds. Where those records are good they can replace work a loan officer would otherwise do from nothing.
 
-Assess the book, not only the borrower. A lender financing hundreds of similar businesses can analyse how the portfolio behaves as a whole while keeping sensible checks on individuals. That removes duplicated work and makes a large number of small loans manageable.
+**Assess the book, not only the borrower.** A lender with hundreds of similar businesses on its books can study how the whole book behaves, while still running sensible checks on individuals. That cuts out repeated work, and it is what makes a large number of small loans manageable.
 
-Move the money digitally. Digital disbursement and repayment cut the administrative work of moving cash and tracking who has paid. How much it saves depends on connectivity, data quality and whether borrowers can actually use the system.
+**Move the money digitally.** Paying out and collecting through a phone cuts the clerical work of handling cash and tracking who has paid. How much it saves depends on the network, the quality of the records, and whether borrowers can actually use the system.
 
 These reinforce one another, which is the point. A lender working through a buyer network also gets the transaction data. That data makes portfolio assessment possible. Digital payments then make collection cheap. The saving comes from redesigning the whole process, not from shaving each step.
 
@@ -220,7 +220,7 @@ The division of labour that follows from all this is not the one currently runni
 
 **Donors are the only source of money that can pay for the cost of lending.** That cost generates no repayment, so no instrument other than a grant can fund it. This is the highest value use of a shrinking budget, and it is not where most of the budget goes.
 
-**Development finance institutions should fund balance sheets, not borrowers.** Assessing a 2 million dollar deal costs about what assessing a 20 million dollar deal costs, which is why their minimum ticket is an arithmetic fact rather than a preference. Their advantage is wholesale: lending to local banks, guaranteeing portfolios, supplying local currency at tenors nobody else can offer.
+**Development finance institutions should fund balance sheets, not borrowers.** Checking a 2 million dollar deal costs roughly what checking a 20 million dollar deal costs. That is why their minimum cheque is arithmetic rather than preference. Their advantage lies upstream: lending to local banks, guaranteeing portfolios, supplying local currency for longer than anyone else will.
 
 **Impact and patient investors should fund two things.** The platforms that make lending cheaper, and the long term assets that are 99.6 per cent unserved: irrigation, storage, processing, machinery. That layer needs money with a longer life than a seven year fund.
 

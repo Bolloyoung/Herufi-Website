@@ -5,7 +5,7 @@ summary: "Africa's agricultural finance problem is almost always described as a 
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-10-28"
-readingTime: "10 min read"
+readingTime: "15 min read"
 pillar: "Venture Strategy and Capital Intelligence"
 tags: ["Agricultural Finance", "Credit Risk", "Blended Finance", "Smallholder Farmers"]
 publication: "agri-capital-matching-2026"
