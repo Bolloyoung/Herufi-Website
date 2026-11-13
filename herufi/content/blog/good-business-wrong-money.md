@@ -15,7 +15,7 @@ A company can be a good business and a bad investment at the same time, for the 
 
 Consider a maize processor with a 12 per cent margin, growing revenue 40 per cent a year, with contracts from two large buyers and a waiting list of farmers who want to supply it. It is an excellent borrower. It is a poor venture investment. Both of those are true at once, and neither is a judgement about the quality of the company.
 
-The previous article established that small farm loans fail on cost rather than on risk: expected credit losses barely move across loan sizes while the cost of making a loan moves 39 times as much. That tells us the businesses are not uniquely dangerous. It leaves the obvious question unanswered.
+The previous article established that small farm loans fail on cost rather than on risk: expected credit losses barely move across loan sizes while the cost of making a loan moves 39 times as much. That means the businesses are not uniquely dangerous. It leaves the obvious question unanswered.
 
 **If these businesses are not dangerous, what exactly is wrong with the money they have been offered?** The short answer is that it did not match them. Five very different kinds of agricultural company have been handed broadly one kind of capital, and only one of the five was ever built to take it.
 
@@ -23,7 +23,7 @@ The previous article established that small farm loans fail on cost rather than 
 
 ## Equity left agricultural technology faster than it left anything else
 
-Two facts from 2025 look contradictory until you set them side by side.
+Two facts from 2025 look contradictory until they sit side by side.
 
 African technology funding went up. The continent's startups raised 4.1 billion dollars, about a quarter more than the year before. Debt reached a record 1.6 billion, which was 41 per cent of all capital deployed, against 31 per cent in 2024 and 17 per cent in 2019.
 
@@ -53,7 +53,7 @@ None of that makes it a bad company. It makes it a bad fit for one specific inst
 
 The deeper problem is that agricultural technology is not one industry. It is at least five, with five different financial shapes. Each one below carries a real company, because a framework nobody can check against the record is just a diagram.
 
-A word first on what those cases can and cannot show. Naming companies is easy and unfair if it is done carelessly, so each case states what was raised, what happened and when, with a source at the foot of this article. None of these businesses succeeded or failed for one reason, and I am not claiming the instrument was the only cause. What the cases show is a pattern consistent with the argument. One limit is worth stating plainly: none of these companies publishes audited profit figures. So "doing well" below means raising capital the balance sheet can actually service, not demonstrated profitability.
+A word first on what those cases can and cannot show. Naming companies is easy and unfair if it is done carelessly, so each case states what was raised, what happened and when, with a source at the foot of this article. None of these businesses succeeded or failed for one reason, and nothing here claims the instrument was the only cause. What the cases show is a pattern consistent with the argument. One limit is worth stating plainly: none of these companies publishes audited profit figures. So "doing well" below means raising capital the balance sheet can actually service, not demonstrated profitability.
 
 **The input distributor** sells seed and fertiliser on a thin margin, and its money sits in stock. Goods go out before planting and cash comes back after harvest, once or twice a year. What fits is a revolving credit line in local currency that expands before the season and shrinks after it. What it often got was growth equity priced as though inventory turning twice a year behaved like software.
 
@@ -91,7 +91,7 @@ The company chases growth its margin cannot fund, because the equity story requi
 
 A large share of what gets written up as agricultural technology failure in Africa is this. Not a failure of the product, the market or the founder, but a company that took the only cheque on offer and then had to spend years pretending to be a different kind of company.
 
-Twiga is the clearest illustration, and it is worth being precise about what it does and does not prove. Twiga expanded into new categories, bought distributors, built its own logistics estate and leased a hub that insiders later described as a financial millstone. Each of those is a defensible decision for a company that has to show a steep line. None of them is how you would run a produce distribution business funded by trade finance against its own stock. The company has not said the instrument was the cause, and plenty else went wrong. But the direction of its 2025 restructuring, which was explicitly toward an asset light model, is the clearest evidence available that the shape of the business and the shape of the money had come apart.
+Twiga is the clearest illustration, and it is worth being precise about what it does and does not prove. Twiga expanded into new categories, bought distributors, built its own logistics estate and leased a hub that insiders later described as a financial millstone. Each of those is a defensible decision for a company that has to show a steep line. None of them fits a produce distribution business funded by trade finance against its own stock. The company has not said the instrument was the cause, and plenty else went wrong. But the direction of its 2025 restructuring, which was explicitly toward an asset light model, is the clearest evidence available that the shape of the business and the shape of the money had come apart.
 
 The people tracking the sector describe the same mechanism. Briter puts the equity retreat down to what these businesses own. Lorries, warehouses full of seed and fertiliser, loan books owed by farmers. Each needs cash up front, and none of it is what equity is good at funding. Briter also notes how the commercial investors who did come back came back: not by leading equity rounds, but in structured deals alongside development finance institutions. That is not a market losing interest. That is a market changing instrument.
 
@@ -109,9 +109,9 @@ It is also completely silent on the only question that matters, which is who got
 
 The two measures are near mirror images. In the smallest band, 84 per cent of borrowers had never held a formal loan, and every dollar of subsidy brought about 5 dollars off the lenders' own balance sheets. In the largest band, 8 per cent were first time borrowers and every dollar of subsidy brought 29.
 
-That is not a coincidence, and the mechanism is not mysterious. A business that can absorb a 1.5 million dollar loan has accounts, assets and probably a bank already. The donor dollar riding alongside it is not changing very much. A manager told to maximise leverage therefore has one reliable strategy, which is to write bigger cheques. Follow that incentive far enough and you reach a 29x ratio while financing companies that had other options. The number on the slide looks excellent. The programme has stopped doing its job.
+That is not a coincidence, and the mechanism is not mysterious. A business that can absorb a 1.5 million dollar loan has accounts, assets and probably a bank already. The donor dollar riding alongside it is not changing very much. A manager told to maximise leverage therefore has one reliable strategy, which is to write bigger cheques. Pushed far enough, that incentive produces a 29x ratio while the programme finances companies that had other options. The number on the slide looks excellent. The programme has stopped doing its job.
 
-This reframes how we should read a set of results that looks, at first glance, like underperformance.
+That reframes a set of results that looks, at first glance, like underperformance.
 
 Aceli missed two of its targets. It mobilised 440 million dollars, not 600. It reached 10x leverage, not 15x. On everything else it overshot, and not by a little. It made 5,576 loans where it had projected 1,500. It reached 2.3 million farmers and workers where it had projected 1.1 million. And 63 per cent of its borrowers had never held a formal loan, against a projection of 35 per cent.
 
@@ -141,7 +141,7 @@ If the binding constraint is the cost of reaching a borrower, then viability com
 
 **Replace the field visit with data that predicts repayment just as well.** What the buyer paid the farmer last season. What the mobile money account shows. What sits in the warehouse. What the satellite says the yield will be. Each one takes a line out of the cost of assessment.
 
-**Price the book, not the name.** Losses turned out to be flat across loan sizes, between 0.7 and 1.1 per cent. Flat and predictable is exactly the condition under which you can price a whole book at once. It is also the condition under which assessing every borrower from scratch is waste.
+**Price the book, not the name.** Losses turned out to be flat across loan sizes, between 0.7 and 1.1 per cent. Flat and predictable is exactly the condition under which a lender can price a whole book at once. It is also the condition under which assessing every borrower from scratch is waste.
 
 **And lend in the currency the business earns.** A trader who earns shillings and repays dollars is carrying a bet on the exchange rate, and nobody is paying them to carry it. Research by TCX suggests that in any given year, one in eight low income countries sees its currency fall by a fifth or more.
 
@@ -151,7 +151,7 @@ Then the second blow landed, and it came from the same event. On 14 October the 
 
 That last point explains a shift that deserves more attention than it gets. Aceli expected international impact investors to do about half the lending. They did almost none of it. Of its 55 partner lenders, 45 are African institutions, and they made 96 per cent of the loans, in local currency, to businesses offshore investors could not reach.
 
-The same substitution has been running through African venture capital, which I traced in [Who Is Actually Writing the Cheques](https://herufi.org/blogs/who-writes-the-cheques-african-vc). In agriculture it matters more. A local bank has two things offshore capital cannot manufacture: branches near the farms, and deposits in the currency the farms earn.
+The same substitution has been running through African venture capital, traced in [Who Is Actually Writing the Cheques](https://herufi.org/blogs/who-writes-the-cheques-african-vc). In agriculture it matters more. A local bank has two things offshore capital cannot manufacture: branches near the farms, and deposits in the currency the farms earn.
 
 ---
 

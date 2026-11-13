@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Why African Startups Stall After Their First Cheque',
     category: 'Explainer',
     pillar: 'Venture Strategy and Capital Intelligence',
-    summary: 'We analysed 49,000 companies worldwide to find out what really holds African startups back. The answer is not talent, sectors or geography. It is the size and shape of the money.',
+    summary: 'This report analysed 49,000 companies worldwide to find out what really holds African startups back. The answer is not talent, sectors or geography. It is the size and shape of the money.',
     date: '2026-07-16',
     readingTime: '4 min read',
     fileUrl: '/blogs/why-african-startups-stall',
@@ -111,7 +111,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Explainer',
     pillar: 'Venture Strategy and Capital Intelligence',
     summary:
-      "Africa's agricultural finance problem is almost always described as a risk problem. Data covering 32,000 loans says something different. Small farm loans fail because they cost too much to make, not because borrowers fail to pay.",
+      'Africa\'s agricultural finance problem is almost always described as a risk problem. Data covering 32,000 loans says something different. Small farm loans fail because they cost too much to make, not because borrowers fail to pay. That one distinction changes which tools can work.',
     date: '2026-10-28',
     readingTime: '15 min read',
     fileUrl: '/blogs/why-banks-turn-down-farm-loans',
@@ -125,7 +125,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Explainer',
     pillar: 'Venture Strategy and Capital Intelligence',
     summary:
-      'Equity funding for African agricultural technology fell by roughly three quarters in three years. That is usually read as investors losing faith. The balance sheets suggest something else.',
+      'Equity funding for African agricultural technology fell by roughly three quarters in three years. That is usually read as investors losing faith. The balance sheets suggest something else: capital finally finding the instrument these businesses can actually service.',
     date: '2026-10-28',
     readingTime: '22 min read',
     fileUrl: '/blogs/good-business-wrong-money',
@@ -139,7 +139,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Explainer',
     pillar: 'Venture Strategy and Capital Intelligence',
     summary:
-      'A model tests African agricultural lending under five futures. Moving donor money from guarantees to the cost of lending barely changes how much gets lent. It changes who gets it.',
+      'A model tests African agricultural lending under five futures. The result was not the one the research set out to prove. Moving donor money from guarantees to the cost of lending barely changes how much gets lent. It changes who gets it, and that turns out to be the more useful finding.',
     date: '2026-10-28',
     readingTime: '19 min read',
     fileUrl: '/blogs/spend-the-same-money-differently',

@@ -14,9 +14,9 @@ export default function RealStoryAfricanStartupGrowth() {
       <div className="meta"><span>Michael Omega</span><span>15 July 2026</span><span>5 min read</span></div>
       <div className="prose">
         <p><em>The second report in the African Startup Investment series.</em></p>
-        <p>In 2014, the entire recorded history of African startup funding came to $1.7 billion across 194 companies. In 2025 alone, African startups raised between $3.2 and $4.1 billion, depending on which tracker you use, across roughly 500 deals. One year now outweighs the whole story up to that point, roughly twice over.</p>
+        <p>In 2014, the entire recorded history of African startup funding came to $1.7 billion across 194 companies. In 2025 alone, African startups raised between $3.2 and $4.1 billion, depending on the tracker, across roughly 500 deals. One year now outweighs the whole story up to that point, roughly twice over.</p>
         <p>That is the headline. It is also the least useful thing in the data.</p>
-        <p>Totals move with global interest rates and tell you mostly about the weather. What matters is whether the machinery underneath changed, because machinery outlasts a cycle. Four things did change, and three of them were not visible at all in 2014.</p>
+        <p>Totals move with global interest rates and describe mostly the weather. What matters is whether the machinery underneath changed, because machinery outlasts a cycle. Four things did change, and three of them were not visible at all in 2014.</p>
         <BlogFigure data={r2fig1 as FigureData} />
         <blockquote>Figure 1: Twenty years of African startup funding on one chart: discovery, emergence, boom, winter, recovery.</blockquote>
         <p>The shape of that chart is worth a moment. A boom through 2021 and 2022, a painful 46% crash in 2023, then recovery in 2025, when Africa was the only region in the world where the number of deals actually grew.</p>
