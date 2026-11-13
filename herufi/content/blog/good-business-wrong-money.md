@@ -5,7 +5,7 @@ summary: "Equity funding for African agricultural technology fell by roughly thr
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-10-28"
-readingTime: "13 min read"
+readingTime: "11 min read"
 pillar: "Venture Strategy and Capital Intelligence"
 tags: ["Agritech", "Venture Capital", "Working Capital", "Debt Financing"]
 publication: "agri-capital-matching-2026"
@@ -37,9 +37,7 @@ So the market rose while agriculture fell, and within agriculture the part that 
 
 ## Venture capital is not patient money. It is a product with requirements.
 
-To see why the instrument was wrong, it helps to be precise about what venture capital needs, because risk appetite is not the answer.
-
-A venture fund needs a small number of enormous winners, because it is paid for by its two or three best investments rather than its average one. It needs them to turn into cash within roughly ten years, because a fund has a life. And it needs growth that outruns cost.
+Risk appetite is not the answer. A venture fund needs a small number of enormous winners, because it is paid for by its two or three best investments rather than its average one. It needs them to turn into cash within roughly ten years, because a fund has a life. And it needs growth that outruns cost.
 
 A maize processor fails all three. To double revenue it must buy twice as much maize, hire more people, rent more storage and tie up more cash, so everything required to support revenue grows with revenue. Its exit options are thin. Its risks are mostly ones no founder can fix.
 
@@ -53,7 +51,7 @@ Agricultural technology is not one industry. It is at least five, with five diff
 
 **The input distributor** sells seed and fertiliser on a thin margin, with its money sitting in stock. What fits is a revolving credit line in local currency that expands before planting and shrinks after harvest. What it often got was growth equity. iProcure reached more than a million farmers on about 17 million dollars, then entered administration in April 2024 after a round failed to close. A round that does not arrive is not a facility.
 
-**The crop buyer and processor** owns machinery, warehouse stock and buyer contracts, with cash bunched around harvest. What fits is trade finance against the stock, plus long term debt for the plant. What it often got was venture equity expecting growth that tonnage cannot produce. Twiga Foods raised more than 180 million dollars and built its own trucks, depots and logistics hub. Then it spent three years dismantling that: 283 jobs cut in 2023, 59 in 2024, over 300 in 2025, a shift to an asset light model, and a subsidiary in administration by August 2026. That pivot is the company agreeing the balance sheet and the cheque never matched.
+**The crop buyer and processor** owns machinery, warehouse stock and buyer contracts, with cash bunched around harvest. What fits is trade finance against the stock, plus long term debt for the plant. What it often got was venture equity expecting growth that tonnage cannot produce. Twiga Foods raised more than 180 million dollars and built its own trucks, depots and logistics hub. Then it spent three years dismantling that, and in 2025 announced a shift to an asset light model. A subsidiary entered administration in August 2026. The pivot is the company agreeing the balance sheet and the cheque never matched.
 
 **The lender embedded in the supply chain** lends to farmers it already trades with, so its loan book is the business. What fits is debt to fund that book, loss cover on the portfolio, and equity only for the technology. What it often got was equity funding the loan book itself, the most expensive mistake here, because a loan book is the one thing in agriculture that makes genuinely good collateral. Apollo Agriculture is the contrast. In May 2026 it bundled its farmer loans and sold investors a security backed by the repayments, raising 276 million shillings against a pool covering 23,839 farmers. The loan book funded by money secured on the loan book, in the currency the farmers repay in.
 
@@ -65,45 +63,21 @@ Agricultural technology is not one industry. It is at least five, with five diff
 
 That matrix is a judgement, not a measurement, published with its reasoning attached so it can be argued with. The venture capital column has exactly one strong cell, and it sits on the row furthest from what a farmer actually earns. The money that is easiest to raise fits the part of the sector that matters least for the outcome everyone says they want.
 
----
-
-## What a mismatch actually does to a company
-
-The wrong instrument does not sit quietly on the balance sheet. It changes behaviour, and the pattern is predictable enough to name.
-
-The company chases growth its margin cannot fund, because the equity story requires a steep line. It raises again too early, because the runway was priced for a trajectory the business does not have. It expands into new countries to show a bigger market rather than deepening the one relationship that was working. Then the equity market turns, and nothing in the business was ever going to produce the exit its shareholders were promised.
-
-A large share of what gets written up as agricultural technology failure in Africa is this. Not a failure of product, market or founder, but a company that took the only cheque on offer and then spent years pretending to be a different kind of company.
-
-Briter puts the retreat down to what these businesses own. Lorries, warehouses full of seed and fertiliser, loan books owed by farmers. Each needs cash up front, and none of it is what equity funds well. Briter also notes how the commercial investors who did come back came back: not by leading equity rounds, but in structured deals alongside development finance institutions. That is not a market losing interest. That is a market changing instrument.
+The consequence for a company is predictable. It chases growth its margin cannot fund, raises again too early, and expands into new countries to show a bigger market rather than deepening the one relationship that was working. A large share of what gets written up as agricultural technology failure in Africa is this. Not a failure of product, market or founder, but a company that took the only cheque on offer and then spent years pretending to be a different kind of company.
 
 ---
 
 ## The measure that quietly defeats the purpose
 
-There is a second mismatch, and it sits inside development finance rather than inside the companies. It concerns how programmes are judged.
+There is a second mismatch, and it sits inside development finance rather than inside the companies.
 
-Leverage is worth stating exactly, because the word gets used loosely. A programme like Aceli pays a lender for each qualifying loan and covers part of the losses if those loans go bad. The loans themselves come from the lender's own deposits. Leverage is the ratio between the two: one million dollars of donor money that puts ten million of bank money out of the door is 10x.
-
-As a rough test of efficiency that is reasonable. It is also completely silent on the only question that matters, which is who got the loans.
+A programme like Aceli pays a lender for each qualifying loan and covers part of the losses if those loans go bad. The loans themselves come from the lender's own deposits. Leverage is the ratio between the two: one million dollars of donor money that puts ten million of bank money out of the door is 10x. As a rough test of efficiency that is reasonable. It is also completely silent on who got the loans.
 
 The two measures are near mirror images. In the smallest band, 84 per cent of borrowers had never held a formal loan, and every subsidy dollar brought about 5 dollars off the lenders' balance sheets. In the largest band, 8 per cent were first time borrowers and every subsidy dollar brought 29.
 
-The mechanism is not mysterious. A business that can absorb a 1.5 million dollar loan has accounts, assets and probably a bank already, so the donor dollar riding alongside it changes very little. A manager told to maximise leverage therefore has one reliable strategy, which is to write bigger cheques. Pushed far enough, that incentive produces a 29x ratio while the programme finances companies that had other options. The number on the slide looks excellent. The programme has stopped doing its job.
+The mechanism is not mysterious. A business that can absorb a 1.5 million dollar loan has accounts, assets and probably a bank already, so the donor dollar riding alongside it changes very little. A manager told to maximise leverage therefore has one reliable strategy, which is to write bigger cheques. The number on the slide looks excellent. The programme has stopped doing its job.
 
-Which is why Aceli's results read oddly. It mobilised 440 million dollars against a 600 million target and reached 10x leverage rather than 15x. Two misses. It also made 5,576 loans against a projected 1,500, reached 2.3 million farmers and workers against 1.1 million, and lent to first time borrowers at 63 per cent against a projected 35. The misses and the overshoots are the same sentence. It went much further down market than planned, at an average loan of 79,000 dollars rather than 400,000, and its 10x is still more than double the roughly 4x average across blended finance globally.
-
----
-
-## The borrowers who get the least money are not the riskiest
-
-The same dataset tests an assumption the industry rarely examines, and the assumption does not survive.
-
-Businesses owned by women default on 3.3 per cent of loans. Businesses owned by young entrepreneurs default on 2.5 per cent. Businesses owned by men over 35 default on 4.6 per cent. The group the market treats as marginal is the safer borrower, by a clear margin.
-
-They also borrow about half as much: an average of 49,000 and 36,000 dollars against 95,000. That is where the trap closes. Smaller loans produce less leverage, so a programme measured on leverage is pushed away from exactly these borrowers without anyone deciding to exclude them. The bias is in the arithmetic, not in the room.
-
-One caution, because the data is narrow. These figures describe one programme in five countries, and a single portfolio can reflect how it was selected as much as how borrowers behave. What they do remove is the excuse that smaller loans to underserved groups must be worse credit.
+The same dataset closes the trap. Businesses owned by women default on 3.3 per cent of loans and those owned by young entrepreneurs on 2.5 per cent, against 4.6 per cent for businesses owned by men over 35. The group the market treats as marginal is the safer borrower. It also borrows about half as much, so it generates less leverage, which is how a leverage target excludes it without anyone deciding to.
 
 ---
 
@@ -113,7 +87,7 @@ Partly, and mostly not.
 
 Some genuinely good companies were starved when the only instrument on offer stopped being offered, and that is a real cost borne by real founders. But most of what happened was a correction, and an overdue one.
 
-One part of that correction deserves more attention than it gets. Aceli expected international impact investors to do about half the lending. They did almost none of it. Of its 55 partner lenders, 45 are African institutions, and they made 96 per cent of the loans in local currency. A local bank holds two things offshore capital cannot manufacture: branches near the farms, and deposits in the currency the farms earn.
+One part of it deserves more attention than it gets. Aceli expected international impact investors to do about half the lending. They did almost none of it. Of its 55 partner lenders, 45 are African institutions, and they made 96 per cent of the loans in local currency. A local bank holds two things offshore capital cannot manufacture: branches near the farms, and deposits in the currency the farms earn.
 
 The danger now is the opposite mistake. The sector spent a decade offering equity to businesses that needed working capital. It could spend the next decade offering working capital to businesses that need patient money for irrigation, storage and processing. That is the 27 billion dollar layer that is 99.6 per cent unserved, and no revolving trade line will ever reach it.
 

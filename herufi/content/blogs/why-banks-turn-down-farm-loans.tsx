@@ -3,7 +3,6 @@ import BlogFigure from '@/components/charts/BlogFigure'
 import type { FigureData } from '@/components/charts/types'
 import ag_fig2 from '@/data/charts/ag_fig2.json'
 import ag_fig3 from '@/data/charts/ag_fig3.json'
-import ag_fig4 from '@/data/charts/ag_fig4.json'
 import ag_fig5 from '@/data/charts/ag_fig5.json'
 
 export default function WhyBanksTurnDownFarmLoans() {
@@ -13,7 +12,7 @@ export default function WhyBanksTurnDownFarmLoans() {
       <div className="chips"><span className="pill green">Venture Strategy and Capital Intelligence</span><span className="pill outline">Explainer</span></div>
       <h1>Why Banks Turn Down Farm Loans They Expect to Be Repaid</h1>
       <p className="summary">Africa&apos;s agricultural finance problem is almost always described as a risk problem. Data covering 32,000 loans says something different. Small farm loans fail because they cost too much to make, not because borrowers fail to pay. That one distinction changes which tools can work.</p>
-      <div className="meta"><span>Michael Omega</span><span>28 October 2026</span><span>11 min read</span></div>
+      <div className="meta"><span>Michael Omega</span><span>28 October 2026</span><span>9 min read</span></div>
       <div className="prose">
         <p>Picture a maize trader. They buy grain from farmers nearby, store it, and sell it to a mill they have dealt with for years. They know which farmers deliver and which ones disappoint. They have an order in hand. The only thing they do not have is the cash to pay the farmers in the weeks before the mill pays them.</p>
         <p>So they go to the bank, and the bank says no. Not because it expects to lose the money. It agrees the loan will probably be repaid. It says no anyway.</p>
@@ -24,7 +23,7 @@ export default function WhyBanksTurnDownFarmLoans() {
         <h2>Credit losses barely move across loan sizes. Costs move enormously.</h2>
         <p>Testing a claim like this needs a rare kind of data. It has to show, loan by loan, not only whether borrowers repaid but what each loan earned and what each loan cost the lender to produce. Banks almost never publish that.</p>
         <p>Aceli Africa does. It is a market facility that pays lenders to make agricultural loans they would otherwise skip. As part of that work it publishes a full profit and loss breakdown: roughly 32,000 agricultural business loans worth about 2 billion dollars, from 41 lenders in five countries.</p>
-        <p>That sets two explanations against each other. The risk explanation says small farm loans go bad more often, so expected losses should climb as loans get smaller. The cost explanation says small farm loans are simply too expensive to produce, so losses should stay flat while costs climb.</p>
+        <p>That sets two explanations against each other. The risk explanation says small farm loans go bad more often, so expected losses should climb as loans get smaller. The cost explanation says they are simply too expensive to produce, so losses should stay flat while costs climb.</p>
         <p>The numbers are not close.</p>
         <div className="tablewrap"><table><thead><tr>
         <th>Loan size</th>
@@ -39,7 +38,7 @@ export default function WhyBanksTurnDownFarmLoans() {
         </tbody></table></div>
         <p className="srcnote">All figures are a percentage of the loan, over the life of the loan. Source: Aceli Africa, 2025 Financial Benchmarking Report.</p>
         <p>Read the losses column first, because the entire risk argument rests on it. It barely moves, and it does not even move in the direction the risk story needs: the largest loans carry slightly more expected loss than the smallest. Across the whole range, expected losses vary by four tenths of a percentage point.</p>
-        <p>Now read the cost column. It runs 16.4 down to 0.9, a swing of 15.5 points. That is roughly 39 times the variation in losses.</p>
+        <p>Now read the cost column. It runs 16.4 down to 0.9, a swing of 15.5 points. Roughly 39 times the variation in losses.</p>
         <BlogFigure data={ag_fig2 as FigureData} />
         <blockquote>Figure 1: Each pair of circles is one loan size band, with circle area showing how much is lent in it.</blockquote>
         <p>The reason is almost dull once stated. Checking a business, visiting the site, writing the credit file and chasing repayment cost roughly the same whether the loan is 15,000 dollars or 1.5 million. The work is fixed. The income is not. A small loan carries the same workload on a fraction of the interest.</p>
@@ -50,49 +49,30 @@ export default function WhyBanksTurnDownFarmLoans() {
         <p>The standard instrument in development finance is the credit guarantee: a promise to cover some of a lender&apos;s losses when borrowers default. It makes a risky loan safer. It does nothing about what the loan costs to produce.</p>
         <p>Follow one loan through. A bank expects to earn 15,000 shillings on it, and to lose 1,000 to default. It spends 18,000 finding the borrower, assessing the business and collecting the money. The bank is down 4,000 shillings.</p>
         <p>Now hand it a perfect guarantee. A donor covers the whole 1,000 shilling expected loss, free and instantly. The bank is down 3,000 instead of 4,000. The loan still loses money. It still does not get made.</p>
-        <p>Run that calculation across the real data and the smallest loan band moves from minus 2.2 per cent to minus 1.5 per cent. Still a loss. There is a ceiling on what any guarantee can achieve, and the ceiling is the size of the loss it covers.</p>
+        <p>Run that across the real data and the smallest loan band moves from minus 2.2 per cent to minus 1.5 per cent. Still a loss. There is a ceiling on what any guarantee can achieve, and the ceiling is the size of the loss it covers.</p>
         <BlogFigure data={ag_fig3 as FigureData} />
         <blockquote>Figure 2: The bar is what a lender keeps today. The gold diamond is the same loan with every expected shilling of loss covered free.</blockquote>
-        <p>The lenders doing this work say the same thing with their behaviour. Aceli offers them two kinds of support: cover against losses, and payments that defray the cost of finding and assessing borrowers. Ninety per cent report that the cost support changed what they did. Seventy three per cent say that about the loss cover.</p>
-        <p>None of which makes guarantees useless. On a 300,000 dollar loan, a recovered percentage point against a cost base of 2.5 per cent is a meaningful gift, often enough to tip a marginal credit into a yes. The claim here is narrower than the one guarantee sceptics usually make. Protecting a bank against losses is one thing. Paying for the work of reaching a borrower is another. Only the second binds at the bottom of the market.</p>
+        <p>The lenders doing this work say the same thing with their behaviour. Aceli offers them cover against losses, and payments that defray the cost of finding and assessing borrowers. Ninety per cent report that the cost support changed what they did. Seventy three per cent say that about the loss cover.</p>
+        <p>None of which makes guarantees useless. On a 300,000 dollar loan, a recovered percentage point against a cost base of 2.5 per cent is often enough to tip a marginal credit into a yes. The claim here is narrower. Protecting a bank against losses is one thing. Paying for the work of reaching a borrower is another. Only the second binds at the bottom of the market.</p>
         <hr />
         <h2>Agriculture is not competing against nothing. It is competing against a government bond.</h2>
         <p>A bank never chooses between lending to a farm business and leaving the money in a drawer. It chooses between that loan and every other thing it could do with the same shilling.</p>
-        <p>Lending to farm businesses earned these banks an average of 3.5 per cent. Government bonds paid 16.2 per cent. The loan book as a whole returned 28.3 per cent. So a treasury bond pays more than four times what a farm loan pays, and asks nothing in return. No field visits, no harvest, no weather. Concessional support lifts farm lending to around 6.5 per cent, still well under half the risk free alternative.</p>
-        <p>That carries a consequence agricultural strategy documents almost never mention. <strong>A high government borrowing rate is an agricultural finance problem.</strong> Every rise in what a government pays to borrow widens the gap a subsidy has to close.</p>
-        <p>Uganda ran that experiment in public this year. On 14 October the Bank of Uganda raised its policy rate from 9.75 per cent to 12 per cent to defend a falling shilling, and raised the share of deposits banks must hold in reserve. Read that from a treasurer&apos;s desk. Lending to the government just got better paid, holding deposits just got more expensive, and nothing whatsoever changed about the maize trader.</p>
-        <hr />
-        <h2>The money that buys the harvest is not the money that transforms the farm</h2>
-        <p>This looks like one gap. It is three. A farmer buying fertiliser needs cash for one season. A processor buying maize needs it for a few months. A business installing irrigation needs it for years. ISF Advisors puts the annual need for Africa south of the Sahara at about 78 billion dollars, divided by purpose like this.</p>
-        <div className="tablewrap"><table><thead><tr>
-        <th>What the money is for</th>
-        <th>Supplied</th>
-        <th>Needed</th>
-        <th>Share met</th>
-        </tr></thead><tbody>
-        <tr><td>Short term: inputs, crop purchases</td><td className="num">10.0bn</td><td className="num">33.0bn</td><td className="num"><strong>30%</strong></td></tr>
-        <tr><td>Long term: irrigation, storage, processing, machinery</td><td className="num">0.1bn</td><td className="num">27.1bn</td><td className="num"><strong>0.4%</strong></td></tr>
-        <tr><td>Household needs outside farming</td><td className="num">9.0bn</td><td className="num">18.0bn</td><td className="num"><strong>50%</strong></td></tr>
-        </tbody></table></div>
-        <p className="srcnote">Source: ISF Advisors, Beyond the Frontier, October 2025.</p>
-        <p>One hundred million dollars supplied against twenty seven billion needed. <strong>Long term agricultural finance in Africa south of the Sahara is 99.6 per cent unserved.</strong> That is not a gap. It is an absence.</p>
-        <BlogFigure data={ag_fig4 as FigureData} />
-        <blockquote>Figure 3: The full need drawn to scale, divided by purpose and then by whether it is supplied.</blockquote>
-        <p>Short term lending works better for a reason anyone can picture. It repays itself out of the thing it buys. The harvest repays the fertiliser loan. The sale repays the loan that bought the maize. Long term lending has no such mechanism. An irrigation system does not produce cash next month, and most lenders are funded with deposits that cannot wait.</p>
-        <p>That recasts the much discussed shift toward working capital. It is sensible, because short term lending is the part that can be solved commercially. It is also incomplete. Short term money keeps the season going. Long term money makes the next season better. Africa needs both and is getting one.</p>
+        <p>Lending to farm businesses earned these banks an average of 3.5 per cent. Government bonds paid 16.2 per cent. The loan book as a whole returned 28.3 per cent. So a treasury bond pays more than four times what a farm loan pays and asks nothing in return. No field visits, no harvest, no weather.</p>
+        <p>Which carries a consequence agricultural strategy documents almost never mention. <strong>A high government borrowing rate is an agricultural finance problem.</strong> In October 2026 the Bank of Uganda raised its policy rate from 9.75 to 12 per cent to defend a falling shilling. Lending to the government got better paid, and nothing whatsoever changed about the maize trader.</p>
         <hr />
         <h2>The biggest lender to African farmers is not a bank</h2>
         <p>If formal lenders supply so little, somebody else is doing the work. It is the company that buys the crop.</p>
         <p>Think of a firm buying coffee, milk or avocados from thousands of farmers. It hands out seed and fertiliser before planting and advances cash against the coming harvest. None of that is described as lending, and all of it is lending.</p>
         <BlogFigure data={ag_fig5 as FigureData} />
-        <blockquote>Figure 4: Annual flow of finance to smallholder farmers worldwide, by the kind of institution supplying it.</blockquote>
-        <p>Crop buyers, traders, processors and input suppliers together supply 43 billion dollars a year, about 45 per cent of all smallholder finance in the world. Informal lenders and savings groups supply 25 billion. Commercial banks, which hold everybody&apos;s deposits, supply about 2 billion. Venture backed agricultural technology companies supply about 0.9 billion, less than a fortieth of the buyer channel they are often described as disrupting.</p>
+        <blockquote>Figure 3: Annual flow of finance to smallholder farmers worldwide, by the kind of institution supplying it.</blockquote>
+        <p>Crop buyers, traders, processors and input suppliers together supply 43 billion dollars a year, about 45 per cent of all smallholder finance in the world. Commercial banks, which hold everybody&apos;s deposits, supply about 2 billion. Venture backed agricultural technology companies supply about 0.9 billion.</p>
         <p>Buyers lend cheaply because they already paid the cost that defeats the bank. A buyer knows how much a farmer delivers, how reliably, and how they did last season. That history is the credit file, and it arrived free with the trading relationship. The buyer also holds a collection mechanism nobody else has: the next purchase.</p>
         <p>So the instinct to build a new digital channel straight to the farmer is usually the expensive path. The cheaper one is to plug into the channel already reaching them.</p>
         <hr />
         <h2>What this establishes</h2>
         <p>A borrower can be entirely creditworthy and the loan can still be a bad deal for the bank. Separating those two ideas is the whole move.</p>
         <p>Expected losses vary by 0.4 percentage points across loan sizes. Costs vary by 15.5. A guarantee can only return the loss it covers, which at the bottom of the market is far smaller than the shortfall. And the biggest lender to farmers is the buyer, which solved the cost problem commercially rather than financially.</p>
+        <p>One further finding belongs here, because the rest of the series leans on it. Split the need by what the money is for and the gap has a shape. Short term lending in Africa south of the Sahara is about 30 per cent met. Long term finance for irrigation, storage, processing and machinery is <strong>0.4 per cent met</strong>, at 0.1 billion dollars of supply against 27.1 billion of need. Short term money keeps the season going. Long term money makes the next season better. The publication sets that out in full.</p>
         <p>So if the problem is not that these businesses are dangerous, what exactly is wrong with the money they have been offered? That is the subject of the next article.</p>
         <hr />
         <h2>Sources</h2>
