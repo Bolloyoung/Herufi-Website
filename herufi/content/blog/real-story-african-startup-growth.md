@@ -5,7 +5,7 @@ summary: "One modern year of African startup funding now beats everything record
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-07-15"
-readingTime: "6 min read"
+readingTime: "5 min read"
 pillar: "Venture Strategy and Capital Intelligence"
 tags: ["Startup Funding", "Venture Capital", "Exits", "Debt Financing"]
 publication: "frontier-to-market-2014-2026"

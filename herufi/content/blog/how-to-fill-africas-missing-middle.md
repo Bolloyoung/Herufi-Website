@@ -5,7 +5,7 @@ summary: "African startups get funded once and then stall. Four financing tools 
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-07-25"
-readingTime: "9 min read"
+readingTime: "7 min read"
 pillar: "Venture Strategy and Capital Intelligence"
 tags: ["Venture Capital", "Venture Debt", "Blended Finance", "Series A"]
 publication: "filling-the-missing-middle-2026"

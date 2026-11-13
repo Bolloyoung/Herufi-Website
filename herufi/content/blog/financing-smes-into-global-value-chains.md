@@ -5,7 +5,7 @@ summary: "Only 15 per cent of Kenyan SMEs engage in global value chains, mostly 
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-08-25"
-readingTime: "4 min read"
+readingTime: "3 min read"
 pillar: "Markets, Systems and African Economies"
 tags: ["Trade", "Kenya", "SMEs", "Access to Finance"]
 publication: "sme-gvc-financial-interventions-2022-23"

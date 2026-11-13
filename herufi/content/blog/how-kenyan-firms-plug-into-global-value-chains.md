@@ -5,7 +5,7 @@ summary: "A firm level study of 358 Kenyan enterprises puts the country's global
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-08-25"
-readingTime: "5 min read"
+readingTime: "3 min read"
 pillar: "Markets, Systems and African Economies"
 tags: ["Trade", "Kenya", "SMEs", "Global Value Chains"]
 publication: "gvc-firm-participation-kenya-2022"

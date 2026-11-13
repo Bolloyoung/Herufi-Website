@@ -5,7 +5,7 @@ summary: "Kenya has taxed raw hide and skin exports at up to 80 per cent to push
 category: "Explainer"
 author: "Michael Omega"
 date: "2026-08-25"
-readingTime: "6 min read"
+readingTime: "4 min read"
 pillar: "Markets, Systems and African Economies"
 tags: ["Trade", "Kenya", "Leather Industry", "Export Policy"]
 publication: "export-levies-hides-skins-leather-2024"
